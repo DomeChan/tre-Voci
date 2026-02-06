@@ -42,9 +42,7 @@ struct ContentView: View {
                 .transition(.move(edge: .trailing).combined(with: .opacity))
 
             case .home:
-                Text("Home — \(persistence.state.displayName)'s Songs")
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.bark)
+                HomeView()
                     .transition(.opacity)
             }
         }

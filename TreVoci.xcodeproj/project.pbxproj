@@ -24,6 +24,16 @@
 		AA000015 /* NameStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000015 /* NameStep.swift */; };
 		AA000016 /* LanguageStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000016 /* LanguageStep.swift */; };
 		AA000017 /* SpeakerStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000017 /* SpeakerStep.swift */; };
+		AA000018 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000018 /* HomeViewModel.swift */; };
+		AA000019 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000019 /* HomeView.swift */; };
+		AA000020 /* DailyMixCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000021 /* DailyMixCard.swift */; };
+		AA000021 /* SongCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000022 /* SongCard.swift */; };
+		AA000022 /* CultureSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000023 /* CultureSection.swift */; };
+		AA000023 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000024 /* PlayerViewModel.swift */; };
+		AA000024 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000025 /* PlayerView.swift */; };
+		AA000025 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000026 /* LyricsView.swift */; };
+		AA000026 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000027 /* LanguagePicker.swift */; };
+		AA000027 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000028 /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +54,16 @@
 		AB000015 /* NameStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStep.swift; sourceTree = "<group>"; };
 		AB000016 /* LanguageStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStep.swift; sourceTree = "<group>"; };
 		AB000017 /* SpeakerStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerStep.swift; sourceTree = "<group>"; };
+		AB000018 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AB000019 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AB000021 /* DailyMixCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMixCard.swift; sourceTree = "<group>"; };
+		AB000022 /* SongCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCard.swift; sourceTree = "<group>"; };
+		AB000023 /* CultureSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureSection.swift; sourceTree = "<group>"; };
+		AB000024 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		AB000025 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		AB000026 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
+		AB000027 /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
+		AB000028 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		AB000020 /* TreVoci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreVoci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +114,8 @@
 		AD000004 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AB000018 /* HomeViewModel.swift */,
+				AB000024 /* PlayerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,8 +125,32 @@
 			children = (
 				AB000013 /* SplashView.swift */,
 				AD000011 /* Onboarding */,
+				AD000012 /* Home */,
+				AD000013 /* Player */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AD000013 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				AB000025 /* PlayerView.swift */,
+				AB000026 /* LyricsView.swift */,
+				AB000027 /* LanguagePicker.swift */,
+				AB000028 /* ProgressBar.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		AD000012 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB000019 /* HomeView.swift */,
+				AB000021 /* DailyMixCard.swift */,
+				AB000022 /* SongCard.swift */,
+				AB000023 /* CultureSection.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		AD000011 /* Onboarding */ = {
@@ -247,6 +293,16 @@
 				AA000015 /* NameStep.swift in Sources */,
 				AA000016 /* LanguageStep.swift in Sources */,
 				AA000017 /* SpeakerStep.swift in Sources */,
+				AA000018 /* HomeViewModel.swift in Sources */,
+				AA000019 /* HomeView.swift in Sources */,
+				AA000020 /* DailyMixCard.swift in Sources */,
+				AA000021 /* SongCard.swift in Sources */,
+				AA000022 /* CultureSection.swift in Sources */,
+				AA000023 /* PlayerViewModel.swift in Sources */,
+				AA000024 /* PlayerView.swift in Sources */,
+				AA000025 /* LyricsView.swift in Sources */,
+				AA000026 /* LanguagePicker.swift in Sources */,
+				AA000027 /* ProgressBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
