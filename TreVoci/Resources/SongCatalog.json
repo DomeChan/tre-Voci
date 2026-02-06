@@ -1,0 +1,763 @@
+{
+  "songs": [
+    {
+      "id": "frere-jacques",
+      "category": "cross-cultural",
+      "melodyOrigin": "Frère Jacques (France, ~1780)",
+      "icon": "🐯",
+      "backgroundGradient": ["#FFF3E0", "#FFE0B2"],
+      "duration": 135,
+      "titles": {
+        "it": "Fra Martino",
+        "zh": "两只老虎",
+        "en": "Are You Sleeping"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/frere-jacques-it.m4a",
+        "zh": "cross-cultural/frere-jacques-zh.m4a",
+        "en": "cross-cultural/frere-jacques-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Fra Martino, campanaro" },
+          { "time": 4.0, "text": "Dormi tu? Dormi tu?" },
+          { "time": 8.0, "text": "Suona le campane" },
+          { "time": 12.0, "text": "Din don dan, din don dan!" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "两只老虎 两只老虎" },
+          { "time": 4.0, "text": "跑得快 跑得快" },
+          { "time": 8.0, "text": "一只没有耳朵" },
+          { "time": 12.0, "text": "一只没有尾巴" },
+          { "time": 16.0, "text": "真奇怪！" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "Are you sleeping, Brother John?" },
+          { "time": 4.0, "text": "Morning bells are ringing" },
+          { "time": 8.0, "text": "Ding dang dong, ding dang dong!" }
+        ]
+      },
+      "activity": {
+        "icon": "🔔",
+        "prompts": {
+          "it": "Trova una campana! 🔔",
+          "zh": "找一个铃铛！🔔",
+          "en": "Find something that rings! 🔔"
+        }
+      },
+      "parentNote": "Fun fact: the Chinese version has completely different lyrics about two tigers — one with no ears, one with no tail!"
+    },
+    {
+      "id": "twinkle",
+      "category": "cross-cultural",
+      "melodyOrigin": "Ah! vous dirai-je, Maman (1761)",
+      "icon": "⭐",
+      "backgroundGradient": ["#E8EAF6", "#C5CAE9"],
+      "duration": 110,
+      "titles": {
+        "it": "Brilla Brilla Stellina",
+        "zh": "小星星",
+        "en": "Twinkle Twinkle"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/twinkle-it.m4a",
+        "zh": "cross-cultural/twinkle-zh.m4a",
+        "en": "cross-cultural/twinkle-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Brilla brilla la stellina" },
+          { "time": 4.5, "text": "Su nel cielo piccolina" },
+          { "time": 9.0, "text": "Brilla brilla la stellina" },
+          { "time": 13.5, "text": "Su nel cielo piccolina" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "一闪一闪亮晶晶" },
+          { "time": 4.5, "text": "满天都是小星星" },
+          { "time": 9.0, "text": "挂在天上放光明" },
+          { "time": 13.5, "text": "好像许多小眼睛" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "Twinkle, twinkle, little star" },
+          { "time": 4.5, "text": "How I wonder what you are" },
+          { "time": 9.0, "text": "Up above the world so high" },
+          { "time": 13.5, "text": "Like a diamond in the sky" }
+        ]
+      },
+      "activity": {
+        "icon": "✨",
+        "prompts": {
+          "it": "Indica una stella! ✨",
+          "zh": "指一颗星星！✨",
+          "en": "Point to a star! ✨"
+        }
+      },
+      "parentNote": "This melody was the basis for Mozart's 12 Variations (K. 265). All three versions preserve the same gentle lullaby feel."
+    },
+    {
+      "id": "old-macdonald",
+      "category": "cross-cultural",
+      "melodyOrigin": "Old MacDonald Had a Farm (1706)",
+      "icon": "🐄",
+      "backgroundGradient": ["#E8F5E9", "#C8E6C9"],
+      "duration": 150,
+      "titles": {
+        "it": "Nella Vecchia Fattoria",
+        "zh": "王老先生有块地",
+        "en": "Old MacDonald"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/old-macdonald-it.m4a",
+        "zh": "cross-cultural/old-macdonald-zh.m4a",
+        "en": "cross-cultural/old-macdonald-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Nella vecchia fattoria, ia ia oh!" },
+          { "time": 5.0, "text": "C'era il cane, ia ia oh!" },
+          { "time": 10.0, "text": "Con un bau bau qui" },
+          { "time": 14.0, "text": "Con un bau bau là" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "王老先生有块地" },
+          { "time": 4.0, "text": "咿呀咿呀哟" },
+          { "time": 8.0, "text": "他在田边养小鸡" },
+          { "time": 12.0, "text": "咿呀咿呀哟" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "Old MacDonald had a farm" },
+          { "time": 4.0, "text": "E-I-E-I-O" },
+          { "time": 8.0, "text": "And on his farm he had a cow" },
+          { "time": 12.0, "text": "With a moo-moo here" }
+        ]
+      },
+      "activity": {
+        "icon": "🐾",
+        "prompts": {
+          "it": "Fai il verso di un animale! 🐾",
+          "zh": "学一个动物叫！🐾",
+          "en": "Make an animal sound! 🐾"
+        }
+      },
+      "parentNote": "The Italian version ('Nella Vecchia Fattoria') is by Quartetto Cetra and is a beloved children's TV classic."
+    },
+    {
+      "id": "if-youre-happy",
+      "category": "cross-cultural",
+      "melodyOrigin": "If You're Happy and You Know It (~1950s)",
+      "icon": "👏",
+      "backgroundGradient": ["#FFF8E1", "#FFECB3"],
+      "duration": 105,
+      "titles": {
+        "it": "Se Sei Felice",
+        "zh": "如果感到幸福",
+        "en": "If You're Happy"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/if-youre-happy-it.m4a",
+        "zh": "cross-cultural/if-youre-happy-zh.m4a",
+        "en": "cross-cultural/if-youre-happy-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Se sei felice tu lo sai batti le mani" },
+          { "time": 5.0, "text": "Se sei felice tu lo sai batti le mani" },
+          { "time": 10.0, "text": "Se sei felice tu lo sai" },
+          { "time": 14.0, "text": "E lo vuoi far veder" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "如果感到幸福你就拍拍手" },
+          { "time": 5.0, "text": "如果感到幸福你就拍拍手" },
+          { "time": 10.0, "text": "如果感到幸福就快快拍拍手呀" },
+          { "time": 15.0, "text": "看那大家都一起拍拍手" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "If you're happy and you know it, clap your hands" },
+          { "time": 5.0, "text": "If you're happy and you know it, clap your hands" },
+          { "time": 10.0, "text": "If you're happy and you know it" },
+          { "time": 14.0, "text": "And you really want to show it" }
+        ]
+      },
+      "activity": {
+        "icon": "👏",
+        "prompts": {
+          "it": "Batti le mani forte! 👏",
+          "zh": "用力拍拍手！👏",
+          "en": "Clap your hands loud! 👏"
+        }
+      },
+      "parentNote": "This is a perfect action song — encourage clapping, stomping, and cheering in all three languages!"
+    },
+    {
+      "id": "head-shoulders",
+      "category": "cross-cultural",
+      "melodyOrigin": "Head, Shoulders, Knees and Toes (1912)",
+      "icon": "🤸",
+      "backgroundGradient": ["#FCE4EC", "#F8BBD0"],
+      "duration": 90,
+      "titles": {
+        "it": "Testa Spalle",
+        "zh": "头肩膀膝脚趾",
+        "en": "Head Shoulders"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/head-shoulders-it.m4a",
+        "zh": "cross-cultural/head-shoulders-zh.m4a",
+        "en": "cross-cultural/head-shoulders-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Testa, spalle, ginocchia e piedi" },
+          { "time": 3.5, "text": "Ginocchia e piedi" },
+          { "time": 7.0, "text": "Occhi, orecchie, bocca e naso" },
+          { "time": 10.5, "text": "Testa, spalle, ginocchia e piedi" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "头 肩膀 膝 脚趾" },
+          { "time": 3.5, "text": "膝 脚趾" },
+          { "time": 7.0, "text": "眼 耳 鼻 和 口" },
+          { "time": 10.5, "text": "头 肩膀 膝 脚趾" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "Head, shoulders, knees and toes" },
+          { "time": 3.5, "text": "Knees and toes" },
+          { "time": 7.0, "text": "Eyes and ears and mouth and nose" },
+          { "time": 10.5, "text": "Head, shoulders, knees and toes" }
+        ]
+      },
+      "activity": {
+        "icon": "🤸",
+        "prompts": {
+          "it": "Tocca la testa! Tocca i piedi! 🤸",
+          "zh": "摸摸你的头！摸摸你的脚！🤸",
+          "en": "Touch your head! Touch your toes! 🤸"
+        }
+      },
+      "parentNote": "Great for body part vocabulary in all three languages. Speed up each round for extra fun!"
+    },
+    {
+      "id": "happy-birthday",
+      "category": "cross-cultural",
+      "melodyOrigin": "Happy Birthday to You (1893)",
+      "icon": "🎂",
+      "backgroundGradient": ["#F3E5F5", "#E1BEE7"],
+      "duration": 45,
+      "titles": {
+        "it": "Tanti Auguri",
+        "zh": "祝你生日快乐",
+        "en": "Happy Birthday"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/happy-birthday-it.m4a",
+        "zh": "cross-cultural/happy-birthday-zh.m4a",
+        "en": "cross-cultural/happy-birthday-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Tanti auguri a te" },
+          { "time": 3.5, "text": "Tanti auguri a te" },
+          { "time": 7.0, "text": "Tanti auguri a te" },
+          { "time": 10.5, "text": "Tanti auguri a te!" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "祝你生日快乐" },
+          { "time": 3.5, "text": "祝你生日快乐" },
+          { "time": 7.0, "text": "祝你生日快乐" },
+          { "time": 10.5, "text": "祝你生日快乐！" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "Happy birthday to you" },
+          { "time": 3.5, "text": "Happy birthday to you" },
+          { "time": 7.0, "text": "Happy birthday, dear friend" },
+          { "time": 10.5, "text": "Happy birthday to you!" }
+        ]
+      },
+      "activity": {
+        "icon": "🎂",
+        "prompts": {
+          "it": "Soffia le candeline! 🎂",
+          "zh": "吹蜡烛！🎂",
+          "en": "Blow out the candles! 🎂"
+        }
+      },
+      "parentNote": "A universal celebration song. The melody is identical in all languages — only the words change!"
+    },
+    {
+      "id": "row-your-boat",
+      "category": "cross-cultural",
+      "melodyOrigin": "Row, Row, Row Your Boat (1852)",
+      "icon": "⛵",
+      "backgroundGradient": ["#E0F7FA", "#B2EBF2"],
+      "duration": 75,
+      "titles": {
+        "it": "Rema Rema Rema",
+        "zh": "划船歌",
+        "en": "Row Your Boat"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/row-your-boat-it.m4a",
+        "zh": "cross-cultural/row-your-boat-zh.m4a",
+        "en": "cross-cultural/row-your-boat-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Rema rema rema la barchetta va" },
+          { "time": 4.0, "text": "Dolcemente dolcemente" },
+          { "time": 8.0, "text": "La vita è bella già" },
+          { "time": 12.0, "text": "La vita è bella già" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "划呀划呀划小船" },
+          { "time": 4.0, "text": "轻轻飘在水中间" },
+          { "time": 8.0, "text": "快快乐乐真开心" },
+          { "time": 12.0, "text": "生活像是在梦里" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "Row, row, row your boat" },
+          { "time": 4.0, "text": "Gently down the stream" },
+          { "time": 8.0, "text": "Merrily, merrily, merrily" },
+          { "time": 12.0, "text": "Life is but a dream" }
+        ]
+      },
+      "activity": {
+        "icon": "⛵",
+        "prompts": {
+          "it": "Fai finta di remare! ⛵",
+          "zh": "假装划船！⛵",
+          "en": "Pretend to row a boat! ⛵"
+        }
+      },
+      "parentNote": "This works wonderfully as a round (canon). Try singing it together with a slight delay!"
+    },
+    {
+      "id": "abc-song",
+      "category": "cross-cultural",
+      "melodyOrigin": "Alphabet Song / Twinkle melody (1835)",
+      "icon": "🔤",
+      "backgroundGradient": ["#FFFDE7", "#FFF9C4"],
+      "duration": 90,
+      "titles": {
+        "it": "Canzone dell'Alfabeto",
+        "zh": "ABC字母歌",
+        "en": "ABC Song"
+      },
+      "audioFiles": {
+        "it": "cross-cultural/abc-song-it.m4a",
+        "zh": "cross-cultural/abc-song-zh.m4a",
+        "en": "cross-cultural/abc-song-en.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "A B C D E F G" },
+          { "time": 4.0, "text": "H I L M N O P" },
+          { "time": 8.0, "text": "Q R S T U V Z" },
+          { "time": 12.0, "text": "Ecco l'alfabeto che so!" }
+        ],
+        "zh": [
+          { "time": 0.0, "text": "A B C D E F G" },
+          { "time": 4.0, "text": "H I J K L M N" },
+          { "time": 8.0, "text": "O P Q R S T" },
+          { "time": 12.0, "text": "U V W X Y Z" }
+        ],
+        "en": [
+          { "time": 0.0, "text": "A B C D E F G" },
+          { "time": 4.0, "text": "H I J K L M N O P" },
+          { "time": 8.0, "text": "Q R S T U V" },
+          { "time": 12.0, "text": "W X Y and Z" }
+        ]
+      },
+      "activity": {
+        "icon": "🔤",
+        "prompts": {
+          "it": "Trova la lettera A! 🔤",
+          "zh": "找到字母A！🔤",
+          "en": "Find the letter A! 🔤"
+        }
+      },
+      "parentNote": "The Italian alphabet has only 21 letters (no J, K, W, X, Y). A fun difference to point out!"
+    },
+    {
+      "id": "stella-stellina",
+      "category": "italian",
+      "melodyOrigin": "Italian traditional lullaby",
+      "icon": "🌟",
+      "backgroundGradient": ["#EDE7F6", "#D1C4E9"],
+      "duration": 120,
+      "titles": {
+        "it": "Stella Stellina"
+      },
+      "audioFiles": {
+        "it": "italian/stella-stellina.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Stella stellina" },
+          { "time": 4.0, "text": "La notte si avvicina" },
+          { "time": 8.0, "text": "La fiamma traballa" },
+          { "time": 12.0, "text": "La mucca è nella stalla" },
+          { "time": 16.0, "text": "La pecora e il suo agnellino" },
+          { "time": 20.0, "text": "Ognuno ha il suo bambino" }
+        ]
+      },
+      "activity": {
+        "icon": "✨",
+        "prompts": {
+          "it": "Chiudi gli occhi e fai un desiderio ✨",
+          "zh": "闭上眼睛许个愿 ✨",
+          "en": "Close your eyes and make a wish ✨"
+        }
+      },
+      "parentNote": "One of Italy's most beloved bedtime songs. The gentle rhythm is perfect for winding down."
+    },
+    {
+      "id": "batti-batti",
+      "category": "italian",
+      "melodyOrigin": "Italian clapping rhyme",
+      "icon": "👏",
+      "backgroundGradient": ["#FBE9E7", "#FFCCBC"],
+      "duration": 60,
+      "titles": {
+        "it": "Batti Batti le Manine"
+      },
+      "audioFiles": {
+        "it": "italian/batti-batti.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Batti batti le manine" },
+          { "time": 3.5, "text": "Che adesso arriva papà" },
+          { "time": 7.0, "text": "E porta le caramelle" },
+          { "time": 10.5, "text": "Che la bimba mangerà" }
+        ]
+      },
+      "activity": {
+        "icon": "👏",
+        "prompts": {
+          "it": "Batti le mani più forte! 👏",
+          "zh": "用力拍手！👏",
+          "en": "Clap your hands louder! 👏"
+        }
+      },
+      "parentNote": "A classic Italian hand-clapping game. Great for motor skills and rhythm."
+    },
+    {
+      "id": "giro-giro-tondo",
+      "category": "italian",
+      "melodyOrigin": "Italian circle game (Ring Around the Rosie equivalent)",
+      "icon": "🔄",
+      "backgroundGradient": ["#E8F5E9", "#A5D6A7"],
+      "duration": 75,
+      "titles": {
+        "it": "Giro Giro Tondo"
+      },
+      "audioFiles": {
+        "it": "italian/giro-giro-tondo.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "Giro giro tondo" },
+          { "time": 3.0, "text": "Casca il mondo" },
+          { "time": 6.0, "text": "Casca la terra" },
+          { "time": 9.0, "text": "Tutti giù per terra!" }
+        ]
+      },
+      "activity": {
+        "icon": "🔄",
+        "prompts": {
+          "it": "Gira in tondo! 🔄",
+          "zh": "转圈圈！🔄",
+          "en": "Spin around! 🔄"
+        }
+      },
+      "parentNote": "The Italian equivalent of 'Ring Around the Rosie.' Children hold hands and fall down at the end!"
+    },
+    {
+      "id": "la-bella-lavanderina",
+      "category": "italian",
+      "melodyOrigin": "Italian traditional action song",
+      "icon": "🧼",
+      "backgroundGradient": ["#E3F2FD", "#BBDEFB"],
+      "duration": 90,
+      "titles": {
+        "it": "La Bella Lavanderina"
+      },
+      "audioFiles": {
+        "it": "italian/la-bella-lavanderina.m4a"
+      },
+      "lyrics": {
+        "it": [
+          { "time": 0.0, "text": "La bella lavanderina" },
+          { "time": 3.5, "text": "Che lava i fazzoletti" },
+          { "time": 7.0, "text": "Per i poveretti della città" },
+          { "time": 11.0, "text": "Fai un salto, fai la giravolta" },
+          { "time": 15.0, "text": "Guarda in su, guarda in giù" },
+          { "time": 19.0, "text": "Dai un bacio a chi vuoi tu!" }
+        ]
+      },
+      "activity": {
+        "icon": "🧼",
+        "prompts": {
+          "it": "Fai finta di lavare! 🧼",
+          "zh": "假装洗衣服！🧼",
+          "en": "Pretend to wash clothes! 🧼"
+        }
+      },
+      "parentNote": "An action song where children mime washing. The kissing at the end is always a hit!"
+    },
+    {
+      "id": "xiao-tuzi-guaiguai",
+      "category": "chinese",
+      "melodyOrigin": "Chinese traditional children's safety song",
+      "icon": "🐰",
+      "backgroundGradient": ["#FFF3E0", "#FFE0B2"],
+      "duration": 90,
+      "titles": {
+        "zh": "小兔子乖乖"
+      },
+      "audioFiles": {
+        "zh": "chinese/xiao-tuzi-guaiguai.m4a"
+      },
+      "lyrics": {
+        "zh": [
+          { "time": 0.0, "text": "小兔子乖乖" },
+          { "time": 3.0, "text": "把门儿开开" },
+          { "time": 6.0, "text": "快点儿开开" },
+          { "time": 9.0, "text": "我要进来" },
+          { "time": 12.0, "text": "不开不开我不开" },
+          { "time": 15.0, "text": "妈妈没回来" },
+          { "time": 18.0, "text": "谁来也不开" }
+        ]
+      },
+      "activity": {
+        "icon": "🚪",
+        "prompts": {
+          "it": "Chi bussa alla porta? Non aprire! 🚪",
+          "zh": "谁在敲门？不要开！🚪",
+          "en": "Who's knocking? Don't open! 🚪"
+        }
+      },
+      "parentNote": "A safety song teaching children not to open the door to strangers. The bunny is wise!"
+    },
+    {
+      "id": "ba-luobo",
+      "category": "chinese",
+      "melodyOrigin": "Chinese traditional story song",
+      "icon": "🥕",
+      "backgroundGradient": ["#FFF8E1", "#FFE082"],
+      "duration": 80,
+      "titles": {
+        "zh": "拔萝卜"
+      },
+      "audioFiles": {
+        "zh": "chinese/ba-luobo.m4a"
+      },
+      "lyrics": {
+        "zh": [
+          { "time": 0.0, "text": "拔萝卜 拔萝卜" },
+          { "time": 3.5, "text": "嘿哟嘿哟 拔萝卜" },
+          { "time": 7.0, "text": "嘿哟嘿哟 拔不动" },
+          { "time": 10.5, "text": "老太婆 快快来" },
+          { "time": 14.0, "text": "快来帮我们拔萝卜" }
+        ]
+      },
+      "activity": {
+        "icon": "🥕",
+        "prompts": {
+          "it": "Tira la carota! 🥕",
+          "zh": "拔呀拔呀拔萝卜！🥕",
+          "en": "Pull out the carrot! 🥕"
+        }
+      },
+      "parentNote": "A cumulative song where more and more characters help pull up a giant radish — like 'The Enormous Turnip.'"
+    },
+    {
+      "id": "zhao-pengyou",
+      "category": "chinese",
+      "melodyOrigin": "Chinese traditional social song",
+      "icon": "🤝",
+      "backgroundGradient": ["#FCE4EC", "#F48FB1"],
+      "duration": 70,
+      "titles": {
+        "zh": "找朋友"
+      },
+      "audioFiles": {
+        "zh": "chinese/zhao-pengyou.m4a"
+      },
+      "lyrics": {
+        "zh": [
+          { "time": 0.0, "text": "找呀找呀找朋友" },
+          { "time": 3.5, "text": "找到一个好朋友" },
+          { "time": 7.0, "text": "敬个礼 握握手" },
+          { "time": 10.5, "text": "你是我的好朋友" }
+        ]
+      },
+      "activity": {
+        "icon": "🤝",
+        "prompts": {
+          "it": "Trova un amico e stringi la mano! 🤝",
+          "zh": "找一个朋友握握手！🤝",
+          "en": "Find a friend and shake hands! 🤝"
+        }
+      },
+      "parentNote": "A lovely friendship song. Children bow, shake hands, and declare friendship. Great for social skills."
+    },
+    {
+      "id": "da-xiang",
+      "category": "chinese",
+      "melodyOrigin": "Chinese traditional animal song",
+      "icon": "🐘",
+      "backgroundGradient": ["#ECEFF1", "#CFD8DC"],
+      "duration": 65,
+      "titles": {
+        "zh": "大象"
+      },
+      "audioFiles": {
+        "zh": "chinese/da-xiang.m4a"
+      },
+      "lyrics": {
+        "zh": [
+          { "time": 0.0, "text": "大象大象" },
+          { "time": 3.0, "text": "你的鼻子怎么那么长" },
+          { "time": 7.0, "text": "妈妈说鼻子长" },
+          { "time": 10.5, "text": "才是漂亮" }
+        ]
+      },
+      "activity": {
+        "icon": "🐘",
+        "prompts": {
+          "it": "Fai la proboscide con il braccio! 🐘",
+          "zh": "用手臂做大象鼻子！🐘",
+          "en": "Make an elephant trunk with your arm! 🐘"
+        }
+      },
+      "parentNote": "A short, catchy song about why elephants have long noses. Kids love swinging their arm-trunks!"
+    },
+    {
+      "id": "humpty-dumpty",
+      "category": "english",
+      "melodyOrigin": "English traditional nursery rhyme (1797)",
+      "icon": "🥚",
+      "backgroundGradient": ["#EFEBE9", "#D7CCC8"],
+      "duration": 45,
+      "titles": {
+        "en": "Humpty Dumpty"
+      },
+      "audioFiles": {
+        "en": "english/humpty-dumpty.m4a"
+      },
+      "lyrics": {
+        "en": [
+          { "time": 0.0, "text": "Humpty Dumpty sat on a wall" },
+          { "time": 3.5, "text": "Humpty Dumpty had a great fall" },
+          { "time": 7.0, "text": "All the king's horses" },
+          { "time": 10.0, "text": "And all the king's men" },
+          { "time": 13.0, "text": "Couldn't put Humpty together again" }
+        ]
+      },
+      "activity": {
+        "icon": "🧱",
+        "prompts": {
+          "it": "Costruisci qualcosa di alto! 🧱",
+          "zh": "搭一个高高的东西！🧱",
+          "en": "Stack something tall! 🧱"
+        }
+      },
+      "parentNote": "One of the oldest English nursery rhymes. Great for teaching about balance and gravity!"
+    },
+    {
+      "id": "baa-baa-black-sheep",
+      "category": "english",
+      "melodyOrigin": "English nursery rhyme, Twinkle melody (1731)",
+      "icon": "🐑",
+      "backgroundGradient": ["#F1F8E9", "#DCEDC8"],
+      "duration": 60,
+      "titles": {
+        "en": "Baa Baa Black Sheep"
+      },
+      "audioFiles": {
+        "en": "english/baa-baa-black-sheep.m4a"
+      },
+      "lyrics": {
+        "en": [
+          { "time": 0.0, "text": "Baa baa black sheep, have you any wool?" },
+          { "time": 4.5, "text": "Yes sir, yes sir, three bags full" },
+          { "time": 9.0, "text": "One for the master, one for the dame" },
+          { "time": 13.5, "text": "And one for the little boy who lives down the lane" }
+        ]
+      },
+      "activity": {
+        "icon": "✋",
+        "prompts": {
+          "it": "Conta fino a tre con le dita! ✋",
+          "zh": "用手指数到三！✋",
+          "en": "Count to three on your fingers! ✋"
+        }
+      },
+      "parentNote": "Same melody as Twinkle Twinkle! Try playing them back-to-back and see if your child notices."
+    },
+    {
+      "id": "mary-little-lamb",
+      "category": "english",
+      "melodyOrigin": "Mary Had a Little Lamb (1830)",
+      "icon": "🐑",
+      "backgroundGradient": ["#F9FBE7", "#F0F4C3"],
+      "duration": 55,
+      "titles": {
+        "en": "Mary Had a Little Lamb"
+      },
+      "audioFiles": {
+        "en": "english/mary-little-lamb.m4a"
+      },
+      "lyrics": {
+        "en": [
+          { "time": 0.0, "text": "Mary had a little lamb" },
+          { "time": 3.0, "text": "Little lamb, little lamb" },
+          { "time": 6.0, "text": "Mary had a little lamb" },
+          { "time": 9.0, "text": "Its fleece was white as snow" },
+          { "time": 12.0, "text": "Everywhere that Mary went" },
+          { "time": 15.0, "text": "The lamb was sure to go" }
+        ]
+      },
+      "activity": {
+        "icon": "☁️",
+        "prompts": {
+          "it": "Trova qualcosa di bianco e morbido! ☁️",
+          "zh": "找一个白色软软的东西！☁️",
+          "en": "Find something white and fluffy! ☁️"
+        }
+      },
+      "parentNote": "One of the first songs ever recorded on Thomas Edison's phonograph in 1877!"
+    },
+    {
+      "id": "itsy-bitsy-spider",
+      "category": "english",
+      "melodyOrigin": "Itsy Bitsy Spider (early 1900s)",
+      "icon": "🕷️",
+      "backgroundGradient": ["#E8EAF6", "#C5CAE9"],
+      "duration": 60,
+      "titles": {
+        "en": "Itsy Bitsy Spider"
+      },
+      "audioFiles": {
+        "en": "english/itsy-bitsy-spider.m4a"
+      },
+      "lyrics": {
+        "en": [
+          { "time": 0.0, "text": "The itsy bitsy spider went up the water spout" },
+          { "time": 4.5, "text": "Down came the rain and washed the spider out" },
+          { "time": 9.0, "text": "Out came the sun and dried up all the rain" },
+          { "time": 13.5, "text": "And the itsy bitsy spider went up the spout again" }
+        ]
+      },
+      "activity": {
+        "icon": "🕷️",
+        "prompts": {
+          "it": "Fai il ragno che si arrampica con le dita! 🕷️",
+          "zh": "用手指做爬行的蜘蛛！🕷️",
+          "en": "Do the spider crawl with your fingers! 🕷️"
+        }
+      },
+      "parentNote": "The finger movements for this song are nearly universal. Great for fine motor skills!"
+    }
+  ]
+}
