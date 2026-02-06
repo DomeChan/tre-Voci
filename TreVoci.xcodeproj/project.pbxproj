@@ -34,6 +34,14 @@
 		AA000025 /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000026 /* LyricsView.swift */; };
 		AA000026 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000027 /* LanguagePicker.swift */; };
 		AA000027 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000028 /* ProgressBar.swift */; };
+		AA000028 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000029 /* SessionViewModel.swift */; };
+		AA000029 /* ActivityBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000030 /* ActivityBridgeView.swift */; };
+		AA000030 /* ParentGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000031 /* ParentGateView.swift */; };
+		AA000031 /* ParentZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000032 /* ParentZoneView.swift */; };
+		AA000032 /* ExposureChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000033 /* ExposureChart.swift */; };
+		AA000033 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000034 /* SettingsView.swift */; };
+		AA000034 /* Font+Nunito.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000036 /* Font+Nunito.swift */; };
+		AA000035 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AB000037 /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +72,15 @@
 		AB000026 /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
 		AB000027 /* LanguagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
 		AB000028 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		AB000029 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		AB000030 /* ActivityBridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBridgeView.swift; sourceTree = "<group>"; };
+		AB000031 /* ParentGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentGateView.swift; sourceTree = "<group>"; };
+		AB000032 /* ParentZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentZoneView.swift; sourceTree = "<group>"; };
+		AB000033 /* ExposureChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureChart.swift; sourceTree = "<group>"; };
+		AB000034 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AB000035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB000036 /* Font+Nunito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Nunito.swift"; sourceTree = "<group>"; };
+		AB000037 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		AB000020 /* TreVoci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreVoci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				AB000001 /* TreVociApp.swift */,
+				AB000035 /* Info.plist */,
 				AD000003 /* Models */,
 				AD000004 /* ViewModels */,
 				AD000005 /* Views */,
@@ -116,6 +134,7 @@
 			children = (
 				AB000018 /* HomeViewModel.swift */,
 				AB000024 /* PlayerViewModel.swift */,
+				AB000029 /* SessionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -127,8 +146,29 @@
 				AD000011 /* Onboarding */,
 				AD000012 /* Home */,
 				AD000013 /* Player */,
+				AD000014 /* Activity */,
+				AD000015 /* ParentZone */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AD000015 /* ParentZone */ = {
+			isa = PBXGroup;
+			children = (
+				AB000031 /* ParentGateView.swift */,
+				AB000032 /* ParentZoneView.swift */,
+				AB000033 /* ExposureChart.swift */,
+				AB000034 /* SettingsView.swift */,
+			);
+			path = ParentZone;
+			sourceTree = "<group>";
+		};
+		AD000014 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				AB000030 /* ActivityBridgeView.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		AD000013 /* Player */ = {
@@ -178,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				AB000002 /* Color+Theme.swift */,
+				AB000036 /* Font+Nunito.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,6 +229,7 @@
 				AB000009 /* Assets.xcassets */,
 				AB000010 /* SongCatalog.json */,
 				AB000012 /* Audio */,
+				AB000037 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -269,6 +311,7 @@
 				AA000009 /* Assets.xcassets in Resources */,
 				AA000010 /* SongCatalog.json in Resources */,
 				AA000012 /* Audio in Resources */,
+				AA000035 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +346,13 @@
 				AA000025 /* LyricsView.swift in Sources */,
 				AA000026 /* LanguagePicker.swift in Sources */,
 				AA000027 /* ProgressBar.swift in Sources */,
+				AA000028 /* SessionViewModel.swift in Sources */,
+				AA000029 /* ActivityBridgeView.swift in Sources */,
+				AA000030 /* ParentGateView.swift in Sources */,
+				AA000031 /* ParentZoneView.swift in Sources */,
+				AA000032 /* ExposureChart.swift in Sources */,
+				AA000033 /* SettingsView.swift in Sources */,
+				AA000034 /* Font+Nunito.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,10 +486,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TreVoci/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TreVoci/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Tre Voci";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,10 +518,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TreVoci/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TreVoci/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Tre Voci";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

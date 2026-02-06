@@ -1,12 +1,25 @@
 import SwiftUI
 
+enum SheetDestination: Identifiable {
+    case player(Song)
+    case activity(Song)
+    case parentGate
+    case parentZone
+
+    var id: String {
+        switch self {
+        case .player(let song): return "player-\(song.id)"
+        case .activity(let song): return "activity-\(song.id)"
+        case .parentGate: return "parentGate"
+        case .parentZone: return "parentZone"
+        }
+    }
+}
+
 struct HomeView: View {
     @Environment(PersistenceService.self) private var persistence
     @State private var viewModel: HomeViewModel?
-    @State private var selectedSong: Song?
-    @State private var showPlayer = false
-    @State private var activitySong: Song?
-    @State private var showActivity = false
+    @State private var activeSheet: SheetDestination?
 
     private let catalog = SongCatalogService()
 
@@ -70,17 +83,55 @@ struct HomeView: View {
             }
         }
         .background(Color.cream)
-        .fullScreenCover(isPresented: $showPlayer) {
-            if let song = selectedSong {
+        .fullScreenCover(item: $activeSheet) { sheet in
+            switch sheet {
+            case .player(let song):
                 PlayerView(
                     song: song,
-                    onBack: { showPlayer = false },
+                    onBack: { activeSheet = nil },
                     onActivityBridge: { song in
-                        activitySong = song
-                        showPlayer = false
-                        showActivity = true
+                        activeSheet = nil
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            activeSheet = .activity(song)
+                        }
                     }
                 )
+            case .activity(let song):
+                ActivityBridgeView(
+                    song: song,
+                    onHome: {
+                        activeSheet = nil
+                    },
+                    onOneMore: {
+                        activeSheet = nil
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            if let vm = viewModel,
+                               let next = vm.crossCulturalSongs.first(where: { $0.id != song.id }) {
+                                activeSheet = .player(next)
+                            }
+                        }
+                    }
+                )
+                .environment(persistence)
+            case .parentGate:
+                ParentGateView(
+                    onUnlock: {
+                        activeSheet = nil
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            activeSheet = .parentZone
+                        }
+                    },
+                    onBack: { activeSheet = nil }
+                )
+            case .parentZone:
+                ParentZoneView(
+                    onBack: { activeSheet = nil },
+                    onReset: {
+                        activeSheet = nil
+                        persistence.resetAll()
+                    }
+                )
+                .environment(persistence)
             }
         }
         .onAppear {
@@ -106,8 +157,8 @@ struct HomeView: View {
 
             Spacer()
 
-            // Parent zone button — placeholder, wired in Phase 7
-            Button(action: {}) {
+            // Parent zone button
+            Button(action: { activeSheet = .parentGate }) {
                 Image(systemName: "person.circle.fill")
                     .font(.system(size: 28))
                     .foregroundStyle(Color.mist)
@@ -172,8 +223,7 @@ struct HomeView: View {
     // MARK: - Actions
 
     private func selectSong(_ song: Song) {
-        selectedSong = song
-        showPlayer = true
+        activeSheet = .player(song)
     }
 
     private func playDailyMix() {

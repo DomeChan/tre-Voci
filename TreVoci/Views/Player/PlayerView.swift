@@ -110,7 +110,8 @@ struct PlayerView: View {
         ) { _ in
             viewModel.updateState()
             // Check if playback finished → go to activity
-            if !viewModel.isPlaying && viewModel.progress >= 0.99 {
+            // Gate on duration > 5s to prevent placeholder audio from auto-triggering
+            if !viewModel.isPlaying && viewModel.progress >= 0.99 && viewModel.duration > 5 {
                 onActivityBridge(viewModel.song)
             }
         }

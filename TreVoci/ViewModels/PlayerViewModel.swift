@@ -41,6 +41,10 @@ final class PlayerViewModel {
         song.availableLanguages
     }
 
+    var duration: TimeInterval {
+        audioService.duration
+    }
+
     // MARK: - Init
 
     init(song: Song) {
