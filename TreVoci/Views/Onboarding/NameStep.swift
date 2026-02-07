@@ -22,6 +22,7 @@ struct NameStep: View {
             // Text field
             TextField("e.g. Sofia", text: $childName)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .foregroundStyle(Color.bark)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
                 .padding(.vertical, 16)

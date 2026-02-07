@@ -40,7 +40,7 @@ final class AudioService: NSObject {
     private func configureAudioSession() {
         let session = AVAudioSession.sharedInstance()
         do {
-            try session.setCategory(.playback, mode: .default, options: [.allowAirPlay, .defaultToSpeaker])
+            try session.setCategory(.playback, mode: .default, options: [.allowAirPlay])
             try session.setActive(true)
         } catch {
             print("Audio session setup failed: \(error)")
@@ -129,6 +129,32 @@ final class AudioService: NSObject {
             updateNowPlaying()
         }
         onSegmentChange?(index)
+    }
+
+    func seek(to normalizedProgress: Double) {
+        guard !segments.isEmpty, totalDuration > 0 else { return }
+        let targetTime = max(0, min(normalizedProgress, 1.0)) * totalDuration
+
+        // Find which segment this time falls in
+        var accumulated: TimeInterval = 0
+        for (i, dur) in segmentDurations.enumerated() {
+            if targetTime < accumulated + dur || i == segmentDurations.count - 1 {
+                let timeInSegment = targetTime - accumulated
+                if i != currentSegment {
+                    currentSegment = i
+                    loadSegment(i)
+                    onSegmentChange?(i)
+                }
+                player?.currentTime = min(timeInSegment, dur)
+                if isPlaying {
+                    player?.play()
+                }
+                updateProgress()
+                updateNowPlaying()
+                return
+            }
+            accumulated += dur
+        }
     }
 
     func skipToNext() {

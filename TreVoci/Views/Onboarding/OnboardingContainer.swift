@@ -59,7 +59,7 @@ struct OnboardingContainer: View {
     private func completeOnboarding() {
         persistence.update { state in
             state.childName = childName
-            state.selectedLanguages = selectedLanguages.map(\.rawValue).sorted()
+            state.selectedLanguages = [Language.it, .zh, .en].filter { selectedLanguages.contains($0) }.map(\.rawValue)
             state.hasCompletedOnboarding = true
         }
         onComplete()

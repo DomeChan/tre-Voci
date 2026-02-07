@@ -35,11 +35,11 @@ final class PlayerViewModel {
     }
 
     var segmentCount: Int {
-        song.isCrossCultural ? selectedLanguages.count : 1
+        song.isCrossCultural ? audioService.segmentLanguages.count : 1
     }
 
     var availableLanguages: [Language] {
-        song.isCrossCultural ? selectedLanguages : song.availableLanguages
+        song.isCrossCultural ? audioService.segmentLanguages : song.availableLanguages
     }
 
     var duration: TimeInterval {
@@ -80,6 +80,17 @@ final class PlayerViewModel {
         currentLanguage = audioService.segmentLanguages.first ?? song.primaryLanguage
         currentLyricIndex = 0
         isPlaying = true
+    }
+
+    func seek(to progress: Double) {
+        audioService.seek(to: progress)
+        self.progress = progress
+        currentSegment = audioService.currentSegment
+        let langs = audioService.segmentLanguages
+        if currentSegment < langs.count {
+            currentLanguage = langs[currentSegment]
+        }
+        currentLyricIndex = 0
     }
 
     func skipToActivity() {

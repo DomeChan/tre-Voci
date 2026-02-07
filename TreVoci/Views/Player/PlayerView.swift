@@ -84,7 +84,8 @@ struct PlayerView: View {
                     progress: viewModel.progress,
                     segmentCount: viewModel.segmentCount,
                     currentSegment: viewModel.currentSegment,
-                    languages: viewModel.availableLanguages
+                    languages: viewModel.availableLanguages,
+                    onSeek: { viewModel.seek(to: $0) }
                 )
                 .padding(.horizontal, 32)
                 .padding(.bottom, 16)
