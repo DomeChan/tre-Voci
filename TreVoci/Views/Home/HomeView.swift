@@ -2,14 +2,14 @@ import SwiftUI
 
 enum SheetDestination: Identifiable {
     case player(Song)
-    case activity(Song)
+    case activity(Song, Int) // song + actual elapsed seconds
     case parentGate
     case parentZone
 
     var id: String {
         switch self {
         case .player(let song): return "player-\(song.id)"
-        case .activity(let song): return "activity-\(song.id)"
+        case .activity(let song, _): return "activity-\(song.id)"
         case .parentGate: return "parentGate"
         case .parentZone: return "parentZone"
         }
@@ -51,7 +51,7 @@ struct HomeView: View {
                 // Italian Section
                 if let vm = viewModel {
                     CultureSection(
-                        title: "🇮🇹 Filastrocche Italiane",
+                        title: "\u{1F1EE}\u{1F1F9} Filastrocche Italiane",
                         language: .it,
                         songs: vm.italianSongs,
                         onSongTap: { selectSong($0) }
@@ -61,7 +61,7 @@ struct HomeView: View {
                 // Chinese Section
                 if let vm = viewModel {
                     CultureSection(
-                        title: "🇨🇳 中文儿歌",
+                        title: "\u{1F1E8}\u{1F1F3} \u{4E2D}\u{6587}\u{513F}\u{6B4C}",
                         language: .zh,
                         songs: vm.chineseSongs,
                         onSongTap: { selectSong($0) }
@@ -71,7 +71,7 @@ struct HomeView: View {
                 // English Section
                 if let vm = viewModel {
                     CultureSection(
-                        title: "🇬🇧 English Nursery Rhymes",
+                        title: "\u{1F1EC}\u{1F1E7} English Nursery Rhymes",
                         language: .en,
                         songs: vm.englishSongs,
                         onSongTap: { selectSong($0) }
@@ -89,16 +89,17 @@ struct HomeView: View {
                 PlayerView(
                     song: song,
                     onBack: { activeSheet = nil },
-                    onActivityBridge: { song in
+                    onActivityBridge: { song, elapsed in
                         activeSheet = nil
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            activeSheet = .activity(song)
+                            activeSheet = .activity(song, elapsed)
                         }
                     }
                 )
-            case .activity(let song):
+            case .activity(let song, let elapsed):
                 ActivityBridgeView(
                     song: song,
+                    actualDurationSeconds: elapsed,
                     onHome: {
                         activeSheet = nil
                     },
@@ -171,24 +172,32 @@ struct HomeView: View {
     // MARK: - Speaker Pill
 
     private var speakerPill: some View {
-        HStack(spacing: 6) {
-            Image(systemName: "speaker.wave.2.fill")
-                .font(.system(size: 10))
-            Text("iPhone Speaker")
-                .font(.system(size: 12, weight: .semibold, design: .rounded))
+        ZStack {
+            HStack(spacing: 6) {
+                Image(systemName: "speaker.wave.2.fill")
+                    .font(.system(size: 10))
+                Text("iPhone Speaker")
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+            }
+            .foregroundStyle(Color.stone)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(Color.warm)
+            .clipShape(Capsule())
+
+            AirPlayPickerButton()
+                .frame(width: 120, height: 28)
+                .opacity(0.015)
         }
-        .foregroundStyle(Color.stone)
-        .padding(.horizontal, 12)
-        .padding(.vertical, 6)
-        .background(Color.warm)
-        .clipShape(Capsule())
+        .fixedSize()
+        .accessibilityLabel("Choose audio output")
     }
 
     // MARK: - Cross-Cultural Section
 
     private var crossCulturalSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("🌍 Same Song, Three Worlds")
+            Text("\u{1F30D} Same Song, Three Worlds")
                 .font(.system(size: 17, weight: .black, design: .rounded))
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)
@@ -213,10 +222,10 @@ struct HomeView: View {
     private var greeting: String {
         let hour = Calendar.current.component(.hour, from: Date())
         switch hour {
-        case 5..<12: return "Buongiorno ☀️"
-        case 12..<17: return "Buon pomeriggio 🌤️"
-        case 17..<21: return "Buonasera 🌅"
-        default: return "Buonanotte 🌙"
+        case 5..<12: return "Buongiorno \u{2600}\u{FE0F}"
+        case 12..<17: return "Buon pomeriggio \u{1F324}\u{FE0F}"
+        case 17..<21: return "Buonasera \u{1F305}"
+        default: return "Buonanotte \u{1F319}"
         }
     }
 

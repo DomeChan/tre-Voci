@@ -16,7 +16,7 @@ final class SessionViewModel {
         case summary
     }
 
-    init(song: Song, persistence: PersistenceService) {
+    init(song: Song, actualDurationSeconds: Int, persistence: PersistenceService) {
         self.song = song
         self.persistence = persistence
         if song.isCrossCultural {
@@ -24,7 +24,7 @@ final class SessionViewModel {
         } else {
             self.languagesHeard = song.availableLanguages
         }
-        self.durationSeconds = song.duration
+        self.durationSeconds = actualDurationSeconds
     }
 
     var childName: String {
@@ -38,30 +38,22 @@ final class SessionViewModel {
     }
 
     func completeActivity() {
-        let session = ListeningSession(
-            songId: song.id,
-            languagesHeard: languagesHeard.map(\.rawValue),
-            durationSeconds: durationSeconds,
-            completedActivity: true
-        )
-        persistence.update { state in
-            state.sessions.append(session)
-            let perLang = durationSeconds / max(1, languagesHeard.count)
-            for lang in languagesHeard {
-                state.totalListeningSeconds[lang.rawValue, default: 0] += perLang
-                state.weeklyListeningSeconds[lang.rawValue, default: 0] += perLang
-            }
-        }
+        recordSession(completedActivity: true)
         showConfetti = true
         phase = .summary
     }
 
     func skipActivity() {
+        recordSession(completedActivity: false)
+        phase = .summary
+    }
+
+    private func recordSession(completedActivity: Bool) {
         let session = ListeningSession(
             songId: song.id,
             languagesHeard: languagesHeard.map(\.rawValue),
             durationSeconds: durationSeconds,
-            completedActivity: false
+            completedActivity: completedActivity
         )
         persistence.update { state in
             state.sessions.append(session)
@@ -70,7 +62,24 @@ final class SessionViewModel {
                 state.totalListeningSeconds[lang.rawValue, default: 0] += perLang
                 state.weeklyListeningSeconds[lang.rawValue, default: 0] += perLang
             }
+
+            // Update streak
+            let calendar = Calendar.current
+            let today = calendar.startOfDay(for: Date())
+            if let lastDate = state.lastSessionDate {
+                let lastDay = calendar.startOfDay(for: lastDate)
+                let daysBetween = calendar.dateComponents([.day], from: lastDay, to: today).day ?? 0
+                if daysBetween == 1 {
+                    state.currentStreak += 1
+                } else if daysBetween > 1 {
+                    state.currentStreak = 1
+                }
+                // daysBetween == 0 means same day, no change
+            } else {
+                state.currentStreak = 1
+            }
+            state.longestStreak = max(state.longestStreak, state.currentStreak)
+            state.lastSessionDate = Date()
         }
-        phase = .summary
     }
 }

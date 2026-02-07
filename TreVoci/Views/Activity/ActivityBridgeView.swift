@@ -6,6 +6,7 @@ struct ActivityBridgeView: View {
     @State private var wiggle = false
 
     let song: Song
+    let actualDurationSeconds: Int
     let onHome: () -> Void
     let onOneMore: () -> Void
 
@@ -27,7 +28,11 @@ struct ActivityBridgeView: View {
         .animation(.spring(response: 0.5, dampingFraction: 0.8), value: viewModel?.phase == .summary)
         .onAppear {
             if viewModel == nil {
-                viewModel = SessionViewModel(song: song, persistence: persistence)
+                viewModel = SessionViewModel(
+                    song: song,
+                    actualDurationSeconds: actualDurationSeconds,
+                    persistence: persistence
+                )
             }
             wiggle = true
         }
@@ -195,6 +200,7 @@ struct ActivityBridgeView: View {
 #Preview {
     ActivityBridgeView(
         song: .preview,
+        actualDurationSeconds: 120,
         onHome: {},
         onOneMore: {}
     )

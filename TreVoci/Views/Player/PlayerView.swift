@@ -3,10 +3,12 @@ import SwiftUI
 struct PlayerView: View {
     @State private var viewModel: PlayerViewModel
     @State private var breathe = false
+    @State private var elapsedSeconds: Int = 0
+    @State private var elapsedTicks: Int = 0
     let onBack: () -> Void
-    let onActivityBridge: (Song) -> Void
+    let onActivityBridge: (Song, Int) -> Void
 
-    init(song: Song, onBack: @escaping () -> Void, onActivityBridge: @escaping (Song) -> Void) {
+    init(song: Song, onBack: @escaping () -> Void, onActivityBridge: @escaping (Song, Int) -> Void) {
         self._viewModel = State(initialValue: PlayerViewModel(song: song))
         self.onBack = onBack
         self.onActivityBridge = onActivityBridge
@@ -109,10 +111,15 @@ struct PlayerView: View {
             Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         ) { _ in
             viewModel.updateState()
-            // Check if playback finished → go to activity
+            // Track elapsed time when playing
+            if viewModel.isPlaying {
+                elapsedTicks += 1
+                elapsedSeconds = elapsedTicks / 10
+            }
+            // Check if playback finished -> go to activity
             // Gate on duration > 5s to prevent placeholder audio from auto-triggering
             if !viewModel.isPlaying && viewModel.progress >= 0.99 && viewModel.duration > 5 {
-                onActivityBridge(viewModel.song)
+                onActivityBridge(viewModel.song, elapsedSeconds)
             }
         }
     }
@@ -137,18 +144,25 @@ struct PlayerView: View {
 
             Spacer()
 
-            // AirPlay indicator
-            HStack(spacing: 4) {
-                Image(systemName: "speaker.wave.2.fill")
-                    .font(.system(size: 10))
-                Text("iPhone")
-                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+            // AirPlay indicator (tappable)
+            ZStack {
+                HStack(spacing: 4) {
+                    Image(systemName: "speaker.wave.2.fill")
+                        .font(.system(size: 10))
+                    Text("iPhone")
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                }
+                .foregroundStyle(.white.opacity(0.7))
+                .padding(.horizontal, 10)
+                .padding(.vertical, 6)
+                .background(.ultraThinMaterial)
+                .clipShape(Capsule())
+
+                AirPlayPickerButton(tintColor: .white)
+                    .frame(width: 80, height: 28)
+                    .opacity(0.015)
             }
-            .foregroundStyle(.white.opacity(0.7))
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .background(.ultraThinMaterial)
-            .clipShape(Capsule())
+            .accessibilityLabel("Choose audio output")
         }
     }
 
@@ -157,7 +171,11 @@ struct PlayerView: View {
     private var playbackControls: some View {
         HStack(spacing: 40) {
             // Restart
-            Button(action: { viewModel.restart() }) {
+            Button(action: {
+                viewModel.restart()
+                elapsedTicks = 0
+                elapsedSeconds = 0
+            }) {
                 Image(systemName: "backward.fill")
                     .font(.system(size: 24))
                     .foregroundStyle(.white)
@@ -181,7 +199,7 @@ struct PlayerView: View {
             // Skip to activity
             Button(action: {
                 viewModel.skipToActivity()
-                onActivityBridge(viewModel.song)
+                onActivityBridge(viewModel.song, elapsedSeconds)
             }) {
                 Image(systemName: "forward.fill")
                     .font(.system(size: 24))
@@ -219,7 +237,7 @@ struct PlayerView: View {
     PlayerView(
         song: .preview,
         onBack: {},
-        onActivityBridge: { _ in }
+        onActivityBridge: { _, _ in }
     )
 }
 #endif

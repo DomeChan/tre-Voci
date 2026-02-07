@@ -42,6 +42,7 @@
 		AA000033 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000034 /* SettingsView.swift */; };
 		AA000034 /* Font+Nunito.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000036 /* Font+Nunito.swift */; };
 		AA000035 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AB000037 /* Fonts */; };
+		AA000036 /* AirPlayPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000038 /* AirPlayPickerButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		AB000035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB000036 /* Font+Nunito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Nunito.swift"; sourceTree = "<group>"; };
 		AB000037 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		AB000038 /* AirPlayPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayPickerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +150,17 @@
 				AD000013 /* Player */,
 				AD000014 /* Activity */,
 				AD000015 /* ParentZone */,
+				AD000016 /* Shared */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AD000016 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AB000038 /* AirPlayPickerButton.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		AD000006 /* Services */ = {
@@ -353,6 +364,7 @@
 				AA000032 /* ExposureChart.swift in Sources */,
 				AA000033 /* SettingsView.swift in Sources */,
 				AA000034 /* Font+Nunito.swift in Sources */,
+				AA000036 /* AirPlayPickerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

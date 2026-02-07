@@ -1,5 +1,4 @@
 import SwiftUI
-import AVKit
 
 struct SettingsView: View {
     @Environment(PersistenceService.self) private var persistence
@@ -125,7 +124,7 @@ struct SettingsView: View {
                 .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .foregroundStyle(Color.bark)
             Spacer()
-            AirPlaySettingsButton()
+            AirPlayPickerButton()
                 .frame(width: 30, height: 30)
         }
         .padding(.horizontal, 16)
@@ -230,18 +229,7 @@ struct SettingsView: View {
     }
 }
 
-// MARK: - AirPlay Settings Button
-
-private struct AirPlaySettingsButton: UIViewRepresentable {
-    func makeUIView(context: Context) -> AVRoutePickerView {
-        let picker = AVRoutePickerView()
-        picker.tintColor = UIColor(Color.stone)
-        picker.activeTintColor = UIColor(Color.coral)
-        return picker
-    }
-
-    func updateUIView(_ uiView: AVRoutePickerView, context: Context) {}
-}
+// Uses shared AirPlayPickerButton from Views/Shared/
 
 #if DEBUG
 #Preview {
