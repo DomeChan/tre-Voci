@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LanguageStep: View {
+    @Binding var selectedLanguages: Set<Language>
     let onNext: () -> Void
 
     var body: some View {
@@ -8,44 +9,36 @@ struct LanguageStep: View {
             Spacer()
 
             // Title
-            Text("Your family speaks")
-                .font(.system(size: 26, weight: .black, design: .rounded))
+            Text("Choose at least 2 languages")
+                .font(.system(size: 24, weight: .black, design: .rounded))
                 .foregroundStyle(Color.bark)
+                .multilineTextAlignment(.center)
 
-            Text("Three beautiful languages!")
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
+            Text("but also 3 :) \u{00B7} You can always change this later")
+                .font(.system(size: 14, weight: .semibold, design: .rounded))
                 .foregroundStyle(Color.stone)
+                .multilineTextAlignment(.center)
 
             // Language rows
             VStack(spacing: 12) {
-                languageRow(
-                    icon: "🧔",
-                    role: "Papà speaks",
-                    flag: "🇮🇹",
-                    language: "Italiano",
-                    backgroundColor: .italianBg,
-                    checkColor: .italianGreen
-                )
-
-                languageRow(
-                    icon: "👩",
-                    role: "Māmā speaks",
-                    flag: "🇨🇳",
-                    language: "中文",
-                    backgroundColor: .chineseBg,
-                    checkColor: .chineseRed
-                )
-
-                languageRow(
-                    icon: "🏫",
-                    role: "School & together",
-                    flag: "🇬🇧",
-                    language: "English",
-                    backgroundColor: .englishBg,
-                    checkColor: .englishBlue
-                )
+                ForEach(Language.allCases) { lang in
+                    languageRow(language: lang)
+                }
             }
             .padding(.horizontal, 24)
+
+            // "More languages coming" note
+            HStack(spacing: 6) {
+                Image(systemName: "sparkles")
+                    .font(.system(size: 12))
+                Text("More languages coming soon!")
+                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+            }
+            .foregroundStyle(Color.stone)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
+            .background(Color.sand.opacity(0.5))
+            .clipShape(Capsule())
 
             Spacer()
 
@@ -56,9 +49,10 @@ struct LanguageStep: View {
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
-                    .background(Color.coral)
+                    .background(selectedLanguages.count >= 2 ? Color.coral : Color.sand)
                     .clipShape(RoundedRectangle(cornerRadius: 18))
             }
+            .disabled(selectedLanguages.count < 2)
             .padding(.horizontal, 32)
             .padding(.bottom, 32)
             .accessibilityLabel("Next step")
@@ -66,48 +60,64 @@ struct LanguageStep: View {
         }
     }
 
-    private func languageRow(
-        icon: String,
-        role: String,
-        flag: String,
-        language: String,
-        backgroundColor: Color,
-        checkColor: Color
-    ) -> some View {
-        HStack(spacing: 12) {
-            Text(icon)
-                .font(.system(size: 28))
+    private func languageRow(language: Language) -> some View {
+        let isSelected = selectedLanguages.contains(language)
 
-            VStack(alignment: .leading, spacing: 2) {
-                Text(role)
-                    .font(.system(size: 12, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.stone)
+        return Button {
+            toggleLanguage(language)
+        } label: {
+            HStack(spacing: 12) {
+                Text(language.familyIcon)
+                    .font(.system(size: 28))
 
-                HStack(spacing: 6) {
-                    Text(flag)
-                        .font(.system(size: 18))
-                    Text(language)
-                        .font(.system(size: 17, weight: .bold, design: .rounded))
-                        .foregroundStyle(Color.bark)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("\(language.familyRole) speaks")
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .foregroundStyle(Color.stone)
+
+                    HStack(spacing: 6) {
+                        Text(language.flag)
+                            .font(.system(size: 18))
+                        Text(language.displayName)
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .foregroundStyle(Color.bark)
+                    }
                 }
+
+                Spacer()
+
+                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 24))
+                    .foregroundStyle(isSelected ? language.primaryColor : Color.sand)
             }
-
-            Spacer()
-
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 24))
-                .foregroundStyle(checkColor)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
+            .background(isSelected ? language.backgroundColor : Color.sand.opacity(0.3))
+            .clipShape(RoundedRectangle(cornerRadius: 18))
+            .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .background(backgroundColor)
-        .clipShape(RoundedRectangle(cornerRadius: 18))
+        .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(language.displayName), \(isSelected ? "selected" : "not selected")")
+        .accessibilityAddTraits(.isButton)
+    }
+
+    private func toggleLanguage(_ language: Language) {
+        if selectedLanguages.contains(language) {
+            // Don't deselect below 2
+            guard selectedLanguages.count > 2 else { return }
+            selectedLanguages.remove(language)
+        } else {
+            selectedLanguages.insert(language)
+        }
     }
 }
 
 #if DEBUG
 #Preview {
-    LanguageStep(onNext: {})
+    LanguageStep(
+        selectedLanguages: .constant([.it, .zh, .en]),
+        onNext: {}
+    )
 }
 #endif

@@ -20,6 +20,11 @@ struct SettingsView: View {
 
                 Divider().padding(.horizontal, 16)
 
+                // Languages
+                languagesRow
+
+                Divider().padding(.horizontal, 16)
+
                 // Default speaker
                 speakerRow
 
@@ -114,6 +119,61 @@ struct SettingsView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 14)
+    }
+
+    // MARK: - Languages Row
+
+    private var languagesRow: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Label("Languages", systemImage: "globe")
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .foregroundStyle(Color.bark)
+                Spacer()
+                Text("at least 2")
+                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    .foregroundStyle(Color.stone)
+            }
+
+            HStack(spacing: 8) {
+                ForEach(Language.allCases) { lang in
+                    let isSelected = persistence.state.isLanguageSelected(lang)
+                    Button {
+                        toggleSettingsLanguage(lang)
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(lang.flag)
+                                .font(.system(size: 14))
+                            Text(lang.displayName)
+                                .font(.system(size: 12, weight: .bold, design: .rounded))
+                        }
+                        .foregroundStyle(isSelected ? .white : Color.bark)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(isSelected ? lang.primaryColor : Color.sand.opacity(0.5))
+                        .clipShape(Capsule())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("\(lang.displayName), \(isSelected ? "selected" : "not selected")")
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 14)
+    }
+
+    private func toggleSettingsLanguage(_ lang: Language) {
+        let current = Set(persistence.state.selectedLanguages)
+        if current.contains(lang.rawValue) {
+            guard current.count > 2 else { return }
+            persistence.update { state in
+                state.selectedLanguages.removeAll { $0 == lang.rawValue }
+            }
+        } else {
+            persistence.update { state in
+                state.selectedLanguages.append(lang.rawValue)
+            }
+        }
     }
 
     // MARK: - Speaker Row

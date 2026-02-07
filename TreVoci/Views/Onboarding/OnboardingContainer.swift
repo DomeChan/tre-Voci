@@ -4,6 +4,7 @@ struct OnboardingContainer: View {
     @Environment(PersistenceService.self) private var persistence
     @State private var currentStep = 0
     @State private var childName = ""
+    @State private var selectedLanguages: Set<Language> = [.it, .zh, .en]
     let onComplete: () -> Void
 
     private let totalSteps = 3
@@ -23,7 +24,7 @@ struct OnboardingContainer: View {
                     NameStep(childName: $childName, onNext: advanceStep)
                         .tag(0)
 
-                    LanguageStep(onNext: advanceStep)
+                    LanguageStep(selectedLanguages: $selectedLanguages, onNext: advanceStep)
                         .tag(1)
 
                     SpeakerStep(onFinish: completeOnboarding)
@@ -58,6 +59,7 @@ struct OnboardingContainer: View {
     private func completeOnboarding() {
         persistence.update { state in
             state.childName = childName
+            state.selectedLanguages = selectedLanguages.map(\.rawValue).sorted()
             state.hasCompletedOnboarding = true
         }
         onComplete()

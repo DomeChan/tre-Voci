@@ -7,6 +7,7 @@ struct ActivityBridgeView: View {
 
     let song: Song
     let actualDurationSeconds: Int
+    var selectedLanguages: [Language] = [.it, .zh, .en]
     let onHome: () -> Void
     let onOneMore: () -> Void
 
@@ -31,7 +32,8 @@ struct ActivityBridgeView: View {
                 viewModel = SessionViewModel(
                     song: song,
                     actualDurationSeconds: actualDurationSeconds,
-                    persistence: persistence
+                    persistence: persistence,
+                    selectedLanguages: selectedLanguages
                 )
             }
             wiggle = true
@@ -97,7 +99,7 @@ struct ActivityBridgeView: View {
 
     private var activityCard: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach(Language.allCases) { lang in
+            ForEach(selectedLanguages) { lang in
                 if let prompt = song.activity.prompts[lang.rawValue], !prompt.isEmpty {
                     HStack(alignment: .top, spacing: 10) {
                         Text(lang.flag)

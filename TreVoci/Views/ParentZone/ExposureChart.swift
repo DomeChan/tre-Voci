@@ -4,11 +4,16 @@ struct ExposureChart: View {
     let weeklySeconds: [String: Int]
     let currentStreak: Int
     let longestStreak: Int
+    var selectedLanguages: [Language] = [.it, .zh, .en]
 
     private var itMinutes: Double { Double(weeklySeconds["it"] ?? 0) / 60.0 }
     private var zhMinutes: Double { Double(weeklySeconds["zh"] ?? 0) / 60.0 }
     private var enMinutes: Double { Double(weeklySeconds["en"] ?? 0) / 60.0 }
     private let targetMinutes: Double = 60
+
+    private func minutes(for lang: Language) -> Double {
+        Double(weeklySeconds[lang.rawValue] ?? 0) / 60.0
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -25,10 +30,10 @@ struct ExposureChart: View {
             weeklyGoalRing
                 .frame(height: 160)
 
-            // Language breakdown cards
-            languageCard(language: .it, minutes: itMinutes, role: "Papa\u{0300}'s language")
-            languageCard(language: .zh, minutes: zhMinutes, role: "Ma\u{0304}ma\u{0304}'s language")
-            languageCard(language: .en, minutes: enMinutes, role: "School language")
+            // Language breakdown cards (only selected)
+            ForEach(selectedLanguages) { lang in
+                languageCard(language: lang, minutes: minutes(for: lang), role: lang.familyRole + "'s language")
+            }
 
             // Tip card
             tipCard
@@ -84,42 +89,26 @@ struct ExposureChart: View {
             let size = min(geo.size.width, geo.size.height)
             let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
             let ringWidth: CGFloat = 14
-            let totalMinutes = itMinutes + zhMinutes + enMinutes
+            let totalMinutes = selectedLanguages.reduce(0.0) { $0 + minutes(for: $1) }
 
             ZStack {
                 // Background rings
-                ForEach(0..<3, id: \.self) { i in
+                ForEach(0..<selectedLanguages.count, id: \.self) { i in
                     Circle()
                         .stroke(Color.sand.opacity(0.4), lineWidth: ringWidth)
                         .frame(width: size - CGFloat(i) * (ringWidth + 6), height: size - CGFloat(i) * (ringWidth + 6))
                 }
 
-                // IT ring (outermost)
-                arcRing(
-                    radius: size,
-                    offset: 0,
-                    width: ringWidth,
-                    progress: min(itMinutes / targetMinutes, 1.0),
-                    color: .italianGreen
-                )
-
-                // ZH ring (middle)
-                arcRing(
-                    radius: size,
-                    offset: 1,
-                    width: ringWidth,
-                    progress: min(zhMinutes / targetMinutes, 1.0),
-                    color: .chineseRed
-                )
-
-                // EN ring (innermost)
-                arcRing(
-                    radius: size,
-                    offset: 2,
-                    width: ringWidth,
-                    progress: min(enMinutes / targetMinutes, 1.0),
-                    color: .englishBlue
-                )
+                // Language rings
+                ForEach(Array(selectedLanguages.enumerated()), id: \.element) { i, lang in
+                    arcRing(
+                        radius: size,
+                        offset: i,
+                        width: ringWidth,
+                        progress: min(minutes(for: lang) / targetMinutes, 1.0),
+                        color: lang.primaryColor
+                    )
+                }
 
                 // Center text
                 VStack(spacing: 2) {
@@ -204,14 +193,10 @@ struct ExposureChart: View {
     }
 
     private func generateTip() -> String {
-        let langs: [(String, Double)] = [
-            ("Italian", itMinutes),
-            ("Mandarin", zhMinutes),
-            ("English", enMinutes),
-        ]
+        let langs: [(String, Double)] = selectedLanguages.map { ($0.displayName, minutes(for: $0)) }
         let sorted = langs.sorted { $0.1 < $1.1 }
         let lowest = sorted[0]
-        let highest = sorted[2]
+        let highest = sorted[sorted.count - 1]
 
         if highest.1 == 0 {
             return "Start your first listening session! Each language needs about 60 minutes per week."
@@ -219,7 +204,8 @@ struct ExposureChart: View {
 
         let diff = highest.1 - lowest.1
         if diff < 5 {
-            return "Great balance! All three languages are getting similar exposure this week."
+            let langCount = selectedLanguages.count == 2 ? "both" : "all \(selectedLanguages.count)"
+            return "Great balance! \(langCount.capitalized) languages are getting similar exposure this week."
         }
 
         let pct = Int((diff / max(highest.1, 1)) * 100)

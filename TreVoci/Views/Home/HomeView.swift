@@ -54,6 +54,7 @@ struct HomeView: View {
                         title: "\u{1F1EE}\u{1F1F9} Filastrocche Italiane",
                         language: .it,
                         songs: vm.italianSongs,
+                        dimmed: !persistence.state.isLanguageSelected(.it),
                         onSongTap: { selectSong($0) }
                     )
                 }
@@ -64,6 +65,7 @@ struct HomeView: View {
                         title: "\u{1F1E8}\u{1F1F3} \u{4E2D}\u{6587}\u{513F}\u{6B4C}",
                         language: .zh,
                         songs: vm.chineseSongs,
+                        dimmed: !persistence.state.isLanguageSelected(.zh),
                         onSongTap: { selectSong($0) }
                     )
                 }
@@ -74,6 +76,7 @@ struct HomeView: View {
                         title: "\u{1F1EC}\u{1F1E7} English Nursery Rhymes",
                         language: .en,
                         songs: vm.englishSongs,
+                        dimmed: !persistence.state.isLanguageSelected(.en),
                         onSongTap: { selectSong($0) }
                     )
                 }
@@ -88,6 +91,7 @@ struct HomeView: View {
             case .player(let song):
                 PlayerView(
                     song: song,
+                    selectedLanguages: persistence.state.selectedLanguages.compactMap { Language(rawValue: $0) },
                     onBack: { activeSheet = nil },
                     onActivityBridge: { song, elapsed in
                         activeSheet = nil
@@ -100,6 +104,7 @@ struct HomeView: View {
                 ActivityBridgeView(
                     song: song,
                     actualDurationSeconds: elapsed,
+                    selectedLanguages: persistence.state.selectedLanguages.compactMap { Language(rawValue: $0) },
                     onHome: {
                         activeSheet = nil
                     },

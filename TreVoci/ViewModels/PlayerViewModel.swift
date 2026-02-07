@@ -14,6 +14,7 @@ final class PlayerViewModel {
     private(set) var toastLanguage: Language = .it
 
     let song: Song
+    let selectedLanguages: [Language]
     let audioService = AudioService()
 
     // MARK: - Computed
@@ -34,11 +35,11 @@ final class PlayerViewModel {
     }
 
     var segmentCount: Int {
-        song.isCrossCultural ? 3 : 1
+        song.isCrossCultural ? selectedLanguages.count : 1
     }
 
     var availableLanguages: [Language] {
-        song.availableLanguages
+        song.isCrossCultural ? selectedLanguages : song.availableLanguages
     }
 
     var duration: TimeInterval {
@@ -47,10 +48,13 @@ final class PlayerViewModel {
 
     // MARK: - Init
 
-    init(song: Song) {
+    init(song: Song, selectedLanguages: [Language] = [.it, .zh, .en]) {
         self.song = song
-        self.currentLanguage = song.primaryLanguage
-        audioService.loadSong(song)
+        self.selectedLanguages = selectedLanguages
+        self.currentLanguage = song.isCrossCultural
+            ? ([.it, .zh, .en].first(where: { selectedLanguages.contains($0) }) ?? song.primaryLanguage)
+            : song.primaryLanguage
+        audioService.loadSong(song, selectedLanguages: selectedLanguages)
         setupCallbacks()
     }
 
@@ -73,7 +77,7 @@ final class PlayerViewModel {
     func restart() {
         audioService.restart()
         currentSegment = 0
-        currentLanguage = song.primaryLanguage
+        currentLanguage = audioService.segmentLanguages.first ?? song.primaryLanguage
         currentLyricIndex = 0
         isPlaying = true
     }
@@ -93,16 +97,12 @@ final class PlayerViewModel {
         currentLyricIndex = 0
 
         if song.isCrossCultural {
-            let segmentIndex: Int
-            switch language {
-            case .it: segmentIndex = 0
-            case .zh: segmentIndex = 1
-            case .en: segmentIndex = 2
-            }
-            currentSegment = segmentIndex
-            audioService.skipToSegment(index: segmentIndex)
-            if isPlaying {
-                audioService.play()
+            if let segmentIndex = audioService.segmentLanguages.firstIndex(of: language) {
+                currentSegment = segmentIndex
+                audioService.skipToSegment(index: segmentIndex)
+                if isPlaying {
+                    audioService.play()
+                }
             }
         }
 
@@ -141,10 +141,8 @@ final class PlayerViewModel {
     private func segmentStartTime() -> TimeInterval {
         // For cross-cultural songs, calculate the offset of prior segments
         guard song.isCrossCultural else { return 0 }
-        // Each segment's start is the cumulative duration of prior segments
-        // Since audioService tracks cumulative time, we use segment boundaries
-        let segmentFraction = 1.0 / Double(segmentCount)
-        return Double(currentSegment) * segmentFraction * audioService.duration
+        // Use actual segment durations instead of equal fractions
+        return audioService.segmentDurationsList.prefix(currentSegment).reduce(0, +)
     }
 
     // MARK: - Callbacks
@@ -154,7 +152,7 @@ final class PlayerViewModel {
             Task { @MainActor in
                 guard let self else { return }
                 self.currentSegment = segment
-                let languages: [Language] = [.it, .zh, .en]
+                let languages = self.audioService.segmentLanguages
                 if segment < languages.count && self.song.isCrossCultural {
                     self.currentLanguage = languages[segment]
                     self.currentLyricIndex = 0

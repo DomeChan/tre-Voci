@@ -23,6 +23,12 @@ final class AudioService: NSObject {
     private var segmentDurations: [TimeInterval] = []
     private var totalDuration: TimeInterval = 0
 
+    /// Public read-only accessor for actual segment durations
+    var segmentDurationsList: [TimeInterval] { segmentDurations }
+
+    /// Public read-only accessor for segment languages
+    var segmentLanguages: [Language] { segments.map(\.language) }
+
     override init() {
         super.init()
         configureAudioSession()
@@ -43,15 +49,16 @@ final class AudioService: NSObject {
 
     // MARK: - Playback Control
 
-    func loadSong(_ song: Song) {
+    func loadSong(_ song: Song, selectedLanguages: [Language] = [.it, .zh, .en]) {
         stop()
         currentSong = song
         segments = []
         segmentDurations = []
 
         if song.isCrossCultural {
-            // IT → ZH → EN sequence
-            for lang in [Language.it, .zh, .en] {
+            // Play only selected languages, in IT → ZH → EN order
+            let playOrder: [Language] = [.it, .zh, .en].filter { selectedLanguages.contains($0) }
+            for lang in playOrder {
                 if let file = song.audioFile(for: lang) {
                     segments.append((file: file, language: lang))
                 }
@@ -233,8 +240,10 @@ extension AudioService: AVAudioPlayerDelegate {
             if nextSegment < segments.count {
                 currentSegment = nextSegment
                 loadSegment(nextSegment)
-                self.player?.play()
                 onSegmentChange?(nextSegment)
+                // Brief pause between language segments for smoother transition
+                try? await Task.sleep(for: .milliseconds(500))
+                self.player?.play()
                 updateNowPlaying()
             } else {
                 // All segments finished

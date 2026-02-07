@@ -3,6 +3,7 @@ import Foundation
 struct AppState: Codable {
     var hasCompletedOnboarding: Bool = false
     var childName: String = ""
+    var selectedLanguages: [String] = ["it", "zh", "en"]
     var preferredSpeaker: String = "phone"
     var sessionLength: Int = 3
     var dailyMixSeed: String = ""
@@ -24,6 +25,14 @@ struct AppState: Codable {
 
     var displayName: String {
         childName.isEmpty ? "piccola" : childName
+    }
+
+    var selectedLanguageSet: Set<Language> {
+        Set(selectedLanguages.compactMap { Language(rawValue: $0) })
+    }
+
+    func isLanguageSelected(_ lang: Language) -> Bool {
+        selectedLanguages.contains(lang.rawValue)
     }
 }
 

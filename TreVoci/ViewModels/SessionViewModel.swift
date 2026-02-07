@@ -16,11 +16,11 @@ final class SessionViewModel {
         case summary
     }
 
-    init(song: Song, actualDurationSeconds: Int, persistence: PersistenceService) {
+    init(song: Song, actualDurationSeconds: Int, persistence: PersistenceService, selectedLanguages: [Language] = [.it, .zh, .en]) {
         self.song = song
         self.persistence = persistence
         if song.isCrossCultural {
-            self.languagesHeard = [.it, .zh, .en]
+            self.languagesHeard = [.it, .zh, .en].filter { selectedLanguages.contains($0) }
         } else {
             self.languagesHeard = song.availableLanguages
         }

@@ -21,7 +21,8 @@ struct ParentZoneView: View {
                 ExposureChart(
                     weeklySeconds: persistence.state.weeklyListeningSeconds,
                     currentStreak: persistence.state.currentStreak,
-                    longestStreak: persistence.state.longestStreak
+                    longestStreak: persistence.state.longestStreak,
+                    selectedLanguages: persistence.state.selectedLanguages.compactMap { Language(rawValue: $0) }
                 )
                 .padding(.horizontal, 20)
 
@@ -74,6 +75,10 @@ struct ParentZoneView: View {
 
     // MARK: - Today's Progress Card
 
+    private var selectedLangs: [Language] {
+        persistence.state.selectedLanguages.compactMap { Language(rawValue: $0) }
+    }
+
     private var todayCard: some View {
         let todaySessions = sessionsToday
         let todayMinutes = todaySessions.reduce(0) { $0 + $1.durationSeconds } / 60
@@ -112,9 +117,9 @@ struct ParentZoneView: View {
 
                 Spacer()
 
-                // Language checks
+                // Language checks (only selected)
                 HStack(spacing: 8) {
-                    ForEach(Language.allCases) { lang in
+                    ForEach(selectedLangs) { lang in
                         VStack(spacing: 4) {
                             Text(lang.flag)
                                 .font(.system(size: 18))
@@ -132,14 +137,15 @@ struct ParentZoneView: View {
                     .font(.system(size: 12, weight: .semibold, design: .rounded))
                     .foregroundStyle(Color.stone)
             } else {
-                let missing = Language.allCases.filter { !langsToday.contains($0.rawValue) }
+                let missing = selectedLangs.filter { !langsToday.contains($0.rawValue) }
                 if missing.isEmpty {
-                    Text("All three languages heard today \u{2014} amazing!")
+                    let langCount = selectedLangs.count == 2 ? "Both" : "All \(selectedLangs.count)"
+                    Text("\(langCount) languages heard today \u{2014} amazing!")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                         .foregroundStyle(Color.italianGreen)
                 } else {
                     let names = missing.map(\.displayName).joined(separator: " & ")
-                    Text("Try a \(names) song to complete today's trio!")
+                    Text("Try a \(names) song to complete today's set!")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                         .foregroundStyle(Color.stone)
                 }

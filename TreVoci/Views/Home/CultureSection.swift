@@ -4,6 +4,7 @@ struct CultureSection: View {
     let title: String
     let language: Language
     let songs: [Song]
+    var dimmed: Bool = false
     let onSongTap: (Song) -> Void
 
     var body: some View {
@@ -26,7 +27,19 @@ struct CultureSection: View {
                 }
             }
             .padding(.horizontal, 20)
+
+            if dimmed {
+                HStack(spacing: 4) {
+                    Image(systemName: "eye.slash")
+                        .font(.system(size: 10))
+                    Text("Not in your selection")
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                }
+                .foregroundStyle(Color.stone)
+                .padding(.horizontal, 20)
+            }
         }
+        .opacity(dimmed ? 0.4 : 1.0)
     }
 
     private func cultureRow(song: Song) -> some View {
@@ -62,11 +75,20 @@ struct CultureSection: View {
 
 #if DEBUG
 #Preview {
-    CultureSection(
-        title: "🇮🇹 Filastrocche Italiane",
-        language: .it,
-        songs: [.preview],
-        onSongTap: { _ in }
-    )
+    VStack(spacing: 20) {
+        CultureSection(
+            title: "\u{1F1EE}\u{1F1F9} Filastrocche Italiane",
+            language: .it,
+            songs: [.preview],
+            onSongTap: { _ in }
+        )
+        CultureSection(
+            title: "\u{1F1EC}\u{1F1E7} English Nursery Rhymes",
+            language: .en,
+            songs: [.preview],
+            dimmed: true,
+            onSongTap: { _ in }
+        )
+    }
 }
 #endif
