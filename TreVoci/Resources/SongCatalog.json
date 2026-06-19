@@ -74,51 +74,63 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "两只老虎  两只老虎"
+            "text": "两只老虎  两只老虎",
+            "romanization": "liǎng zhǐ lǎo hǔ  liǎng zhǐ lǎo hǔ"
           },
           {
             "time": 5.0,
-            "text": "跑得快  跑得快"
+            "text": "跑得快  跑得快",
+            "romanization": "pǎo dé kuài  pǎo dé kuài"
           },
           {
             "time": 8.6,
-            "text": "一只没有耳朵  一只没有尾巴"
+            "text": "一只没有耳朵  一只没有尾巴",
+            "romanization": "yī zhī méi yǒu ěr duǒ  yī zhī méi yǒu wěi ba"
           },
           {
             "time": 12.5,
-            "text": "真奇怪  真奇怪"
+            "text": "真奇怪  真奇怪",
+            "romanization": "zhēn qí guài  zhēn qí guài"
           },
           {
             "time": 16.2,
-            "text": "两只老虎  两只老虎"
+            "text": "两只老虎  两只老虎",
+            "romanization": "liǎng zhǐ lǎo hǔ  liǎng zhǐ lǎo hǔ"
           },
           {
             "time": 23.9,
-            "text": "跑得快  跑得快"
+            "text": "跑得快  跑得快",
+            "romanization": "pǎo dé kuài  pǎo dé kuài"
           },
           {
             "time": 31.6,
-            "text": "一只没有耳朵  一只没有尾巴"
+            "text": "一只没有耳朵  一只没有尾巴",
+            "romanization": "yī zhī méi yǒu ěr duǒ  yī zhī méi yǒu wěi ba"
           },
           {
             "time": 35.6,
-            "text": "真奇怪  真奇怪"
+            "text": "真奇怪  真奇怪",
+            "romanization": "zhēn qí guài  zhēn qí guài"
           },
           {
             "time": 39.2,
-            "text": "两只老虎  两只老虎"
+            "text": "两只老虎  两只老虎",
+            "romanization": "liǎng zhǐ lǎo hǔ  liǎng zhǐ lǎo hǔ"
           },
           {
             "time": 46.9,
-            "text": "跑得快  跑得快"
+            "text": "跑得快  跑得快",
+            "romanization": "pǎo dé kuài  pǎo dé kuài"
           },
           {
             "time": 54.7,
-            "text": "一只没有耳朵  一只没有尾巴"
+            "text": "一只没有耳朵  一只没有尾巴",
+            "romanization": "yī zhī méi yǒu ěr duǒ  yī zhī méi yǒu wěi ba"
           },
           {
             "time": 60.6,
-            "text": "真奇怪  真奇怪"
+            "text": "真奇怪  真奇怪",
+            "romanization": "zhēn qí guài  zhēn qí guài"
           }
         ],
         "en": [
@@ -260,63 +272,78 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "一闪一闪亮晶晶"
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
           },
           {
             "time": 12.8,
-            "text": "满天都是小星星"
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
           },
           {
             "time": 17.0,
-            "text": "挂在天上放光明"
+            "text": "挂在天上放光明",
+            "romanization": "guà zài tiān shàng fàng guāng míng"
           },
           {
             "time": 21.2,
-            "text": "好像许多小眼睛"
+            "text": "好像许多小眼睛",
+            "romanization": "hǎo xiàng xǔ duō xiǎo yǎn jīng"
           },
           {
             "time": 25.4,
-            "text": "一闪一闪亮晶晶"
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
           },
           {
             "time": 29.5,
-            "text": "满天都是小星星"
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
           },
           {
             "time": 33.8,
-            "text": "一闪一闪亮晶晶"
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
           },
           {
             "time": 42.0,
-            "text": "满天都是小星星"
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
           },
           {
             "time": 46.4,
-            "text": "挂在天上放光明"
+            "text": "挂在天上放光明",
+            "romanization": "guà zài tiān shàng fàng guāng míng"
           },
           {
             "time": 50.4,
-            "text": "好像许多小眼睛"
+            "text": "好像许多小眼睛",
+            "romanization": "hǎo xiàng xǔ duō xiǎo yǎn jīng"
           },
           {
             "time": 54.6,
-            "text": "一闪一闪亮晶晶"
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
           },
           {
             "time": 58.7,
-            "text": "满天都是小星星"
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
           },
           {
             "time": 63.4,
-            "text": "一闪一闪亮晶晶"
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
           },
           {
             "time": 75.4,
-            "text": "满天都是小星星"
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
           },
           {
             "time": 79.6,
-            "text": "挂在天上放光明"
+            "text": "挂在天上放光明",
+            "romanization": "guà zài tiān shàng fàng guāng míng"
           }
         ],
         "en": [
@@ -450,51 +477,63 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "王老先生有块地, 咿呀咿呀哟"
+            "text": "王老先生有块地, 咿呀咿呀哟",
+            "romanization": "wáng lǎo xiān shēng yǒu kuài dì , yī yā yī yā yō"
           },
           {
             "time": 5.4,
-            "text": "他在田边养小鸡, 咿呀咿呀哟"
+            "text": "他在田边养小鸡, 咿呀咿呀哟",
+            "romanization": "tā zài tián biān yǎng xiǎo jī , yī yā yī yā yō"
           },
           {
             "time": 10.0,
-            "text": "这里鸡鸡, 那里鸡鸡"
+            "text": "这里鸡鸡, 那里鸡鸡",
+            "romanization": "zhè lǐ jī jī , nà lǐ jī jī"
           },
           {
             "time": 11.4,
-            "text": "到处都是小鸡鸡, 咿呀咿呀哟"
+            "text": "到处都是小鸡鸡, 咿呀咿呀哟",
+            "romanization": "dào chù dōu shì xiǎo jī jī , yī yā yī yā yō"
           },
           {
             "time": 27.8,
-            "text": "王老先生有块地, 咿呀咿呀哟"
+            "text": "王老先生有块地, 咿呀咿呀哟",
+            "romanization": "wáng lǎo xiān shēng yǒu kuài dì , yī yā yī yā yō"
           },
           {
             "time": 35.2,
-            "text": "他在田边养鸭子, 咿呀咿呀哟"
+            "text": "他在田边养鸭子, 咿呀咿呀哟",
+            "romanization": "tā zài tián biān yǎng yā zi , yī yā yī yā yō"
           },
           {
             "time": 39.7,
-            "text": "这里嘎嘎, 那里嘎嘎"
+            "text": "这里嘎嘎, 那里嘎嘎",
+            "romanization": "zhè lǐ gā gā , nà lǐ gā gā"
           },
           {
             "time": 41.0,
-            "text": "到处都是小鸭子, 咿呀咿呀哟"
+            "text": "到处都是小鸭子, 咿呀咿呀哟",
+            "romanization": "dào chù dōu shì xiǎo yā zi , yī yā yī yā yō"
           },
           {
             "time": 51.6,
-            "text": "王老先生有块地, 咿呀咿呀哟"
+            "text": "王老先生有块地, 咿呀咿呀哟",
+            "romanization": "wáng lǎo xiān shēng yǒu kuài dì , yī yā yī yā yō"
           },
           {
             "time": 57.2,
-            "text": "他在田边养小猫, 咿呀咿呀哟"
+            "text": "他在田边养小猫, 咿呀咿呀哟",
+            "romanization": "tā zài tián biān yǎng xiǎo māo , yī yā yī yā yō"
           },
           {
             "time": 63.8,
-            "text": "这里喵喵, 那里喵喵"
+            "text": "这里喵喵, 那里喵喵",
+            "romanization": "zhè lǐ miāo miāo , nà lǐ miāo miāo"
           },
           {
             "time": 66.7,
-            "text": "到处都是小猫猫, 咿呀咿呀哟"
+            "text": "到处都是小猫猫, 咿呀咿呀哟",
+            "romanization": "dào chù dōu shì xiǎo māo māo , yī yā yī yā yō"
           }
         ],
         "en": [
@@ -668,67 +707,83 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "如果感到幸福你就拍拍手"
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
           },
           {
             "time": 6.0,
-            "text": "如果感到幸福你就拍拍手"
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
           },
           {
             "time": 13.5,
-            "text": "如果感到幸福就快快拍拍手呀"
+            "text": "如果感到幸福就快快拍拍手呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài pāi pāi shǒu ya"
           },
           {
             "time": 16.2,
-            "text": "如果感到幸福你就拍拍手"
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
           },
           {
             "time": 20.0,
-            "text": "如果感到幸福你就拍拍手"
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
           },
           {
             "time": 20.1,
-            "text": "如果感到幸福你就拍拍手"
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
           },
           {
             "time": 24.7,
-            "text": "如果感到幸福就快快拍拍手呀"
+            "text": "如果感到幸福就快快拍拍手呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài pāi pāi shǒu ya"
           },
           {
             "time": 28.3,
-            "text": "如果感到幸福你就拍拍手"
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
           },
           {
             "time": 31.2,
-            "text": "如果感到幸福你就跺跺脚"
+            "text": "如果感到幸福你就跺跺脚",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù duò duò jiǎo"
           },
           {
             "time": 35.0,
-            "text": "如果感到幸福你就跺跺脚"
+            "text": "如果感到幸福你就跺跺脚",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù duò duò jiǎo"
           },
           {
             "time": 39.7,
-            "text": "如果感到幸福就快快跺跺脚呀"
+            "text": "如果感到幸福就快快跺跺脚呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài duò duò jiǎo ya"
           },
           {
             "time": 42.5,
-            "text": "如果感到幸福你就跺跺脚"
+            "text": "如果感到幸福你就跺跺脚",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù duò duò jiǎo"
           },
           {
             "time": 46.2,
-            "text": "如果感到幸福你就拍拍肩"
+            "text": "如果感到幸福你就拍拍肩",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi jiān"
           },
           {
             "time": 50.0,
-            "text": "如果感到幸福你就拍拍肩"
+            "text": "如果感到幸福你就拍拍肩",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi jiān"
           },
           {
             "time": 54.7,
-            "text": "如果感到幸福就快快拍拍肩呀"
+            "text": "如果感到幸福就快快拍拍肩呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài pāi pāi jiān ya"
           },
           {
             "time": 59.0,
-            "text": "如果感到幸福你就拍拍肩"
+            "text": "如果感到幸福你就拍拍肩",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi jiān"
           }
         ],
         "en": [
@@ -882,51 +937,63 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "头 肩膀 膝盖和脚趾"
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
           },
           {
             "time": 5.8,
-            "text": "膝盖和脚趾"
+            "text": "膝盖和脚趾",
+            "romanization": "xī gài hé jiǎo zhǐ"
           },
           {
             "time": 9.6,
-            "text": "眼睛 耳朵 嘴巴 鼻子"
+            "text": "眼睛 耳朵 嘴巴 鼻子",
+            "romanization": "yǎn jīng ěr duǒ zuǐ bā bí zi"
           },
           {
             "time": 13.9,
-            "text": "头 肩膀 膝盖和脚趾"
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
           },
           {
             "time": 16.5,
-            "text": "头 肩膀 膝盖和脚趾"
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
           },
           {
             "time": 26.1,
-            "text": "膝盖和脚趾"
+            "text": "膝盖和脚趾",
+            "romanization": "xī gài hé jiǎo zhǐ"
           },
           {
             "time": 26.9,
-            "text": "眼睛 耳朵 嘴巴 鼻子"
+            "text": "眼睛 耳朵 嘴巴 鼻子",
+            "romanization": "yǎn jīng ěr duǒ zuǐ bā bí zi"
           },
           {
             "time": 32.9,
-            "text": "头 肩膀 膝盖和脚趾"
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
           },
           {
             "time": 36.2,
-            "text": "头 肩膀 膝盖和脚趾"
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
           },
           {
             "time": 44.8,
-            "text": "膝盖和脚趾"
+            "text": "膝盖和脚趾",
+            "romanization": "xī gài hé jiǎo zhǐ"
           },
           {
             "time": 48.1,
-            "text": "眼睛 耳朵 嘴巴 鼻子"
+            "text": "眼睛 耳朵 嘴巴 鼻子",
+            "romanization": "yǎn jīng ěr duǒ zuǐ bā bí zi"
           },
           {
             "time": 51.6,
-            "text": "头 肩膀 膝盖和脚趾"
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
           }
         ],
         "en": [
@@ -1060,19 +1127,23 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 5.7,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 9.9,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 14.6,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 17.9,
@@ -1092,19 +1163,23 @@
           },
           {
             "time": 29.9,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 38.3,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 40.9,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 43.5,
-            "text": "祝你生日快乐"
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
           },
           {
             "time": 46.3,
@@ -1234,67 +1309,83 @@
         "zh": [
           {
             "time": 1.0,
-            "text": "划呀划呀划小船"
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
           },
           {
             "time": 5.0,
-            "text": "轻轻顺流而下"
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
           },
           {
             "time": 10.0,
-            "text": "快乐快乐真快乐"
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
           },
           {
             "time": 13.0,
-            "text": "生活像梦境"
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
           },
           {
             "time": 23.5,
-            "text": "划呀划呀划小船"
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
           },
           {
             "time": 26.5,
-            "text": "轻轻顺流而下"
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
           },
           {
             "time": 30.2,
-            "text": "快乐快乐真快乐"
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
           },
           {
             "time": 32.4,
-            "text": "生活像梦境"
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
           },
           {
             "time": 34.7,
-            "text": "划呀划呀划小船"
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
           },
           {
             "time": 39.0,
-            "text": "轻轻顺流而下"
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
           },
           {
             "time": 41.7,
-            "text": "快乐快乐真快乐"
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
           },
           {
             "time": 44.3,
-            "text": "生活像梦境"
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
           },
           {
             "time": 46.7,
-            "text": "划呀划呀划小船"
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
           },
           {
             "time": 54.9,
-            "text": "轻轻顺流而下"
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
           },
           {
             "time": 55.6,
-            "text": "快乐快乐真快乐"
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
           },
           {
             "time": 57.6,
-            "text": "生活像梦境"
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
           }
         ],
         "en": [
@@ -1488,11 +1579,13 @@
           },
           {
             "time": 27.1,
-            "text": "我们学会了 A B C"
+            "text": "我们学会了 A B C",
+            "romanization": "wǒ men xué huì le A B C"
           },
           {
             "time": 40.7,
-            "text": "一起唱歌真开心"
+            "text": "一起唱歌真开心",
+            "romanization": "yì qǐ chàng gē zhēn kāi xīn"
           },
           {
             "time": 40.8,
@@ -2124,87 +2217,108 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "小兔子乖乖"
+            "text": "小兔子乖乖",
+            "romanization": "xiǎo tù zi guāi guāi"
           },
           {
             "time": 0.1,
-            "text": "把门儿开开"
+            "text": "把门儿开开",
+            "romanization": "bǎ mén ér kāi kāi"
           },
           {
             "time": 11.3,
-            "text": "快点儿开开"
+            "text": "快点儿开开",
+            "romanization": "kuài diǎn ér kāi kāi"
           },
           {
             "time": 13.4,
-            "text": "我要进来"
+            "text": "我要进来",
+            "romanization": "wǒ yào jìn lái"
           },
           {
             "time": 15.4,
-            "text": "不开 不开 我不开"
+            "text": "不开 不开 我不开",
+            "romanization": "bù kāi bù kāi wǒ bù kāi"
           },
           {
             "time": 18.1,
-            "text": "妈妈没回来"
+            "text": "妈妈没回来",
+            "romanization": "mā mā méi huí lái"
           },
           {
             "time": 25.4,
-            "text": "谁来也不开"
+            "text": "谁来也不开",
+            "romanization": "shuí lái yě bù kāi"
           },
           {
             "time": 25.5,
-            "text": "小兔子乖乖"
+            "text": "小兔子乖乖",
+            "romanization": "xiǎo tù zi guāi guāi"
           },
           {
             "time": 27.0,
-            "text": "把门儿开开"
+            "text": "把门儿开开",
+            "romanization": "bǎ mén ér kāi kāi"
           },
           {
             "time": 29.4,
-            "text": "快点儿开开"
+            "text": "快点儿开开",
+            "romanization": "kuài diǎn ér kāi kāi"
           },
           {
             "time": 43.4,
-            "text": "我要进来"
+            "text": "我要进来",
+            "romanization": "wǒ yào jìn lái"
           },
           {
             "time": 45.3,
-            "text": "不开 不开 我不开"
+            "text": "不开 不开 我不开",
+            "romanization": "bù kāi bù kāi wǒ bù kāi"
           },
           {
             "time": 47.1,
-            "text": "妈妈没回来"
+            "text": "妈妈没回来",
+            "romanization": "mā mā méi huí lái"
           },
           {
             "time": 57.3,
-            "text": "谁来也不开"
+            "text": "谁来也不开",
+            "romanization": "shuí lái yě bù kāi"
           },
           {
             "time": 58.3,
-            "text": "小兔子乖乖"
+            "text": "小兔子乖乖",
+            "romanization": "xiǎo tù zi guāi guāi"
           },
           {
             "time": 59.9,
-            "text": "把门儿开开"
+            "text": "把门儿开开",
+            "romanization": "bǎ mén ér kāi kāi"
           },
           {
             "time": 61.9,
-            "text": "快点儿开开"
+            "text": "快点儿开开",
+            "romanization": "kuài diǎn ér kāi kāi"
           },
           {
             "time": 79.1,
-            "text": "我要进来"
+            "text": "我要进来",
+            "romanization": "wǒ yào jìn lái"
           },
           {
             "time": 79.2,
-            "text": "不开 不开 我不开"
+            "text": "不开 不开 我不开",
+            "romanization": "bù kāi bù kāi wǒ bù kāi"
           },
           {
             "time": 89.9,
-            "text": "妈妈没回来"
+            "text": "妈妈没回来",
+            "romanization": "mā mā méi huí lái"
           },
           {
             "time": 91.8,
-            "text": "谁来也不开"
+            "text": "谁来也不开",
+            "romanization": "shuí lái yě bù kāi"
           }
         ]
       },
@@ -2238,83 +2352,103 @@
         "zh": [
           {
             "time": 5.0,
-            "text": "拔萝卜  拔萝卜"
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
           },
           {
             "time": 9.1,
-            "text": "嘿哟  嘿哟  拔萝卜"
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
           },
           {
             "time": 13.1,
-            "text": "嘿哟  嘿哟  拔不动"
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
           },
           {
             "time": 17.1,
-            "text": "老奶奶  快快来"
+            "text": "老奶奶  快快来",
+            "romanization": "lǎo nǎi nǎi  kuài kuài lái"
           },
           {
             "time": 21.2,
-            "text": "快来帮我们拔萝卜"
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
           },
           {
             "time": 25.2,
-            "text": "拔萝卜  拔萝卜"
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
           },
           {
             "time": 29.3,
-            "text": "嘿哟  嘿哟  拔萝卜"
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
           },
           {
             "time": 33.3,
-            "text": "嘿哟  嘿哟  拔不动"
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
           },
           {
             "time": 37.4,
-            "text": "老奶奶  快快来"
+            "text": "老奶奶  快快来",
+            "romanization": "lǎo nǎi nǎi  kuài kuài lái"
           },
           {
             "time": 41.4,
-            "text": "快来帮我们拔萝卜"
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
           },
           {
             "time": 45.5,
-            "text": "拔萝卜  拔萝卜"
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
           },
           {
             "time": 49.5,
-            "text": "嘿哟  嘿哟  拔萝卜"
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
           },
           {
             "time": 53.6,
-            "text": "嘿哟  嘿哟  拔不动"
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
           },
           {
             "time": 57.6,
-            "text": "小弟弟  快快来"
+            "text": "小弟弟  快快来",
+            "romanization": "xiǎo dì dì  kuài kuài lái"
           },
           {
             "time": 61.7,
-            "text": "快来帮我们拔萝卜"
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
           },
           {
             "time": 65.8,
-            "text": "拔萝卜  拔萝卜"
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
           },
           {
             "time": 69.8,
-            "text": "嘿哟  嘿哟  拔萝卜"
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
           },
           {
             "time": 73.8,
-            "text": "嘿哟  嘿哟  拔不动"
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
           },
           {
             "time": 77.9,
-            "text": "小姐姐  快快来"
+            "text": "小姐姐  快快来",
+            "romanization": "xiǎo jiě jiě  kuài kuài lái"
           },
           {
             "time": 82.0,
-            "text": "快来帮我们拔萝卜"
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
           }
         ]
       },
@@ -2348,67 +2482,83 @@
         "zh": [
           {
             "time": 0.6,
-            "text": "找呀找呀找朋友"
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
           },
           {
             "time": 4.0,
-            "text": "找到一个好朋友"
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
           },
           {
             "time": 7.4,
-            "text": "敬个礼  握握手"
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
           },
           {
             "time": 10.8,
-            "text": "你是我的好朋友"
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
           },
           {
             "time": 14.2,
-            "text": "找呀找呀找朋友"
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
           },
           {
             "time": 17.6,
-            "text": "找到一个好朋友"
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
           },
           {
             "time": 21.0,
-            "text": "敬个礼  握握手"
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
           },
           {
             "time": 24.4,
-            "text": "你是我的好朋友"
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
           },
           {
             "time": 27.8,
-            "text": "找呀找呀找朋友"
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
           },
           {
             "time": 31.2,
-            "text": "找到一个好朋友"
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
           },
           {
             "time": 34.6,
-            "text": "敬个礼  握握手"
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
           },
           {
             "time": 38.0,
-            "text": "你是我的好朋友"
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
           },
           {
             "time": 41.4,
-            "text": "找呀找呀找朋友"
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
           },
           {
             "time": 44.8,
-            "text": "找到一个好朋友"
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
           },
           {
             "time": 48.2,
-            "text": "敬个礼  握握手"
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
           },
           {
             "time": 51.6,
-            "text": "你是我的好朋友"
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
           }
         ]
       },
@@ -2442,51 +2592,63 @@
         "zh": [
           {
             "time": 0.0,
-            "text": "大象  大象"
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
           },
           {
             "time": 2.4,
-            "text": "你的鼻子怎么那么长"
+            "text": "你的鼻子怎么那么长",
+            "romanization": "nǐ de bí zi zěn me nà me zhǎng"
           },
           {
             "time": 5.8,
-            "text": "妈妈说鼻子长才是漂亮"
+            "text": "妈妈说鼻子长才是漂亮",
+            "romanization": "mā mā shuō bí zi zhǎng cái shì piào liàng"
           },
           {
             "time": 11.6,
-            "text": "大象  大象"
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
           },
           {
             "time": 16.0,
-            "text": "你喜欢爸爸或妈妈"
+            "text": "你喜欢爸爸或妈妈",
+            "romanization": "nǐ xǐ huān bà bà huò mā mā"
           },
           {
             "time": 19.3,
-            "text": "我好像比较喜欢我的妈妈"
+            "text": "我好像比较喜欢我的妈妈",
+            "romanization": "wǒ hǎo xiàng bǐ jiào xǐ huān wǒ de mā mā"
           },
           {
             "time": 30.0,
-            "text": "大象  大象"
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
           },
           {
             "time": 36.2,
-            "text": "你的鼻子怎么那么长"
+            "text": "你的鼻子怎么那么长",
+            "romanization": "nǐ de bí zi zěn me nà me zhǎng"
           },
           {
             "time": 39.7,
-            "text": "妈妈说鼻子长才是漂亮"
+            "text": "妈妈说鼻子长才是漂亮",
+            "romanization": "mā mā shuō bí zi zhǎng cái shì piào liàng"
           },
           {
             "time": 45.5,
-            "text": "大象  大象"
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
           },
           {
             "time": 48.1,
-            "text": "你喜欢爸爸或妈妈"
+            "text": "你喜欢爸爸或妈妈",
+            "romanization": "nǐ xǐ huān bà bà huò mā mā"
           },
           {
             "time": 53.3,
-            "text": "我好像比较喜欢我的妈妈"
+            "text": "我好像比较喜欢我的妈妈",
+            "romanization": "wǒ hǎo xiàng bǐ jiào xǐ huān wǒ de mā mā"
           }
         ]
       },

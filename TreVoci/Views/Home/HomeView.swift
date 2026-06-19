@@ -86,7 +86,7 @@ struct HomeView: View {
                 // Bottom padding
                 Color.clear.frame(height: 32)
             }
-            .readableContentWidth()
+            .readableContentWidth(1000)
         }
         .background(Color.cream)
         .fullScreenCover(item: $activeSheet) { sheet in

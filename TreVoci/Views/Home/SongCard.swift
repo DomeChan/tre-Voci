@@ -1,15 +1,20 @@
 import SwiftUI
 
 struct SongCard: View {
+    @Environment(\.horizontalSizeClass) private var hSize
     let song: Song
     let onTap: () -> Void
+
+    private var cardWidth: CGFloat { hSize == .regular ? 220 : 160 }
+    private var cardHeight: CGFloat { hSize == .regular ? 250 : 190 }
+    private var emojiSize: CGFloat { hSize == .regular ? 46 : 36 }
 
     var body: some View {
         Button(action: onTap) {
             VStack(alignment: .leading, spacing: 8) {
                 // Emoji
                 Text(song.icon)
-                    .font(.system(size: 36))
+                    .font(.system(size: emojiSize))
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 Spacer()
@@ -45,7 +50,7 @@ struct SongCard: View {
                     .foregroundStyle(.white.opacity(0.6))
             }
             .padding(16)
-            .frame(width: 160, height: 190)
+            .frame(width: cardWidth, height: cardHeight)
             .background(
                 LinearGradient(
                     colors: song.backgroundGradient.map { Color(hex: $0) },

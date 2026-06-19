@@ -1,11 +1,19 @@
 import SwiftUI
 
 struct CultureSection: View {
+    @Environment(\.horizontalSizeClass) private var hSize
     let title: String
     let language: Language
     let songs: [Song]
     var dimmed: Bool = false
     let onSongTap: (Song) -> Void
+
+    /// 2 columns on iPad / regular width, 1 on iPhone — so the song rows fill the
+    /// canvas instead of stacking in a single narrow column.
+    private var columns: [GridItem] {
+        let count = hSize == .regular ? 2 : 1
+        return Array(repeating: GridItem(.flexible(), spacing: 12), count: count)
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -14,7 +22,7 @@ struct CultureSection: View {
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)
 
-            VStack(spacing: 8) {
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
                 ForEach(songs) { song in
                     Button {
                         onSongTap(song)

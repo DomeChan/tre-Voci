@@ -44,7 +44,7 @@ struct ParentZoneView: View {
 
                 Color.clear.frame(height: 32)
             }
-            .readableContentWidth()
+            .readableContentWidth(860)
         }
         .background(Color.cream)
     }
