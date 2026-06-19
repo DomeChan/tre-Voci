@@ -33,17 +33,23 @@ struct PlayerView: View {
 
                 Spacer()
 
-                // Song emoji with breathing animation
-                Text(viewModel.song.icon)
-                    .font(.system(size: 80))
-                    .scaleEffect(breathe ? 1.08 : 1.0)
-                    .animation(
-                        viewModel.isPlaying
-                            ? .easeInOut(duration: 2.5).repeatForever(autoreverses: true)
-                            : .easeOut(duration: 0.3),
-                        value: breathe
-                    )
-                    .accessibilityHidden(true)
+                // Song emoji with breathing animation — tap to replay ("Again!")
+                Button(action: { viewModel.restart() }) {
+                    Text(viewModel.song.icon)
+                        .font(.system(size: 80))
+                        .scaleEffect(breathe ? 1.08 : 1.0)
+                        .animation(
+                            viewModel.isPlaying
+                                ? .easeInOut(duration: 2.5).repeatForever(autoreverses: true)
+                                : .easeOut(duration: 0.3),
+                            value: breathe
+                        )
+                        .frame(minWidth: 44, minHeight: 44)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Play again")
+                .accessibilityAddTraits(.isButton)
 
                 // Title
                 Text(viewModel.currentTitle)
