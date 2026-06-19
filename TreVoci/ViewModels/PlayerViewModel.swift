@@ -12,6 +12,8 @@ final class PlayerViewModel {
     private(set) var currentSegment: Int = 0
     private(set) var showLanguageToast: Bool = false
     private(set) var toastLanguage: Language = .it
+    private(set) var outputRouteName: String = "iPhone"
+    private(set) var outputRouteSymbol: String = "speaker.wave.2.fill"
 
     let song: Song
     let selectedLanguages: [Language]
@@ -127,6 +129,8 @@ final class PlayerViewModel {
         currentTime = audioService.currentTime
         isPlaying = audioService.isPlaying
         currentSegment = audioService.currentSegment
+        outputRouteName = audioService.outputRouteName
+        outputRouteSymbol = audioService.outputRouteSymbol
         updateLyricIndex()
     }
 

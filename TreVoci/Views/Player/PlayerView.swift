@@ -152,13 +152,14 @@ struct PlayerView: View {
 
             Spacer()
 
-            // AirPlay indicator (tappable)
+            // AirPlay indicator (tappable) — shows the real current output route
             ZStack {
                 HStack(spacing: 4) {
-                    Image(systemName: "speaker.wave.2.fill")
+                    Image(systemName: viewModel.outputRouteSymbol)
                         .font(.system(size: 10))
-                    Text("iPhone")
+                    Text(viewModel.outputRouteName)
                         .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .lineLimit(1)
                 }
                 .foregroundStyle(.white.opacity(0.7))
                 .padding(.horizontal, 10)
@@ -170,7 +171,8 @@ struct PlayerView: View {
                     .frame(width: 80, height: 28)
                     .opacity(0.015)
             }
-            .accessibilityLabel("Choose audio output")
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Playing on \(viewModel.outputRouteName). Tap to choose audio output.")
         }
     }
 

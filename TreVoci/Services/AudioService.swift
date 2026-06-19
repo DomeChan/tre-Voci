@@ -35,6 +35,29 @@ final class AudioService: NSObject {
         configureRemoteCommands()
     }
 
+    // MARK: - Output Route
+
+    /// Human-readable name of the current audio output (e.g. "Living Room", "HomePod",
+    /// "iPhone Speaker"). Read on demand from the live `AVAudioSession` route — no observer,
+    /// no stored state — so the chrome reflects the real route, not a hardcoded guess.
+    var outputRouteName: String {
+        let outputs = AVAudioSession.sharedInstance().currentRoute.outputs
+        guard let port = outputs.first else { return "iPhone" }
+        if port.portType == .builtInSpeaker { return "iPhone Speaker" }
+        return port.portName
+    }
+
+    /// SF Symbol that matches the current output route type.
+    var outputRouteSymbol: String {
+        let outputs = AVAudioSession.sharedInstance().currentRoute.outputs
+        switch outputs.first?.portType {
+        case .airPlay: return "airplayaudio"
+        case .bluetoothA2DP, .bluetoothLE, .bluetoothHFP: return "headphones"
+        case .headphones, .headsetMic: return "headphones"
+        default: return "speaker.wave.2.fill"
+        }
+    }
+
     // MARK: - Audio Session
 
     private func configureAudioSession() {
