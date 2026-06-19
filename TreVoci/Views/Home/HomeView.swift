@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 
 enum SheetDestination: Identifiable {
     case player(Song)
@@ -20,6 +21,7 @@ struct HomeView: View {
     @Environment(PersistenceService.self) private var persistence
     @State private var viewModel: HomeViewModel?
     @State private var activeSheet: SheetDestination?
+    @State private var routeMonitor = AudioRouteMonitor()
 
     private let catalog = SongCatalogService()
 
@@ -144,6 +146,10 @@ struct HomeView: View {
             if viewModel == nil {
                 viewModel = HomeViewModel(catalog: catalog, persistence: persistence)
             }
+            routeMonitor.start()
+        }
+        .onDisappear {
+            routeMonitor.stop()
         }
     }
 
@@ -179,9 +185,9 @@ struct HomeView: View {
     private var speakerPill: some View {
         ZStack {
             HStack(spacing: 6) {
-                Image(systemName: "speaker.wave.2.fill")
+                Image(systemName: routeMonitor.iconName)
                     .font(.system(size: 10))
-                Text("iPhone Speaker")
+                Text(routeMonitor.routeName)
                     .font(.system(size: 12, weight: .semibold, design: .rounded))
             }
             .foregroundStyle(Color.stone)
@@ -189,13 +195,15 @@ struct HomeView: View {
             .padding(.vertical, 6)
             .background(Color.warm)
             .clipShape(Capsule())
+            .animation(.spring(response: 0.4, dampingFraction: 0.8), value: routeMonitor.routeName)
 
             AirPlayPickerButton()
                 .frame(width: 120, height: 28)
                 .opacity(0.015)
         }
         .fixedSize()
-        .accessibilityLabel("Choose audio output")
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Playing on \(routeMonitor.routeName). Tap to choose audio output.")
     }
 
     // MARK: - Cross-Cultural Section
@@ -243,6 +251,68 @@ struct HomeView: View {
     private func playDailyMix() {
         guard let vm = viewModel, let first = vm.dailyMix.first else { return }
         selectSong(first)
+    }
+}
+
+// MARK: - Audio Route Monitor
+
+/// Reads the live audio output route from `AVAudioSession` so the speaker pill
+/// tells the truth (AirPlay device, Bluetooth, headphones, or this iPhone)
+/// instead of a hardcoded "iPhone Speaker" label.
+@Observable
+@MainActor
+final class AudioRouteMonitor {
+    private(set) var routeName: String = "iPhone Speaker"
+    private(set) var iconName: String = "speaker.wave.2.fill"
+
+    private var observer: NSObjectProtocol?
+
+    func start() {
+        updateRoute()
+        guard observer == nil else { return }
+        observer = NotificationCenter.default.addObserver(
+            forName: AVAudioSession.routeChangeNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated {
+                self?.updateRoute()
+            }
+        }
+    }
+
+    func stop() {
+        if let observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
+        observer = nil
+    }
+
+    private func updateRoute() {
+        let outputs = AVAudioSession.sharedInstance().currentRoute.outputs
+        guard let output = outputs.first else {
+            routeName = "iPhone Speaker"
+            iconName = "speaker.wave.2.fill"
+            return
+        }
+
+        switch output.portType {
+        case .airPlay:
+            routeName = output.portName
+            iconName = "airplayaudio"
+        case .bluetoothA2DP, .bluetoothLE, .bluetoothHFP:
+            routeName = output.portName
+            iconName = "hifispeaker.fill"
+        case .headphones, .headsetMic:
+            routeName = "Headphones"
+            iconName = "headphones"
+        case .builtInSpeaker:
+            routeName = "iPhone Speaker"
+            iconName = "speaker.wave.2.fill"
+        default:
+            routeName = output.portName
+            iconName = "speaker.wave.2.fill"
+        }
     }
 }
 
