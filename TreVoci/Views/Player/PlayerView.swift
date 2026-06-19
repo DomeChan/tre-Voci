@@ -100,6 +100,7 @@ struct PlayerView: View {
                 playbackControls
                     .padding(.bottom, 32)
             }
+            .readableContentWidth()
 
             // Language switch toast
             if viewModel.showLanguageToast {

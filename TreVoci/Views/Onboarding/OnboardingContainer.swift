@@ -33,6 +33,7 @@ struct OnboardingContainer: View {
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(.spring(response: 0.4, dampingFraction: 0.8), value: currentStep)
             }
+            .readableContentWidth()
         }
     }
 

@@ -48,3 +48,16 @@ extension Color {
         )
     }
 }
+
+// MARK: - Adaptive layout
+
+extension View {
+    /// Caps content to a comfortable reading column and centres it horizontally on
+    /// large screens (iPad / landscape). On iPhone the content is narrower than the
+    /// cap, so this is a no-op there. Keeps the iPhone-first layouts looking designed
+    /// on iPad instead of stretching edge-to-edge.
+    func readableContentWidth(_ maxWidth: CGFloat = 640) -> some View {
+        frame(maxWidth: maxWidth)
+            .frame(maxWidth: .infinity)
+    }
+}
