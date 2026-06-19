@@ -15,14 +15,15 @@ struct LyricsView: View {
                   : .system(size: fontSize, weight: .heavy, design: .rounded))
             .foregroundStyle(language.primaryColor)
             .multilineTextAlignment(.center)
-            .lineLimit(2)
+            .lineLimit(3)
+            .minimumScaleFactor(0.65)
             .id("\(language.rawValue)-\(text)")
             .transition(.asymmetric(
                 insertion: .opacity.combined(with: .offset(y: 6)),
                 removal: .opacity
             ))
             .animation(.easeOut(duration: 0.4), value: text)
-            .frame(height: 60)
+            .frame(height: 76)
             .accessibilityLabel(text)
     }
 }
