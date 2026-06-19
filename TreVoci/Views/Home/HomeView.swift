@@ -40,7 +40,7 @@ struct HomeView: View {
                 // Daily Mix Hero Card
                 if let vm = viewModel {
                     DailyMixCard(
-                        songCount: vm.dailyMix.count,
+                        songs: vm.dailyMix,
                         duration: vm.dailyMixDuration,
                         onPlay: { playDailyMix() }
                     )

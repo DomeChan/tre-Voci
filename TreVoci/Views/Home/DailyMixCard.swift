@@ -1,9 +1,15 @@
 import SwiftUI
 
 struct DailyMixCard: View {
-    let songCount: Int
+    let songs: [Song]
     let duration: Int
     let onPlay: () -> Void
+
+    private var songCount: Int { songs.count }
+
+    private var tracklistLabel: String {
+        songs.map { $0.title(for: .en) }.joined(separator: ", ")
+    }
 
     var body: some View {
         Button(action: onPlay) {
@@ -42,6 +48,22 @@ struct DailyMixCard: View {
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                         .foregroundStyle(.white.opacity(0.85))
 
+                    // Tracklist preview — catalog glyphs for today's songs.
+                    // VoiceOver reads the real song names below.
+                    if !songs.isEmpty {
+                        HStack(spacing: 6) {
+                            ForEach(songs) { song in
+                                Text(song.icon)
+                                    .font(.system(size: 18))
+                                    .frame(width: 32, height: 32)
+                                    .background(.white.opacity(0.18))
+                                    .clipShape(Circle())
+                            }
+                        }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel("Today's songs: \(tracklistLabel)")
+                    }
+
                     HStack {
                         Spacer()
 
@@ -75,7 +97,7 @@ struct DailyMixCard: View {
 
 #if DEBUG
 #Preview {
-    DailyMixCard(songCount: 3, duration: 720, onPlay: {})
+    DailyMixCard(songs: [.preview, .preview, .preview], duration: 720, onPlay: {})
         .padding()
 }
 #endif
