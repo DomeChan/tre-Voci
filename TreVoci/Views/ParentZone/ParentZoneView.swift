@@ -1,7 +1,9 @@
 import SwiftUI
+import AVFoundation
 
 struct ParentZoneView: View {
     @Environment(PersistenceService.self) private var persistence
+    @State private var showPronunciation = false
     let onBack: () -> Void
     let onReset: () -> Void
 
@@ -38,6 +40,10 @@ struct ParentZoneView: View {
                 privacyCard
                     .padding(.horizontal, 20)
 
+                // Pronunciation guide
+                pronunciationButton
+                    .padding(.horizontal, 20)
+
                 // Settings
                 SettingsView(onReset: onReset)
                     .padding(.horizontal, 20)
@@ -47,6 +53,41 @@ struct ParentZoneView: View {
             .readableContentWidth(860)
         }
         .background(Color.cream)
+        .sheet(isPresented: $showPronunciation) {
+            PronunciationGuideView()
+        }
+    }
+
+    private var pronunciationButton: some View {
+        Button { showPronunciation = true } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "character.book.closed.fill")
+                    .font(.system(size: 18))
+                    .foregroundStyle(Color.coral)
+                    .frame(width: 40, height: 40)
+                    .background(Color.coral.opacity(0.12))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Pronunciation Guide")
+                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .foregroundStyle(Color.bark)
+                    Text("Lyrics with pinyin · tap a line to hear it")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .foregroundStyle(Color.stone)
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(Color.mist)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(color: Color.black.opacity(0.04), radius: 8, y: 2)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Pronunciation guide. Lyrics with pinyin, tap a line to hear it.")
     }
 
     // MARK: - Header
@@ -338,3 +379,127 @@ struct ParentZoneView: View {
         .environment(PersistenceService())
 }
 #endif
+
+// MARK: - Pronunciation Guide (parent-gated)
+
+/// Browse every song's lyrics with romanization (pinyin under Chinese lines) so the
+/// non-native parent can read along; tap any line to hear that exact segment.
+struct PronunciationGuideView: View {
+    @Environment(\.dismiss) private var dismiss
+    private let catalog = SongCatalogService()
+
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(catalog.allSongs) { song in
+                    NavigationLink {
+                        SongLyricsView(song: song)
+                    } label: {
+                        HStack(spacing: 12) {
+                            Text(song.icon).font(.system(size: 26))
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(song.title(for: song.primaryLanguage))
+                                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                                    .foregroundStyle(Color.bark)
+                                Text(song.availableLanguages.map(\.flag).joined(separator: " "))
+                                    .font(.system(size: 13))
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Pronunciation")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
+    }
+}
+
+private struct SongLyricsView: View {
+    let song: Song
+    @State private var player = LyricPreviewPlayer()
+    @State private var playingKey: String?
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                ForEach(song.availableLanguages) { lang in
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack(spacing: 6) {
+                            Text(lang.flag)
+                            Text(lang.displayName)
+                                .font(.system(size: 15, weight: .black, design: .rounded))
+                                .foregroundStyle(lang.primaryColor)
+                        }
+
+                        let lines = song.lyrics[lang.rawValue] ?? []
+                        ForEach(Array(lines.enumerated()), id: \.offset) { idx, line in
+                            let key = "\(lang.rawValue)-\(idx)"
+                            Button {
+                                player.play(file: song.audioFile(for: lang), from: line.time)
+                                playingKey = key
+                            } label: {
+                                HStack(alignment: .top, spacing: 10) {
+                                    Image(systemName: playingKey == key ? "speaker.wave.2.fill" : "play.circle")
+                                        .font(.system(size: 14))
+                                        .foregroundStyle(lang.primaryColor)
+                                        .padding(.top, 2)
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text(line.text)
+                                            .font(.system(size: lang == .zh ? 18 : 16, weight: .semibold, design: .rounded))
+                                            .foregroundStyle(Color.bark)
+                                            .multilineTextAlignment(.leading)
+                                        if let r = line.romanization {
+                                            Text(r)
+                                                .font(.system(size: 13, weight: .medium, design: .rounded))
+                                                .foregroundStyle(Color.stone)
+                                                .italic()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                    }
+                                    Spacer(minLength: 0)
+                                }
+                                .padding(12)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(playingKey == key ? lang.backgroundColor : Color.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 14))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+                Color.clear.frame(height: 24)
+            }
+            .padding(20)
+            .readableContentWidth(720)
+        }
+        .background(Color.cream)
+        .navigationTitle(song.title(for: song.primaryLanguage))
+        .navigationBarTitleDisplayMode(.inline)
+        .onDisappear { player.stop() }
+    }
+}
+
+@MainActor
+@Observable
+final class LyricPreviewPlayer {
+    private var player: AVAudioPlayer?
+
+    func play(file: String?, from time: Double) {
+        stop()
+        guard let file, let url = SongCatalogService.audioURL(for: file),
+              let p = try? AVAudioPlayer(contentsOf: url) else { return }
+        p.currentTime = max(0, time)
+        p.play()
+        player = p
+    }
+
+    func stop() {
+        player?.stop()
+        player = nil
+    }
+}

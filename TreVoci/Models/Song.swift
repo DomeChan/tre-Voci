@@ -51,6 +51,9 @@ enum SongCategory: String, Codable {
 struct LyricLine: Codable {
     let time: Double
     let text: String
+    /// Romanization (pinyin) for non-latin scripts — shown under the line in the
+    /// parent pronunciation guide. nil for already-latin lines (Italian/English).
+    var romanization: String?
 }
 
 struct Activity: Codable {
