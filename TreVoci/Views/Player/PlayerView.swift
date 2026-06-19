@@ -8,8 +8,8 @@ struct PlayerView: View {
     let onBack: () -> Void
     let onActivityBridge: (Song, Int) -> Void
 
-    init(song: Song, selectedLanguages: [Language] = Language.all, onBack: @escaping () -> Void, onActivityBridge: @escaping (Song, Int) -> Void) {
-        self._viewModel = State(initialValue: PlayerViewModel(song: song, selectedLanguages: selectedLanguages))
+    init(song: Song, selectedLanguages: [Language] = Language.all, bedtime: Bool = false, onBack: @escaping () -> Void, onActivityBridge: @escaping (Song, Int) -> Void) {
+        self._viewModel = State(initialValue: PlayerViewModel(song: song, selectedLanguages: selectedLanguages, bedtime: bedtime))
         self.onBack = onBack
         self.onActivityBridge = onActivityBridge
     }
@@ -73,6 +73,13 @@ struct PlayerView: View {
                 )
                 .padding(.horizontal, 32)
 
+                // Echo Word — one shared concept that pulses as it's sung, so the
+                // child (and family) can catch the same word in every language.
+                if let echo = viewModel.echoWord, let word = viewModel.echoWordText {
+                    echoWordChip(echo: echo, word: word)
+                        .padding(.top, 14)
+                }
+
                 Spacer()
 
                 // Language picker
@@ -131,6 +138,39 @@ struct PlayerView: View {
                 onActivityBridge(viewModel.song, elapsedSeconds)
             }
         }
+    }
+
+    // MARK: - Echo Word Chip
+
+    private func echoWordChip(echo: EchoWord, word: String) -> some View {
+        let active = viewModel.isEchoWordActive
+        return HStack(spacing: 8) {
+            Text(echo.emoji)
+                .font(.system(size: 24))
+                .scaleEffect(active ? 1.35 : 1.0)
+                .animation(.spring(response: 0.35, dampingFraction: 0.55), value: active)
+
+            VStack(alignment: .leading, spacing: 1) {
+                Text(word)
+                    .font(.system(size: 15, weight: .heavy, design: .rounded))
+                    .foregroundStyle(.white)
+                if let rom = viewModel.echoWordRomanization {
+                    Text(rom)
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.white.opacity(0.7))
+                }
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 8)
+        .background(.ultraThinMaterial)
+        .clipShape(Capsule())
+        .overlay(
+            Capsule().stroke(.white.opacity(active ? 0.55 : 0.0), lineWidth: 1.5)
+        )
+        .scaleEffect(active ? 1.05 : 1.0)
+        .animation(.easeOut(duration: 0.3), value: active)
+        .accessibilityLabel("Listen for the word \(word)")
     }
 
     // MARK: - Top Bar

@@ -48,14 +48,34 @@ final class PlayerViewModel {
         audioService.duration
     }
 
+    // MARK: - Echo Word
+
+    var echoWord: EchoWord? { song.echoWord }
+
+    var echoWordText: String? {
+        song.echoWord?.word(for: currentLanguage)
+    }
+
+    var echoWordRomanization: String? {
+        song.echoWord?.romanization(for: currentLanguage)
+    }
+
+    /// True while the current lyric line sings the echo word — drives the pulse.
+    /// Substring match keeps it timestamp-free and works across the looped verses.
+    var isEchoWordActive: Bool {
+        guard let word = echoWordText?.lowercased(), !word.isEmpty else { return false }
+        return currentLyricText.lowercased().contains(word)
+    }
+
     // MARK: - Init
 
-    init(song: Song, selectedLanguages: [Language] = Language.all) {
+    init(song: Song, selectedLanguages: [Language] = Language.all, bedtime: Bool = false) {
         self.song = song
         self.selectedLanguages = selectedLanguages
         self.currentLanguage = song.isCrossCultural
             ? (Language.all.first(where: { selectedLanguages.contains($0) }) ?? song.primaryLanguage)
             : song.primaryLanguage
+        audioService.bedtime = bedtime
         audioService.loadSong(song, selectedLanguages: selectedLanguages)
         setupCallbacks()
     }

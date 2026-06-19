@@ -427,6 +427,8 @@ private struct SongLyricsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
+                extensionCard
+
                 ForEach(song.availableLanguages) { lang in
                     VStack(alignment: .leading, spacing: 10) {
                         HStack(spacing: 6) {
@@ -472,6 +474,8 @@ private struct SongLyricsView: View {
                         }
                     }
                 }
+
+                creditsFooter
                 Color.clear.frame(height: 24)
             }
             .padding(20)
@@ -481,6 +485,74 @@ private struct SongLyricsView: View {
         .navigationTitle(song.title(for: song.primaryLanguage))
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear { player.stop() }
+    }
+
+    /// "What it means & how to extend it" — a carry-over phrase per language plus
+    /// one plain-English line, so the family can reuse the song off-app.
+    @ViewBuilder
+    private var extensionCard: some View {
+        if let ext = song.parentExtension {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 6) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 13))
+                        .foregroundStyle(Color.coral)
+                    Text("Carry it into the day")
+                        .font(.system(size: 15, weight: .black, design: .rounded))
+                        .foregroundStyle(Color.bark)
+                }
+
+                Text(ext.meaning)
+                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                    .foregroundStyle(Color.stone)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                ForEach(song.availableLanguages) { lang in
+                    if let phrase = ext.phrase(for: lang) {
+                        HStack(alignment: .top, spacing: 8) {
+                            Text(lang.flag)
+                            VStack(alignment: .leading, spacing: 1) {
+                                Text(phrase)
+                                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                                    .foregroundStyle(Color.bark)
+                                if let rom = ext.romanization(for: lang) {
+                                    Text(rom)
+                                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                                        .foregroundStyle(Color.stone)
+                                        .italic()
+                                }
+                            }
+                            Spacer(minLength: 0)
+                        }
+                    }
+                }
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 18))
+        }
+    }
+
+    /// Where each language's recording came from — quiet credit to the sources.
+    @ViewBuilder
+    private var creditsFooter: some View {
+        if let sources = song.recordingSource, !sources.isEmpty {
+            let line = song.availableLanguages
+                .compactMap { lang in sources[lang.rawValue].map { "\(lang.displayName): \($0)" } }
+                .joined(separator: "  ·  ")
+            if !line.isEmpty {
+                HStack(spacing: 6) {
+                    Image(systemName: "music.note.list")
+                        .font(.system(size: 11))
+                    Text(line)
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .multilineTextAlignment(.leading)
+                }
+                .foregroundStyle(Color.stone)
+                .padding(.top, 4)
+            }
+        }
     }
 }
 

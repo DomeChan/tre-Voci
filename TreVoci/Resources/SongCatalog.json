@@ -196,7 +196,25 @@
           "en": "Find something that rings! 🔔"
         }
       },
-      "parentNote": "Fun fact: the Chinese version has completely different lyrics about two tigers — one with no ears, one with no tail!"
+      "parentNote": "Fun fact: the Chinese version has completely different lyrics about two tigers — one with no ears, one with no tail!",
+      "energy": "gentle",
+      "bpm": 96,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Dormi tu?",
+          "zh": "两只老虎",
+          "en": "Are you sleeping?"
+        },
+        "carryRomanization": {
+          "zh": "liǎng zhī lǎo hǔ"
+        },
+        "meaning": "A gentle nap-time question in Italian and English; the Chinese twin is the playful 'two tigers'."
+      }
     },
     {
       "id": "twinkle",
@@ -381,7 +399,36 @@
           "en": "Point to a star! ✨"
         }
       },
-      "parentNote": "This melody was the basis for Mozart's 12 Variations (K. 265). All three versions preserve the same gentle lullaby feel."
+      "parentNote": "This melody was the basis for Mozart's 12 Variations (K. 265). All three versions preserve the same gentle lullaby feel.",
+      "energy": "lullaby",
+      "bpm": 80,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "⭐",
+        "words": {
+          "it": "stella",
+          "zh": "星星",
+          "en": "star"
+        },
+        "romanization": {
+          "zh": "xīng xing"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Brilla, brilla",
+          "zh": "一闪一闪",
+          "en": "Twinkle, twinkle"
+        },
+        "carryRomanization": {
+          "zh": "yì shǎn yì shǎn"
+        },
+        "meaning": "Point at a real star or light and say it together — 'star' in all three."
+      }
     },
     {
       "id": "old-macdonald",
@@ -611,7 +658,36 @@
           "en": "Make an animal sound! 🐾"
         }
       },
-      "parentNote": "The Italian version ('Nella Vecchia Fattoria') is by Quartetto Cetra and is a beloved children's TV classic."
+      "parentNote": "The Italian version ('Nella Vecchia Fattoria') is by Quartetto Cetra and is a beloved children's TV classic.",
+      "energy": "playful",
+      "bpm": 120,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🐮",
+        "words": {
+          "it": "mucca",
+          "zh": "奶牛",
+          "en": "cow"
+        },
+        "romanization": {
+          "zh": "nǎi niú"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Che fa la mucca?",
+          "zh": "奶牛怎么叫?",
+          "en": "What does the cow say?"
+        },
+        "carryRomanization": {
+          "zh": "nǎi niú zěn me jiào"
+        },
+        "meaning": "Point at an animal and ask what sound it makes — in any language."
+      }
     },
     {
       "id": "if-youre-happy",
@@ -861,7 +937,36 @@
           "en": "Clap your hands loud! 👏"
         }
       },
-      "parentNote": "This is a perfect action song — encourage clapping, stomping, and cheering in all three languages!"
+      "parentNote": "This is a perfect action song — encourage clapping, stomping, and cheering in all three languages!",
+      "energy": "action",
+      "bpm": 116,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "👏",
+        "words": {
+          "it": "batti le mani",
+          "zh": "拍拍手",
+          "en": "clap your hands"
+        },
+        "romanization": {
+          "zh": "pāi pāi shǒu"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Se sei felice",
+          "zh": "如果感到幸福",
+          "en": "If you're happy"
+        },
+        "carryRomanization": {
+          "zh": "rú guǒ gǎn dào xìng fú"
+        },
+        "meaning": "Pair a feeling with an action — clap when happy, stomp when excited."
+      }
     },
     {
       "id": "head-shoulders",
@@ -1055,7 +1160,36 @@
           "en": "Touch your head! Touch your toes! 🤸"
         }
       },
-      "parentNote": "Great for body part vocabulary in all three languages. Speed up each round for extra fun!"
+      "parentNote": "Great for body part vocabulary in all three languages. Speed up each round for extra fun!",
+      "energy": "action",
+      "bpm": 120,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🧒",
+        "words": {
+          "it": "testa",
+          "zh": "头",
+          "en": "head"
+        },
+        "romanization": {
+          "zh": "tóu"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "testa, spalle",
+          "zh": "头, 肩膀",
+          "en": "head, shoulders"
+        },
+        "carryRomanization": {
+          "zh": "tóu, jiān bǎng"
+        },
+        "meaning": "Touch each body part as you name it — great for learning body words."
+      }
     },
     {
       "id": "happy-birthday",
@@ -1217,7 +1351,36 @@
           "en": "Blow out the candles! 🎂"
         }
       },
-      "parentNote": "A universal celebration song. The melody is identical in all languages — only the words change!"
+      "parentNote": "A universal celebration song. The melody is identical in all languages — only the words change!",
+      "energy": "playful",
+      "bpm": 100,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🎂",
+        "words": {
+          "it": "buon compleanno",
+          "zh": "生日快乐",
+          "en": "happy birthday"
+        },
+        "romanization": {
+          "zh": "shēng rì kuài lè"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Tanti auguri",
+          "zh": "生日快乐",
+          "en": "Happy birthday"
+        },
+        "carryRomanization": {
+          "zh": "shēng rì kuài lè"
+        },
+        "meaning": "Sing it at any celebration — same tune in all three languages."
+      }
     },
     {
       "id": "row-your-boat",
@@ -1475,7 +1638,36 @@
           "en": "Pretend to row a boat! ⛵"
         }
       },
-      "parentNote": "This works wonderfully as a round (canon). Try singing it together with a slight delay!"
+      "parentNote": "This works wonderfully as a round (canon). Try singing it together with a slight delay!",
+      "energy": "gentle",
+      "bpm": 104,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🚣",
+        "words": {
+          "it": "barca",
+          "zh": "小船",
+          "en": "boat"
+        },
+        "romanization": {
+          "zh": "xiǎo chuán"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Rema, rema",
+          "zh": "划划船",
+          "en": "Row, row"
+        },
+        "carryRomanization": {
+          "zh": "huá huá chuán"
+        },
+        "meaning": "Sit facing your child, hold hands, and rock back and forth like rowing."
+      }
     },
     {
       "id": "abc-song",
@@ -1679,7 +1871,25 @@
           "en": "Find the letter A! 🔤"
         }
       },
-      "parentNote": "The Italian alphabet has only 21 letters (no J, K, W, X, Y). A fun difference to point out!"
+      "parentNote": "The Italian alphabet has only 21 letters (no J, K, W, X, Y). A fun difference to point out!",
+      "energy": "playful",
+      "bpm": 110,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "l'alfabeto",
+          "zh": "字母歌",
+          "en": "the alphabet"
+        },
+        "carryRomanization": {
+          "zh": "zì mǔ gē"
+        },
+        "meaning": "Same melody as Twinkle — point out letters on signs and packages."
+      }
     },
     {
       "id": "stella-stellina",
@@ -1781,7 +1991,18 @@
           "en": "Close your eyes and make a wish ✨"
         }
       },
-      "parentNote": "One of Italy's most beloved bedtime songs. The gentle rhythm is perfect for winding down."
+      "parentNote": "One of Italy's most beloved bedtime songs. The gentle rhythm is perfect for winding down.",
+      "energy": "lullaby",
+      "bpm": 72,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Stella stellina"
+        },
+        "meaning": "A classic Italian lullaby — 'little star, the night draws near.' Perfect for winding down."
+      }
     },
     {
       "id": "batti-batti",
@@ -1991,7 +2212,18 @@
           "en": "Clap your hands louder! 👏"
         }
       },
-      "parentNote": "A classic Italian hand-clapping game. Great for motor skills and rhythm."
+      "parentNote": "A classic Italian hand-clapping game. Great for motor skills and rhythm.",
+      "energy": "action",
+      "bpm": 112,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Batti batti le manine"
+        },
+        "meaning": "An Italian clapping game — clap your baby's hands together gently to the rhythm."
+      }
     },
     {
       "id": "giro-giro-tondo",
@@ -2109,7 +2341,18 @@
           "en": "Spin around! 🔄"
         }
       },
-      "parentNote": "The Italian equivalent of 'Ring Around the Rosie.' Children hold hands and fall down at the end!"
+      "parentNote": "The Italian equivalent of 'Ring Around the Rosie.' Children hold hands and fall down at the end!",
+      "energy": "playful",
+      "bpm": 116,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Giro giro tondo"
+        },
+        "meaning": "Italy's 'Ring around the rosie' — hold hands, circle, and all fall down at the end."
+      }
     },
     {
       "id": "la-bella-lavanderina",
@@ -2195,7 +2438,18 @@
           "en": "Pretend to wash clothes! 🧼"
         }
       },
-      "parentNote": "An action song where children mime washing. The kissing at the end is always a hit!"
+      "parentNote": "An action song where children mime washing. The kissing at the end is always a hit!",
+      "energy": "action",
+      "bpm": 112,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "La bella lavanderina"
+        },
+        "meaning": "An action song — mime washing, wringing, and ironing clothes as you sing."
+      }
     },
     {
       "id": "xiao-tuzi-guaiguai",
@@ -2330,7 +2584,21 @@
           "en": "Who's knocking? Don't open! 🚪"
         }
       },
-      "parentNote": "A safety song teaching children not to open the door to strangers. The bunny is wise!"
+      "parentNote": "A safety song teaching children not to open the door to strangers. The bunny is wise!",
+      "energy": "gentle",
+      "bpm": 100,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "小兔子乖乖"
+        },
+        "carryRomanization": {
+          "zh": "xiǎo tù zi guāi guāi"
+        },
+        "meaning": "'Little rabbit, be good' — a story-song where the bunny only opens the door for mama."
+      }
     },
     {
       "id": "ba-luobo",
@@ -2460,7 +2728,21 @@
           "en": "Pull out the carrot! 🥕"
         }
       },
-      "parentNote": "A cumulative song where more and more characters help pull up a giant radish — like 'The Enormous Turnip.'"
+      "parentNote": "A cumulative song where more and more characters help pull up a giant radish — like 'The Enormous Turnip.'",
+      "energy": "action",
+      "bpm": 120,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "拔萝卜"
+        },
+        "carryRomanization": {
+          "zh": "bá luó bo"
+        },
+        "meaning": "'Pulling up the radish' — everyone joins to tug together; great for a pulling game."
+      }
     },
     {
       "id": "zhao-pengyou",
@@ -2570,7 +2852,21 @@
           "en": "Find a friend and shake hands! 🤝"
         }
       },
-      "parentNote": "A lovely friendship song. Children bow, shake hands, and declare friendship. Great for social skills."
+      "parentNote": "A lovely friendship song. Children bow, shake hands, and declare friendship. Great for social skills.",
+      "energy": "playful",
+      "bpm": 112,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "找朋友"
+        },
+        "carryRomanization": {
+          "zh": "zhǎo péng you"
+        },
+        "meaning": "'Find a friend' — a greeting song: find a friend, salute, shake hands, and smile."
+      }
     },
     {
       "id": "da-xiang",
@@ -2660,7 +2956,21 @@
           "en": "Make an elephant trunk with your arm! 🐘"
         }
       },
-      "parentNote": "A short, catchy song about why elephants have long noses. Kids love swinging their arm-trunks!"
+      "parentNote": "A short, catchy song about why elephants have long noses. Kids love swinging their arm-trunks!",
+      "energy": "playful",
+      "bpm": 108,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "大象"
+        },
+        "carryRomanization": {
+          "zh": "dà xiàng"
+        },
+        "meaning": "'The elephant' — sing about the elephant's long, long nose; point at your own nose."
+      }
     },
     {
       "id": "humpty-dumpty",
@@ -2738,7 +3048,18 @@
           "en": "Stack something tall! 🧱"
         }
       },
-      "parentNote": "One of the oldest English nursery rhymes. Great for teaching about balance and gravity!"
+      "parentNote": "One of the oldest English nursery rhymes. Great for teaching about balance and gravity!",
+      "energy": "gentle",
+      "bpm": 100,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "Humpty Dumpty"
+        },
+        "meaning": "A classic rhyme about an egg's great fall — fun to act out with a tumble."
+      }
     },
     {
       "id": "baa-baa-black-sheep",
@@ -2816,7 +3137,18 @@
           "en": "Count to three on your fingers! ✋"
         }
       },
-      "parentNote": "Same melody as Twinkle Twinkle! Try playing them back-to-back and see if your child notices."
+      "parentNote": "Same melody as Twinkle Twinkle! Try playing them back-to-back and see if your child notices.",
+      "energy": "gentle",
+      "bpm": 96,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "Baa, baa, black sheep"
+        },
+        "meaning": "Shares its melody with Twinkle and the ABC song — make the 'baa' sound together."
+      }
     },
     {
       "id": "mary-little-lamb",
@@ -2922,7 +3254,18 @@
           "en": "Find something white and fluffy! ☁️"
         }
       },
-      "parentNote": "One of the first songs ever recorded on Thomas Edison's phonograph in 1877!"
+      "parentNote": "One of the first songs ever recorded on Thomas Edison's phonograph in 1877!",
+      "energy": "gentle",
+      "bpm": 100,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "Mary had a little lamb"
+        },
+        "meaning": "A gentle story-song about a lamb that follows Mary everywhere."
+      }
     },
     {
       "id": "itsy-bitsy-spider",
@@ -3008,7 +3351,18 @@
           "en": "Do the spider crawl with your fingers! 🕷️"
         }
       },
-      "parentNote": "The finger movements for this song are nearly universal. Great for fine motor skills!"
+      "parentNote": "The finger movements for this song are nearly universal. Great for fine motor skills!",
+      "energy": "playful",
+      "bpm": 108,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "The itsy-bitsy spider"
+        },
+        "meaning": "Do the finger-walking spider climb up — a favorite hand-action rhyme."
+      }
     }
   ]
 }

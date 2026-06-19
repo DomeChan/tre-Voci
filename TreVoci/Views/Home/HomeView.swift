@@ -94,6 +94,7 @@ struct HomeView: View {
                 PlayerView(
                     song: song,
                     selectedLanguages: persistence.state.selectedLanguages.compactMap { Language(rawValue: $0) },
+                    bedtime: persistence.state.bedtimeMode,
                     onBack: { activeSheet = nil },
                     onActivityBridge: { song, elapsed in
                         activeSheet = nil

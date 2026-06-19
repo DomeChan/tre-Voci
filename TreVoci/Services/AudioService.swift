@@ -11,6 +11,11 @@ final class AudioService: NSObject {
     private(set) var progress: Double = 0
     private(set) var currentSegment: Int = 0
 
+    // MARK: - Config
+    /// When true, transitions get a longer, calmer gap and the final verse
+    /// gently fades down — for winding a child toward sleep. Set before `play()`.
+    var bedtime: Bool = false
+
     // MARK: - Private
     private var player: AVAudioPlayer?
     private var displayLink: CADisplayLink?
@@ -114,6 +119,7 @@ final class AudioService: NSObject {
             loadSegment(currentSegment)
         }
         player?.play()
+        applyBedtimeTaperIfNeeded()
         isPlaying = true
         startDisplayLink()
         updateNowPlaying()
@@ -149,6 +155,7 @@ final class AudioService: NSObject {
         loadSegment(index)
         if isPlaying {
             player?.play()
+            applyBedtimeTaperIfNeeded()
             updateNowPlaying()
         }
         onSegmentChange?(index)
@@ -209,6 +216,19 @@ final class AudioService: NSObject {
             player?.prepareToPlay()
         } catch {
             print("Failed to load audio: \(error)")
+        }
+    }
+
+    /// In Bedtime Mode, gently fade the final verse down so the song trails off
+    /// into quiet instead of stopping abruptly. Earlier languages stay at full
+    /// volume so the child still hears each one clearly. No-op otherwise.
+    private func applyBedtimeTaperIfNeeded() {
+        guard let player else { return }
+        let isFinalSegment = currentSegment == segments.count - 1
+        if bedtime && isFinalSegment {
+            player.setVolume(0.4, fadeDuration: max(4, player.duration))
+        } else {
+            player.volume = 1.0
         }
     }
 
@@ -295,9 +315,11 @@ extension AudioService: AVAudioPlayerDelegate {
                 currentSegment = nextSegment
                 loadSegment(nextSegment)
                 onSegmentChange?(nextSegment)
-                // Brief pause between language segments for smoother transition
-                try? await Task.sleep(for: .milliseconds(500))
+                // Pause between language segments — longer in Bedtime Mode so the
+                // hand-off feels unhurried.
+                try? await Task.sleep(for: .milliseconds(bedtime ? 1400 : 500))
                 self.player?.play()
+                applyBedtimeTaperIfNeeded()
                 updateNowPlaying()
             } else {
                 // All segments finished

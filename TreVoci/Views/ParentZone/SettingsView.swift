@@ -256,10 +256,16 @@ struct SettingsView: View {
     // MARK: - Bedtime Mode Row
 
     private var bedtimeModeRow: some View {
-        HStack {
-            Label("Bedtime Mode", systemImage: "moon.fill")
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
-                .foregroundStyle(Color.bark)
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 4) {
+                Label("Bedtime Mode", systemImage: "moon.fill")
+                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .foregroundStyle(Color.bark)
+                Text("Calm songs only, unhurried language hand-offs, a soft fade-out, and no \u{201C}one more.\u{201D}")
+                    .font(.system(size: 12, weight: .medium, design: .rounded))
+                    .foregroundStyle(Color.stone)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
             Spacer()
             Toggle("", isOn: Binding(
                 get: { persistence.state.bedtimeMode },
