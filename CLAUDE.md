@@ -29,7 +29,7 @@ Note: An `appintentsmetadataprocessor` warning appears in builds — this is sys
 - **Swift 6, SwiftUI, iOS 17+** deployment target
 - **MVVM with `@Observable`** — never use `ObservableObject`
 - **No network calls, no analytics, no tracking** — local state only via UserDefaults
-- **Portrait only**, no iPad-specific layouts
+- **Universal (iPhone + iPad)** — iPhone is portrait-only; iPad supports portrait + landscape with size-class-adaptive layouts (`readableContentWidth`, multi-column grids on regular width)
 
 ## Architecture
 
