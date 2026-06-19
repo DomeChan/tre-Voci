@@ -180,20 +180,25 @@ struct ActivityBridgeView: View {
             .accessibilityAddTraits(.isButton)
             .padding(.horizontal, 24)
 
-            // One More Song button
-            Button(action: onOneMore) {
-                Text("One More Song")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.coral)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 44)
-                    .background(Color.coral.opacity(0.12))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+            // One More Song button — hidden in Bedtime Mode, where the point is
+            // to play less and wind down, not invite another round.
+            if !persistence.state.bedtimeMode {
+                Button(action: onOneMore) {
+                    Text("One More Song")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundStyle(Color.coral)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .background(Color.coral.opacity(0.12))
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                }
+                .accessibilityLabel("Play one more song")
+                .accessibilityAddTraits(.isButton)
+                .padding(.horizontal, 24)
+                .padding(.bottom, 32)
+            } else {
+                Color.clear.frame(height: 32)
             }
-            .accessibilityLabel("Play one more song")
-            .accessibilityAddTraits(.isButton)
-            .padding(.horizontal, 24)
-            .padding(.bottom, 32)
         }
     }
 }

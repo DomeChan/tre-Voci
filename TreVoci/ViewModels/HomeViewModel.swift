@@ -28,10 +28,39 @@ final class HomeViewModel {
     }
 
     func dailyMix(for date: Date) -> [Song] {
+        // Bedtime Mode narrows the pool to calm songs (and plays fewer).
+        var pool = crossCulturalSongs
+        if persistence.state.bedtimeMode {
+            let calm = pool.filter { $0.isCalm }
+            if !calm.isEmpty { pool = calm }
+        }
+
+        // Least-heard-first: songs the child has heard least surface first, so
+        // exposure stays balanced instead of replaying the same favourites. The
+        // daily seed only breaks ties, so the order still rotates day to day.
+        let counts = playCounts()
         let seed = Calendar.current.startOfDay(for: date).hashValue
         var rng = SeededRandomNumberGenerator(seed: UInt64(bitPattern: Int64(seed)))
-        let songs = crossCulturalSongs.shuffled(using: &rng)
-        return Array(songs.prefix(sessionLength))
+        let ranked = pool
+            .map { (song: $0, tieBreak: rng.next()) }
+            .sorted { lhs, rhs in
+                let lc = counts[lhs.song.id, default: 0]
+                let rc = counts[rhs.song.id, default: 0]
+                if lc != rc { return lc < rc }
+                return lhs.tieBreak < rhs.tieBreak
+            }
+            .map(\.song)
+
+        return Array(ranked.prefix(sessionLength))
+    }
+
+    /// How many times each song has been played, from listening history.
+    private func playCounts() -> [String: Int] {
+        var counts: [String: Int] = [:]
+        for session in persistence.state.sessions {
+            counts[session.songId, default: 0] += 1
+        }
+        return counts
     }
 
     func song(byId id: String) -> Song? {
