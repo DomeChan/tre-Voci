@@ -1,19 +1,16 @@
 import SwiftUI
 
 struct CultureSection: View {
-    @Environment(\.horizontalSizeClass) private var hSize
     let title: String
     let language: Language
     let songs: [Song]
     var dimmed: Bool = false
     let onSongTap: (Song) -> Void
 
-    /// 2 columns on iPad / regular width, 1 on iPhone — so the song rows fill the
-    /// canvas instead of stacking in a single narrow column.
-    private var columns: [GridItem] {
-        let count = hSize == .regular ? 2 : 1
-        return Array(repeating: GridItem(.flexible(), spacing: 12), count: count)
-    }
+    /// Auto-fill columns by available width so the grid genuinely fills the canvas:
+    /// 1 column on iPhone, more as the iPad widens (≈3 in portrait, ≈4 in landscape) —
+    /// no fixed cap, no blank side gutters.
+    private let columns = [GridItem(.adaptive(minimum: 300), spacing: 12)]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
