@@ -34,6 +34,10 @@ struct ParentZoneView: View {
                 researchCard
                     .padding(.horizontal, 20)
 
+                // Privacy receipt
+                privacyCard
+                    .padding(.horizontal, 20)
+
                 // Settings
                 SettingsView(onReset: onReset)
                     .padding(.horizontal, 20)
@@ -284,6 +288,46 @@ struct ParentZoneView: View {
         return dayMap.keys.sorted(by: >).map { date in
             DayGroup(date: date, sessions: dayMap[date]!)
         }
+    }
+
+    // MARK: - Privacy Card
+
+    private var privacyCard: some View {
+        let lines = [
+            "This data lives only on this iPhone.",
+            "No accounts, no network calls, no tracking.",
+            "Nothing here ever leaves the device.",
+        ]
+        return VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 6) {
+                Image(systemName: "lock.shield.fill")
+                    .font(.system(size: 14))
+                    .foregroundStyle(Color.italianGreen)
+                Text("Stays on This Device")
+                    .font(.system(size: 14, weight: .black, design: .rounded))
+                    .foregroundStyle(Color.bark)
+            }
+            VStack(alignment: .leading, spacing: 6) {
+                ForEach(lines, id: \.self) { line in
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundStyle(Color.italianGreen)
+                        Text(line)
+                            .font(.system(size: 13, weight: .medium, design: .rounded))
+                            .foregroundStyle(Color.stone)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+            }
+        }
+        .padding(18)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(color: Color.black.opacity(0.04), radius: 8, y: 2)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Privacy: this data stays on this device. No accounts, no network calls, no tracking. Nothing ever leaves the device.")
     }
 }
 
