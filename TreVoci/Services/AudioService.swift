@@ -220,10 +220,15 @@ final class AudioService: NSObject {
         guard let song = currentSong else { return }
         let lang = currentSegment < segments.count ? segments[currentSegment].language : song.primaryLanguage
 
+        // Global elapsed time across all segments (lock-screen scrubber must match
+        // the in-app progress bar, which spans the whole IT→ZH→EN sequence).
+        let elapsedInPriorSegments = segmentDurations.prefix(currentSegment).reduce(0, +)
+        let globalElapsed = elapsedInPriorSegments + (player?.currentTime ?? 0)
+
         var info = [String: Any]()
         info[MPMediaItemPropertyTitle] = song.title(for: lang)
         info[MPMediaItemPropertyArtist] = "Tre Voci"
-        info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player?.currentTime ?? 0
+        info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = globalElapsed
         info[MPMediaItemPropertyPlaybackDuration] = totalDuration
         info[MPNowPlayingInfoPropertyPlaybackRate] = isPlaying ? 1.0 : 0.0
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
