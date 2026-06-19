@@ -283,6 +283,17 @@ struct SettingsView: View {
             Text("Made with \u{2764}\u{FE0F} in Dubai")
                 .font(.system(size: 11, weight: .semibold, design: .rounded))
                 .foregroundStyle(Color.mist)
+            HStack(spacing: 4) {
+                Image(systemName: "lock.shield.fill")
+                    .font(.system(size: 10, weight: .semibold))
+                Text("No tracking. No ads. No accounts. Nothing leaves your iPhone.")
+                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    .multilineTextAlignment(.center)
+            }
+            .foregroundStyle(Color.stone)
+            .padding(.top, 2)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Privacy promise: No tracking, no ads, no accounts. Nothing leaves your iPhone.")
         }
         .frame(maxWidth: .infinity)
         .padding(.top, 8)
