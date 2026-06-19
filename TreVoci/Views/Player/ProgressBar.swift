@@ -4,7 +4,7 @@ struct ProgressBar: View {
     let progress: Double
     let segmentCount: Int
     let currentSegment: Int
-    var languages: [Language] = [.it, .zh, .en]
+    var languages: [Language] = Language.all
     var onSeek: ((Double) -> Void)?
 
     @State private var isDragging = false

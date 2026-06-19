@@ -72,7 +72,7 @@ final class AudioService: NSObject {
 
     // MARK: - Playback Control
 
-    func loadSong(_ song: Song, selectedLanguages: [Language] = [.it, .zh, .en]) {
+    func loadSong(_ song: Song, selectedLanguages: [Language] = Language.all) {
         stop()
         currentSong = song
         segments = []
@@ -80,7 +80,7 @@ final class AudioService: NSObject {
 
         if song.isCrossCultural {
             // Play only selected languages, in IT → ZH → EN order
-            let playOrder: [Language] = [.it, .zh, .en].filter { selectedLanguages.contains($0) }
+            let playOrder: [Language] = Language.all.filter { selectedLanguages.contains($0) }
             for lang in playOrder {
                 if let file = song.audioFile(for: lang) {
                     segments.append((file: file, language: lang))

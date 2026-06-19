@@ -7,7 +7,7 @@ struct ActivityBridgeView: View {
 
     let song: Song
     let actualDurationSeconds: Int
-    var selectedLanguages: [Language] = [.it, .zh, .en]
+    var selectedLanguages: [Language] = Language.all
     let onHome: () -> Void
     let onOneMore: () -> Void
 

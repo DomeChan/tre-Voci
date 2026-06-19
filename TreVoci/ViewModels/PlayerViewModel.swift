@@ -50,11 +50,11 @@ final class PlayerViewModel {
 
     // MARK: - Init
 
-    init(song: Song, selectedLanguages: [Language] = [.it, .zh, .en]) {
+    init(song: Song, selectedLanguages: [Language] = Language.all) {
         self.song = song
         self.selectedLanguages = selectedLanguages
         self.currentLanguage = song.isCrossCultural
-            ? ([.it, .zh, .en].first(where: { selectedLanguages.contains($0) }) ?? song.primaryLanguage)
+            ? (Language.all.first(where: { selectedLanguages.contains($0) }) ?? song.primaryLanguage)
             : song.primaryLanguage
         audioService.loadSong(song, selectedLanguages: selectedLanguages)
         setupCallbacks()

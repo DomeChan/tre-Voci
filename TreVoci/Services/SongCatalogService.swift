@@ -31,11 +31,7 @@ final class SongCatalogService {
     }
 
     func songsByLanguage(_ language: Language) -> [Song] {
-        switch language {
-        case .it: return allSongs.filter { $0.category == .italian }
-        case .zh: return allSongs.filter { $0.category == .chinese }
-        case .en: return allSongs.filter { $0.category == .english }
-        }
+        allSongs.filter { $0.category == language.category }
     }
 
     var italianSongs: [Song] { songsByLanguage(.it) }

@@ -116,7 +116,7 @@ struct LanguageStep: View {
 #if DEBUG
 #Preview {
     LanguageStep(
-        selectedLanguages: .constant([.it, .zh, .en]),
+        selectedLanguages: .constant(Set(Language.all)),
         onNext: {}
     )
 }

@@ -8,7 +8,7 @@ struct PlayerView: View {
     let onBack: () -> Void
     let onActivityBridge: (Song, Int) -> Void
 
-    init(song: Song, selectedLanguages: [Language] = [.it, .zh, .en], onBack: @escaping () -> Void, onActivityBridge: @escaping (Song, Int) -> Void) {
+    init(song: Song, selectedLanguages: [Language] = Language.all, onBack: @escaping () -> Void, onActivityBridge: @escaping (Song, Int) -> Void) {
         self._viewModel = State(initialValue: PlayerViewModel(song: song, selectedLanguages: selectedLanguages))
         self.onBack = onBack
         self.onActivityBridge = onActivityBridge

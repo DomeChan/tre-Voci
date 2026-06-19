@@ -4,7 +4,7 @@ struct OnboardingContainer: View {
     @Environment(PersistenceService.self) private var persistence
     @State private var currentStep = 0
     @State private var childName = ""
-    @State private var selectedLanguages: Set<Language> = [.it, .zh, .en]
+    @State private var selectedLanguages: Set<Language> = Set(Language.all)
     let onComplete: () -> Void
 
     private let totalSteps = 3

@@ -4,7 +4,7 @@ struct ExposureChart: View {
     let weeklySeconds: [String: Int]
     let currentStreak: Int
     let longestStreak: Int
-    var selectedLanguages: [Language] = [.it, .zh, .en]
+    var selectedLanguages: [Language] = Language.all
 
     private var itMinutes: Double { Double(weeklySeconds["it"] ?? 0) / 60.0 }
     private var zhMinutes: Double { Double(weeklySeconds["zh"] ?? 0) / 60.0 }
