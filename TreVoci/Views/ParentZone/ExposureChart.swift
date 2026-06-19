@@ -15,6 +15,38 @@ struct ExposureChart: View {
         Double(weeklySeconds[lang.rawValue] ?? 0) / 60.0
     }
 
+    // MARK: - VoiceOver
+
+    /// One spoken description of the week's exposure across every language with
+    /// recorded data, so the chart is legible to VoiceOver instead of silent.
+    /// Iterates the same data the ring/cards use — a 2-language household reads
+    /// two languages, a 3-language one reads three. Purely additive a11y metadata.
+    private var spokenSummary: String {
+        let entries: [(name: String, minutes: Double)] = selectedLanguages.map {
+            ($0.displayName, minutes(for: $0))
+        }.filter { $0.minutes > 0 }
+
+        guard !entries.isEmpty else {
+            return "No listening recorded yet this week. The weekly goal is about \(Int(targetMinutes)) minutes per language."
+        }
+
+        let parts = entries.map { entry -> String in
+            let mins = Int(entry.minutes.rounded())
+            return "\(entry.name) \(mins) \(mins == 1 ? "minute" : "minutes")"
+        }
+        return "\(parts.joined(separator: ", ")). Weekly goal is about \(Int(targetMinutes)) minutes per language."
+    }
+
+    /// Per-card spoken value: minutes heard plus progress toward the weekly goal.
+    private func cardAccessibilityValue(minutes: Double) -> String {
+        let mins = Int(minutes.rounded())
+        let unit = mins == 1 ? "minute" : "minutes"
+        let goal = minutes >= targetMinutes
+            ? "goal reached"
+            : "\(Int((targetMinutes - minutes).rounded())) minutes to goal"
+        return "\(mins) \(unit), \(goal)"
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             // Streak banner
@@ -26,13 +58,20 @@ struct ExposureChart: View {
                 .font(.system(size: 17, weight: .black, design: .rounded))
                 .foregroundStyle(Color.bark)
 
-            // Weekly goal ring
+            // Weekly goal ring — one spoken summary so VoiceOver reads the
+            // week's per-language balance instead of leaving the ring silent.
             weeklyGoalRing
                 .frame(height: 160)
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("This week's listening exposure by language")
+                .accessibilityValue(spokenSummary)
 
             // Language breakdown cards (only selected)
             ForEach(selectedLanguages) { lang in
                 languageCard(language: lang, minutes: minutes(for: lang), role: lang.familyRole + "'s language")
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(lang.displayName)
+                    .accessibilityValue(cardAccessibilityValue(minutes: minutes(for: lang)))
             }
 
             // Tip card
