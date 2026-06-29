@@ -16,7 +16,7 @@ struct DailyMixCard: View {
             ZStack {
                 // Background gradient
                 LinearGradient(
-                    colors: [.coral, .rose, Color(hex: "9B59B6")],
+                    colors: [.coral, .rose, .plum],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )

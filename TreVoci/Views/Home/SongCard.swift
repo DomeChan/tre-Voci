@@ -23,6 +23,7 @@ struct SongCard: View {
                 Text(song.title(for: .en))
                     .font(.system(size: 15, weight: .heavy, design: .rounded))
                     .foregroundStyle(.white)
+                    .shadow(color: .black.opacity(0.25), radius: 2, y: 1)
                     .lineLimit(2)
 
                 // Subtitles (IT + ZH if cross-cultural)
@@ -41,13 +42,13 @@ struct SongCard: View {
                         }
                     }
                     .font(.system(size: 11, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.white.opacity(0.75))
+                    .foregroundStyle(.white.opacity(0.9))
                 }
 
                 // Duration
                 Text(song.formattedDuration)
                     .font(.system(size: 11, weight: .bold, design: .rounded))
-                    .foregroundStyle(.white.opacity(0.6))
+                    .foregroundStyle(.white.opacity(0.85))
             }
             .padding(16)
             .frame(width: cardWidth, height: cardHeight)
@@ -57,7 +58,7 @@ struct SongCard: View {
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
-                .overlay(Color.black.opacity(0.25))
+                .overlay(Color.black.opacity(0.32))
             )
             .clipShape(RoundedRectangle(cornerRadius: 24))
             .shadow(color: .black.opacity(0.1), radius: 8, y: 4)

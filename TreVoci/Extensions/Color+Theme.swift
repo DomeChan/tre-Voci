@@ -24,6 +24,7 @@ extension Color {
     static let rose = Color(hex: "FF6B8A")
     static let peach = Color(hex: "FFAD8F")
     static let gold = Color(hex: "FFB84D")
+    static let plum = Color(hex: "9B59B6")
 
     // MARK: - Hex Initializer
     init(hex: String) {
