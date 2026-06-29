@@ -9,6 +9,7 @@
       "familyRole": "Papà",
       "familyIcon": "🧔",
       "isRomanizable": false,
+      "readyWord": "Pronti!",
       "sectionTitle": "🇮🇹 Filastrocche Italiane"
     },
     "zh": {
@@ -19,6 +20,7 @@
       "familyRole": "Māmā",
       "familyIcon": "👩",
       "isRomanizable": true,
+      "readyWord": "准备好了!",
       "sectionTitle": "🇨🇳 中文儿歌"
     },
     "en": {
@@ -29,6 +31,7 @@
       "familyRole": "School",
       "familyIcon": "🏫",
       "isRomanizable": false,
+      "readyWord": "Ready!",
       "sectionTitle": "🇬🇧 English Nursery Rhymes"
     }
   }

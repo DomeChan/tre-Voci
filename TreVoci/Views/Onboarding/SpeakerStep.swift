@@ -2,7 +2,16 @@ import AVKit
 import SwiftUI
 
 struct SpeakerStep: View {
+    /// The family's chosen languages (registry order), used to localize the
+    /// finish button's "ready" word(s) instead of hardcoding IT/ZH.
+    var selectedLanguages: [Language] = Language.all
     let onFinish: () -> Void
+
+    /// "Pronti! · 准备好了!" — but built from whatever languages the family picked.
+    private var readyLabel: String {
+        let words = selectedLanguages.prefix(3).map(\.readyWord)
+        return words.isEmpty ? "Let's go!" : words.joined(separator: " · ")
+    }
 
     var body: some View {
         VStack(spacing: 24) {
@@ -82,7 +91,7 @@ struct SpeakerStep: View {
 
             // Finish button
             Button(action: onFinish) {
-                Text("Pronti! · 准备好了!")
+                Text(readyLabel)
                     .font(.nunito(.bold, size: 17))
                     .foregroundStyle(Color.bark)
                     .frame(maxWidth: .infinity)

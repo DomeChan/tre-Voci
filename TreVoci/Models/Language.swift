@@ -50,6 +50,8 @@ struct Language: Identifiable, Hashable, Codable {
     var isRomanizable: Bool { def.isRomanizable }
     /// Home section header. Defaults to "flag displayName" for any new language.
     var sectionTitle: String { def.sectionTitle ?? "\(flag) \(displayName)" }
+    /// A native "ready/let's go" word for the onboarding finish button.
+    var readyWord: String { def.readyWord ?? "Let's go!" }
 
     /// Every registered language, in canonical presentation order. The engine iterates
     /// this instead of a hardcoded `[.it, .zh, .en]`.
@@ -114,6 +116,8 @@ struct LanguageDef: Codable {
     let isRomanizable: Bool
     /// Optional Home section header; falls back to "flag displayName" if absent.
     var sectionTitle: String? = nil
+    /// Optional native "ready" word for the onboarding finish button.
+    var readyWord: String? = nil
 
     /// Graceful fallback for an unknown code (e.g. content present but not registered).
     /// DEBUG builds trip an assertion via `Language.def` so the orphan surfaces loudly.

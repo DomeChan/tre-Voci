@@ -4,6 +4,14 @@ struct LanguageStep: View {
     @Binding var selectedLanguages: Set<Language>
     let onNext: () -> Void
 
+    private let catalog = SongCatalogService()
+
+    /// How many songs a child would actually hear in this language (culture-
+    /// specific + any cross-cultural song that offers it). Drives honest counts.
+    private func songCount(_ language: Language) -> Int {
+        catalog.allSongs.filter { $0.audioFiles[language.code] != nil }.count
+    }
+
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
@@ -62,6 +70,8 @@ struct LanguageStep: View {
 
     private func languageRow(language: Language) -> some View {
         let isSelected = selectedLanguages.contains(language)
+        let count = songCount(language)
+        let hasContent = count > 0
 
         return Button {
             toggleLanguage(language)
@@ -82,6 +92,12 @@ struct LanguageStep: View {
                             .font(.nunito(.bold, size: 17))
                             .foregroundStyle(Color.bark)
                     }
+
+                    // Honest content count — "coming soon" when a registered
+                    // language has no real recordings yet (P10).
+                    Text(hasContent ? "\(count) songs" : "coming soon")
+                        .font(.nunito(.semiBold, size: 11))
+                        .foregroundStyle(Color.stone)
                 }
 
                 Spacer()
@@ -94,11 +110,13 @@ struct LanguageStep: View {
             .padding(.vertical, 14)
             .background(isSelected ? language.backgroundColor : Color.sand.opacity(0.3))
             .clipShape(RoundedRectangle(cornerRadius: 18))
+            .opacity(hasContent ? 1.0 : 0.5)
             .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
         }
         .buttonStyle(.plain)
+        .disabled(!hasContent)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(language.displayName), \(isSelected ? "selected" : "not selected")")
+        .accessibilityLabel("\(language.displayName), \(count) songs, \(isSelected ? "selected" : "not selected")")
         .accessibilityAddTraits(.isButton)
     }
 
