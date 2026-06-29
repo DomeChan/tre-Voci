@@ -53,6 +53,19 @@ struct Language: Identifiable, Hashable, Codable {
     /// A native "ready/let's go" word for the onboarding finish button.
     var readyWord: String { def.readyWord ?? "Let's go!" }
 
+    /// Whether the language is written in Latin script. Nunito (the brand font) is
+    /// Latin-only, so non-Latin languages (中文, العربية…) must render with the
+    /// system font, which carries the right glyphs. Defaults true.
+    var usesLatinScript: Bool { def.latinScript ?? true }
+    /// Right-to-left script (Arabic, Hebrew…). Drives text alignment / layout direction.
+    var isRTL: Bool { def.rtl ?? false }
+
+    /// Brand font for Latin languages; system font (with full glyph coverage) for
+    /// non-Latin scripts. Use for any text rendered in this language's own script.
+    func font(weight: NunitoWeight, size: CGFloat) -> Font {
+        usesLatinScript ? .nunito(weight, size: size) : .system(size: size, weight: weight.systemWeight)
+    }
+
     /// Every registered language, in canonical presentation order. The engine iterates
     /// this instead of a hardcoded `[.it, .zh, .en]`.
     static let all: [Language] = registryOrder.map(Language.init(code:))
@@ -118,6 +131,11 @@ struct LanguageDef: Codable {
     var sectionTitle: String? = nil
     /// Optional native "ready" word for the onboarding finish button.
     var readyWord: String? = nil
+    /// Latin script? Defaults true; set false for 中文/العربية so they render with
+    /// the system font instead of the Latin-only Nunito.
+    var latinScript: Bool? = nil
+    /// Right-to-left script (Arabic, Hebrew…). Defaults false.
+    var rtl: Bool? = nil
 
     /// Graceful fallback for an unknown code (e.g. content present but not registered).
     /// DEBUG builds trip an assertion via `Language.def` so the orphan surfaces loudly.

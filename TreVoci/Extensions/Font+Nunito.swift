@@ -9,6 +9,21 @@ enum NunitoWeight: String {
     case bold = "Nunito-Bold"
     case extraBold = "Nunito-ExtraBold"
     case black = "Nunito-Black"
+
+    /// Closest system `Font.Weight`, for non-Latin scripts that fall back to the
+    /// system font (which Nunito can't render).
+    var systemWeight: Font.Weight {
+        switch self {
+        case .extraLight: return .ultraLight
+        case .light: return .light
+        case .regular: return .regular
+        case .medium: return .medium
+        case .semiBold: return .semibold
+        case .bold: return .bold
+        case .extraBold: return .heavy
+        case .black: return .black
+        }
+    }
 }
 
 extension Font {

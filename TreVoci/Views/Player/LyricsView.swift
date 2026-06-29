@@ -5,14 +5,14 @@ struct LyricsView: View {
     let language: Language
 
     private var fontSize: CGFloat {
-        language == .zh ? 24 : 20
+        language.usesLatinScript ? 20 : 24   // non-Latin scripts read better a touch larger
     }
 
     var body: some View {
         Text(text)
-            .font(language == .zh
-                  ? .system(size: fontSize, weight: .bold)
-                  : .nunito(.extraBold, size: fontSize))
+            // Script-aware: Nunito for Latin, system font for 中文/العربية (glyph coverage).
+            .font(language.font(weight: .extraBold, size: fontSize))
+            .environment(\.layoutDirection, language.isRTL ? .rightToLeft : .leftToRight)
             .foregroundStyle(language.primaryColor)
             .multilineTextAlignment(.center)
             .lineLimit(3)

@@ -1,5 +1,5 @@
 {
-  "order": ["it", "zh", "en", "fr", "es", "de"],
+  "order": ["it", "zh", "en", "fr", "es", "de", "ar"],
   "languages": {
     "it": {
       "displayName": "Italiano",
@@ -20,6 +20,7 @@
       "familyRole": "Māmā",
       "familyIcon": "👩",
       "isRomanizable": true,
+      "latinScript": false,
       "readyWord": "准备好了!",
       "sectionTitle": "🇨🇳 中文儿歌"
     },
@@ -66,6 +67,19 @@
       "isRomanizable": false,
       "readyWord": "Los geht's!",
       "sectionTitle": "🇩🇪 Kinderlieder"
+    },
+    "ar": {
+      "displayName": "العربية",
+      "flag": "🇸🇦",
+      "primaryHex": "1F7A5C",
+      "backgroundHex": "EAF4EF",
+      "familyRole": "Jadd",
+      "familyIcon": "🧑",
+      "isRomanizable": true,
+      "latinScript": false,
+      "rtl": true,
+      "readyWord": "هيا بنا!",
+      "sectionTitle": "🇸🇦 أناشيد الأطفال"
     }
   }
 }
