@@ -13,12 +13,14 @@
       "titles": {
         "it": "Fra Martino",
         "zh": "两只老虎",
-        "en": "Are You Sleeping"
+        "en": "Are You Sleeping",
+        "fr": "Frère Jacques"
       },
       "audioFiles": {
         "it": "cross-cultural/frere-jacques-it.m4a",
         "zh": "cross-cultural/frere-jacques-zh.m4a",
-        "en": "cross-cultural/frere-jacques-en.m4a"
+        "en": "cross-cultural/frere-jacques-en.m4a",
+        "fr": "cross-cultural/frere-jacques-fr.m4a"
       },
       "lyrics": {
         "it": [
@@ -186,6 +188,40 @@
             "time": 72.4,
             "text": "Rise and shine, rise and shine!"
           }
+        ],
+        "fr": [
+          {
+            "time": 0.3,
+            "text": "Frère Jacques, Frère Jacques,"
+          },
+          {
+            "time": 6.8,
+            "text": "Dormez-vous? Dormez-vous?"
+          },
+          {
+            "time": 10.4,
+            "text": "Sonnez les matines, sonnez les matines,"
+          },
+          {
+            "time": 12.4,
+            "text": "Din din don, din din don."
+          },
+          {
+            "time": 21.0,
+            "text": "Frère Jacques, Frère Jacques,"
+          },
+          {
+            "time": 27.5,
+            "text": "Dormez-vous? Dormez-vous?"
+          },
+          {
+            "time": 31.1,
+            "text": "Sonnez les matines, sonnez les matines,"
+          },
+          {
+            "time": 33.1,
+            "text": "Din din don, din din don."
+          }
         ]
       },
       "activity": {
@@ -202,7 +238,8 @@
       "recordingSource": {
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
-        "en": "Super Simple Songs"
+        "en": "Super Simple Songs",
+        "fr": "Monde des Titounis"
       },
       "parentExtension": {
         "carryPhrase": {
