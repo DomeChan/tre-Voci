@@ -28,11 +28,11 @@ struct ParentGateView: View {
                 }
 
                 Text("Parent Zone")
-                    .font(.system(size: 24, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 24))
                     .foregroundStyle(Color.bark)
 
                 Text("Hold the button for 3 seconds")
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 14))
                     .foregroundStyle(Color.stone)
 
                 // Hold-to-unlock button
@@ -90,7 +90,7 @@ struct ParentGateView: View {
                         Image(systemName: "arrow.left")
                             .font(.system(size: 12, weight: .semibold))
                         Text("Back to songs")
-                            .font(.system(size: 14, weight: .semibold, design: .rounded))
+                            .font(.nunito(.semiBold, size: 14))
                     }
                     .foregroundStyle(Color.stone)
                 }

@@ -15,7 +15,7 @@ struct CultureSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)
 
@@ -38,7 +38,7 @@ struct CultureSection: View {
                     Image(systemName: "eye.slash")
                         .font(.system(size: 10))
                     Text("Not in your selection")
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                 }
                 .foregroundStyle(Color.stone)
                 .padding(.horizontal, 20)
@@ -57,11 +57,11 @@ struct CultureSection: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(song.title(for: language))
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 15))
                     .foregroundStyle(Color.bark)
 
                 Text(song.formattedDuration)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 12))
                     .foregroundStyle(Color.stone)
             }
 

@@ -53,14 +53,14 @@ struct PlayerView: View {
 
                 // Title
                 Text(viewModel.currentTitle)
-                    .font(.system(size: 22, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 22))
                     .foregroundStyle(.white)
                     .padding(.top, 12)
                     .animation(.easeOut(duration: 0.3), value: viewModel.currentLanguage)
 
                 // Melody origin subtitle
                 Text(viewModel.song.melodyOrigin)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 12))
                     .foregroundStyle(.white.opacity(0.6))
                     .padding(.top, 4)
 
@@ -152,11 +152,11 @@ struct PlayerView: View {
 
             VStack(alignment: .leading, spacing: 1) {
                 Text(word)
-                    .font(.system(size: 15, weight: .heavy, design: .rounded))
+                    .font(.nunito(.extraBold, size: 15))
                     .foregroundStyle(.white)
                 if let rom = viewModel.echoWordRomanization {
                     Text(rom)
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                         .foregroundStyle(.white.opacity(0.7))
                 }
             }
@@ -199,7 +199,7 @@ struct PlayerView: View {
                     Image(systemName: viewModel.outputRouteSymbol)
                         .font(.system(size: 10))
                     Text(viewModel.outputRouteName)
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                         .lineLimit(1)
                 }
                 .foregroundStyle(.white.opacity(0.7))
@@ -269,7 +269,7 @@ struct PlayerView: View {
             HStack(spacing: 6) {
                 Text(viewModel.toastLanguage.flag)
                 Text("Now playing in \(viewModel.toastLanguage.displayName)")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 13))
                     .foregroundStyle(.white)
             }
             .padding(.horizontal, 16)

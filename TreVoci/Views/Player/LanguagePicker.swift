@@ -15,7 +15,7 @@ struct LanguagePicker: View {
                         Text(language.flag)
                             .font(.system(size: 14))
                         Text(language.displayName)
-                            .font(.system(size: 13, weight: .bold, design: .rounded))
+                            .font(.nunito(.bold, size: 13))
                     }
                     .padding(.horizontal, 14)
                     .padding(.vertical, 8)

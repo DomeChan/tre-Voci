@@ -12,7 +12,7 @@ struct LyricsView: View {
         Text(text)
             .font(language == .zh
                   ? .system(size: fontSize, weight: .bold)
-                  : .system(size: fontSize, weight: .heavy, design: .rounded))
+                  : .nunito(.extraBold, size: fontSize))
             .foregroundStyle(language.primaryColor)
             .multilineTextAlignment(.center)
             .lineLimit(3)

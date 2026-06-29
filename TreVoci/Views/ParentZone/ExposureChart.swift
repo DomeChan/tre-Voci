@@ -55,7 +55,7 @@ struct ExposureChart: View {
             }
 
             Text("This Week's Exposure")
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
 
             // Weekly goal ring — one spoken summary so VoiceOver reads the
@@ -91,11 +91,11 @@ struct ExposureChart: View {
                 .font(.system(size: 22))
             VStack(alignment: .leading, spacing: 2) {
                 Text("\(currentStreak)-day streak")
-                    .font(.system(size: 16, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 16))
                     .foregroundStyle(Color.bark)
                 if longestStreak > currentStreak {
                     Text("Best: \(longestStreak) days")
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                         .foregroundStyle(Color.stone)
                 }
             }
@@ -143,10 +143,10 @@ struct ExposureChart: View {
                 // Center text
                 VStack(spacing: 2) {
                     Text("\(Int(totalMinutes))")
-                        .font(.system(size: 28, weight: .black, design: .rounded))
+                        .font(.nunito(.black, size: 28))
                         .foregroundStyle(Color.bark)
                     Text("min total")
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                         .foregroundStyle(Color.stone)
                 }
             }
@@ -172,10 +172,10 @@ struct ExposureChart: View {
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(language.displayName)
-                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 14))
                     .foregroundStyle(Color.bark)
                 Text(role)
-                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 11))
                     .foregroundStyle(Color.stone)
             }
 
@@ -183,10 +183,10 @@ struct ExposureChart: View {
 
             VStack(alignment: .trailing, spacing: 3) {
                 Text("\(Int(minutes)) min")
-                    .font(.system(size: 14, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 14))
                     .foregroundStyle(language.primaryColor)
                 Text("of \(Int(targetMinutes)) min goal")
-                    .font(.system(size: 10, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 10))
                     .foregroundStyle(Color.stone)
             }
         }
@@ -213,7 +213,7 @@ struct ExposureChart: View {
             Text("\u{1F4A1}")
                 .font(.system(size: 20))
             Text(tip)
-                .font(.system(size: 13, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 13))
                 .foregroundStyle(Color.bark)
                 .fixedSize(horizontal: false, vertical: true)
         }

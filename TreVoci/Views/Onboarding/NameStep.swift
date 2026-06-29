@@ -15,13 +15,13 @@ struct NameStep: View {
 
             // Title
             Text("What's your little one's name?")
-                .font(.system(size: 26, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 26))
                 .foregroundStyle(Color.bark)
                 .multilineTextAlignment(.center)
 
             // Text field
             TextField("e.g. Sofia", text: $childName)
-                .font(.system(size: 20, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 20))
                 .foregroundStyle(Color.bark)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
@@ -35,7 +35,7 @@ struct NameStep: View {
 
             // Privacy note
             Text("Never sent anywhere. Stored only on this device.")
-                .font(.system(size: 12, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 12))
                 .foregroundStyle(Color.mist)
 
             Spacer()
@@ -43,7 +43,7 @@ struct NameStep: View {
             // Next button
             Button(action: onNext) {
                 Text("Next")
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 17))
                     .foregroundStyle(Color.bark)
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)

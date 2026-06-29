@@ -160,11 +160,11 @@ struct HomeView: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(greeting)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 14))
                     .foregroundStyle(Color.stone)
 
                 Text("\(persistence.state.displayName)'s Songs")
-                    .font(.system(size: 26, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 26))
                     .foregroundStyle(Color.bark)
             }
 
@@ -189,7 +189,7 @@ struct HomeView: View {
                 Image(systemName: routeMonitor.iconName)
                     .font(.system(size: 10))
                 Text(routeMonitor.routeName)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 12))
             }
             .foregroundStyle(Color.stone)
             .padding(.horizontal, 12)
@@ -212,7 +212,7 @@ struct HomeView: View {
     private var crossCulturalSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("\u{1F30D} Same Song, Three Worlds")
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)
 

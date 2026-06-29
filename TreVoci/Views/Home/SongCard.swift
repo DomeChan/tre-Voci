@@ -21,7 +21,7 @@ struct SongCard: View {
 
                 // English title
                 Text(song.title(for: .en))
-                    .font(.system(size: 15, weight: .heavy, design: .rounded))
+                    .font(.nunito(.extraBold, size: 15))
                     .foregroundStyle(.white)
                     .shadow(color: .black.opacity(0.25), radius: 2, y: 1)
                     .lineLimit(2)
@@ -41,13 +41,13 @@ struct SongCard: View {
                                 .lineLimit(1)
                         }
                     }
-                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 11))
                     .foregroundStyle(.white.opacity(0.9))
                 }
 
                 // Duration
                 Text(song.formattedDuration)
-                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 11))
                     .foregroundStyle(.white.opacity(0.85))
             }
             .padding(16)

@@ -35,11 +35,11 @@ struct DonationView: View {
     private var header: some View {
         HStack {
             Button("Done") { dismiss() }
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 15))
                 .foregroundStyle(Color.coral)
             Spacer()
             Text("Support the Maker")
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
             Spacer()
             Color.clear.frame(width: 50, height: 1)
@@ -52,10 +52,10 @@ struct DonationView: View {
                 .font(.system(size: 36))
                 .foregroundStyle(Color.coral)
             Text("A labor of love")
-                .font(.system(size: 20, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 20))
                 .foregroundStyle(Color.bark)
             Text("Tre Voci is built by one dad for his trilingual toddler \u{2014} no ads, no tracking, no subscriptions. Every song stays free, forever. If it's brought some calm to your home, a tip helps cover the Apple Developer fee and re-mastering the audio. Completely optional \u{2014} ignore this and you lose nothing.")
-                .font(.system(size: 14, weight: .medium, design: .rounded))
+                .font(.nunito(.medium, size: 14))
                 .foregroundStyle(Color.stone)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
@@ -74,7 +74,7 @@ struct DonationView: View {
             VStack(spacing: 10) {
                 ProgressView()
                 Text("Loading\u{2026}")
-                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .font(.nunito(.medium, size: 13))
                     .foregroundStyle(Color.stone)
             }
             .frame(maxWidth: .infinity)
@@ -93,7 +93,7 @@ struct DonationView: View {
                 }
                 if let err = store.purchaseError {
                     Text(err)
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .font(.nunito(.medium, size: 12))
                         .foregroundStyle(Color.stone)
                 }
             }
@@ -108,15 +108,15 @@ struct DonationView: View {
                 .font(.system(size: 32))
                 .foregroundStyle(Color.mist)
             Text("Tips need a connection")
-                .font(.system(size: 16, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 16))
                 .foregroundStyle(Color.bark)
             Text("The App Store isn't reachable right now, so tips are paused. Nothing's wrong \u{2014} the app works fully offline, and your support can wait. Try again anytime.")
-                .font(.system(size: 13, weight: .medium, design: .rounded))
+                .font(.nunito(.medium, size: 13))
                 .foregroundStyle(Color.stone)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
             Button("Try again") { Task { await store.loadProducts() } }
-                .font(.system(size: 14, weight: .bold, design: .rounded))
+                .font(.nunito(.bold, size: 14))
                 .foregroundStyle(Color.coral)
                 .frame(minHeight: 44)
         }
@@ -130,16 +130,16 @@ struct DonationView: View {
                 .font(.system(size: 40))
                 .foregroundStyle(Color.coral)
             Text("Grazie \u{00B7} \u{8C22}\u{8C22} \u{00B7} Thank you")
-                .font(.system(size: 22, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 22))
                 .foregroundStyle(Color.bark)
                 .multilineTextAlignment(.center)
             Text("Truly \u{2014} this keeps the lights on. Now go sing something.")
-                .font(.system(size: 14, weight: .medium, design: .rounded))
+                .font(.nunito(.medium, size: 14))
                 .foregroundStyle(Color.stone)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
             Button("Close") { dismiss() }
-                .font(.system(size: 15, weight: .bold, design: .rounded))
+                .font(.nunito(.bold, size: 15))
                 .foregroundStyle(Color.coral)
                 .frame(minHeight: 44)
         }
@@ -149,7 +149,7 @@ struct DonationView: View {
 
     private var footer: some View {
         Text("Payments are handled by Apple. Tre Voci never sees your card, and collects nothing about you.")
-            .font(.system(size: 11, weight: .semibold, design: .rounded))
+            .font(.nunito(.semiBold, size: 11))
             .foregroundStyle(Color.stone)
             .multilineTextAlignment(.center)
             .fixedSize(horizontal: false, vertical: true)
@@ -173,10 +173,10 @@ private struct TipTierCard: View {
                     .font(.system(size: 28))
                 VStack(alignment: .leading, spacing: 2) {
                     Text(product.displayName)
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 15))
                         .foregroundStyle(Color.bark)
                     Text(blurb)
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .font(.nunito(.medium, size: 12))
                         .foregroundStyle(Color.stone)
                 }
                 Spacer()
@@ -185,7 +185,7 @@ private struct TipTierCard: View {
                         ProgressView()
                     } else {
                         Text(product.displayPrice)
-                            .font(.system(size: 15, weight: .black, design: .rounded))
+                            .font(.nunito(.black, size: 15))
                             .foregroundStyle(Color.bark)
                     }
                 }

@@ -35,17 +35,17 @@ struct DailyMixCard: View {
                 // Content
                 VStack(alignment: .leading, spacing: 12) {
                     Text("🎵 Daily Mix")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 12))
                         .foregroundStyle(.white.opacity(0.8))
                         .textCase(.uppercase)
                         .tracking(1.5)
 
                     Text("Today's\nAdventure")
-                        .font(.system(size: 28, weight: .black, design: .rounded))
+                        .font(.nunito(.black, size: 28))
                         .foregroundStyle(.white)
 
                     Text("\(songCount) Songs · 3 Languages · ~\(duration / 60) min")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 14))
                         .foregroundStyle(.white.opacity(0.85))
 
                     // Tracklist preview — catalog glyphs for today's songs.
@@ -71,7 +71,7 @@ struct DailyMixCard: View {
                             Image(systemName: "play.fill")
                                 .font(.system(size: 16))
                             Text("Play Mix")
-                                .font(.system(size: 16, weight: .bold, design: .rounded))
+                                .font(.nunito(.bold, size: 16))
                         }
                         .foregroundStyle(Color.coral)
                         .padding(.horizontal, 24)

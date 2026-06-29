@@ -140,7 +140,7 @@ struct ProgressBar: View {
                         Text(lang.flag)
                             .font(.system(size: 10))
                         Text(lang.rawValue.uppercased())
-                            .font(.system(size: 10, weight: .bold, design: .rounded))
+                            .font(.nunito(.bold, size: 10))
                             .foregroundStyle(i == currentSegment ? lang.primaryColor : Color.white.opacity(0.5))
                     }
                     if i < segmentCount - 1 {

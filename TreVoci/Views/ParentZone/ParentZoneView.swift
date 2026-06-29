@@ -78,10 +78,10 @@ struct ParentZoneView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Support the Maker")
-                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .font(.nunito(.black, size: 14))
                         .foregroundStyle(Color.bark)
                     Text("Tip the dad who built this \u{00B7} everything stays free")
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .font(.nunito(.medium, size: 12))
                         .foregroundStyle(Color.stone)
                 }
                 Spacer()
@@ -110,10 +110,10 @@ struct ParentZoneView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Pronunciation Guide")
-                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .font(.nunito(.black, size: 14))
                         .foregroundStyle(Color.bark)
                     Text("Lyrics with pinyin · tap a line to hear it")
-                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .font(.nunito(.medium, size: 12))
                         .foregroundStyle(Color.stone)
                 }
                 Spacer()
@@ -140,7 +140,7 @@ struct ParentZoneView: View {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 14, weight: .semibold))
                     Text("Home")
-                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 15))
                 }
                 .foregroundStyle(Color.coral)
             }
@@ -150,7 +150,7 @@ struct ParentZoneView: View {
             Spacer()
 
             Text("Parent Zone")
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
 
             Spacer()
@@ -177,7 +177,7 @@ struct ParentZoneView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(Color.coral)
                 Text("Today")
-                    .font(.system(size: 15, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 15))
                     .foregroundStyle(Color.bark)
             }
 
@@ -185,20 +185,20 @@ struct ParentZoneView: View {
                 // Songs played
                 VStack(spacing: 4) {
                     Text("\(todaySessions.count)")
-                        .font(.system(size: 24, weight: .black, design: .rounded))
+                        .font(.nunito(.black, size: 24))
                         .foregroundStyle(Color.bark)
                     Text("songs")
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                         .foregroundStyle(Color.stone)
                 }
 
                 // Minutes
                 VStack(spacing: 4) {
                     Text("\(todayMinutes)")
-                        .font(.system(size: 24, weight: .black, design: .rounded))
+                        .font(.nunito(.black, size: 24))
                         .foregroundStyle(Color.bark)
                     Text("min")
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                         .foregroundStyle(Color.stone)
                 }
 
@@ -221,19 +221,19 @@ struct ParentZoneView: View {
             // Motivational copy
             if todaySessions.isEmpty {
                 Text("No songs yet today.")
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 12))
                     .foregroundStyle(Color.stone)
             } else {
                 let missing = selectedLangs.filter { !langsToday.contains($0.rawValue) }
                 if missing.isEmpty {
                     let langCount = selectedLangs.count == 2 ? "Both" : "All \(selectedLangs.count)"
                     Text("\(langCount) languages heard today.")
-                        .font(.system(size: 12, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 12))
                         .foregroundStyle(Color.italianGreen)
                 } else {
                     let names = missing.map(\.displayName).joined(separator: " & ")
                     Text("Not heard yet today: \(names).")
-                        .font(.system(size: 12, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 12))
                         .foregroundStyle(Color.stone)
                 }
             }
@@ -255,13 +255,13 @@ struct ParentZoneView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(Color.englishBlue)
                 Text("Recent Sessions")
-                    .font(.system(size: 15, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 15))
                     .foregroundStyle(Color.bark)
             }
 
             if grouped.isEmpty {
                 Text("No sessions recorded yet.")
-                    .font(.system(size: 13, weight: .medium, design: .rounded))
+                    .font(.nunito(.medium, size: 13))
                     .foregroundStyle(Color.stone)
                     .padding(.vertical, 8)
             } else {
@@ -285,12 +285,12 @@ struct ParentZoneView: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(day.label)
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 13))
                     .foregroundStyle(Color.bark)
                 let langs = Set(day.sessions.flatMap(\.languagesHeard))
                 let flags = Language.allCases.filter { langs.contains($0.rawValue) }.map(\.flag).joined(separator: " ")
                 Text("\(day.sessions.count) song\(day.sessions.count == 1 ? "" : "s") \u{00B7} \(day.totalMinutes) min \u{00B7} \(flags)")
-                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 11))
                     .foregroundStyle(Color.stone)
             }
 
@@ -317,11 +317,11 @@ struct ParentZoneView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(Color.englishBlue)
                 Text("Research Corner")
-                    .font(.system(size: 14, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 14))
                     .foregroundStyle(Color.bark)
             }
             Text(tips[tipIndex])
-                .font(.system(size: 13, weight: .medium, design: .rounded))
+                .font(.nunito(.medium, size: 13))
                 .foregroundStyle(Color.stone)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -387,7 +387,7 @@ struct ParentZoneView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(Color.italianGreen)
                 Text("Stays on This Device")
-                    .font(.system(size: 14, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 14))
                     .foregroundStyle(Color.bark)
             }
             VStack(alignment: .leading, spacing: 6) {
@@ -397,7 +397,7 @@ struct ParentZoneView: View {
                             .font(.system(size: 11, weight: .bold))
                             .foregroundStyle(Color.italianGreen)
                         Text(line)
-                            .font(.system(size: 13, weight: .medium, design: .rounded))
+                            .font(.nunito(.medium, size: 13))
                             .foregroundStyle(Color.stone)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -415,7 +415,7 @@ struct ParentZoneView: View {
                     Image(systemName: showStoredData ? "chevron.down" : "chevron.right")
                         .font(.system(size: 11, weight: .bold))
                     Text(showStoredData ? "Hide what's stored" : "See exactly what's stored")
-                        .font(.system(size: 13, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 13))
                 }
                 .foregroundStyle(Color.italianGreen)
                 .frame(minHeight: 44, alignment: .leading)
@@ -425,7 +425,7 @@ struct ParentZoneView: View {
             if showStoredData {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(storedSummary)
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 12))
                         .foregroundStyle(Color.bark)
                     ScrollView {
                         Text(storedJSON)
@@ -495,7 +495,7 @@ struct PronunciationGuideView: View {
                             Text(song.icon).font(.system(size: 26))
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(song.title(for: song.primaryLanguage))
-                                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                                    .font(.nunito(.bold, size: 15))
                                     .foregroundStyle(Color.bark)
                                 Text(song.availableLanguages.map(\.flag).joined(separator: " "))
                                     .font(.system(size: 13))
@@ -530,7 +530,7 @@ private struct SongLyricsView: View {
                         HStack(spacing: 6) {
                             Text(lang.flag)
                             Text(lang.displayName)
-                                .font(.system(size: 15, weight: .black, design: .rounded))
+                                .font(.nunito(.black, size: 15))
                                 .foregroundStyle(lang.primaryColor)
                         }
 
@@ -553,7 +553,7 @@ private struct SongLyricsView: View {
                                             .multilineTextAlignment(.leading)
                                         if let r = line.romanization {
                                             Text(r)
-                                                .font(.system(size: 13, weight: .medium, design: .rounded))
+                                                .font(.nunito(.medium, size: 13))
                                                 .foregroundStyle(Color.stone)
                                                 .italic()
                                                 .multilineTextAlignment(.leading)
@@ -594,12 +594,12 @@ private struct SongLyricsView: View {
                         .font(.system(size: 13))
                         .foregroundStyle(Color.coral)
                     Text("Carry it into the day")
-                        .font(.system(size: 15, weight: .black, design: .rounded))
+                        .font(.nunito(.black, size: 15))
                         .foregroundStyle(Color.bark)
                 }
 
                 Text(ext.meaning)
-                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                    .font(.nunito(.medium, size: 14))
                     .foregroundStyle(Color.stone)
                     .fixedSize(horizontal: false, vertical: true)
 
@@ -609,11 +609,11 @@ private struct SongLyricsView: View {
                             Text(lang.flag)
                             VStack(alignment: .leading, spacing: 1) {
                                 Text(phrase)
-                                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                                    .font(.nunito(.bold, size: 15))
                                     .foregroundStyle(Color.bark)
                                 if let rom = ext.romanization(for: lang) {
                                     Text(rom)
-                                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                                        .font(.nunito(.medium, size: 12))
                                         .foregroundStyle(Color.stone)
                                         .italic()
                                 }
@@ -642,7 +642,7 @@ private struct SongLyricsView: View {
                     Image(systemName: "music.note.list")
                         .font(.system(size: 11))
                     Text(line)
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .font(.nunito(.semiBold, size: 11))
                         .multilineTextAlignment(.leading)
                 }
                 .foregroundStyle(Color.stone)

@@ -10,12 +10,12 @@ struct LanguageStep: View {
 
             // Title
             Text("Choose at least 2 languages")
-                .font(.system(size: 24, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 24))
                 .foregroundStyle(Color.bark)
                 .multilineTextAlignment(.center)
 
             Text("but also 3 :) \u{00B7} You can always change this later")
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 14))
                 .foregroundStyle(Color.stone)
                 .multilineTextAlignment(.center)
 
@@ -32,7 +32,7 @@ struct LanguageStep: View {
                 Image(systemName: "sparkles")
                     .font(.system(size: 12))
                 Text("More languages coming soon!")
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 12))
             }
             .foregroundStyle(Color.stone)
             .padding(.horizontal, 14)
@@ -45,7 +45,7 @@ struct LanguageStep: View {
             // Next button
             Button(action: onNext) {
                 Text("Next")
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 17))
                     .foregroundStyle(Color.bark)
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
@@ -72,14 +72,14 @@ struct LanguageStep: View {
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text("\(language.familyRole) speaks")
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 12))
                         .foregroundStyle(Color.stone)
 
                     HStack(spacing: 6) {
                         Text(language.flag)
                             .font(.system(size: 18))
                         Text(language.displayName)
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .font(.nunito(.bold, size: 17))
                             .foregroundStyle(Color.bark)
                     }
                 }

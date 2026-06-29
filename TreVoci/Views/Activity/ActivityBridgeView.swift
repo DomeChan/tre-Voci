@@ -57,11 +57,11 @@ struct ActivityBridgeView: View {
 
             // Celebration header
             Text("Brava \(vm.childName)! \u{1F389}")
-                .font(.system(size: 24, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 24))
                 .foregroundStyle(Color.bark)
 
             Text("Time for a little activity!")
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 15))
                 .foregroundStyle(Color.stone)
 
             // Activity prompts card
@@ -72,7 +72,7 @@ struct ActivityBridgeView: View {
             // Done button
             Button(action: { vm.completeActivity() }) {
                 Text("Done! \u{00B7} Fatto! \u{00B7} \u{505A}\u{5B8C}\u{4E86}!")
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 17))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 52)
@@ -86,7 +86,7 @@ struct ActivityBridgeView: View {
             // Skip link
             Button(action: { vm.skipActivity() }) {
                 Text("Skip activity")
-                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 13))
                     .foregroundStyle(Color.stone)
             }
             .accessibilityLabel("Skip activity")
@@ -105,7 +105,7 @@ struct ActivityBridgeView: View {
                         Text(lang.flag)
                             .font(.system(size: 20))
                         Text(prompt)
-                            .font(.system(size: 15, weight: .medium, design: .rounded))
+                            .font(.nunito(.medium, size: 15))
                             .foregroundStyle(Color.bark)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -140,11 +140,11 @@ struct ActivityBridgeView: View {
             .animation(.spring(response: 0.5, dampingFraction: 0.6), value: vm.showConfetti)
 
             Text("Session Complete!")
-                .font(.system(size: 24, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 24))
                 .foregroundStyle(Color.bark)
 
             Text(vm.sessionSummaryText)
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 15))
                 .foregroundStyle(Color.stone)
 
             // Language badges
@@ -169,7 +169,7 @@ struct ActivityBridgeView: View {
             // Back Home button
             Button(action: onHome) {
                 Text("Back Home")
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 17))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 52)
@@ -185,7 +185,7 @@ struct ActivityBridgeView: View {
             if !persistence.state.bedtimeMode {
                 Button(action: onOneMore) {
                     Text("One More Song")
-                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 15))
                         .foregroundStyle(Color.coral)
                         .frame(maxWidth: .infinity)
                         .frame(height: 44)
