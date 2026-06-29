@@ -5,8 +5,11 @@
       "category": "cross-cultural",
       "melodyOrigin": "Frère Jacques (France, ~1780)",
       "icon": "🐯",
-      "backgroundGradient": ["#FFF3E0", "#FFE0B2"],
-      "duration": 135,
+      "backgroundGradient": [
+        "#FFF3E0",
+        "#FFE0B2"
+      ],
+      "duration": 211,
       "titles": {
         "it": "Fra Martino",
         "zh": "两只老虎",
@@ -19,22 +22,170 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Fra Martino, campanaro" },
-          { "time": 4.0, "text": "Dormi tu? Dormi tu?" },
-          { "time": 8.0, "text": "Suona le campane" },
-          { "time": 12.0, "text": "Din don dan, din don dan!" }
+          {
+            "time": 0.2,
+            "text": "Fra Martino, campanaro"
+          },
+          {
+            "time": 6.7,
+            "text": "Dormi tu? Dormi tu?"
+          },
+          {
+            "time": 10.3,
+            "text": "Suona le campane"
+          },
+          {
+            "time": 12.3,
+            "text": "Din don dan, din don dan!"
+          },
+          {
+            "time": 18.0,
+            "text": "Fra Martino, campanaro"
+          },
+          {
+            "time": 22.4,
+            "text": "Dormi tu? Dormi tu?"
+          },
+          {
+            "time": 27.0,
+            "text": "Suona le campane"
+          },
+          {
+            "time": 28.8,
+            "text": "Din don dan, din don dan!"
+          },
+          {
+            "time": 36.8,
+            "text": "Fra Martino, campanaro"
+          },
+          {
+            "time": 44.5,
+            "text": "Dormi tu? Dormi tu?"
+          },
+          {
+            "time": 52.3,
+            "text": "Suona le campane"
+          },
+          {
+            "time": 55.0,
+            "text": "Din don dan, din don dan!"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "两只老虎 两只老虎" },
-          { "time": 4.0, "text": "跑得快 跑得快" },
-          { "time": 8.0, "text": "一只没有耳朵" },
-          { "time": 12.0, "text": "一只没有尾巴" },
-          { "time": 16.0, "text": "真奇怪！" }
+          {
+            "time": 0.0,
+            "text": "两只老虎  两只老虎",
+            "romanization": "liǎng zhǐ lǎo hǔ  liǎng zhǐ lǎo hǔ"
+          },
+          {
+            "time": 5.0,
+            "text": "跑得快  跑得快",
+            "romanization": "pǎo dé kuài  pǎo dé kuài"
+          },
+          {
+            "time": 8.6,
+            "text": "一只没有耳朵  一只没有尾巴",
+            "romanization": "yī zhī méi yǒu ěr duǒ  yī zhī méi yǒu wěi ba"
+          },
+          {
+            "time": 12.5,
+            "text": "真奇怪  真奇怪",
+            "romanization": "zhēn qí guài  zhēn qí guài"
+          },
+          {
+            "time": 16.2,
+            "text": "两只老虎  两只老虎",
+            "romanization": "liǎng zhǐ lǎo hǔ  liǎng zhǐ lǎo hǔ"
+          },
+          {
+            "time": 23.9,
+            "text": "跑得快  跑得快",
+            "romanization": "pǎo dé kuài  pǎo dé kuài"
+          },
+          {
+            "time": 31.6,
+            "text": "一只没有耳朵  一只没有尾巴",
+            "romanization": "yī zhī méi yǒu ěr duǒ  yī zhī méi yǒu wěi ba"
+          },
+          {
+            "time": 35.6,
+            "text": "真奇怪  真奇怪",
+            "romanization": "zhēn qí guài  zhēn qí guài"
+          },
+          {
+            "time": 39.2,
+            "text": "两只老虎  两只老虎",
+            "romanization": "liǎng zhǐ lǎo hǔ  liǎng zhǐ lǎo hǔ"
+          },
+          {
+            "time": 46.9,
+            "text": "跑得快  跑得快",
+            "romanization": "pǎo dé kuài  pǎo dé kuài"
+          },
+          {
+            "time": 54.7,
+            "text": "一只没有耳朵  一只没有尾巴",
+            "romanization": "yī zhī méi yǒu ěr duǒ  yī zhī méi yǒu wěi ba"
+          },
+          {
+            "time": 60.6,
+            "text": "真奇怪  真奇怪",
+            "romanization": "zhēn qí guài  zhēn qí guài"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "Are you sleeping, Brother John?" },
-          { "time": 4.0, "text": "Morning bells are ringing" },
-          { "time": 8.0, "text": "Ding dang dong, ding dang dong!" }
+          {
+            "time": 0.3,
+            "text": "Here we go!"
+          },
+          {
+            "time": 7.0,
+            "text": "Are you sleeping? Are you sleeping?"
+          },
+          {
+            "time": 16.6,
+            "text": "Brother John, Brother John"
+          },
+          {
+            "time": 20.6,
+            "text": "Morning bells are ringing"
+          },
+          {
+            "time": 25.1,
+            "text": "Ding ding dong, ding ding dong"
+          },
+          {
+            "time": 32.9,
+            "text": "Are you sleeping? Are you sleeping?"
+          },
+          {
+            "time": 41.1,
+            "text": "Brother John, Brother John"
+          },
+          {
+            "time": 47.1,
+            "text": "Bluebirds are singing"
+          },
+          {
+            "time": 52.0,
+            "text": "Tweet, tweet, tweet"
+          },
+          {
+            "time": 56.2,
+            "text": "Are you sleeping? Are you sleeping?"
+          },
+          {
+            "time": 64.2,
+            "text": "Brother John, Brother John"
+          },
+          {
+            "time": 67.2,
+            "text": "The morning sun is shining"
+          },
+          {
+            "time": 72.4,
+            "text": "Rise and shine, rise and shine!"
+          }
         ]
       },
       "activity": {
@@ -45,15 +196,36 @@
           "en": "Find something that rings! 🔔"
         }
       },
-      "parentNote": "Fun fact: the Chinese version has completely different lyrics about two tigers — one with no ears, one with no tail!"
+      "parentNote": "Fun fact: the Chinese version has completely different lyrics about two tigers — one with no ears, one with no tail!",
+      "energy": "gentle",
+      "bpm": 96,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Dormi tu?",
+          "zh": "两只老虎",
+          "en": "Are you sleeping?"
+        },
+        "carryRomanization": {
+          "zh": "liǎng zhī lǎo hǔ"
+        },
+        "meaning": "A gentle nap-time question in Italian and English; the Chinese twin is the playful 'two tigers'."
+      }
     },
     {
       "id": "twinkle",
       "category": "cross-cultural",
       "melodyOrigin": "Ah! vous dirai-je, Maman (1761)",
       "icon": "⭐",
-      "backgroundGradient": ["#E8EAF6", "#C5CAE9"],
-      "duration": 110,
+      "backgroundGradient": [
+        "#E8EAF6",
+        "#C5CAE9"
+      ],
+      "duration": 219,
       "titles": {
         "it": "Brilla Brilla Stellina",
         "zh": "小星星",
@@ -66,22 +238,157 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Brilla brilla la stellina" },
-          { "time": 4.5, "text": "Su nel cielo piccolina" },
-          { "time": 9.0, "text": "Brilla brilla la stellina" },
-          { "time": 13.5, "text": "Su nel cielo piccolina" }
+          {
+            "time": 0.3,
+            "text": "Brilla, brilla la stellina"
+          },
+          {
+            "time": 15.4,
+            "text": "Su nel cielo piccolina"
+          },
+          {
+            "time": 20.9,
+            "text": "Brilla, brilla sopra noi"
+          },
+          {
+            "time": 26.4,
+            "text": "Mi domando tu chi sei"
+          },
+          {
+            "time": 31.9,
+            "text": "Brilla, brilla la stellina"
+          },
+          {
+            "time": 36.9,
+            "text": "Su nel cielo piccolina"
+          },
+          {
+            "time": 45.4,
+            "text": "Quando il sole è tramontato"
+          },
+          {
+            "time": 48.8,
+            "text": "Niente più è luminoso"
+          },
+          {
+            "time": 56.8,
+            "text": "Brilla, brilla mia stellina"
+          },
+          {
+            "time": 62.2,
+            "text": "Che la notte si avvicina"
+          },
+          {
+            "time": 68.1,
+            "text": "Vieni, vieni mia stellina"
+          },
+          {
+            "time": 73.2,
+            "text": "Su nel cielo piccolina"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "一闪一闪亮晶晶" },
-          { "time": 4.5, "text": "满天都是小星星" },
-          { "time": 9.0, "text": "挂在天上放光明" },
-          { "time": 13.5, "text": "好像许多小眼睛" }
+          {
+            "time": 0.0,
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
+          },
+          {
+            "time": 12.8,
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
+          },
+          {
+            "time": 17.0,
+            "text": "挂在天上放光明",
+            "romanization": "guà zài tiān shàng fàng guāng míng"
+          },
+          {
+            "time": 21.2,
+            "text": "好像许多小眼睛",
+            "romanization": "hǎo xiàng xǔ duō xiǎo yǎn jīng"
+          },
+          {
+            "time": 25.4,
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
+          },
+          {
+            "time": 29.5,
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
+          },
+          {
+            "time": 33.8,
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
+          },
+          {
+            "time": 42.0,
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
+          },
+          {
+            "time": 46.4,
+            "text": "挂在天上放光明",
+            "romanization": "guà zài tiān shàng fàng guāng míng"
+          },
+          {
+            "time": 50.4,
+            "text": "好像许多小眼睛",
+            "romanization": "hǎo xiàng xǔ duō xiǎo yǎn jīng"
+          },
+          {
+            "time": 54.6,
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
+          },
+          {
+            "time": 58.7,
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
+          },
+          {
+            "time": 63.4,
+            "text": "一闪一闪亮晶晶",
+            "romanization": "yī shǎn yī shǎn liàng jīng jīng"
+          },
+          {
+            "time": 75.4,
+            "text": "满天都是小星星",
+            "romanization": "mǎn tiān dōu shì xiǎo xīng xīng"
+          },
+          {
+            "time": 79.6,
+            "text": "挂在天上放光明",
+            "romanization": "guà zài tiān shàng fàng guāng míng"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "Twinkle, twinkle, little star" },
-          { "time": 4.5, "text": "How I wonder what you are" },
-          { "time": 9.0, "text": "Up above the world so high" },
-          { "time": 13.5, "text": "Like a diamond in the sky" }
+          {
+            "time": 0.3,
+            "text": "Twinkle, twinkle, little star"
+          },
+          {
+            "time": 23.3,
+            "text": "How I wonder what you are"
+          },
+          {
+            "time": 29.4,
+            "text": "Up above the world so high"
+          },
+          {
+            "time": 34.5,
+            "text": "Like a diamond in the sky"
+          },
+          {
+            "time": 39.8,
+            "text": "Twinkle, twinkle, little star"
+          },
+          {
+            "time": 46.0,
+            "text": "How I wonder what you are"
+          }
         ]
       },
       "activity": {
@@ -92,15 +399,47 @@
           "en": "Point to a star! ✨"
         }
       },
-      "parentNote": "This melody was the basis for Mozart's 12 Variations (K. 265). All three versions preserve the same gentle lullaby feel."
+      "parentNote": "This melody was the basis for Mozart's 12 Variations (K. 265). All three versions preserve the same gentle lullaby feel.",
+      "energy": "lullaby",
+      "bpm": 80,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "⭐",
+        "words": {
+          "it": "stella",
+          "zh": "星星",
+          "en": "star"
+        },
+        "romanization": {
+          "zh": "xīng xing"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Brilla, brilla",
+          "zh": "一闪一闪",
+          "en": "Twinkle, twinkle"
+        },
+        "carryRomanization": {
+          "zh": "yì shǎn yì shǎn"
+        },
+        "meaning": "Point at a real star or light and say it together — 'star' in all three."
+      }
     },
     {
       "id": "old-macdonald",
       "category": "cross-cultural",
       "melodyOrigin": "Old MacDonald Had a Farm (1706)",
       "icon": "🐄",
-      "backgroundGradient": ["#E8F5E9", "#C8E6C9"],
-      "duration": 150,
+      "backgroundGradient": [
+        "#E8F5E9",
+        "#C8E6C9"
+      ],
+      "duration": 312,
       "titles": {
         "it": "Nella Vecchia Fattoria",
         "zh": "王老先生有块地",
@@ -113,22 +452,202 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Nella vecchia fattoria, ia ia oh!" },
-          { "time": 5.0, "text": "C'era il cane, ia ia oh!" },
-          { "time": 10.0, "text": "Con un bau bau qui" },
-          { "time": 14.0, "text": "Con un bau bau là" }
+          {
+            "time": 0.1,
+            "text": "Nella vecchia fattoria, ia ia oh!"
+          },
+          {
+            "time": 13.0,
+            "text": "Quante bestie a Zio Tobia, ia ia oh!"
+          },
+          {
+            "time": 17.2,
+            "text": "C'è la capra, capra, capra"
+          },
+          {
+            "time": 18.4,
+            "text": "Nella vecchia fattoria, ia ia oh!"
+          },
+          {
+            "time": 24.3,
+            "text": "Attaccato a un carrettino, ia ia oh!"
+          },
+          {
+            "time": 33.5,
+            "text": "C'è un quadrupede piccino, ia ia oh!"
+          },
+          {
+            "time": 42.2,
+            "text": "L'asinello, nello, nello"
+          },
+          {
+            "time": 45.9,
+            "text": "C'è la capra, capra, capra"
+          },
+          {
+            "time": 52.3,
+            "text": "Nella vecchia fattoria, ia ia oh!"
+          },
+          {
+            "time": 68.4,
+            "text": "Tra le casse e i ferri rotti, ia ia oh!"
+          },
+          {
+            "time": 74.0,
+            "text": "Dove i topi son grassotti, ia ia oh!"
+          },
+          {
+            "time": 81.4,
+            "text": "C'è il gatto, gatto, gatto"
+          },
+          {
+            "time": 87.2,
+            "text": "L'asinello, nello, nello"
+          },
+          {
+            "time": 90.0,
+            "text": "C'è la capra, capra, capra"
+          },
+          {
+            "time": 93.2,
+            "text": "Nella vecchia fattoria, ia ia oh!"
+          },
+          {
+            "time": 98.8,
+            "text": "Tanto grasso e tanto grosso, ia ia oh!"
+          },
+          {
+            "time": 108.6,
+            "text": "Sempre sporco a più non posso, ia ia oh!"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "王老先生有块地" },
-          { "time": 4.0, "text": "咿呀咿呀哟" },
-          { "time": 8.0, "text": "他在田边养小鸡" },
-          { "time": 12.0, "text": "咿呀咿呀哟" }
+          {
+            "time": 0.0,
+            "text": "王老先生有块地, 咿呀咿呀哟",
+            "romanization": "wáng lǎo xiān shēng yǒu kuài dì , yī yā yī yā yō"
+          },
+          {
+            "time": 5.4,
+            "text": "他在田边养小鸡, 咿呀咿呀哟",
+            "romanization": "tā zài tián biān yǎng xiǎo jī , yī yā yī yā yō"
+          },
+          {
+            "time": 10.0,
+            "text": "这里鸡鸡, 那里鸡鸡",
+            "romanization": "zhè lǐ jī jī , nà lǐ jī jī"
+          },
+          {
+            "time": 11.4,
+            "text": "到处都是小鸡鸡, 咿呀咿呀哟",
+            "romanization": "dào chù dōu shì xiǎo jī jī , yī yā yī yā yō"
+          },
+          {
+            "time": 27.8,
+            "text": "王老先生有块地, 咿呀咿呀哟",
+            "romanization": "wáng lǎo xiān shēng yǒu kuài dì , yī yā yī yā yō"
+          },
+          {
+            "time": 35.2,
+            "text": "他在田边养鸭子, 咿呀咿呀哟",
+            "romanization": "tā zài tián biān yǎng yā zi , yī yā yī yā yō"
+          },
+          {
+            "time": 39.7,
+            "text": "这里嘎嘎, 那里嘎嘎",
+            "romanization": "zhè lǐ gā gā , nà lǐ gā gā"
+          },
+          {
+            "time": 41.0,
+            "text": "到处都是小鸭子, 咿呀咿呀哟",
+            "romanization": "dào chù dōu shì xiǎo yā zi , yī yā yī yā yō"
+          },
+          {
+            "time": 51.6,
+            "text": "王老先生有块地, 咿呀咿呀哟",
+            "romanization": "wáng lǎo xiān shēng yǒu kuài dì , yī yā yī yā yō"
+          },
+          {
+            "time": 57.2,
+            "text": "他在田边养小猫, 咿呀咿呀哟",
+            "romanization": "tā zài tián biān yǎng xiǎo māo , yī yā yī yā yō"
+          },
+          {
+            "time": 63.8,
+            "text": "这里喵喵, 那里喵喵",
+            "romanization": "zhè lǐ miāo miāo , nà lǐ miāo miāo"
+          },
+          {
+            "time": 66.7,
+            "text": "到处都是小猫猫, 咿呀咿呀哟",
+            "romanization": "dào chù dōu shì xiǎo māo māo , yī yā yī yā yō"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "Old MacDonald had a farm" },
-          { "time": 4.0, "text": "E-I-E-I-O" },
-          { "time": 8.0, "text": "And on his farm he had a cow" },
-          { "time": 12.0, "text": "With a moo-moo here" }
+          {
+            "time": 0.1,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          },
+          {
+            "time": 34.4,
+            "text": "And on that farm he had a cow, E-I-E-I-O"
+          },
+          {
+            "time": 46.0,
+            "text": "With a moo-moo here and a moo-moo there"
+          },
+          {
+            "time": 51.1,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          },
+          {
+            "time": 53.7,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          },
+          {
+            "time": 61.0,
+            "text": "And on that farm he had a duck, E-I-E-I-O"
+          },
+          {
+            "time": 71.0,
+            "text": "With a quack-quack here and a quack-quack there"
+          },
+          {
+            "time": 75.4,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          },
+          {
+            "time": 77.7,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          },
+          {
+            "time": 79.5,
+            "text": "And on that farm he had a horse, E-I-E-I-O"
+          },
+          {
+            "time": 83.9,
+            "text": "With a neigh-neigh here and a neigh-neigh there"
+          },
+          {
+            "time": 96.7,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          },
+          {
+            "time": 101.4,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          },
+          {
+            "time": 104.2,
+            "text": "And on that farm he had a sheep, E-I-E-I-O"
+          },
+          {
+            "time": 107.7,
+            "text": "With a baa-baa here and a baa-baa there"
+          },
+          {
+            "time": 110.5,
+            "text": "Old MacDonald had a farm, E-I-E-I-O"
+          }
         ]
       },
       "activity": {
@@ -139,15 +658,47 @@
           "en": "Make an animal sound! 🐾"
         }
       },
-      "parentNote": "The Italian version ('Nella Vecchia Fattoria') is by Quartetto Cetra and is a beloved children's TV classic."
+      "parentNote": "The Italian version ('Nella Vecchia Fattoria') is by Quartetto Cetra and is a beloved children's TV classic.",
+      "energy": "playful",
+      "bpm": 120,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🐮",
+        "words": {
+          "it": "mucca",
+          "zh": "奶牛",
+          "en": "cow"
+        },
+        "romanization": {
+          "zh": "nǎi niú"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Che fa la mucca?",
+          "zh": "奶牛怎么叫?",
+          "en": "What does the cow say?"
+        },
+        "carryRomanization": {
+          "zh": "nǎi niú zěn me jiào"
+        },
+        "meaning": "Point at an animal and ask what sound it makes — in any language."
+      }
     },
     {
       "id": "if-youre-happy",
       "category": "cross-cultural",
       "melodyOrigin": "If You're Happy and You Know It (~1950s)",
       "icon": "👏",
-      "backgroundGradient": ["#FFF8E1", "#FFECB3"],
-      "duration": 105,
+      "backgroundGradient": [
+        "#FFF8E1",
+        "#FFECB3"
+      ],
+      "duration": 256,
       "titles": {
         "it": "Se Sei Felice",
         "zh": "如果感到幸福",
@@ -160,22 +711,222 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Se sei felice tu lo sai batti le mani" },
-          { "time": 5.0, "text": "Se sei felice tu lo sai batti le mani" },
-          { "time": 10.0, "text": "Se sei felice tu lo sai" },
-          { "time": 14.0, "text": "E lo vuoi far veder" }
+          {
+            "time": 0.1,
+            "text": "Se sei felice e tu lo sai, batti le mani"
+          },
+          {
+            "time": 20.5,
+            "text": "Se sei felice e tu lo sai, batti le mani"
+          },
+          {
+            "time": 32.7,
+            "text": "Se sei felice e tu lo sai, e mostrarmelo potrai"
+          },
+          {
+            "time": 35.3,
+            "text": "Se sei felice e tu lo sai, batti le mani"
+          },
+          {
+            "time": 38.5,
+            "text": "Se sei felice e tu lo sai, schiocca la lingua"
+          },
+          {
+            "time": 42.1,
+            "text": "Se sei felice e tu lo sai, schiocca la lingua"
+          },
+          {
+            "time": 45.2,
+            "text": "Se sei felice e tu lo sai, e mostrarmelo potrai"
+          },
+          {
+            "time": 47.5,
+            "text": "Se sei felice e tu lo sai, schiocca la lingua"
+          },
+          {
+            "time": 51.0,
+            "text": "Se sei felice e tu lo sai, schiocca le dita"
+          },
+          {
+            "time": 53.8,
+            "text": "Se sei felice e tu lo sai, schiocca le dita"
+          },
+          {
+            "time": 57.8,
+            "text": "Se sei felice e tu lo sai, e mostrarmelo potrai"
+          },
+          {
+            "time": 60.2,
+            "text": "Se sei felice e tu lo sai, schiocca le dita"
+          },
+          {
+            "time": 63.0,
+            "text": "Se sei felice e tu lo sai, fai lo starnuto"
+          },
+          {
+            "time": 66.3,
+            "text": "Se sei felice e tu lo sai, fai lo starnuto"
+          },
+          {
+            "time": 69.9,
+            "text": "Se sei felice e tu lo sai, e mostrarmelo potrai"
+          },
+          {
+            "time": 73.4,
+            "text": "Se sei felice e tu lo sai, fai lo starnuto"
+          },
+          {
+            "time": 75.6,
+            "text": "Se sei felice e tu lo sai, mandami un bacio"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "如果感到幸福你就拍拍手" },
-          { "time": 5.0, "text": "如果感到幸福你就拍拍手" },
-          { "time": 10.0, "text": "如果感到幸福就快快拍拍手呀" },
-          { "time": 15.0, "text": "看那大家都一起拍拍手" }
+          {
+            "time": 0.0,
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
+          },
+          {
+            "time": 6.0,
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
+          },
+          {
+            "time": 13.5,
+            "text": "如果感到幸福就快快拍拍手呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài pāi pāi shǒu ya"
+          },
+          {
+            "time": 16.2,
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
+          },
+          {
+            "time": 20.0,
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
+          },
+          {
+            "time": 20.1,
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
+          },
+          {
+            "time": 24.7,
+            "text": "如果感到幸福就快快拍拍手呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài pāi pāi shǒu ya"
+          },
+          {
+            "time": 28.3,
+            "text": "如果感到幸福你就拍拍手",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi shǒu"
+          },
+          {
+            "time": 31.2,
+            "text": "如果感到幸福你就跺跺脚",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù duò duò jiǎo"
+          },
+          {
+            "time": 35.0,
+            "text": "如果感到幸福你就跺跺脚",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù duò duò jiǎo"
+          },
+          {
+            "time": 39.7,
+            "text": "如果感到幸福就快快跺跺脚呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài duò duò jiǎo ya"
+          },
+          {
+            "time": 42.5,
+            "text": "如果感到幸福你就跺跺脚",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù duò duò jiǎo"
+          },
+          {
+            "time": 46.2,
+            "text": "如果感到幸福你就拍拍肩",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi jiān"
+          },
+          {
+            "time": 50.0,
+            "text": "如果感到幸福你就拍拍肩",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi jiān"
+          },
+          {
+            "time": 54.7,
+            "text": "如果感到幸福就快快拍拍肩呀",
+            "romanization": "rú guǒ gǎn dào xìng fú jiù kuài kuài pāi pāi jiān ya"
+          },
+          {
+            "time": 59.0,
+            "text": "如果感到幸福你就拍拍肩",
+            "romanization": "rú guǒ gǎn dào xìng fú nǐ jiù pāi pāi jiān"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "If you're happy and you know it, clap your hands" },
-          { "time": 5.0, "text": "If you're happy and you know it, clap your hands" },
-          { "time": 10.0, "text": "If you're happy and you know it" },
-          { "time": 14.0, "text": "And you really want to show it" }
+          {
+            "time": 0.3,
+            "text": "If you're happy and you know it, clap your hands"
+          },
+          {
+            "time": 15.3,
+            "text": "If you're happy and you know it, clap your hands"
+          },
+          {
+            "time": 19.2,
+            "text": "If you're happy and you know it, then your face will surely show it"
+          },
+          {
+            "time": 23.5,
+            "text": "If you're happy and you know it, clap your hands"
+          },
+          {
+            "time": 30.3,
+            "text": "If you're happy and you know it, stomp your feet"
+          },
+          {
+            "time": 35.0,
+            "text": "If you're happy and you know it, stomp your feet"
+          },
+          {
+            "time": 39.1,
+            "text": "If you're happy and you know it, then your face will surely show it"
+          },
+          {
+            "time": 43.4,
+            "text": "If you're happy and you know it, stomp your feet"
+          },
+          {
+            "time": 50.2,
+            "text": "If you're happy and you know it, shout hooray!"
+          },
+          {
+            "time": 55.0,
+            "text": "If you're happy and you know it, shout hooray!"
+          },
+          {
+            "time": 58.6,
+            "text": "If you're happy and you know it, then your face will surely show it"
+          },
+          {
+            "time": 62.7,
+            "text": "If you're happy and you know it, shout hooray!"
+          },
+          {
+            "time": 66.7,
+            "text": "If you're happy and you know it, do all three"
+          },
+          {
+            "time": 75.0,
+            "text": "If you're happy and you know it, do all three"
+          },
+          {
+            "time": 80.9,
+            "text": "If you're happy and you know it, then your face will surely show it"
+          },
+          {
+            "time": 85.9,
+            "text": "If you're happy and you know it, do all three"
+          }
         ]
       },
       "activity": {
@@ -186,15 +937,47 @@
           "en": "Clap your hands loud! 👏"
         }
       },
-      "parentNote": "This is a perfect action song — encourage clapping, stomping, and cheering in all three languages!"
+      "parentNote": "This is a perfect action song — encourage clapping, stomping, and cheering in all three languages!",
+      "energy": "action",
+      "bpm": 116,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "👏",
+        "words": {
+          "it": "batti le mani",
+          "zh": "拍拍手",
+          "en": "clap your hands"
+        },
+        "romanization": {
+          "zh": "pāi pāi shǒu"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Se sei felice",
+          "zh": "如果感到幸福",
+          "en": "If you're happy"
+        },
+        "carryRomanization": {
+          "zh": "rú guǒ gǎn dào xìng fú"
+        },
+        "meaning": "Pair a feeling with an action — clap when happy, stomp when excited."
+      }
     },
     {
       "id": "head-shoulders",
       "category": "cross-cultural",
       "melodyOrigin": "Head, Shoulders, Knees and Toes (1912)",
       "icon": "🤸",
-      "backgroundGradient": ["#FCE4EC", "#F8BBD0"],
-      "duration": 90,
+      "backgroundGradient": [
+        "#FCE4EC",
+        "#F8BBD0"
+      ],
+      "duration": 201,
       "titles": {
         "it": "Testa Spalle",
         "zh": "头肩膀膝脚趾",
@@ -207,22 +990,166 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Testa, spalle, ginocchia e piedi" },
-          { "time": 3.5, "text": "Ginocchia e piedi" },
-          { "time": 7.0, "text": "Occhi, orecchie, bocca e naso" },
-          { "time": 10.5, "text": "Testa, spalle, ginocchia e piedi" }
+          {
+            "time": 0.8,
+            "text": "Testa, spalle, ginocchia e piedi"
+          },
+          {
+            "time": 6.4,
+            "text": "Ginocchia e piedi"
+          },
+          {
+            "time": 10.2,
+            "text": "Occhi, orecchie, bocca e naso"
+          },
+          {
+            "time": 18.3,
+            "text": "Testa, spalle, ginocchia e piedi"
+          },
+          {
+            "time": 22.5,
+            "text": "Testa, spalle, ginocchia e piedi"
+          },
+          {
+            "time": 28.1,
+            "text": "Ginocchia e piedi"
+          },
+          {
+            "time": 32.4,
+            "text": "Occhi, orecchie, bocca e naso"
+          },
+          {
+            "time": 39.2,
+            "text": "Testa, spalle, ginocchia e piedi"
+          },
+          {
+            "time": 43.9,
+            "text": "Testa, spalle, ginocchia e piedi"
+          },
+          {
+            "time": 48.8,
+            "text": "Ginocchia e piedi"
+          },
+          {
+            "time": 52.6,
+            "text": "Occhi, orecchie, bocca e naso"
+          },
+          {
+            "time": 59.3,
+            "text": "Testa, spalle, ginocchia e piedi"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "头 肩膀 膝 脚趾" },
-          { "time": 3.5, "text": "膝 脚趾" },
-          { "time": 7.0, "text": "眼 耳 鼻 和 口" },
-          { "time": 10.5, "text": "头 肩膀 膝 脚趾" }
+          {
+            "time": 0.0,
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 5.8,
+            "text": "膝盖和脚趾",
+            "romanization": "xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 9.6,
+            "text": "眼睛 耳朵 嘴巴 鼻子",
+            "romanization": "yǎn jīng ěr duǒ zuǐ bā bí zi"
+          },
+          {
+            "time": 13.9,
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 16.5,
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 26.1,
+            "text": "膝盖和脚趾",
+            "romanization": "xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 26.9,
+            "text": "眼睛 耳朵 嘴巴 鼻子",
+            "romanization": "yǎn jīng ěr duǒ zuǐ bā bí zi"
+          },
+          {
+            "time": 32.9,
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 36.2,
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 44.8,
+            "text": "膝盖和脚趾",
+            "romanization": "xī gài hé jiǎo zhǐ"
+          },
+          {
+            "time": 48.1,
+            "text": "眼睛 耳朵 嘴巴 鼻子",
+            "romanization": "yǎn jīng ěr duǒ zuǐ bā bí zi"
+          },
+          {
+            "time": 51.6,
+            "text": "头 肩膀 膝盖和脚趾",
+            "romanization": "tóu jiān bǎng xī gài hé jiǎo zhǐ"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "Head, shoulders, knees and toes" },
-          { "time": 3.5, "text": "Knees and toes" },
-          { "time": 7.0, "text": "Eyes and ears and mouth and nose" },
-          { "time": 10.5, "text": "Head, shoulders, knees and toes" }
+          {
+            "time": 0.3,
+            "text": "Head, shoulders, knees and toes"
+          },
+          {
+            "time": 13.3,
+            "text": "Knees and toes"
+          },
+          {
+            "time": 16.1,
+            "text": "Eyes and ears and mouth and nose"
+          },
+          {
+            "time": 23.2,
+            "text": "Head, shoulders, knees and toes"
+          },
+          {
+            "time": 30.3,
+            "text": "Head, shoulders, knees and toes"
+          },
+          {
+            "time": 36.9,
+            "text": "Knees and toes"
+          },
+          {
+            "time": 40.9,
+            "text": "Eyes and ears and mouth and nose"
+          },
+          {
+            "time": 46.6,
+            "text": "Head, shoulders, knees and toes"
+          },
+          {
+            "time": 51.3,
+            "text": "Head, shoulders, knees and toes"
+          },
+          {
+            "time": 60.9,
+            "text": "Knees and toes"
+          },
+          {
+            "time": 64.3,
+            "text": "Eyes and ears and mouth and nose"
+          },
+          {
+            "time": 70.6,
+            "text": "Head, shoulders, knees and toes"
+          }
         ]
       },
       "activity": {
@@ -233,15 +1160,47 @@
           "en": "Touch your head! Touch your toes! 🤸"
         }
       },
-      "parentNote": "Great for body part vocabulary in all three languages. Speed up each round for extra fun!"
+      "parentNote": "Great for body part vocabulary in all three languages. Speed up each round for extra fun!",
+      "energy": "action",
+      "bpm": 120,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🧒",
+        "words": {
+          "it": "testa",
+          "zh": "头",
+          "en": "head"
+        },
+        "romanization": {
+          "zh": "tóu"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "testa, spalle",
+          "zh": "头, 肩膀",
+          "en": "head, shoulders"
+        },
+        "carryRomanization": {
+          "zh": "tóu, jiān bǎng"
+        },
+        "meaning": "Touch each body part as you name it — great for learning body words."
+      }
     },
     {
       "id": "happy-birthday",
       "category": "cross-cultural",
       "melodyOrigin": "Happy Birthday to You (1893)",
       "icon": "🎂",
-      "backgroundGradient": ["#F3E5F5", "#E1BEE7"],
-      "duration": 45,
+      "backgroundGradient": [
+        "#F3E5F5",
+        "#E1BEE7"
+      ],
+      "duration": 99,
       "titles": {
         "it": "Tanti Auguri",
         "zh": "祝你生日快乐",
@@ -254,22 +1213,134 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Tanti auguri a te" },
-          { "time": 3.5, "text": "Tanti auguri a te" },
-          { "time": 7.0, "text": "Tanti auguri a te" },
-          { "time": 10.5, "text": "Tanti auguri a te!" }
+          {
+            "time": 0.1,
+            "text": "Tanti auguri a te"
+          },
+          {
+            "time": 5.7,
+            "text": "Tanti auguri a te"
+          },
+          {
+            "time": 8.5,
+            "text": "Tanti auguri felici"
+          },
+          {
+            "time": 12.0,
+            "text": "Tanti auguri a te!"
+          },
+          {
+            "time": 16.4,
+            "text": "Pronti, torte e candeline"
+          },
+          {
+            "time": 19.0,
+            "text": "Soffiamo tutti insieme"
+          },
+          {
+            "time": 20.1,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 21.9,
+            "text": "Tanti auguri a te"
+          },
+          {
+            "time": 24.5,
+            "text": "Tanti auguri a te"
+          },
+          {
+            "time": 28.2,
+            "text": "Tanti auguri felici"
+          },
+          {
+            "time": 31.6,
+            "text": "Tanti auguri a te!"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "祝你生日快乐" },
-          { "time": 3.5, "text": "祝你生日快乐" },
-          { "time": 7.0, "text": "祝你生日快乐" },
-          { "time": 10.5, "text": "祝你生日快乐！" }
+          {
+            "time": 0.0,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 5.7,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 9.9,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 14.6,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 17.9,
+            "text": "Happy birthday to you"
+          },
+          {
+            "time": 20.9,
+            "text": "Happy birthday to you"
+          },
+          {
+            "time": 23.9,
+            "text": "Happy birthday to you"
+          },
+          {
+            "time": 27.1,
+            "text": "Happy birthday to you"
+          },
+          {
+            "time": 29.9,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 38.3,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 40.9,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 43.5,
+            "text": "祝你生日快乐",
+            "romanization": "zhù nǐ shēng rì kuài lè"
+          },
+          {
+            "time": 46.3,
+            "text": "Happy birthday to you"
+          },
+          {
+            "time": 48.5,
+            "text": "Happy birthday to you"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "Happy birthday to you" },
-          { "time": 3.5, "text": "Happy birthday to you" },
-          { "time": 7.0, "text": "Happy birthday, dear friend" },
-          { "time": 10.5, "text": "Happy birthday to you!" }
+          {
+            "time": 0.2,
+            "text": "Happy birthday to you"
+          },
+          {
+            "time": 3.2,
+            "text": "Happy birthday to you"
+          },
+          {
+            "time": 6.9,
+            "text": "Happy birthday, happy birthday"
+          },
+          {
+            "time": 10.4,
+            "text": "Happy birthday to you"
+          }
         ]
       },
       "activity": {
@@ -280,15 +1351,47 @@
           "en": "Blow out the candles! 🎂"
         }
       },
-      "parentNote": "A universal celebration song. The melody is identical in all languages — only the words change!"
+      "parentNote": "A universal celebration song. The melody is identical in all languages — only the words change!",
+      "energy": "playful",
+      "bpm": 100,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🎂",
+        "words": {
+          "it": "buon compleanno",
+          "zh": "生日快乐",
+          "en": "happy birthday"
+        },
+        "romanization": {
+          "zh": "shēng rì kuài lè"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Tanti auguri",
+          "zh": "生日快乐",
+          "en": "Happy birthday"
+        },
+        "carryRomanization": {
+          "zh": "shēng rì kuài lè"
+        },
+        "meaning": "Sing it at any celebration — same tune in all three languages."
+      }
     },
     {
       "id": "row-your-boat",
       "category": "cross-cultural",
       "melodyOrigin": "Row, Row, Row Your Boat (1852)",
       "icon": "⛵",
-      "backgroundGradient": ["#E0F7FA", "#B2EBF2"],
-      "duration": 75,
+      "backgroundGradient": [
+        "#E0F7FA",
+        "#B2EBF2"
+      ],
+      "duration": 236,
       "titles": {
         "it": "Rema Rema Rema",
         "zh": "划船歌",
@@ -301,22 +1404,230 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Rema rema rema la barchetta va" },
-          { "time": 4.0, "text": "Dolcemente dolcemente" },
-          { "time": 8.0, "text": "La vita è bella già" },
-          { "time": 12.0, "text": "La vita è bella già" }
+          {
+            "time": 0.7,
+            "text": "Rema, rema, rema la barca"
+          },
+          {
+            "time": 13.0,
+            "text": "Dolce lungo la sua scia"
+          },
+          {
+            "time": 19.6,
+            "text": "Allegra, allegra, allegra va"
+          },
+          {
+            "time": 22.8,
+            "text": "La vita un sogno è"
+          },
+          {
+            "time": 24.8,
+            "text": "Rema, rema, rema la barca"
+          },
+          {
+            "time": 29.2,
+            "text": "Dolce lungo la sua scia"
+          },
+          {
+            "time": 31.5,
+            "text": "Allegra, allegra, allegra va"
+          },
+          {
+            "time": 33.9,
+            "text": "La vita un sogno è"
+          },
+          {
+            "time": 36.8,
+            "text": "Rema, rema, rema la barca"
+          },
+          {
+            "time": 54.0,
+            "text": "Dolce lungo la sua scia"
+          },
+          {
+            "time": 56.5,
+            "text": "Allegra, allegra, allegra va"
+          },
+          {
+            "time": 58.4,
+            "text": "La vita un sogno è"
+          },
+          {
+            "time": 62.9,
+            "text": "Rema, rema, rema la barca"
+          },
+          {
+            "time": 64.6,
+            "text": "Dolce lungo la sua scia"
+          },
+          {
+            "time": 81.6,
+            "text": "Allegra, allegra, allegra va"
+          },
+          {
+            "time": 84.2,
+            "text": "La vita un sogno è"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "划呀划呀划小船" },
-          { "time": 4.0, "text": "轻轻飘在水中间" },
-          { "time": 8.0, "text": "快快乐乐真开心" },
-          { "time": 12.0, "text": "生活像是在梦里" }
+          {
+            "time": 1.0,
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
+          },
+          {
+            "time": 5.0,
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
+          },
+          {
+            "time": 10.0,
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
+          },
+          {
+            "time": 13.0,
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
+          },
+          {
+            "time": 23.5,
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
+          },
+          {
+            "time": 26.5,
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
+          },
+          {
+            "time": 30.2,
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
+          },
+          {
+            "time": 32.4,
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
+          },
+          {
+            "time": 34.7,
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
+          },
+          {
+            "time": 39.0,
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
+          },
+          {
+            "time": 41.7,
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
+          },
+          {
+            "time": 44.3,
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
+          },
+          {
+            "time": 46.7,
+            "text": "划呀划呀划小船",
+            "romanization": "huà ya huà ya huà xiǎo chuán"
+          },
+          {
+            "time": 54.9,
+            "text": "轻轻顺流而下",
+            "romanization": "qīng qīng shùn liú ér xià"
+          },
+          {
+            "time": 55.6,
+            "text": "快乐快乐真快乐",
+            "romanization": "kuài lè kuài lè zhēn kuài lè"
+          },
+          {
+            "time": 57.6,
+            "text": "生活像梦境",
+            "romanization": "shēng huó xiàng mèng jìng"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "Row, row, row your boat" },
-          { "time": 4.0, "text": "Gently down the stream" },
-          { "time": 8.0, "text": "Merrily, merrily, merrily" },
-          { "time": 12.0, "text": "Life is but a dream" }
+          {
+            "time": 0.3,
+            "text": "Row, row, row your boat"
+          },
+          {
+            "time": 20.9,
+            "text": "Gently down the stream"
+          },
+          {
+            "time": 23.3,
+            "text": "Merrily, merrily, merrily, merrily"
+          },
+          {
+            "time": 26.1,
+            "text": "Life is but a dream"
+          },
+          {
+            "time": 28.6,
+            "text": "Row, row, row your boat"
+          },
+          {
+            "time": 35.7,
+            "text": "Row, row, row your boat"
+          },
+          {
+            "time": 38.8,
+            "text": "Gently down the stream"
+          },
+          {
+            "time": 42.4,
+            "text": "Merrily, merrily, merrily, merrily"
+          },
+          {
+            "time": 43.9,
+            "text": "Life is but a dream"
+          },
+          {
+            "time": 49.1,
+            "text": "Row, row, row your boat"
+          },
+          {
+            "time": 53.7,
+            "text": "Gently down the stream"
+          },
+          {
+            "time": 57.5,
+            "text": "Merrily, merrily, merrily, merrily"
+          },
+          {
+            "time": 59.3,
+            "text": "Life is but a dream"
+          },
+          {
+            "time": 65.2,
+            "text": "Row, row, row your boat"
+          },
+          {
+            "time": 68.7,
+            "text": "Gently down the stream"
+          },
+          {
+            "time": 72.3,
+            "text": "Merrily, merrily, merrily, merrily"
+          },
+          {
+            "time": 74.6,
+            "text": "Life is but a dream"
+          },
+          {
+            "time": 77.7,
+            "text": "Row, row, row your boat"
+          },
+          {
+            "time": 84.4,
+            "text": "Gently down the stream"
+          }
         ]
       },
       "activity": {
@@ -327,15 +1638,47 @@
           "en": "Pretend to row a boat! ⛵"
         }
       },
-      "parentNote": "This works wonderfully as a round (canon). Try singing it together with a slight delay!"
+      "parentNote": "This works wonderfully as a round (canon). Try singing it together with a slight delay!",
+      "energy": "gentle",
+      "bpm": 104,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "echoWord": {
+        "emoji": "🚣",
+        "words": {
+          "it": "barca",
+          "zh": "小船",
+          "en": "boat"
+        },
+        "romanization": {
+          "zh": "xiǎo chuán"
+        }
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Rema, rema",
+          "zh": "划划船",
+          "en": "Row, row"
+        },
+        "carryRomanization": {
+          "zh": "huá huá chuán"
+        },
+        "meaning": "Sit facing your child, hold hands, and rock back and forth like rowing."
+      }
     },
     {
       "id": "abc-song",
       "category": "cross-cultural",
       "melodyOrigin": "Alphabet Song / Twinkle melody (1835)",
       "icon": "🔤",
-      "backgroundGradient": ["#FFFDE7", "#FFF9C4"],
-      "duration": 90,
+      "backgroundGradient": [
+        "#FFFDE7",
+        "#FFF9C4"
+      ],
+      "duration": 261,
       "titles": {
         "it": "Canzone dell'Alfabeto",
         "zh": "ABC字母歌",
@@ -348,22 +1691,176 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "A B C D E F G" },
-          { "time": 4.0, "text": "H I L M N O P" },
-          { "time": 8.0, "text": "Q R S T U V Z" },
-          { "time": 12.0, "text": "Ecco l'alfabeto che so!" }
+          {
+            "time": 0.2,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 27.6,
+            "text": "Noi l'alfabeto l'impariamo così"
+          },
+          {
+            "time": 32.2,
+            "text": "H I L M N O P Q"
+          },
+          {
+            "time": 37.6,
+            "text": "Noi dell'alfabeto ne vogliamo di più"
+          },
+          {
+            "time": 43.9,
+            "text": "R S T U V Z"
+          },
+          {
+            "time": 48.7,
+            "text": "Noi non siamo di un altro pianeta"
+          },
+          {
+            "time": 53.8,
+            "text": "Forza, ripetiamo insieme!"
+          },
+          {
+            "time": 56.2,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 61.6,
+            "text": "H I L M N O P Q"
+          },
+          {
+            "time": 66.9,
+            "text": "R S T U V Z"
+          },
+          {
+            "time": 72.5,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 83.7,
+            "text": "Noi l'alfabeto l'impariamo così"
+          },
+          {
+            "time": 88.2,
+            "text": "H I L M N O P Q"
+          },
+          {
+            "time": 93.6,
+            "text": "Noi dell'alfabeto ne vogliamo di più"
+          }
         ],
         "zh": [
-          { "time": 0.0, "text": "A B C D E F G" },
-          { "time": 4.0, "text": "H I J K L M N" },
-          { "time": 8.0, "text": "O P Q R S T" },
-          { "time": 12.0, "text": "U V W X Y Z" }
+          {
+            "time": 0.0,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 6.0,
+            "text": "H I J K L M N"
+          },
+          {
+            "time": 12.1,
+            "text": "O P Q R S T"
+          },
+          {
+            "time": 17.6,
+            "text": "U V W X Y Z"
+          },
+          {
+            "time": 23.2,
+            "text": "W X Y Z"
+          },
+          {
+            "time": 27.1,
+            "text": "我们学会了 A B C",
+            "romanization": "wǒ men xué huì le A B C"
+          },
+          {
+            "time": 40.7,
+            "text": "一起唱歌真开心",
+            "romanization": "yì qǐ chàng gē zhēn kāi xīn"
+          },
+          {
+            "time": 40.8,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 59.0,
+            "text": "H I J K L M N"
+          },
+          {
+            "time": 63.5,
+            "text": "O P Q R S T"
+          },
+          {
+            "time": 69.5,
+            "text": "U V W X Y Z"
+          }
         ],
         "en": [
-          { "time": 0.0, "text": "A B C D E F G" },
-          { "time": 4.0, "text": "H I J K L M N O P" },
-          { "time": 8.0, "text": "Q R S T U V" },
-          { "time": 12.0, "text": "W X Y and Z" }
+          {
+            "time": 0.1,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 16.3,
+            "text": "H I J K L M N O P"
+          },
+          {
+            "time": 22.0,
+            "text": "Q R S T U V"
+          },
+          {
+            "time": 27.8,
+            "text": "W X Y and Z"
+          },
+          {
+            "time": 32.3,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 40.0,
+            "text": "H I J K"
+          },
+          {
+            "time": 43.5,
+            "text": "L M N O P"
+          },
+          {
+            "time": 46.1,
+            "text": "Q R S"
+          },
+          {
+            "time": 47.4,
+            "text": "T U V"
+          },
+          {
+            "time": 50.6,
+            "text": "W X Y and Z"
+          },
+          {
+            "time": 55.8,
+            "text": "The alphabet is so much fun"
+          },
+          {
+            "time": 61.9,
+            "text": "I like to sing with everyone"
+          },
+          {
+            "time": 64.5,
+            "text": "Now I know my ABCs"
+          },
+          {
+            "time": 66.5,
+            "text": "Next time won't you sing with me?"
+          },
+          {
+            "time": 71.1,
+            "text": "A B C D E F G"
+          },
+          {
+            "time": 77.1,
+            "text": "H I J K L M N O P"
+          }
         ]
       },
       "activity": {
@@ -374,15 +1871,36 @@
           "en": "Find the letter A! 🔤"
         }
       },
-      "parentNote": "The Italian alphabet has only 21 letters (no J, K, W, X, Y). A fun difference to point out!"
+      "parentNote": "The Italian alphabet has only 21 letters (no J, K, W, X, Y). A fun difference to point out!",
+      "energy": "playful",
+      "bpm": 110,
+      "recordingSource": {
+        "it": "Coccole Sonore",
+        "zh": "宝宝巴士",
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "l'alfabeto",
+          "zh": "字母歌",
+          "en": "the alphabet"
+        },
+        "carryRomanization": {
+          "zh": "zì mǔ gē"
+        },
+        "meaning": "Same melody as Twinkle — point out letters on signs and packages."
+      }
     },
     {
       "id": "stella-stellina",
       "category": "italian",
       "melodyOrigin": "Italian traditional lullaby",
       "icon": "🌟",
-      "backgroundGradient": ["#EDE7F6", "#D1C4E9"],
-      "duration": 120,
+      "backgroundGradient": [
+        "#EDE7F6",
+        "#D1C4E9"
+      ],
+      "duration": 73,
       "titles": {
         "it": "Stella Stellina"
       },
@@ -391,12 +1909,78 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Stella stellina" },
-          { "time": 4.0, "text": "La notte si avvicina" },
-          { "time": 8.0, "text": "La fiamma traballa" },
-          { "time": 12.0, "text": "La mucca è nella stalla" },
-          { "time": 16.0, "text": "La pecora e il suo agnellino" },
-          { "time": 20.0, "text": "Ognuno ha il suo bambino" }
+          {
+            "time": 0.2,
+            "text": "Stella stellina"
+          },
+          {
+            "time": 16.2,
+            "text": "La notte si avvicina"
+          },
+          {
+            "time": 18.5,
+            "text": "La fiamma traballa"
+          },
+          {
+            "time": 20.2,
+            "text": "La mucca è nella stalla"
+          },
+          {
+            "time": 22.2,
+            "text": "La mucca e il vitello"
+          },
+          {
+            "time": 24.7,
+            "text": "La pecora e l'agnello"
+          },
+          {
+            "time": 26.8,
+            "text": "La chioccia coi pulcini"
+          },
+          {
+            "time": 29.0,
+            "text": "La mamma coi bambini"
+          },
+          {
+            "time": 31.4,
+            "text": "Ognuno ha il suo bambino"
+          },
+          {
+            "time": 34.0,
+            "text": "E tutti fan la nanna"
+          },
+          {
+            "time": 53.2,
+            "text": "Stella stellina"
+          },
+          {
+            "time": 54.2,
+            "text": "La notte si avvicina"
+          },
+          {
+            "time": 57.3,
+            "text": "La fiamma traballa"
+          },
+          {
+            "time": 58.8,
+            "text": "La mucca è nella stalla"
+          },
+          {
+            "time": 61.0,
+            "text": "La mucca e il vitello"
+          },
+          {
+            "time": 64.3,
+            "text": "La pecora e l'agnello"
+          },
+          {
+            "time": 66.2,
+            "text": "La chioccia coi pulcini"
+          },
+          {
+            "time": 68.0,
+            "text": "La mamma coi bambini"
+          }
         ]
       },
       "activity": {
@@ -407,15 +1991,29 @@
           "en": "Close your eyes and make a wish ✨"
         }
       },
-      "parentNote": "One of Italy's most beloved bedtime songs. The gentle rhythm is perfect for winding down."
+      "parentNote": "One of Italy's most beloved bedtime songs. The gentle rhythm is perfect for winding down.",
+      "energy": "lullaby",
+      "bpm": 72,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Stella stellina"
+        },
+        "meaning": "A classic Italian lullaby — 'little star, the night draws near.' Perfect for winding down."
+      }
     },
     {
       "id": "batti-batti",
       "category": "italian",
       "melodyOrigin": "Italian clapping rhyme",
       "icon": "👏",
-      "backgroundGradient": ["#FBE9E7", "#FFCCBC"],
-      "duration": 60,
+      "backgroundGradient": [
+        "#FBE9E7",
+        "#FFCCBC"
+      ],
+      "duration": 131,
       "titles": {
         "it": "Batti Batti le Manine"
       },
@@ -424,10 +2022,186 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Batti batti le manine" },
-          { "time": 3.5, "text": "Che adesso arriva papà" },
-          { "time": 7.0, "text": "E porta le caramelle" },
-          { "time": 10.5, "text": "Che la bimba mangerà" }
+          {
+            "time": 0.0,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 3.4,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 5.4,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 7.3,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 9.3,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 11.8,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 14.1,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 16.2,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 19.0,
+            "text": "Salto!"
+          },
+          {
+            "time": 26.8,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 29.4,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 31.7,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 33.4,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 35.8,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 37.6,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 39.8,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 42.1,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 45.0,
+            "text": "Giro!"
+          },
+          {
+            "time": 52.8,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 55.6,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 57.9,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 59.5,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 61.6,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 64.1,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 66.3,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 68.6,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 70.8,
+            "text": "Tutti giù!"
+          },
+          {
+            "time": 79.2,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 81.7,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 84.1,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 86.2,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 88.2,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 90.1,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 92.4,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 94.6,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 97.3,
+            "text": "Magia!"
+          },
+          {
+            "time": 105.3,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 107.9,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 110.3,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 112.3,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 114.4,
+            "text": "Batti, batti le manine"
+          },
+          {
+            "time": 116.2,
+            "text": "Che son belle piccine"
+          },
+          {
+            "time": 118.5,
+            "text": "Son piccole come te"
+          },
+          {
+            "time": 120.8,
+            "text": "Uno, due, tre!"
+          },
+          {
+            "time": 123.9,
+            "text": "Ciao bimbi!"
+          }
         ]
       },
       "activity": {
@@ -438,15 +2212,29 @@
           "en": "Clap your hands louder! 👏"
         }
       },
-      "parentNote": "A classic Italian hand-clapping game. Great for motor skills and rhythm."
+      "parentNote": "A classic Italian hand-clapping game. Great for motor skills and rhythm.",
+      "energy": "action",
+      "bpm": 112,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Batti batti le manine"
+        },
+        "meaning": "An Italian clapping game — clap your baby's hands together gently to the rhythm."
+      }
     },
     {
       "id": "giro-giro-tondo",
       "category": "italian",
       "melodyOrigin": "Italian circle game (Ring Around the Rosie equivalent)",
       "icon": "🔄",
-      "backgroundGradient": ["#E8F5E9", "#A5D6A7"],
-      "duration": 75,
+      "backgroundGradient": [
+        "#E8F5E9",
+        "#A5D6A7"
+      ],
+      "duration": 120,
       "titles": {
         "it": "Giro Giro Tondo"
       },
@@ -455,10 +2243,94 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "Giro giro tondo" },
-          { "time": 3.0, "text": "Casca il mondo" },
-          { "time": 6.0, "text": "Casca la terra" },
-          { "time": 9.0, "text": "Tutti giù per terra!" }
+          {
+            "time": 0.2,
+            "text": "Giro giro tondo"
+          },
+          {
+            "time": 23.8,
+            "text": "Gira il mondo"
+          },
+          {
+            "time": 26.1,
+            "text": "Gira la terra"
+          },
+          {
+            "time": 28.3,
+            "text": "Tutti giù per terra!"
+          },
+          {
+            "time": 30.6,
+            "text": "Giro giro tondo"
+          },
+          {
+            "time": 37.7,
+            "text": "Il mare è fondo"
+          },
+          {
+            "time": 40.1,
+            "text": "Tondo è la terra"
+          },
+          {
+            "time": 42.5,
+            "text": "Tutti giù per terra!"
+          },
+          {
+            "time": 44.9,
+            "text": "Giro giro tondo"
+          },
+          {
+            "time": 52.1,
+            "text": "L'angelo è biondo"
+          },
+          {
+            "time": 54.6,
+            "text": "Biondo è il grano"
+          },
+          {
+            "time": 57.1,
+            "text": "Tutti ci sediamo!"
+          },
+          {
+            "time": 62.1,
+            "text": "Giro giro tondo"
+          },
+          {
+            "time": 66.9,
+            "text": "Ora ti circondo"
+          },
+          {
+            "time": 69.4,
+            "text": "Come una ciambella"
+          },
+          {
+            "time": 71.9,
+            "text": "Tutti giù per terra!"
+          },
+          {
+            "time": 78.2,
+            "text": "Giro giro tondo"
+          },
+          {
+            "time": 86.1,
+            "text": "Gira il mondo, gira la terra"
+          },
+          {
+            "time": 90.9,
+            "text": "Tutti giù per terra!"
+          },
+          {
+            "time": 106.5,
+            "text": "Giro giro tondo, è cascato il mondo"
+          },
+          {
+            "time": 111.8,
+            "text": "È cascata la terra"
+          },
+          {
+            "time": 114.1,
+            "text": "Tutti giù per terra!"
+          }
         ]
       },
       "activity": {
@@ -469,15 +2341,29 @@
           "en": "Spin around! 🔄"
         }
       },
-      "parentNote": "The Italian equivalent of 'Ring Around the Rosie.' Children hold hands and fall down at the end!"
+      "parentNote": "The Italian equivalent of 'Ring Around the Rosie.' Children hold hands and fall down at the end!",
+      "energy": "playful",
+      "bpm": 116,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "Giro giro tondo"
+        },
+        "meaning": "Italy's 'Ring around the rosie' — hold hands, circle, and all fall down at the end."
+      }
     },
     {
       "id": "la-bella-lavanderina",
       "category": "italian",
       "melodyOrigin": "Italian traditional action song",
       "icon": "🧼",
-      "backgroundGradient": ["#E3F2FD", "#BBDEFB"],
-      "duration": 90,
+      "backgroundGradient": [
+        "#E3F2FD",
+        "#BBDEFB"
+      ],
+      "duration": 80,
       "titles": {
         "it": "La Bella Lavanderina"
       },
@@ -486,12 +2372,62 @@
       },
       "lyrics": {
         "it": [
-          { "time": 0.0, "text": "La bella lavanderina" },
-          { "time": 3.5, "text": "Che lava i fazzoletti" },
-          { "time": 7.0, "text": "Per i poveretti della città" },
-          { "time": 11.0, "text": "Fai un salto, fai la giravolta" },
-          { "time": 15.0, "text": "Guarda in su, guarda in giù" },
-          { "time": 19.0, "text": "Dai un bacio a chi vuoi tu!" }
+          {
+            "time": 0.2,
+            "text": "La bella lavanderina"
+          },
+          {
+            "time": 23.3,
+            "text": "Che lava i fazzoletti"
+          },
+          {
+            "time": 25.6,
+            "text": "Per i poveretti della città"
+          },
+          {
+            "time": 29.2,
+            "text": "Fai un salto, fanne un altro"
+          },
+          {
+            "time": 34.6,
+            "text": "Fai la giravolta, falla un'altra volta"
+          },
+          {
+            "time": 37.4,
+            "text": "Guarda in su, guarda in giù"
+          },
+          {
+            "time": 41.6,
+            "text": "Dai un bacio a chi vuoi tu!"
+          },
+          {
+            "time": 46.0,
+            "text": "La bella lavanderina"
+          },
+          {
+            "time": 56.2,
+            "text": "Che lava i fazzoletti"
+          },
+          {
+            "time": 59.2,
+            "text": "Per i poveretti della città"
+          },
+          {
+            "time": 63.6,
+            "text": "Fai un salto, fanne un altro"
+          },
+          {
+            "time": 68.2,
+            "text": "Fai la giravolta, falla un'altra volta"
+          },
+          {
+            "time": 70.6,
+            "text": "Guarda in su, guarda in giù"
+          },
+          {
+            "time": 75.0,
+            "text": "Dai un bacio a chi vuoi tu!"
+          }
         ]
       },
       "activity": {
@@ -502,15 +2438,29 @@
           "en": "Pretend to wash clothes! 🧼"
         }
       },
-      "parentNote": "An action song where children mime washing. The kissing at the end is always a hit!"
+      "parentNote": "An action song where children mime washing. The kissing at the end is always a hit!",
+      "energy": "action",
+      "bpm": 112,
+      "recordingSource": {
+        "it": "Coccole Sonore"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "it": "La bella lavanderina"
+        },
+        "meaning": "An action song — mime washing, wringing, and ironing clothes as you sing."
+      }
     },
     {
       "id": "xiao-tuzi-guaiguai",
       "category": "chinese",
       "melodyOrigin": "Chinese traditional children's safety song",
       "icon": "🐰",
-      "backgroundGradient": ["#FFF3E0", "#FFE0B2"],
-      "duration": 90,
+      "backgroundGradient": [
+        "#FFF3E0",
+        "#FFE0B2"
+      ],
+      "duration": 108,
       "titles": {
         "zh": "小兔子乖乖"
       },
@@ -519,13 +2469,111 @@
       },
       "lyrics": {
         "zh": [
-          { "time": 0.0, "text": "小兔子乖乖" },
-          { "time": 3.0, "text": "把门儿开开" },
-          { "time": 6.0, "text": "快点儿开开" },
-          { "time": 9.0, "text": "我要进来" },
-          { "time": 12.0, "text": "不开不开我不开" },
-          { "time": 15.0, "text": "妈妈没回来" },
-          { "time": 18.0, "text": "谁来也不开" }
+          {
+            "time": 0.0,
+            "text": "小兔子乖乖",
+            "romanization": "xiǎo tù zi guāi guāi"
+          },
+          {
+            "time": 0.1,
+            "text": "把门儿开开",
+            "romanization": "bǎ mén ér kāi kāi"
+          },
+          {
+            "time": 11.3,
+            "text": "快点儿开开",
+            "romanization": "kuài diǎn ér kāi kāi"
+          },
+          {
+            "time": 13.4,
+            "text": "我要进来",
+            "romanization": "wǒ yào jìn lái"
+          },
+          {
+            "time": 15.4,
+            "text": "不开 不开 我不开",
+            "romanization": "bù kāi bù kāi wǒ bù kāi"
+          },
+          {
+            "time": 18.1,
+            "text": "妈妈没回来",
+            "romanization": "mā mā méi huí lái"
+          },
+          {
+            "time": 25.4,
+            "text": "谁来也不开",
+            "romanization": "shuí lái yě bù kāi"
+          },
+          {
+            "time": 25.5,
+            "text": "小兔子乖乖",
+            "romanization": "xiǎo tù zi guāi guāi"
+          },
+          {
+            "time": 27.0,
+            "text": "把门儿开开",
+            "romanization": "bǎ mén ér kāi kāi"
+          },
+          {
+            "time": 29.4,
+            "text": "快点儿开开",
+            "romanization": "kuài diǎn ér kāi kāi"
+          },
+          {
+            "time": 43.4,
+            "text": "我要进来",
+            "romanization": "wǒ yào jìn lái"
+          },
+          {
+            "time": 45.3,
+            "text": "不开 不开 我不开",
+            "romanization": "bù kāi bù kāi wǒ bù kāi"
+          },
+          {
+            "time": 47.1,
+            "text": "妈妈没回来",
+            "romanization": "mā mā méi huí lái"
+          },
+          {
+            "time": 57.3,
+            "text": "谁来也不开",
+            "romanization": "shuí lái yě bù kāi"
+          },
+          {
+            "time": 58.3,
+            "text": "小兔子乖乖",
+            "romanization": "xiǎo tù zi guāi guāi"
+          },
+          {
+            "time": 59.9,
+            "text": "把门儿开开",
+            "romanization": "bǎ mén ér kāi kāi"
+          },
+          {
+            "time": 61.9,
+            "text": "快点儿开开",
+            "romanization": "kuài diǎn ér kāi kāi"
+          },
+          {
+            "time": 79.1,
+            "text": "我要进来",
+            "romanization": "wǒ yào jìn lái"
+          },
+          {
+            "time": 79.2,
+            "text": "不开 不开 我不开",
+            "romanization": "bù kāi bù kāi wǒ bù kāi"
+          },
+          {
+            "time": 89.9,
+            "text": "妈妈没回来",
+            "romanization": "mā mā méi huí lái"
+          },
+          {
+            "time": 91.8,
+            "text": "谁来也不开",
+            "romanization": "shuí lái yě bù kāi"
+          }
         ]
       },
       "activity": {
@@ -536,15 +2584,32 @@
           "en": "Who's knocking? Don't open! 🚪"
         }
       },
-      "parentNote": "A safety song teaching children not to open the door to strangers. The bunny is wise!"
+      "parentNote": "A safety song teaching children not to open the door to strangers. The bunny is wise!",
+      "energy": "gentle",
+      "bpm": 100,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "小兔子乖乖"
+        },
+        "carryRomanization": {
+          "zh": "xiǎo tù zi guāi guāi"
+        },
+        "meaning": "'Little rabbit, be good' — a story-song where the bunny only opens the door for mama."
+      }
     },
     {
       "id": "ba-luobo",
       "category": "chinese",
       "melodyOrigin": "Chinese traditional story song",
       "icon": "🥕",
-      "backgroundGradient": ["#FFF8E1", "#FFE082"],
-      "duration": 80,
+      "backgroundGradient": [
+        "#FFF8E1",
+        "#FFE082"
+      ],
+      "duration": 90,
       "titles": {
         "zh": "拔萝卜"
       },
@@ -553,11 +2618,106 @@
       },
       "lyrics": {
         "zh": [
-          { "time": 0.0, "text": "拔萝卜 拔萝卜" },
-          { "time": 3.5, "text": "嘿哟嘿哟 拔萝卜" },
-          { "time": 7.0, "text": "嘿哟嘿哟 拔不动" },
-          { "time": 10.5, "text": "老太婆 快快来" },
-          { "time": 14.0, "text": "快来帮我们拔萝卜" }
+          {
+            "time": 5.0,
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
+          },
+          {
+            "time": 9.1,
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
+          },
+          {
+            "time": 13.1,
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
+          },
+          {
+            "time": 17.1,
+            "text": "老奶奶  快快来",
+            "romanization": "lǎo nǎi nǎi  kuài kuài lái"
+          },
+          {
+            "time": 21.2,
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
+          },
+          {
+            "time": 25.2,
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
+          },
+          {
+            "time": 29.3,
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
+          },
+          {
+            "time": 33.3,
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
+          },
+          {
+            "time": 37.4,
+            "text": "老奶奶  快快来",
+            "romanization": "lǎo nǎi nǎi  kuài kuài lái"
+          },
+          {
+            "time": 41.4,
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
+          },
+          {
+            "time": 45.5,
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
+          },
+          {
+            "time": 49.5,
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
+          },
+          {
+            "time": 53.6,
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
+          },
+          {
+            "time": 57.6,
+            "text": "小弟弟  快快来",
+            "romanization": "xiǎo dì dì  kuài kuài lái"
+          },
+          {
+            "time": 61.7,
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
+          },
+          {
+            "time": 65.8,
+            "text": "拔萝卜  拔萝卜",
+            "romanization": "bá luó bo  bá luó bo"
+          },
+          {
+            "time": 69.8,
+            "text": "嘿哟  嘿哟  拔萝卜",
+            "romanization": "hēi yō  hēi yō  bá luó bo"
+          },
+          {
+            "time": 73.8,
+            "text": "嘿哟  嘿哟  拔不动",
+            "romanization": "hēi yō  hēi yō  bá bù dòng"
+          },
+          {
+            "time": 77.9,
+            "text": "小姐姐  快快来",
+            "romanization": "xiǎo jiě jiě  kuài kuài lái"
+          },
+          {
+            "time": 82.0,
+            "text": "快来帮我们拔萝卜",
+            "romanization": "kuài lái bāng wǒ men bá luó bo"
+          }
         ]
       },
       "activity": {
@@ -568,15 +2728,32 @@
           "en": "Pull out the carrot! 🥕"
         }
       },
-      "parentNote": "A cumulative song where more and more characters help pull up a giant radish — like 'The Enormous Turnip.'"
+      "parentNote": "A cumulative song where more and more characters help pull up a giant radish — like 'The Enormous Turnip.'",
+      "energy": "action",
+      "bpm": 120,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "拔萝卜"
+        },
+        "carryRomanization": {
+          "zh": "bá luó bo"
+        },
+        "meaning": "'Pulling up the radish' — everyone joins to tug together; great for a pulling game."
+      }
     },
     {
       "id": "zhao-pengyou",
       "category": "chinese",
       "melodyOrigin": "Chinese traditional social song",
       "icon": "🤝",
-      "backgroundGradient": ["#FCE4EC", "#F48FB1"],
-      "duration": 70,
+      "backgroundGradient": [
+        "#FCE4EC",
+        "#F48FB1"
+      ],
+      "duration": 58,
       "titles": {
         "zh": "找朋友"
       },
@@ -585,10 +2762,86 @@
       },
       "lyrics": {
         "zh": [
-          { "time": 0.0, "text": "找呀找呀找朋友" },
-          { "time": 3.5, "text": "找到一个好朋友" },
-          { "time": 7.0, "text": "敬个礼 握握手" },
-          { "time": 10.5, "text": "你是我的好朋友" }
+          {
+            "time": 0.6,
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
+          },
+          {
+            "time": 4.0,
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
+          },
+          {
+            "time": 7.4,
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
+          },
+          {
+            "time": 10.8,
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
+          },
+          {
+            "time": 14.2,
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
+          },
+          {
+            "time": 17.6,
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
+          },
+          {
+            "time": 21.0,
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
+          },
+          {
+            "time": 24.4,
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
+          },
+          {
+            "time": 27.8,
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
+          },
+          {
+            "time": 31.2,
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
+          },
+          {
+            "time": 34.6,
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
+          },
+          {
+            "time": 38.0,
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
+          },
+          {
+            "time": 41.4,
+            "text": "找呀找呀找朋友",
+            "romanization": "zhǎo ya zhǎo ya zhǎo péng yǒu"
+          },
+          {
+            "time": 44.8,
+            "text": "找到一个好朋友",
+            "romanization": "zhǎo dào yí gè hǎo péng yǒu"
+          },
+          {
+            "time": 48.2,
+            "text": "敬个礼  握握手",
+            "romanization": "jìng gè lǐ  wò wò shǒu"
+          },
+          {
+            "time": 51.6,
+            "text": "你是我的好朋友",
+            "romanization": "nǐ shì wǒ de hǎo péng yǒu"
+          }
         ]
       },
       "activity": {
@@ -599,15 +2852,32 @@
           "en": "Find a friend and shake hands! 🤝"
         }
       },
-      "parentNote": "A lovely friendship song. Children bow, shake hands, and declare friendship. Great for social skills."
+      "parentNote": "A lovely friendship song. Children bow, shake hands, and declare friendship. Great for social skills.",
+      "energy": "playful",
+      "bpm": 112,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "找朋友"
+        },
+        "carryRomanization": {
+          "zh": "zhǎo péng you"
+        },
+        "meaning": "'Find a friend' — a greeting song: find a friend, salute, shake hands, and smile."
+      }
     },
     {
       "id": "da-xiang",
       "category": "chinese",
       "melodyOrigin": "Chinese traditional animal song",
       "icon": "🐘",
-      "backgroundGradient": ["#ECEFF1", "#CFD8DC"],
-      "duration": 65,
+      "backgroundGradient": [
+        "#ECEFF1",
+        "#CFD8DC"
+      ],
+      "duration": 61,
       "titles": {
         "zh": "大象"
       },
@@ -616,10 +2886,66 @@
       },
       "lyrics": {
         "zh": [
-          { "time": 0.0, "text": "大象大象" },
-          { "time": 3.0, "text": "你的鼻子怎么那么长" },
-          { "time": 7.0, "text": "妈妈说鼻子长" },
-          { "time": 10.5, "text": "才是漂亮" }
+          {
+            "time": 0.0,
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
+          },
+          {
+            "time": 2.4,
+            "text": "你的鼻子怎么那么长",
+            "romanization": "nǐ de bí zi zěn me nà me zhǎng"
+          },
+          {
+            "time": 5.8,
+            "text": "妈妈说鼻子长才是漂亮",
+            "romanization": "mā mā shuō bí zi zhǎng cái shì piào liàng"
+          },
+          {
+            "time": 11.6,
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
+          },
+          {
+            "time": 16.0,
+            "text": "你喜欢爸爸或妈妈",
+            "romanization": "nǐ xǐ huān bà bà huò mā mā"
+          },
+          {
+            "time": 19.3,
+            "text": "我好像比较喜欢我的妈妈",
+            "romanization": "wǒ hǎo xiàng bǐ jiào xǐ huān wǒ de mā mā"
+          },
+          {
+            "time": 30.0,
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
+          },
+          {
+            "time": 36.2,
+            "text": "你的鼻子怎么那么长",
+            "romanization": "nǐ de bí zi zěn me nà me zhǎng"
+          },
+          {
+            "time": 39.7,
+            "text": "妈妈说鼻子长才是漂亮",
+            "romanization": "mā mā shuō bí zi zhǎng cái shì piào liàng"
+          },
+          {
+            "time": 45.5,
+            "text": "大象  大象",
+            "romanization": "dà xiàng  dà xiàng"
+          },
+          {
+            "time": 48.1,
+            "text": "你喜欢爸爸或妈妈",
+            "romanization": "nǐ xǐ huān bà bà huò mā mā"
+          },
+          {
+            "time": 53.3,
+            "text": "我好像比较喜欢我的妈妈",
+            "romanization": "wǒ hǎo xiàng bǐ jiào xǐ huān wǒ de mā mā"
+          }
         ]
       },
       "activity": {
@@ -630,15 +2956,32 @@
           "en": "Make an elephant trunk with your arm! 🐘"
         }
       },
-      "parentNote": "A short, catchy song about why elephants have long noses. Kids love swinging their arm-trunks!"
+      "parentNote": "A short, catchy song about why elephants have long noses. Kids love swinging their arm-trunks!",
+      "energy": "playful",
+      "bpm": 108,
+      "recordingSource": {
+        "zh": "宝宝巴士"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "zh": "大象"
+        },
+        "carryRomanization": {
+          "zh": "dà xiàng"
+        },
+        "meaning": "'The elephant' — sing about the elephant's long, long nose; point at your own nose."
+      }
     },
     {
       "id": "humpty-dumpty",
       "category": "english",
       "melodyOrigin": "English traditional nursery rhyme (1797)",
       "icon": "🥚",
-      "backgroundGradient": ["#EFEBE9", "#D7CCC8"],
-      "duration": 45,
+      "backgroundGradient": [
+        "#EFEBE9",
+        "#D7CCC8"
+      ],
+      "duration": 70,
       "titles": {
         "en": "Humpty Dumpty"
       },
@@ -647,11 +2990,54 @@
       },
       "lyrics": {
         "en": [
-          { "time": 0.0, "text": "Humpty Dumpty sat on a wall" },
-          { "time": 3.5, "text": "Humpty Dumpty had a great fall" },
-          { "time": 7.0, "text": "All the king's horses" },
-          { "time": 10.0, "text": "And all the king's men" },
-          { "time": 13.0, "text": "Couldn't put Humpty together again" }
+          {
+            "time": 0.3,
+            "text": "Humpty Dumpty sat on a wall"
+          },
+          {
+            "time": 13.6,
+            "text": "Humpty Dumpty had a great fall"
+          },
+          {
+            "time": 17.0,
+            "text": "All the king's horses and all the king's men"
+          },
+          {
+            "time": 19.8,
+            "text": "Couldn't put Humpty together again"
+          },
+          {
+            "time": 26.6,
+            "text": "Humpty Dumpty sat on a wall"
+          },
+          {
+            "time": 29.6,
+            "text": "Humpty Dumpty had a great fall"
+          },
+          {
+            "time": 32.8,
+            "text": "All the king's horses and all the king's men"
+          },
+          {
+            "time": 35.5,
+            "text": "Couldn't put Humpty together again"
+          },
+          {
+            "time": 56.7,
+            "text": "Humpty Dumpty sat on a wall"
+          },
+          {
+            "time": 60.8,
+            "text": "Humpty Dumpty had a great fall"
+          },
+          {
+            "time": 63.8,
+            "text": "All the king's horses and all the king's men"
+          },
+          {
+            "time": 67.1,
+            "text": "Couldn't put Humpty together again"
+          }
         ]
       },
       "activity": {
@@ -662,15 +3048,29 @@
           "en": "Stack something tall! 🧱"
         }
       },
-      "parentNote": "One of the oldest English nursery rhymes. Great for teaching about balance and gravity!"
+      "parentNote": "One of the oldest English nursery rhymes. Great for teaching about balance and gravity!",
+      "energy": "gentle",
+      "bpm": 100,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "Humpty Dumpty"
+        },
+        "meaning": "A classic rhyme about an egg's great fall — fun to act out with a tumble."
+      }
     },
     {
       "id": "baa-baa-black-sheep",
       "category": "english",
       "melodyOrigin": "English nursery rhyme, Twinkle melody (1731)",
       "icon": "🐑",
-      "backgroundGradient": ["#F1F8E9", "#DCEDC8"],
-      "duration": 60,
+      "backgroundGradient": [
+        "#F1F8E9",
+        "#DCEDC8"
+      ],
+      "duration": 85,
       "titles": {
         "en": "Baa Baa Black Sheep"
       },
@@ -679,10 +3079,54 @@
       },
       "lyrics": {
         "en": [
-          { "time": 0.0, "text": "Baa baa black sheep, have you any wool?" },
-          { "time": 4.5, "text": "Yes sir, yes sir, three bags full" },
-          { "time": 9.0, "text": "One for the master, one for the dame" },
-          { "time": 13.5, "text": "And one for the little boy who lives down the lane" }
+          {
+            "time": 0.1,
+            "text": "Baa, baa, black sheep, have you any wool?"
+          },
+          {
+            "time": 7.9,
+            "text": "Yes sir, yes sir, three bags full"
+          },
+          {
+            "time": 11.4,
+            "text": "One for the master, one for the dame"
+          },
+          {
+            "time": 15.5,
+            "text": "And one for the little boy who lives down the lane"
+          },
+          {
+            "time": 30.1,
+            "text": "Baa, baa, black sheep, have you any wool?"
+          },
+          {
+            "time": 35.9,
+            "text": "Yes sir, yes sir, three bags full"
+          },
+          {
+            "time": 39.4,
+            "text": "One for the master, one for the dame"
+          },
+          {
+            "time": 43.5,
+            "text": "And one for the little boy who lives down the lane"
+          },
+          {
+            "time": 60.1,
+            "text": "Baa, baa, black sheep, have you any wool?"
+          },
+          {
+            "time": 63.9,
+            "text": "Yes sir, yes sir, three bags full"
+          },
+          {
+            "time": 67.8,
+            "text": "One for the master, one for the dame"
+          },
+          {
+            "time": 71.5,
+            "text": "And one for the little boy who lives down the lane"
+          }
         ]
       },
       "activity": {
@@ -693,15 +3137,29 @@
           "en": "Count to three on your fingers! ✋"
         }
       },
-      "parentNote": "Same melody as Twinkle Twinkle! Try playing them back-to-back and see if your child notices."
+      "parentNote": "Same melody as Twinkle Twinkle! Try playing them back-to-back and see if your child notices.",
+      "energy": "gentle",
+      "bpm": 96,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "Baa, baa, black sheep"
+        },
+        "meaning": "Shares its melody with Twinkle and the ABC song — make the 'baa' sound together."
+      }
     },
     {
       "id": "mary-little-lamb",
       "category": "english",
       "melodyOrigin": "Mary Had a Little Lamb (1830)",
       "icon": "🐑",
-      "backgroundGradient": ["#F9FBE7", "#F0F4C3"],
-      "duration": 55,
+      "backgroundGradient": [
+        "#F9FBE7",
+        "#F0F4C3"
+      ],
+      "duration": 75,
       "titles": {
         "en": "Mary Had a Little Lamb"
       },
@@ -710,12 +3168,82 @@
       },
       "lyrics": {
         "en": [
-          { "time": 0.0, "text": "Mary had a little lamb" },
-          { "time": 3.0, "text": "Little lamb, little lamb" },
-          { "time": 6.0, "text": "Mary had a little lamb" },
-          { "time": 9.0, "text": "Its fleece was white as snow" },
-          { "time": 12.0, "text": "Everywhere that Mary went" },
-          { "time": 15.0, "text": "The lamb was sure to go" }
+          {
+            "time": 1.6,
+            "text": "Mary had a little lamb"
+          },
+          {
+            "time": 9.1,
+            "text": "Little lamb, little lamb"
+          },
+          {
+            "time": 12.3,
+            "text": "Mary had a little lamb"
+          },
+          {
+            "time": 16.2,
+            "text": "Whose fleece was white as snow"
+          },
+          {
+            "time": 19.1,
+            "text": "Mary had a little lamb"
+          },
+          {
+            "time": 22.0,
+            "text": "And a big giraffe!"
+          },
+          {
+            "time": 25.3,
+            "text": "Mary had a big giraffe"
+          },
+          {
+            "time": 31.4,
+            "text": "Big giraffe, big giraffe"
+          },
+          {
+            "time": 34.2,
+            "text": "Mary had a big giraffe"
+          },
+          {
+            "time": 37.1,
+            "text": "Whose neck was very long"
+          },
+          {
+            "time": 42.6,
+            "text": "Long, long, long, long, long"
+          },
+          {
+            "time": 47.8,
+            "text": "Very, very, very long"
+          },
+          {
+            "time": 49.0,
+            "text": "And a rhinoceros!"
+          },
+          {
+            "time": 51.3,
+            "text": "Mary had a rhinoceros"
+          },
+          {
+            "time": 57.2,
+            "text": "Rhinoceros, rhinoceros"
+          },
+          {
+            "time": 60.5,
+            "text": "Mary had a rhinoceros"
+          },
+          {
+            "time": 65.3,
+            "text": "Whose horn was very sharp"
+          },
+          {
+            "time": 70.1,
+            "text": "Ouch!"
+          },
+          {
+            "time": 71.0,
+            "text": "Sharp, sharp, sharp, sharp, sharp"
+          }
         ]
       },
       "activity": {
@@ -726,15 +3254,29 @@
           "en": "Find something white and fluffy! ☁️"
         }
       },
-      "parentNote": "One of the first songs ever recorded on Thomas Edison's phonograph in 1877!"
+      "parentNote": "One of the first songs ever recorded on Thomas Edison's phonograph in 1877!",
+      "energy": "gentle",
+      "bpm": 100,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "Mary had a little lamb"
+        },
+        "meaning": "A gentle story-song about a lamb that follows Mary everywhere."
+      }
     },
     {
       "id": "itsy-bitsy-spider",
       "category": "english",
       "melodyOrigin": "Itsy Bitsy Spider (early 1900s)",
       "icon": "🕷️",
-      "backgroundGradient": ["#E8EAF6", "#C5CAE9"],
-      "duration": 60,
+      "backgroundGradient": [
+        "#E8EAF6",
+        "#C5CAE9"
+      ],
+      "duration": 89,
       "titles": {
         "en": "Itsy Bitsy Spider"
       },
@@ -743,10 +3285,62 @@
       },
       "lyrics": {
         "en": [
-          { "time": 0.0, "text": "The itsy bitsy spider went up the water spout" },
-          { "time": 4.5, "text": "Down came the rain and washed the spider out" },
-          { "time": 9.0, "text": "Out came the sun and dried up all the rain" },
-          { "time": 13.5, "text": "And the itsy bitsy spider went up the spout again" }
+          {
+            "time": 0.2,
+            "text": "The itsy bitsy spider went up the water spout"
+          },
+          {
+            "time": 18.8,
+            "text": "Down came the rain and washed the spider out"
+          },
+          {
+            "time": 25.5,
+            "text": "Out came the sun and dried up all the rain"
+          },
+          {
+            "time": 32.0,
+            "text": "And the itsy bitsy spider went up the spout again"
+          },
+          {
+            "time": 40.5,
+            "text": "Okay, put your fingers together"
+          },
+          {
+            "time": 45.4,
+            "text": "Let's do the itsy bitsy spider!"
+          },
+          {
+            "time": 50.3,
+            "text": "The itsy bitsy spider went up the water spout"
+          },
+          {
+            "time": 56.2,
+            "text": "Down came the rain and washed the spider out"
+          },
+          {
+            "time": 61.7,
+            "text": "Out came the sun and dried up all the rain"
+          },
+          {
+            "time": 67.2,
+            "text": "And the itsy bitsy spider went up the spout again"
+          },
+          {
+            "time": 72.6,
+            "text": "A little faster now!"
+          },
+          {
+            "time": 75.3,
+            "text": "The itsy bitsy spider went up the water spout"
+          },
+          {
+            "time": 80.0,
+            "text": "Down came the rain and washed the spider out"
+          },
+          {
+            "time": 84.4,
+            "text": "Out came the sun and dried up all the rain"
+          }
         ]
       },
       "activity": {
@@ -757,7 +3351,18 @@
           "en": "Do the spider crawl with your fingers! 🕷️"
         }
       },
-      "parentNote": "The finger movements for this song are nearly universal. Great for fine motor skills!"
+      "parentNote": "The finger movements for this song are nearly universal. Great for fine motor skills!",
+      "energy": "playful",
+      "bpm": 108,
+      "recordingSource": {
+        "en": "Super Simple Songs"
+      },
+      "parentExtension": {
+        "carryPhrase": {
+          "en": "The itsy-bitsy spider"
+        },
+        "meaning": "Do the finger-walking spider climb up — a favorite hand-action rhyme."
+      }
     }
   ]
 }

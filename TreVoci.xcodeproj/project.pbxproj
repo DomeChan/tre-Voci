@@ -42,6 +42,9 @@
 		AA000033 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000034 /* SettingsView.swift */; };
 		AA000034 /* Font+Nunito.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000036 /* Font+Nunito.swift */; };
 		AA000035 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AB000037 /* Fonts */; };
+		AA000036 /* AirPlayPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000038 /* AirPlayPickerButton.swift */; };
+		AA000037 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000039 /* StoreService.swift */; };
+		AA000038 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000040 /* DonationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,10 @@
 		AB000035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB000036 /* Font+Nunito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Nunito.swift"; sourceTree = "<group>"; };
 		AB000037 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		AB000038 /* AirPlayPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayPickerButton.swift; sourceTree = "<group>"; };
+		AB000039 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		AB000040 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		AB000041 /* TreVoci.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TreVoci.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +115,7 @@
 			children = (
 				AB000001 /* TreVociApp.swift */,
 				AB000035 /* Info.plist */,
+				AB000041 /* TreVoci.storekit */,
 				AD000003 /* Models */,
 				AD000004 /* ViewModels */,
 				AD000005 /* Views */,
@@ -148,8 +156,26 @@
 				AD000013 /* Player */,
 				AD000014 /* Activity */,
 				AD000015 /* ParentZone */,
+				AD000016 /* Shared */,
+				AD000017 /* Donation */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AD000017 /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				AB000040 /* DonationView.swift */,
+			);
+			path = Donation;
+			sourceTree = "<group>";
+		};
+		AD000016 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AB000038 /* AirPlayPickerButton.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		AD000006 /* Services */ = {
@@ -158,6 +184,7 @@
 				AB000006 /* PersistenceService.swift */,
 				AB000007 /* SongCatalogService.swift */,
 				AB000011 /* AudioService.swift */,
+				AB000039 /* StoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -353,6 +380,9 @@
 				AA000032 /* ExposureChart.swift in Sources */,
 				AA000033 /* SettingsView.swift in Sources */,
 				AA000034 /* Font+Nunito.swift in Sources */,
+				AA000036 /* AirPlayPickerButton.swift in Sources */,
+				AA000037 /* StoreService.swift in Sources */,
+				AA000038 /* DonationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +523,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -508,7 +538,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -529,7 +559,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,7 +574,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

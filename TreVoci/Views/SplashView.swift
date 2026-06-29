@@ -35,7 +35,7 @@ struct SplashView: View {
 
                 // App title with gradient text
                 Text("Tre Voci")
-                    .font(.system(size: 44, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 44))
                     .foregroundStyle(
                         LinearGradient(
                             colors: [.coral, .rose, .gold],
@@ -46,7 +46,7 @@ struct SplashView: View {
 
                 // Subtitle
                 Text("THREE VOICES · ONE SONG")
-                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 12))
                     .foregroundStyle(Color.stone)
                     .tracking(2.5)
 
@@ -63,7 +63,7 @@ struct SplashView: View {
                 // CTA Button
                 Button(action: onStart) {
                     Text("Cominciamo! · 开始吧!")
-                        .font(.system(size: 17, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 17))
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .frame(height: 56)

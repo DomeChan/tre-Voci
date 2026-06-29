@@ -1,5 +1,4 @@
 import SwiftUI
-import AVKit
 
 struct SettingsView: View {
     @Environment(PersistenceService.self) private var persistence
@@ -12,12 +11,17 @@ struct SettingsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Settings")
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
 
             VStack(spacing: 0) {
                 // Child's name
                 nameRow
+
+                Divider().padding(.horizontal, 16)
+
+                // Languages
+                languagesRow
 
                 Divider().padding(.horizontal, 16)
 
@@ -49,7 +53,7 @@ struct SettingsView: View {
                     Image(systemName: "arrow.counterclockwise")
                         .font(.system(size: 14, weight: .semibold))
                     Text("Reset All Data")
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .font(.nunito(.bold, size: 14))
                 }
                 .foregroundStyle(Color.chineseRed)
                 .frame(maxWidth: .infinity)
@@ -81,12 +85,12 @@ struct SettingsView: View {
     private var nameRow: some View {
         HStack {
             Label("Child's Name", systemImage: "person.fill")
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 14))
                 .foregroundStyle(Color.bark)
             Spacer()
             if editingName {
                 TextField("Name", text: $nameText)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 14))
                     .multilineTextAlignment(.trailing)
                     .frame(width: 120)
                     .onSubmit {
@@ -97,11 +101,11 @@ struct SettingsView: View {
                     persistence.update { $0.childName = nameText }
                     editingName = false
                 }
-                .font(.system(size: 13, weight: .bold, design: .rounded))
+                .font(.nunito(.bold, size: 13))
                 .foregroundStyle(Color.coral)
             } else {
                 Text(persistence.state.displayName)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 14))
                     .foregroundStyle(Color.stone)
                 Button {
                     nameText = persistence.state.childName
@@ -117,15 +121,70 @@ struct SettingsView: View {
         .padding(.vertical, 14)
     }
 
+    // MARK: - Languages Row
+
+    private var languagesRow: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Label("Languages", systemImage: "globe")
+                    .font(.nunito(.semiBold, size: 14))
+                    .foregroundStyle(Color.bark)
+                Spacer()
+                Text("at least 2")
+                    .font(.nunito(.semiBold, size: 11))
+                    .foregroundStyle(Color.stone)
+            }
+
+            HStack(spacing: 8) {
+                ForEach(Language.allCases) { lang in
+                    let isSelected = persistence.state.isLanguageSelected(lang)
+                    Button {
+                        toggleSettingsLanguage(lang)
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(lang.flag)
+                                .font(.system(size: 14))
+                            Text(lang.displayName)
+                                .font(.nunito(.bold, size: 12))
+                        }
+                        .foregroundStyle(isSelected ? .white : Color.bark)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(isSelected ? lang.primaryColor : Color.sand.opacity(0.5))
+                        .clipShape(Capsule())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("\(lang.displayName), \(isSelected ? "selected" : "not selected")")
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 14)
+    }
+
+    private func toggleSettingsLanguage(_ lang: Language) {
+        let current = Set(persistence.state.selectedLanguages)
+        if current.contains(lang.rawValue) {
+            guard current.count > 2 else { return }
+            persistence.update { state in
+                state.selectedLanguages.removeAll { $0 == lang.rawValue }
+            }
+        } else {
+            persistence.update { state in
+                state.selectedLanguages.append(lang.rawValue)
+            }
+        }
+    }
+
     // MARK: - Speaker Row
 
     private var speakerRow: some View {
         HStack {
             Label("Default Speaker", systemImage: "speaker.wave.2.fill")
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 14))
                 .foregroundStyle(Color.bark)
             Spacer()
-            AirPlaySettingsButton()
+            AirPlayPickerButton()
                 .frame(width: 30, height: 30)
         }
         .padding(.horizontal, 16)
@@ -137,7 +196,7 @@ struct SettingsView: View {
     private var sessionLengthRow: some View {
         HStack {
             Label("Songs per Session", systemImage: "music.note.list")
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 14))
                 .foregroundStyle(Color.bark)
             Spacer()
             HStack(spacing: 12) {
@@ -154,7 +213,7 @@ struct SettingsView: View {
                 .disabled(persistence.state.sessionLength <= 1)
 
                 Text("\(persistence.state.sessionLength)")
-                    .font(.system(size: 16, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 16))
                     .foregroundStyle(Color.bark)
                     .frame(width: 24)
 
@@ -180,7 +239,7 @@ struct SettingsView: View {
     private var autoRotationRow: some View {
         HStack {
             Label("Auto Language Rotation", systemImage: "arrow.triangle.2.circlepath")
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 14))
                 .foregroundStyle(Color.bark)
             Spacer()
             Toggle("", isOn: Binding(
@@ -197,10 +256,16 @@ struct SettingsView: View {
     // MARK: - Bedtime Mode Row
 
     private var bedtimeModeRow: some View {
-        HStack {
-            Label("Bedtime Mode", systemImage: "moon.fill")
-                .font(.system(size: 14, weight: .semibold, design: .rounded))
-                .foregroundStyle(Color.bark)
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 4) {
+                Label("Bedtime Mode", systemImage: "moon.fill")
+                    .font(.nunito(.semiBold, size: 14))
+                    .foregroundStyle(Color.bark)
+                Text("Calm songs only, unhurried language hand-offs, a soft fade-out, and no \u{201C}one more.\u{201D}")
+                    .font(.nunito(.medium, size: 12))
+                    .foregroundStyle(Color.stone)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
             Spacer()
             Toggle("", isOn: Binding(
                 get: { persistence.state.bedtimeMode },
@@ -219,29 +284,29 @@ struct SettingsView: View {
         VStack(spacing: 6) {
             let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
             Text("Tre Voci v\(version)")
-                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .font(.nunito(.bold, size: 12))
                 .foregroundStyle(Color.stone)
             Text("Made with \u{2764}\u{FE0F} in Dubai")
-                .font(.system(size: 11, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 11))
                 .foregroundStyle(Color.mist)
+            HStack(spacing: 4) {
+                Image(systemName: "lock.shield.fill")
+                    .font(.system(size: 10, weight: .semibold))
+                Text("No tracking. No ads. No accounts. Nothing leaves your iPhone.")
+                    .font(.nunito(.semiBold, size: 11))
+                    .multilineTextAlignment(.center)
+            }
+            .foregroundStyle(Color.stone)
+            .padding(.top, 2)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Privacy promise: No tracking, no ads, no accounts. Nothing leaves your iPhone.")
         }
         .frame(maxWidth: .infinity)
         .padding(.top, 8)
     }
 }
 
-// MARK: - AirPlay Settings Button
-
-private struct AirPlaySettingsButton: UIViewRepresentable {
-    func makeUIView(context: Context) -> AVRoutePickerView {
-        let picker = AVRoutePickerView()
-        picker.tintColor = UIColor(Color.stone)
-        picker.activeTintColor = UIColor(Color.coral)
-        return picker
-    }
-
-    func updateUIView(_ uiView: AVRoutePickerView, context: Context) {}
-}
+// Uses shared AirPlayPickerButton from Views/Shared/
 
 #if DEBUG
 #Preview {

@@ -6,6 +6,8 @@ struct ActivityBridgeView: View {
     @State private var wiggle = false
 
     let song: Song
+    let actualDurationSeconds: Int
+    var selectedLanguages: [Language] = Language.all
     let onHome: () -> Void
     let onOneMore: () -> Void
 
@@ -27,7 +29,12 @@ struct ActivityBridgeView: View {
         .animation(.spring(response: 0.5, dampingFraction: 0.8), value: viewModel?.phase == .summary)
         .onAppear {
             if viewModel == nil {
-                viewModel = SessionViewModel(song: song, persistence: persistence)
+                viewModel = SessionViewModel(
+                    song: song,
+                    actualDurationSeconds: actualDurationSeconds,
+                    persistence: persistence,
+                    selectedLanguages: selectedLanguages
+                )
             }
             wiggle = true
         }
@@ -50,11 +57,11 @@ struct ActivityBridgeView: View {
 
             // Celebration header
             Text("Brava \(vm.childName)! \u{1F389}")
-                .font(.system(size: 24, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 24))
                 .foregroundStyle(Color.bark)
 
             Text("Time for a little activity!")
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 15))
                 .foregroundStyle(Color.stone)
 
             // Activity prompts card
@@ -65,7 +72,7 @@ struct ActivityBridgeView: View {
             // Done button
             Button(action: { vm.completeActivity() }) {
                 Text("Done! \u{00B7} Fatto! \u{00B7} \u{505A}\u{5B8C}\u{4E86}!")
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 17))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 52)
@@ -79,7 +86,7 @@ struct ActivityBridgeView: View {
             // Skip link
             Button(action: { vm.skipActivity() }) {
                 Text("Skip activity")
-                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 13))
                     .foregroundStyle(Color.stone)
             }
             .accessibilityLabel("Skip activity")
@@ -92,13 +99,13 @@ struct ActivityBridgeView: View {
 
     private var activityCard: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ForEach(Language.allCases) { lang in
+            ForEach(selectedLanguages) { lang in
                 if let prompt = song.activity.prompts[lang.rawValue], !prompt.isEmpty {
                     HStack(alignment: .top, spacing: 10) {
                         Text(lang.flag)
                             .font(.system(size: 20))
                         Text(prompt)
-                            .font(.system(size: 15, weight: .medium, design: .rounded))
+                            .font(.nunito(.medium, size: 15))
                             .foregroundStyle(Color.bark)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -133,11 +140,11 @@ struct ActivityBridgeView: View {
             .animation(.spring(response: 0.5, dampingFraction: 0.6), value: vm.showConfetti)
 
             Text("Session Complete!")
-                .font(.system(size: 24, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 24))
                 .foregroundStyle(Color.bark)
 
             Text(vm.sessionSummaryText)
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 15))
                 .foregroundStyle(Color.stone)
 
             // Language badges
@@ -162,7 +169,7 @@ struct ActivityBridgeView: View {
             // Back Home button
             Button(action: onHome) {
                 Text("Back Home")
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 17))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 52)
@@ -173,20 +180,25 @@ struct ActivityBridgeView: View {
             .accessibilityAddTraits(.isButton)
             .padding(.horizontal, 24)
 
-            // One More Song button
-            Button(action: onOneMore) {
-                Text("One More Song")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.coral)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 44)
-                    .background(Color.coral.opacity(0.12))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+            // One More Song button — hidden in Bedtime Mode, where the point is
+            // to play less and wind down, not invite another round.
+            if !persistence.state.bedtimeMode {
+                Button(action: onOneMore) {
+                    Text("One More Song")
+                        .font(.nunito(.bold, size: 15))
+                        .foregroundStyle(Color.coral)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                        .background(Color.coral.opacity(0.12))
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                }
+                .accessibilityLabel("Play one more song")
+                .accessibilityAddTraits(.isButton)
+                .padding(.horizontal, 24)
+                .padding(.bottom, 32)
+            } else {
+                Color.clear.frame(height: 32)
             }
-            .accessibilityLabel("Play one more song")
-            .accessibilityAddTraits(.isButton)
-            .padding(.horizontal, 24)
-            .padding(.bottom, 32)
         }
     }
 }
@@ -195,6 +207,7 @@ struct ActivityBridgeView: View {
 #Preview {
     ActivityBridgeView(
         song: .preview,
+        actualDurationSeconds: 120,
         onHome: {},
         onOneMore: {}
     )

@@ -12,17 +12,18 @@ struct LyricsView: View {
         Text(text)
             .font(language == .zh
                   ? .system(size: fontSize, weight: .bold)
-                  : .system(size: fontSize, weight: .heavy, design: .rounded))
+                  : .nunito(.extraBold, size: fontSize))
             .foregroundStyle(language.primaryColor)
             .multilineTextAlignment(.center)
-            .lineLimit(2)
+            .lineLimit(3)
+            .minimumScaleFactor(0.65)
             .id("\(language.rawValue)-\(text)")
             .transition(.asymmetric(
                 insertion: .opacity.combined(with: .offset(y: 6)),
                 removal: .opacity
             ))
             .animation(.easeOut(duration: 0.4), value: text)
-            .frame(height: 60)
+            .frame(height: 76)
             .accessibilityLabel(text)
     }
 }

@@ -1,15 +1,16 @@
 import SwiftUI
+import AVFoundation
 
 enum SheetDestination: Identifiable {
     case player(Song)
-    case activity(Song)
+    case activity(Song, Int) // song + actual elapsed seconds
     case parentGate
     case parentZone
 
     var id: String {
         switch self {
         case .player(let song): return "player-\(song.id)"
-        case .activity(let song): return "activity-\(song.id)"
+        case .activity(let song, _): return "activity-\(song.id)"
         case .parentGate: return "parentGate"
         case .parentZone: return "parentZone"
         }
@@ -18,8 +19,10 @@ enum SheetDestination: Identifiable {
 
 struct HomeView: View {
     @Environment(PersistenceService.self) private var persistence
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var viewModel: HomeViewModel?
     @State private var activeSheet: SheetDestination?
+    @State private var routeMonitor = AudioRouteMonitor()
 
     private let catalog = SongCatalogService()
 
@@ -38,7 +41,7 @@ struct HomeView: View {
                 // Daily Mix Hero Card
                 if let vm = viewModel {
                     DailyMixCard(
-                        songCount: vm.dailyMix.count,
+                        songs: vm.dailyMix,
                         duration: vm.dailyMixDuration,
                         onPlay: { playDailyMix() }
                     )
@@ -51,9 +54,10 @@ struct HomeView: View {
                 // Italian Section
                 if let vm = viewModel {
                     CultureSection(
-                        title: "🇮🇹 Filastrocche Italiane",
+                        title: "\u{1F1EE}\u{1F1F9} Filastrocche Italiane",
                         language: .it,
                         songs: vm.italianSongs,
+                        dimmed: !persistence.state.isLanguageSelected(.it),
                         onSongTap: { selectSong($0) }
                     )
                 }
@@ -61,9 +65,10 @@ struct HomeView: View {
                 // Chinese Section
                 if let vm = viewModel {
                     CultureSection(
-                        title: "🇨🇳 中文儿歌",
+                        title: "\u{1F1E8}\u{1F1F3} \u{4E2D}\u{6587}\u{513F}\u{6B4C}",
                         language: .zh,
                         songs: vm.chineseSongs,
+                        dimmed: !persistence.state.isLanguageSelected(.zh),
                         onSongTap: { selectSong($0) }
                     )
                 }
@@ -71,9 +76,10 @@ struct HomeView: View {
                 // English Section
                 if let vm = viewModel {
                     CultureSection(
-                        title: "🇬🇧 English Nursery Rhymes",
+                        title: "\u{1F1EC}\u{1F1E7} English Nursery Rhymes",
                         language: .en,
                         songs: vm.englishSongs,
+                        dimmed: !persistence.state.isLanguageSelected(.en),
                         onSongTap: { selectSong($0) }
                     )
                 }
@@ -88,17 +94,21 @@ struct HomeView: View {
             case .player(let song):
                 PlayerView(
                     song: song,
+                    selectedLanguages: persistence.state.selectedLanguages.compactMap { Language(rawValue: $0) },
+                    bedtime: persistence.state.bedtimeMode,
                     onBack: { activeSheet = nil },
-                    onActivityBridge: { song in
+                    onActivityBridge: { song, elapsed in
                         activeSheet = nil
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            activeSheet = .activity(song)
+                            activeSheet = .activity(song, elapsed)
                         }
                     }
                 )
-            case .activity(let song):
+            case .activity(let song, let elapsed):
                 ActivityBridgeView(
                     song: song,
+                    actualDurationSeconds: elapsed,
+                    selectedLanguages: persistence.state.selectedLanguages.compactMap { Language(rawValue: $0) },
                     onHome: {
                         activeSheet = nil
                     },
@@ -138,6 +148,10 @@ struct HomeView: View {
             if viewModel == nil {
                 viewModel = HomeViewModel(catalog: catalog, persistence: persistence)
             }
+            routeMonitor.start()
+        }
+        .onDisappear {
+            routeMonitor.stop()
         }
     }
 
@@ -147,11 +161,11 @@ struct HomeView: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(greeting)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 14))
                     .foregroundStyle(Color.stone)
 
                 Text("\(persistence.state.displayName)'s Songs")
-                    .font(.system(size: 26, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 26))
                     .foregroundStyle(Color.bark)
             }
 
@@ -171,25 +185,35 @@ struct HomeView: View {
     // MARK: - Speaker Pill
 
     private var speakerPill: some View {
-        HStack(spacing: 6) {
-            Image(systemName: "speaker.wave.2.fill")
-                .font(.system(size: 10))
-            Text("iPhone Speaker")
-                .font(.system(size: 12, weight: .semibold, design: .rounded))
+        ZStack {
+            HStack(spacing: 6) {
+                Image(systemName: routeMonitor.iconName)
+                    .font(.system(size: 10))
+                Text(routeMonitor.routeName)
+                    .font(.nunito(.semiBold, size: 12))
+            }
+            .foregroundStyle(Color.stone)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(Color.warm)
+            .clipShape(Capsule())
+            .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8), value: routeMonitor.routeName)
+
+            AirPlayPickerButton()
+                .frame(width: 120, height: 28)
+                .opacity(0.015)
         }
-        .foregroundStyle(Color.stone)
-        .padding(.horizontal, 12)
-        .padding(.vertical, 6)
-        .background(Color.warm)
-        .clipShape(Capsule())
+        .fixedSize()
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Playing on \(routeMonitor.routeName). Tap to choose audio output.")
     }
 
     // MARK: - Cross-Cultural Section
 
     private var crossCulturalSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("🌍 Same Song, Three Worlds")
-                .font(.system(size: 17, weight: .black, design: .rounded))
+            Text("\u{1F30D} Same Song, Three Worlds")
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)
 
@@ -213,10 +237,10 @@ struct HomeView: View {
     private var greeting: String {
         let hour = Calendar.current.component(.hour, from: Date())
         switch hour {
-        case 5..<12: return "Buongiorno ☀️"
-        case 12..<17: return "Buon pomeriggio 🌤️"
-        case 17..<21: return "Buonasera 🌅"
-        default: return "Buonanotte 🌙"
+        case 5..<12: return "Buongiorno \u{2600}\u{FE0F}"
+        case 12..<17: return "Buon pomeriggio \u{1F324}\u{FE0F}"
+        case 17..<21: return "Buonasera \u{1F305}"
+        default: return "Buonanotte \u{1F319}"
         }
     }
 
@@ -229,6 +253,68 @@ struct HomeView: View {
     private func playDailyMix() {
         guard let vm = viewModel, let first = vm.dailyMix.first else { return }
         selectSong(first)
+    }
+}
+
+// MARK: - Audio Route Monitor
+
+/// Reads the live audio output route from `AVAudioSession` so the speaker pill
+/// tells the truth (AirPlay device, Bluetooth, headphones, or this iPhone)
+/// instead of a hardcoded "iPhone Speaker" label.
+@Observable
+@MainActor
+final class AudioRouteMonitor {
+    private(set) var routeName: String = "iPhone Speaker"
+    private(set) var iconName: String = "speaker.wave.2.fill"
+
+    private var observer: NSObjectProtocol?
+
+    func start() {
+        updateRoute()
+        guard observer == nil else { return }
+        observer = NotificationCenter.default.addObserver(
+            forName: AVAudioSession.routeChangeNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            MainActor.assumeIsolated {
+                self?.updateRoute()
+            }
+        }
+    }
+
+    func stop() {
+        if let observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
+        observer = nil
+    }
+
+    private func updateRoute() {
+        let outputs = AVAudioSession.sharedInstance().currentRoute.outputs
+        guard let output = outputs.first else {
+            routeName = "iPhone Speaker"
+            iconName = "speaker.wave.2.fill"
+            return
+        }
+
+        switch output.portType {
+        case .airPlay:
+            routeName = output.portName
+            iconName = "airplayaudio"
+        case .bluetoothA2DP, .bluetoothLE, .bluetoothHFP:
+            routeName = output.portName
+            iconName = "hifispeaker.fill"
+        case .headphones, .headsetMic:
+            routeName = "Headphones"
+            iconName = "headphones"
+        case .builtInSpeaker:
+            routeName = "iPhone Speaker"
+            iconName = "speaker.wave.2.fill"
+        default:
+            routeName = output.portName
+            iconName = "speaker.wave.2.fill"
+        }
     }
 }
 

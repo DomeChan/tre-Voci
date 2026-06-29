@@ -14,12 +14,12 @@ struct SpeakerStep: View {
 
             // Title
             Text("Where should we play?")
-                .font(.system(size: 26, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 26))
                 .foregroundStyle(Color.bark)
                 .multilineTextAlignment(.center)
 
             Text("Pick a speaker — you can change anytime")
-                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 15))
                 .foregroundStyle(Color.stone)
 
             // Speaker options
@@ -31,10 +31,10 @@ struct SpeakerStep: View {
 
                     VStack(alignment: .leading, spacing: 2) {
                         Text("AirPlay Speakers")
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .font(.nunito(.bold, size: 17))
                             .foregroundStyle(Color.bark)
                         Text("Sonos, HomePod, etc.")
-                            .font(.system(size: 12, weight: .semibold, design: .rounded))
+                            .font(.nunito(.semiBold, size: 12))
                             .foregroundStyle(Color.stone)
                     }
 
@@ -56,10 +56,10 @@ struct SpeakerStep: View {
 
                     VStack(alignment: .leading, spacing: 2) {
                         Text("This iPhone")
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .font(.nunito(.bold, size: 17))
                             .foregroundStyle(Color.bark)
                         Text("Built-in speaker")
-                            .font(.system(size: 12, weight: .semibold, design: .rounded))
+                            .font(.nunito(.semiBold, size: 12))
                             .foregroundStyle(Color.stone)
                     }
 
@@ -83,8 +83,8 @@ struct SpeakerStep: View {
             // Finish button
             Button(action: onFinish) {
                 Text("Pronti! · 准备好了!")
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
-                    .foregroundStyle(.white)
+                    .font(.nunito(.bold, size: 17))
+                    .foregroundStyle(Color.bark)
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
                     .background(

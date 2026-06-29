@@ -24,6 +24,7 @@ extension Color {
     static let rose = Color(hex: "FF6B8A")
     static let peach = Color(hex: "FFAD8F")
     static let gold = Color(hex: "FFB84D")
+    static let plum = Color(hex: "9B59B6")
 
     // MARK: - Hex Initializer
     init(hex: String) {
@@ -46,5 +47,18 @@ extension Color {
             blue: Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+}
+
+// MARK: - Adaptive layout
+
+extension View {
+    /// Caps content to a comfortable reading column and centres it horizontally on
+    /// large screens (iPad / landscape). On iPhone the content is narrower than the
+    /// cap, so this is a no-op there. Keeps the iPhone-first layouts looking designed
+    /// on iPad instead of stretching edge-to-edge.
+    func readableContentWidth(_ maxWidth: CGFloat = 640) -> some View {
+        frame(maxWidth: maxWidth)
+            .frame(maxWidth: .infinity)
     }
 }

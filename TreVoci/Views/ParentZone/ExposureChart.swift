@@ -2,22 +2,77 @@ import SwiftUI
 
 struct ExposureChart: View {
     let weeklySeconds: [String: Int]
+    let currentStreak: Int
+    let longestStreak: Int
+    var selectedLanguages: [Language] = Language.all
 
     private var itMinutes: Double { Double(weeklySeconds["it"] ?? 0) / 60.0 }
     private var zhMinutes: Double { Double(weeklySeconds["zh"] ?? 0) / 60.0 }
     private var enMinutes: Double { Double(weeklySeconds["en"] ?? 0) / 60.0 }
-    private var maxMinutes: Double { max(max(itMinutes, max(zhMinutes, enMinutes)), 1) }
     private let targetMinutes: Double = 60
 
+    private func minutes(for lang: Language) -> Double {
+        Double(weeklySeconds[lang.rawValue] ?? 0) / 60.0
+    }
+
+    // MARK: - VoiceOver
+
+    /// One spoken description of the week's exposure across every language with
+    /// recorded data, so the chart is legible to VoiceOver instead of silent.
+    /// Iterates the same data the ring/cards use — a 2-language household reads
+    /// two languages, a 3-language one reads three. Purely additive a11y metadata.
+    private var spokenSummary: String {
+        let entries: [(name: String, minutes: Double)] = selectedLanguages.map {
+            ($0.displayName, minutes(for: $0))
+        }.filter { $0.minutes > 0 }
+
+        guard !entries.isEmpty else {
+            return "No listening recorded yet this week. The weekly goal is about \(Int(targetMinutes)) minutes per language."
+        }
+
+        let parts = entries.map { entry -> String in
+            let mins = Int(entry.minutes.rounded())
+            return "\(entry.name) \(mins) \(mins == 1 ? "minute" : "minutes")"
+        }
+        return "\(parts.joined(separator: ", ")). Weekly goal is about \(Int(targetMinutes)) minutes per language."
+    }
+
+    /// Per-card spoken value: minutes heard plus progress toward the weekly goal.
+    private func cardAccessibilityValue(minutes: Double) -> String {
+        let mins = Int(minutes.rounded())
+        let unit = mins == 1 ? "minute" : "minutes"
+        let goal = minutes >= targetMinutes
+            ? "goal reached"
+            : "\(Int((targetMinutes - minutes).rounded())) minutes to goal"
+        return "\(mins) \(unit), \(goal)"
+    }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 20) {
+            // Streak banner
+            if currentStreak > 0 {
+                streakBanner
+            }
+
             Text("This Week's Exposure")
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
 
-            // Chart
-            chartView
-                .frame(height: 180)
+            // Weekly goal ring — one spoken summary so VoiceOver reads the
+            // week's per-language balance instead of leaving the ring silent.
+            weeklyGoalRing
+                .frame(height: 160)
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("This week's listening exposure by language")
+                .accessibilityValue(spokenSummary)
+
+            // Language breakdown cards (only selected)
+            ForEach(selectedLanguages) { lang in
+                languageCard(language: lang, minutes: minutes(for: lang), role: lang.familyRole + "'s language")
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(lang.displayName)
+                    .accessibilityValue(cardAccessibilityValue(minutes: minutes(for: lang)))
+            }
 
             // Tip card
             tipCard
@@ -28,61 +83,126 @@ struct ExposureChart: View {
         .shadow(color: Color.black.opacity(0.06), radius: 12, y: 4)
     }
 
-    // MARK: - Chart
+    // MARK: - Streak Banner
 
-    private var chartView: some View {
-        let barData: [(Language, Double, Color)] = [
-            (.it, itMinutes, .italianGreen),
-            (.zh, zhMinutes, .chineseRed),
-            (.en, enMinutes, .englishBlue),
-        ]
-        let chartMax = max(maxMinutes, targetMinutes) * 1.2
-
-        return GeometryReader { geo in
-            let barWidth: CGFloat = 56
-            let spacing = (geo.size.width - barWidth * 3) / 4
-
-            ZStack(alignment: .bottomLeading) {
-                // Dashed target line
-                let targetY = geo.size.height * (1 - targetMinutes / chartMax)
-                Path { path in
-                    path.move(to: CGPoint(x: 0, y: targetY))
-                    path.addLine(to: CGPoint(x: geo.size.width, y: targetY))
-                }
-                .stroke(Color.stone, style: StrokeStyle(lineWidth: 1, dash: [6, 4]))
-
-                Text("\(Int(targetMinutes))m target")
-                    .font(.system(size: 9, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color.stone)
-                    .position(x: geo.size.width - 36, y: targetY - 10)
-
-                // Bars
-                HStack(alignment: .bottom, spacing: spacing) {
-                    Spacer(minLength: 0)
-                    ForEach(Array(barData.enumerated()), id: \.0) { _, item in
-                        let (lang, minutes, color) = item
-                        let barHeight = max(4, geo.size.height * minutes / chartMax)
-                        VStack(spacing: 4) {
-                            // Minutes label
-                            Text("\(Int(minutes))m")
-                                .font(.system(size: 12, weight: .bold, design: .rounded))
-                                .foregroundStyle(color)
-
-                            // Bar
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(color)
-                                .frame(width: barWidth, height: barHeight)
-
-                            // Flag + label
-                            Text("\(lang.flag) \(lang.rawValue.uppercased())")
-                                .font(.system(size: 11, weight: .bold, design: .rounded))
-                                .foregroundStyle(Color.stone)
-                        }
-                    }
-                    Spacer(minLength: 0)
+    private var streakBanner: some View {
+        HStack(spacing: 8) {
+            Text("\u{1F525}")
+                .font(.system(size: 22))
+            VStack(alignment: .leading, spacing: 2) {
+                Text("\(currentStreak)-day streak")
+                    .font(.nunito(.black, size: 16))
+                    .foregroundStyle(Color.bark)
+                if longestStreak > currentStreak {
+                    Text("Best: \(longestStreak) days")
+                        .font(.nunito(.semiBold, size: 11))
+                        .foregroundStyle(Color.stone)
                 }
             }
+            Spacer()
         }
+        .padding(14)
+        .background(
+            LinearGradient(
+                colors: [Color.coral.opacity(0.12), Color.rose.opacity(0.08)],
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    // MARK: - Weekly Goal Ring
+
+    private var weeklyGoalRing: some View {
+        GeometryReader { geo in
+            let size = min(geo.size.width, geo.size.height)
+            let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
+            let ringWidth: CGFloat = 14
+            let totalMinutes = selectedLanguages.reduce(0.0) { $0 + minutes(for: $1) }
+
+            ZStack {
+                // Background rings
+                ForEach(0..<selectedLanguages.count, id: \.self) { i in
+                    Circle()
+                        .stroke(Color.sand.opacity(0.4), lineWidth: ringWidth)
+                        .frame(width: size - CGFloat(i) * (ringWidth + 6), height: size - CGFloat(i) * (ringWidth + 6))
+                }
+
+                // Language rings
+                ForEach(Array(selectedLanguages.enumerated()), id: \.element) { i, lang in
+                    arcRing(
+                        radius: size,
+                        offset: i,
+                        width: ringWidth,
+                        progress: min(minutes(for: lang) / targetMinutes, 1.0),
+                        color: lang.primaryColor
+                    )
+                }
+
+                // Center text
+                VStack(spacing: 2) {
+                    Text("\(Int(totalMinutes))")
+                        .font(.nunito(.black, size: 28))
+                        .foregroundStyle(Color.bark)
+                    Text("min total")
+                        .font(.nunito(.semiBold, size: 11))
+                        .foregroundStyle(Color.stone)
+                }
+            }
+            .position(center)
+        }
+    }
+
+    private func arcRing(radius: CGFloat, offset: Int, width: CGFloat, progress: Double, color: Color) -> some View {
+        let ringSize = radius - CGFloat(offset) * (width + 6)
+        return Circle()
+            .trim(from: 0, to: progress)
+            .stroke(color, style: StrokeStyle(lineWidth: width, lineCap: .round))
+            .rotationEffect(.degrees(-90))
+            .frame(width: ringSize, height: ringSize)
+    }
+
+    // MARK: - Language Card
+
+    private func languageCard(language: Language, minutes: Double, role: String) -> some View {
+        HStack(spacing: 12) {
+            Text(language.flag)
+                .font(.system(size: 24))
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(language.displayName)
+                    .font(.nunito(.bold, size: 14))
+                    .foregroundStyle(Color.bark)
+                Text(role)
+                    .font(.nunito(.semiBold, size: 11))
+                    .foregroundStyle(Color.stone)
+            }
+
+            Spacer()
+
+            VStack(alignment: .trailing, spacing: 3) {
+                Text("\(Int(minutes)) min")
+                    .font(.nunito(.black, size: 14))
+                    .foregroundStyle(language.primaryColor)
+                Text("of \(Int(targetMinutes)) min goal")
+                    .font(.nunito(.semiBold, size: 10))
+                    .foregroundStyle(Color.stone)
+            }
+        }
+        .padding(12)
+        .background(
+            GeometryReader { geo in
+                Rectangle()
+                    .fill(language.primaryColor.opacity(0.1))
+                    .frame(width: geo.size.width * min(minutes / targetMinutes, 1.0))
+            }
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(language.primaryColor.opacity(0.15), lineWidth: 1)
+        )
     }
 
     // MARK: - Tip Card
@@ -93,7 +213,7 @@ struct ExposureChart: View {
             Text("\u{1F4A1}")
                 .font(.system(size: 20))
             Text(tip)
-                .font(.system(size: 13, weight: .semibold, design: .rounded))
+                .font(.nunito(.semiBold, size: 13))
                 .foregroundStyle(Color.bark)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -103,14 +223,10 @@ struct ExposureChart: View {
     }
 
     private func generateTip() -> String {
-        let langs: [(String, Double)] = [
-            ("Italian", itMinutes),
-            ("Mandarin", zhMinutes),
-            ("English", enMinutes),
-        ]
+        let langs: [(String, Double)] = selectedLanguages.map { ($0.displayName, minutes(for: $0)) }
         let sorted = langs.sorted { $0.1 < $1.1 }
         let lowest = sorted[0]
-        let highest = sorted[2]
+        let highest = sorted[sorted.count - 1]
 
         if highest.1 == 0 {
             return "Start your first listening session! Each language needs about 60 minutes per week."
@@ -118,7 +234,8 @@ struct ExposureChart: View {
 
         let diff = highest.1 - lowest.1
         if diff < 5 {
-            return "Great balance! All three languages are getting similar exposure this week."
+            let langCount = selectedLanguages.count == 2 ? "both" : "all \(selectedLanguages.count)"
+            return "Great balance! \(langCount.capitalized) languages are getting similar exposure this week."
         }
 
         let pct = Int((diff / max(highest.1, 1)) * 100)
@@ -128,8 +245,14 @@ struct ExposureChart: View {
 
 #if DEBUG
 #Preview {
-    ExposureChart(weeklySeconds: ["it": 2400, "zh": 900, "en": 1800])
+    ScrollView {
+        ExposureChart(
+            weeklySeconds: ["it": 2400, "zh": 900, "en": 1800],
+            currentStreak: 5,
+            longestStreak: 12
+        )
         .padding(20)
-        .background(Color.cream)
+    }
+    .background(Color.cream)
 }
 #endif

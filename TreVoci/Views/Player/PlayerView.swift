@@ -3,11 +3,13 @@ import SwiftUI
 struct PlayerView: View {
     @State private var viewModel: PlayerViewModel
     @State private var breathe = false
+    @State private var elapsedSeconds: Int = 0
+    @State private var elapsedTicks: Int = 0
     let onBack: () -> Void
-    let onActivityBridge: (Song) -> Void
+    let onActivityBridge: (Song, Int) -> Void
 
-    init(song: Song, onBack: @escaping () -> Void, onActivityBridge: @escaping (Song) -> Void) {
-        self._viewModel = State(initialValue: PlayerViewModel(song: song))
+    init(song: Song, selectedLanguages: [Language] = Language.all, bedtime: Bool = false, onBack: @escaping () -> Void, onActivityBridge: @escaping (Song, Int) -> Void) {
+        self._viewModel = State(initialValue: PlayerViewModel(song: song, selectedLanguages: selectedLanguages, bedtime: bedtime))
         self.onBack = onBack
         self.onActivityBridge = onActivityBridge
     }
@@ -31,28 +33,34 @@ struct PlayerView: View {
 
                 Spacer()
 
-                // Song emoji with breathing animation
-                Text(viewModel.song.icon)
-                    .font(.system(size: 80))
-                    .scaleEffect(breathe ? 1.08 : 1.0)
-                    .animation(
-                        viewModel.isPlaying
-                            ? .easeInOut(duration: 2.5).repeatForever(autoreverses: true)
-                            : .easeOut(duration: 0.3),
-                        value: breathe
-                    )
-                    .accessibilityHidden(true)
+                // Song emoji with breathing animation — tap to replay ("Again!")
+                Button(action: { viewModel.restart() }) {
+                    Text(viewModel.song.icon)
+                        .font(.system(size: 80))
+                        .scaleEffect(breathe ? 1.08 : 1.0)
+                        .animation(
+                            viewModel.isPlaying
+                                ? .easeInOut(duration: 2.5).repeatForever(autoreverses: true)
+                                : .easeOut(duration: 0.3),
+                            value: breathe
+                        )
+                        .frame(minWidth: 44, minHeight: 44)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Play again")
+                .accessibilityAddTraits(.isButton)
 
                 // Title
                 Text(viewModel.currentTitle)
-                    .font(.system(size: 22, weight: .black, design: .rounded))
+                    .font(.nunito(.black, size: 22))
                     .foregroundStyle(.white)
                     .padding(.top, 12)
                     .animation(.easeOut(duration: 0.3), value: viewModel.currentLanguage)
 
                 // Melody origin subtitle
                 Text(viewModel.song.melodyOrigin)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 12))
                     .foregroundStyle(.white.opacity(0.6))
                     .padding(.top, 4)
 
@@ -64,6 +72,13 @@ struct PlayerView: View {
                     language: viewModel.currentLanguage
                 )
                 .padding(.horizontal, 32)
+
+                // Echo Word — one shared concept that pulses as it's sung, so the
+                // child (and family) can catch the same word in every language.
+                if let echo = viewModel.echoWord, let word = viewModel.echoWordText {
+                    echoWordChip(echo: echo, word: word)
+                        .padding(.top, 14)
+                }
 
                 Spacer()
 
@@ -81,7 +96,9 @@ struct PlayerView: View {
                 ProgressBar(
                     progress: viewModel.progress,
                     segmentCount: viewModel.segmentCount,
-                    currentSegment: viewModel.currentSegment
+                    currentSegment: viewModel.currentSegment,
+                    languages: viewModel.availableLanguages,
+                    onSeek: { viewModel.seek(to: $0) }
                 )
                 .padding(.horizontal, 32)
                 .padding(.bottom, 16)
@@ -90,6 +107,7 @@ struct PlayerView: View {
                 playbackControls
                     .padding(.bottom, 32)
             }
+            .readableContentWidth(720)
 
             // Language switch toast
             if viewModel.showLanguageToast {
@@ -109,12 +127,50 @@ struct PlayerView: View {
             Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
         ) { _ in
             viewModel.updateState()
-            // Check if playback finished → go to activity
+            // Track elapsed time when playing
+            if viewModel.isPlaying {
+                elapsedTicks += 1
+                elapsedSeconds = elapsedTicks / 10
+            }
+            // Check if playback finished -> go to activity
             // Gate on duration > 5s to prevent placeholder audio from auto-triggering
             if !viewModel.isPlaying && viewModel.progress >= 0.99 && viewModel.duration > 5 {
-                onActivityBridge(viewModel.song)
+                onActivityBridge(viewModel.song, elapsedSeconds)
             }
         }
+    }
+
+    // MARK: - Echo Word Chip
+
+    private func echoWordChip(echo: EchoWord, word: String) -> some View {
+        let active = viewModel.isEchoWordActive
+        return HStack(spacing: 8) {
+            Text(echo.emoji)
+                .font(.system(size: 24))
+                .scaleEffect(active ? 1.35 : 1.0)
+                .animation(.spring(response: 0.35, dampingFraction: 0.55), value: active)
+
+            VStack(alignment: .leading, spacing: 1) {
+                Text(word)
+                    .font(.nunito(.extraBold, size: 15))
+                    .foregroundStyle(.white)
+                if let rom = viewModel.echoWordRomanization {
+                    Text(rom)
+                        .font(.nunito(.semiBold, size: 11))
+                        .foregroundStyle(.white.opacity(0.7))
+                }
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 8)
+        .background(.ultraThinMaterial)
+        .clipShape(Capsule())
+        .overlay(
+            Capsule().stroke(.white.opacity(active ? 0.55 : 0.0), lineWidth: 1.5)
+        )
+        .scaleEffect(active ? 1.05 : 1.0)
+        .animation(.easeOut(duration: 0.3), value: active)
+        .accessibilityLabel("Listen for the word \(word)")
     }
 
     // MARK: - Top Bar
@@ -137,18 +193,27 @@ struct PlayerView: View {
 
             Spacer()
 
-            // AirPlay indicator
-            HStack(spacing: 4) {
-                Image(systemName: "speaker.wave.2.fill")
-                    .font(.system(size: 10))
-                Text("iPhone")
-                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+            // AirPlay indicator (tappable) — shows the real current output route
+            ZStack {
+                HStack(spacing: 4) {
+                    Image(systemName: viewModel.outputRouteSymbol)
+                        .font(.system(size: 10))
+                    Text(viewModel.outputRouteName)
+                        .font(.nunito(.semiBold, size: 11))
+                        .lineLimit(1)
+                }
+                .foregroundStyle(.white.opacity(0.7))
+                .padding(.horizontal, 10)
+                .padding(.vertical, 6)
+                .background(.ultraThinMaterial)
+                .clipShape(Capsule())
+
+                AirPlayPickerButton(tintColor: .white)
+                    .frame(width: 80, height: 28)
+                    .opacity(0.015)
             }
-            .foregroundStyle(.white.opacity(0.7))
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .background(.ultraThinMaterial)
-            .clipShape(Capsule())
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Playing on \(viewModel.outputRouteName). Tap to choose audio output.")
         }
     }
 
@@ -157,7 +222,11 @@ struct PlayerView: View {
     private var playbackControls: some View {
         HStack(spacing: 40) {
             // Restart
-            Button(action: { viewModel.restart() }) {
+            Button(action: {
+                viewModel.restart()
+                elapsedTicks = 0
+                elapsedSeconds = 0
+            }) {
                 Image(systemName: "backward.fill")
                     .font(.system(size: 24))
                     .foregroundStyle(.white)
@@ -181,7 +250,7 @@ struct PlayerView: View {
             // Skip to activity
             Button(action: {
                 viewModel.skipToActivity()
-                onActivityBridge(viewModel.song)
+                onActivityBridge(viewModel.song, elapsedSeconds)
             }) {
                 Image(systemName: "forward.fill")
                     .font(.system(size: 24))
@@ -200,7 +269,7 @@ struct PlayerView: View {
             HStack(spacing: 6) {
                 Text(viewModel.toastLanguage.flag)
                 Text("Now playing in \(viewModel.toastLanguage.displayName)")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 13))
                     .foregroundStyle(.white)
             }
             .padding(.horizontal, 16)
@@ -219,7 +288,7 @@ struct PlayerView: View {
     PlayerView(
         song: .preview,
         onBack: {},
-        onActivityBridge: { _ in }
+        onActivityBridge: { _, _ in }
     )
 }
 #endif

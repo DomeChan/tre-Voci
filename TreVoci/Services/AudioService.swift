@@ -11,6 +11,11 @@ final class AudioService: NSObject {
     private(set) var progress: Double = 0
     private(set) var currentSegment: Int = 0
 
+    // MARK: - Config
+    /// When true, transitions get a longer, calmer gap and the final verse
+    /// gently fades down — for winding a child toward sleep. Set before `play()`.
+    var bedtime: Bool = false
+
     // MARK: - Private
     private var player: AVAudioPlayer?
     private var displayLink: CADisplayLink?
@@ -23,10 +28,39 @@ final class AudioService: NSObject {
     private var segmentDurations: [TimeInterval] = []
     private var totalDuration: TimeInterval = 0
 
+    /// Public read-only accessor for actual segment durations
+    var segmentDurationsList: [TimeInterval] { segmentDurations }
+
+    /// Public read-only accessor for segment languages
+    var segmentLanguages: [Language] { segments.map(\.language) }
+
     override init() {
         super.init()
         configureAudioSession()
         configureRemoteCommands()
+    }
+
+    // MARK: - Output Route
+
+    /// Human-readable name of the current audio output (e.g. "Living Room", "HomePod",
+    /// "iPhone Speaker"). Read on demand from the live `AVAudioSession` route — no observer,
+    /// no stored state — so the chrome reflects the real route, not a hardcoded guess.
+    var outputRouteName: String {
+        let outputs = AVAudioSession.sharedInstance().currentRoute.outputs
+        guard let port = outputs.first else { return "iPhone" }
+        if port.portType == .builtInSpeaker { return "iPhone Speaker" }
+        return port.portName
+    }
+
+    /// SF Symbol that matches the current output route type.
+    var outputRouteSymbol: String {
+        let outputs = AVAudioSession.sharedInstance().currentRoute.outputs
+        switch outputs.first?.portType {
+        case .airPlay: return "airplayaudio"
+        case .bluetoothA2DP, .bluetoothLE, .bluetoothHFP: return "headphones"
+        case .headphones, .headsetMic: return "headphones"
+        default: return "speaker.wave.2.fill"
+        }
     }
 
     // MARK: - Audio Session
@@ -34,7 +68,7 @@ final class AudioService: NSObject {
     private func configureAudioSession() {
         let session = AVAudioSession.sharedInstance()
         do {
-            try session.setCategory(.playback, mode: .default, options: [.allowAirPlay, .defaultToSpeaker])
+            try session.setCategory(.playback, mode: .default, options: [.allowAirPlay])
             try session.setActive(true)
         } catch {
             print("Audio session setup failed: \(error)")
@@ -43,15 +77,16 @@ final class AudioService: NSObject {
 
     // MARK: - Playback Control
 
-    func loadSong(_ song: Song) {
+    func loadSong(_ song: Song, selectedLanguages: [Language] = Language.all) {
         stop()
         currentSong = song
         segments = []
         segmentDurations = []
 
         if song.isCrossCultural {
-            // IT → ZH → EN sequence
-            for lang in [Language.it, .zh, .en] {
+            // Play only selected languages, in IT → ZH → EN order
+            let playOrder: [Language] = Language.all.filter { selectedLanguages.contains($0) }
+            for lang in playOrder {
                 if let file = song.audioFile(for: lang) {
                     segments.append((file: file, language: lang))
                 }
@@ -84,6 +119,7 @@ final class AudioService: NSObject {
             loadSegment(currentSegment)
         }
         player?.play()
+        applyBedtimeTaperIfNeeded()
         isPlaying = true
         startDisplayLink()
         updateNowPlaying()
@@ -119,9 +155,36 @@ final class AudioService: NSObject {
         loadSegment(index)
         if isPlaying {
             player?.play()
+            applyBedtimeTaperIfNeeded()
             updateNowPlaying()
         }
         onSegmentChange?(index)
+    }
+
+    func seek(to normalizedProgress: Double) {
+        guard !segments.isEmpty, totalDuration > 0 else { return }
+        let targetTime = max(0, min(normalizedProgress, 1.0)) * totalDuration
+
+        // Find which segment this time falls in
+        var accumulated: TimeInterval = 0
+        for (i, dur) in segmentDurations.enumerated() {
+            if targetTime < accumulated + dur || i == segmentDurations.count - 1 {
+                let timeInSegment = targetTime - accumulated
+                if i != currentSegment {
+                    currentSegment = i
+                    loadSegment(i)
+                    onSegmentChange?(i)
+                }
+                player?.currentTime = min(timeInSegment, dur)
+                if isPlaying {
+                    player?.play()
+                }
+                updateProgress()
+                updateNowPlaying()
+                return
+            }
+            accumulated += dur
+        }
     }
 
     func skipToNext() {
@@ -156,6 +219,19 @@ final class AudioService: NSObject {
         }
     }
 
+    /// In Bedtime Mode, gently fade the final verse down so the song trails off
+    /// into quiet instead of stopping abruptly. Earlier languages stay at full
+    /// volume so the child still hears each one clearly. No-op otherwise.
+    private func applyBedtimeTaperIfNeeded() {
+        guard let player else { return }
+        let isFinalSegment = currentSegment == segments.count - 1
+        if bedtime && isFinalSegment {
+            player.setVolume(0.4, fadeDuration: max(4, player.duration))
+        } else {
+            player.volume = 1.0
+        }
+    }
+
     // MARK: - Display Link for Progress Updates
 
     private func startDisplayLink() {
@@ -187,10 +263,15 @@ final class AudioService: NSObject {
         guard let song = currentSong else { return }
         let lang = currentSegment < segments.count ? segments[currentSegment].language : song.primaryLanguage
 
+        // Global elapsed time across all segments (lock-screen scrubber must match
+        // the in-app progress bar, which spans the whole IT→ZH→EN sequence).
+        let elapsedInPriorSegments = segmentDurations.prefix(currentSegment).reduce(0, +)
+        let globalElapsed = elapsedInPriorSegments + (player?.currentTime ?? 0)
+
         var info = [String: Any]()
         info[MPMediaItemPropertyTitle] = song.title(for: lang)
         info[MPMediaItemPropertyArtist] = "Tre Voci"
-        info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player?.currentTime ?? 0
+        info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = globalElapsed
         info[MPMediaItemPropertyPlaybackDuration] = totalDuration
         info[MPNowPlayingInfoPropertyPlaybackRate] = isPlaying ? 1.0 : 0.0
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
@@ -233,8 +314,12 @@ extension AudioService: AVAudioPlayerDelegate {
             if nextSegment < segments.count {
                 currentSegment = nextSegment
                 loadSegment(nextSegment)
-                self.player?.play()
                 onSegmentChange?(nextSegment)
+                // Pause between language segments — longer in Bedtime Mode so the
+                // hand-off feels unhurried.
+                try? await Task.sleep(for: .milliseconds(bedtime ? 1400 : 500))
+                self.player?.play()
+                applyBedtimeTaperIfNeeded()
                 updateNowPlaying()
             } else {
                 // All segments finished

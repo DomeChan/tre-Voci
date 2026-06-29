@@ -30,3 +30,6 @@ ehthumbs.db
 # Misc
 audio-processing/
 .cache/
+
+# Audio sync working dir (whisper model, transcripts, originals backup)
+.sync-work/

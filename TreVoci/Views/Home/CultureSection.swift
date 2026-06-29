@@ -4,16 +4,22 @@ struct CultureSection: View {
     let title: String
     let language: Language
     let songs: [Song]
+    var dimmed: Bool = false
     let onSongTap: (Song) -> Void
+
+    /// Auto-fill columns by available width so the grid genuinely fills the canvas:
+    /// 1 column on iPhone, more as the iPad widens (≈3 in portrait, ≈4 in landscape) —
+    /// no fixed cap, no blank side gutters.
+    private let columns = [GridItem(.adaptive(minimum: 300), spacing: 12)]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(title)
-                .font(.system(size: 17, weight: .black, design: .rounded))
+                .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)
 
-            VStack(spacing: 8) {
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
                 ForEach(songs) { song in
                     Button {
                         onSongTap(song)
@@ -26,7 +32,19 @@ struct CultureSection: View {
                 }
             }
             .padding(.horizontal, 20)
+
+            if dimmed {
+                HStack(spacing: 4) {
+                    Image(systemName: "eye.slash")
+                        .font(.system(size: 10))
+                    Text("Not in your selection")
+                        .font(.nunito(.semiBold, size: 11))
+                }
+                .foregroundStyle(Color.stone)
+                .padding(.horizontal, 20)
+            }
         }
+        .opacity(dimmed ? 0.4 : 1.0)
     }
 
     private func cultureRow(song: Song) -> some View {
@@ -39,11 +57,11 @@ struct CultureSection: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(song.title(for: language))
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .font(.nunito(.bold, size: 15))
                     .foregroundStyle(Color.bark)
 
                 Text(song.formattedDuration)
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .font(.nunito(.semiBold, size: 12))
                     .foregroundStyle(Color.stone)
             }
 
@@ -62,11 +80,20 @@ struct CultureSection: View {
 
 #if DEBUG
 #Preview {
-    CultureSection(
-        title: "🇮🇹 Filastrocche Italiane",
-        language: .it,
-        songs: [.preview],
-        onSongTap: { _ in }
-    )
+    VStack(spacing: 20) {
+        CultureSection(
+            title: "\u{1F1EE}\u{1F1F9} Filastrocche Italiane",
+            language: .it,
+            songs: [.preview],
+            onSongTap: { _ in }
+        )
+        CultureSection(
+            title: "\u{1F1EC}\u{1F1E7} English Nursery Rhymes",
+            language: .en,
+            songs: [.preview],
+            dimmed: true,
+            onSongTap: { _ in }
+        )
+    }
 }
 #endif
