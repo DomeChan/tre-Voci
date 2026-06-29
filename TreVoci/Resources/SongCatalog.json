@@ -504,7 +504,7 @@
           },
           {
             "time": 11.3,
-            "text": "En el cielo o en el bar"
+            "text": "En el cielo o en el mar"
           },
           {
             "time": 16.8,
@@ -528,7 +528,7 @@
           },
           {
             "time": 56.6,
-            "text": "En el cielo o en el bar"
+            "text": "En el cielo o en el mar"
           },
           {
             "time": 62.4,
@@ -550,7 +550,7 @@
         "fr": [
           {
             "time": 0.0,
-            "text": "Brille tes petits détoiles Dans la nuit qui se dévoile"
+            "text": "Brille, brille, petite étoile Dans la nuit qui se dévoile"
           },
           {
             "time": 9.08,
@@ -558,11 +558,11 @@
           },
           {
             "time": 18.0,
-            "text": "Brille tes petits détoiles Veille sur ce qui t'entend bas"
+            "text": "Brille, brille, petite étoile Veille sur ce qui t'entend bas"
           },
           {
             "time": 26.68,
-            "text": "Tellement haute dans le ciel Petit détoile comme tu es belle"
+            "text": "Tellement haute dans le ciel Petit étoile comme tu es belle"
           },
           {
             "time": 35.52,
@@ -570,7 +570,7 @@
           },
           {
             "time": 44.52,
-            "text": "Brille tes petits détoiles Au cœur de la nuit sans pas"
+            "text": "Brille, brille, petite étoile Au cœur de la nuit sans pas"
           },
           {
             "time": 53.28,
@@ -578,7 +578,7 @@
           },
           {
             "time": 62.32,
-            "text": "Brille tes petits détoiles Dans la nuit qui se dévoile"
+            "text": "Brille, brille, petite étoile Dans la nuit qui se dévoile"
           }
         ]
       },
@@ -849,27 +849,27 @@
         "es": [
           {
             "time": 8.6,
-            "text": "El viejo McDonald tenía una granja y ahi ahi ahi yo"
+            "text": "El viejo McDonald tenía una granja y ía ía o"
           },
           {
             "time": 12.96,
-            "text": "Y en esa granja tenía cerdos y ahi ahi ahi yo"
+            "text": "Y en esa granja tenía cerdos y ía ía o"
           },
           {
             "time": 17.48,
-            "text": "Con su oinca aquí, con su oinca ya, oinca aquí, oinca ya, siempre con su oin"
+            "text": "Con su oink aquí, con su oink ya, oink aquí, oink ya, siempre con su oin"
           },
           {
             "time": 22.08,
-            "text": "El viejo McDonald tenía una granja y ahi ahi yo"
+            "text": "El viejo McDonald tenía una granja y ía ía o"
           },
           {
             "time": 26.4,
-            "text": "El viejo McDonald tenía una granja y ahi ahi yo"
+            "text": "El viejo McDonald tenía una granja y ía ía o"
           },
           {
             "time": 31.08,
-            "text": "Y en esa granja tenía vacas y ahi ahi yo"
+            "text": "Y en esa granja tenía vacas y ía ía o"
           },
           {
             "time": 35.56,
@@ -877,19 +877,19 @@
           },
           {
             "time": 40.08,
-            "text": "Con su oinca aquí, con su oinca ya, oinca aquí, oinca ya, siempre con su oin"
+            "text": "Con su oink aquí, con su oink ya, oink aquí, oink ya, siempre con su oin"
           },
           {
             "time": 44.6,
-            "text": "El viejo McDonald tenía una granja y ahi ahi yo"
+            "text": "El viejo McDonald tenía una granja y ía ía o"
           },
           {
             "time": 49.04,
-            "text": "El viejo McDonald tenía una granja y ahi ahi yo"
+            "text": "El viejo McDonald tenía una granja y ía ía o"
           },
           {
             "time": 53.48,
-            "text": "Y en esa granja tenía patos y ahi ahi yo"
+            "text": "Y en esa granja tenía patos y ía ía o"
           },
           {
             "time": 57.96,
@@ -901,11 +901,11 @@
           },
           {
             "time": 66.96,
-            "text": "Con su oinca aquí, con su oinca ya, oinca aquí, oinca ya, siempre con su oin"
+            "text": "Con su oink aquí, con su oink ya, oink aquí, oink ya, siempre con su oin"
           },
           {
             "time": 71.44,
-            "text": "El viejo McDonald tenía una granja y ahi ahi yo"
+            "text": "El viejo McDonald tenía una granja y ía ía o"
           },
           {
             "time": 82.04,
@@ -915,7 +915,7 @@
         "fr": [
           {
             "time": 14.28,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 16.56,
@@ -955,7 +955,7 @@
           },
           {
             "time": 27.8,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 29.96,
@@ -963,7 +963,7 @@
           },
           {
             "time": 31.96,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 34.48,
@@ -991,7 +991,7 @@
           },
           {
             "time": 45.68,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 47.92,
@@ -999,7 +999,7 @@
           },
           {
             "time": 50.12,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 52.4,
@@ -1027,7 +1027,7 @@
           },
           {
             "time": 63.64,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 65.88,
@@ -1035,7 +1035,7 @@
           },
           {
             "time": 68.12,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 70.4,
@@ -1063,7 +1063,7 @@
           },
           {
             "time": 81.6,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 83.84,
@@ -1071,7 +1071,7 @@
           },
           {
             "time": 86.08,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 88.36,
@@ -1099,7 +1099,7 @@
           },
           {
             "time": 99.48,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 101.72,
@@ -1107,7 +1107,7 @@
           },
           {
             "time": 103.92,
-            "text": "Dans la ferme de Maturin"
+            "text": "Dans la ferme de Mathurin"
           },
           {
             "time": 106.24,
@@ -1999,16 +1999,8 @@
         ],
         "es": [
           {
-            "time": 0.0,
-            "text": "[SUSPENSE]"
-          },
-          {
-            "time": 3.0,
-            "text": "[PAPI]"
-          },
-          {
             "time": 16.0,
-            "text": "Cumple años feliz, que deseamos a ti, que los cumplas en tu día."
+            "text": "Cumpleaños feliz, que deseamos a ti, que los cumplas en tu día."
           },
           {
             "time": 30.0,
