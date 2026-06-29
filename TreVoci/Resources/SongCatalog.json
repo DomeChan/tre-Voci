@@ -330,14 +330,16 @@
         "zh": "小星星",
         "en": "Twinkle Twinkle",
         "es": "Estrellita, ¿dónde estás?",
-        "fr": "Brille, brille, petite étoile"
+        "fr": "Brille, brille, petite étoile",
+        "de": "Funkel, funkel, kleiner Stern"
       },
       "audioFiles": {
         "it": "cross-cultural/twinkle-it.m4a",
         "zh": "cross-cultural/twinkle-zh.m4a",
         "en": "cross-cultural/twinkle-en.m4a",
         "es": "cross-cultural/twinkle-es.m4a",
-        "fr": "cross-cultural/twinkle-fr.m4a"
+        "fr": "cross-cultural/twinkle-fr.m4a",
+        "de": "cross-cultural/twinkle-de.m4a"
       },
       "lyrics": {
         "it": [
@@ -580,6 +582,36 @@
             "time": 62.32,
             "text": "Brille, brille, petite étoile Dans la nuit qui se dévoile"
           }
+        ],
+        "de": [
+          {
+            "time": 0.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, wie bist du mir so fern?"
+          },
+          {
+            "time": 29.0,
+            "text": "Wunderschön und unbekannt, Wie ein strahlend Diamant."
+          },
+          {
+            "time": 40.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, wie bist du mir so fern?"
+          },
+          {
+            "time": 59.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, was haben wir dich gern?"
+          },
+          {
+            "time": 73.0,
+            "text": "Strahlend schön am Himmelszelt, Erleuchtestell die ganze Welt."
+          },
+          {
+            "time": 84.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, was haben wir dich gern?"
+          },
+          {
+            "time": 103.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, was haben wir dich gern?"
+          }
         ]
       },
       "activity": {
@@ -598,7 +630,8 @@
         "zh": "宝宝巴士",
         "en": "Super Simple Songs",
         "es": "El Reino Infantil (Plim Plim)",
-        "fr": "YesKids"
+        "fr": "YesKids",
+        "de": "YouTube · c_GA5inSE7E"
       },
       "echoWord": {
         "emoji": "⭐",
@@ -638,14 +671,16 @@
         "zh": "王老先生有块地",
         "en": "Old MacDonald",
         "es": "El viejo MacDonald",
-        "fr": "Dans la ferme de Mathurin"
+        "fr": "Dans la ferme de Mathurin",
+        "de": "Old MacDonald hatte eine Farm"
       },
       "audioFiles": {
         "it": "cross-cultural/old-macdonald-it.m4a",
         "zh": "cross-cultural/old-macdonald-zh.m4a",
         "en": "cross-cultural/old-macdonald-en.m4a",
         "es": "cross-cultural/old-macdonald-es.m4a",
-        "fr": "cross-cultural/old-macdonald-fr.m4a"
+        "fr": "cross-cultural/old-macdonald-fr.m4a",
+        "de": "cross-cultural/old-macdonald-de.m4a"
       },
       "lyrics": {
         "it": [
@@ -1113,6 +1148,112 @@
             "time": 106.24,
             "text": "Chacun son refrain"
           }
+        ],
+        "de": [
+          {
+            "time": 11.68,
+            "text": "Old MacDonald hat eine Farm, ia ia o."
+          },
+          {
+            "time": 16.12,
+            "text": "Und auf der Farm gibt's 'ne Kuh, ia ia o."
+          },
+          {
+            "time": 20.92,
+            "text": "Mit 'nem Muh hier und 'nem Muh da, hier ein Mutter, ein Mo,"
+          },
+          {
+            "time": 25.2,
+            "text": "überall ein Muh, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 35.52,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 40.0,
+            "text": "Und auf der Farm gibt's ein Schwein, ia ia o."
+          },
+          {
+            "time": 44.84,
+            "text": "Mit 'nem Onk, Onk hier und 'nem Onk, Onk da, hier ein Onk, da ein Onk,"
+          },
+          {
+            "time": 49.04,
+            "text": "überall ein Onk, Onk, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 59.68,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 64.0,
+            "text": "Und auf der Farm gibt's 'nen Hund, ia ia o."
+          },
+          {
+            "time": 68.92,
+            "text": "Mit 'nem Wurf, Wurf hier und 'nem Wurf, Wurf da, hier ein Wurf, da ein Wurf,"
+          },
+          {
+            "time": 73.36,
+            "text": "überall ein Wurf, Wurf, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 83.6,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 88.08,
+            "text": "Und auf der Farm gibt's ein Müll, ia ia o."
+          },
+          {
+            "time": 92.92,
+            "text": "Mit 'nem Gack, Gack hier und 'nem Gack, Gack da, hier ein Gack,"
+          },
+          {
+            "time": 96.44,
+            "text": "da ein Gack, überall ein Gack, Gack, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 118.08,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 122.56,
+            "text": "Und auf der Farm gibt's 'nen Schaf, ia ia o."
+          },
+          {
+            "time": 127.04,
+            "text": "Mit 'nem Mehme hier und Mehme da, hier ein Mehme da,"
+          },
+          {
+            "time": 130.76,
+            "text": "ein Mehme überall, ein Mehme."
+          },
+          {
+            "time": 133.0,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 142.08,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 146.08,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 150.56,
+            "text": "Und auf der Farm gibt's ein Pferd, ia ia o."
+          },
+          {
+            "time": 155.4,
+            "text": "Mit 'nem Wehr, wir, hier und 'nem Wehr, wir da, hier ein Wehr, da ein Wehr,"
+          },
+          {
+            "time": 159.52,
+            "text": "überall ein Wehr, wir, Old MacDonald hat 'ne Farm, ia ia o."
+          }
         ]
       },
       "activity": {
@@ -1131,7 +1272,8 @@
         "zh": "宝宝巴士",
         "en": "Super Simple Songs",
         "es": "El Reino Infantil",
-        "fr": "BB LouLou"
+        "fr": "BB LouLou",
+        "de": "YouTube · dwMxNqIAqd4"
       },
       "echoWord": {
         "emoji": "🐮",
@@ -1596,13 +1738,17 @@
         "it": "Testa Spalle",
         "zh": "头肩膀膝脚趾",
         "en": "Head Shoulders",
-        "es": "Cabeza, hombros, rodillas, pies"
+        "es": "Cabeza, hombros, rodillas, pies",
+        "fr": "Tête, épaules, genoux et pieds",
+        "de": "Kopf, Schulter, Knie und Fuß"
       },
       "audioFiles": {
         "it": "cross-cultural/head-shoulders-it.m4a",
         "zh": "cross-cultural/head-shoulders-zh.m4a",
         "en": "cross-cultural/head-shoulders-en.m4a",
-        "es": "cross-cultural/head-shoulders-es.m4a"
+        "es": "cross-cultural/head-shoulders-es.m4a",
+        "fr": "cross-cultural/head-shoulders-fr.m4a",
+        "de": "cross-cultural/head-shoulders-de.m4a"
       },
       "lyrics": {
         "it": [
@@ -1788,6 +1934,166 @@
             "time": 51.2,
             "text": "y pies, rodillas y pies."
           }
+        ],
+        "fr": [
+          {
+            "time": 0.0,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 4.48,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 8.48,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 10.98,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 13.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 17.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 22.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 26.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 28.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 30.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 33.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 36.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 40.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 44.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 48.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 52.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 55.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 58.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 60.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 62.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 66.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 70.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 73.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 75.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 77.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 81.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 84.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 87.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 89.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 91.08,
+            "text": "Genoux et pieds"
+          }
+        ],
+        "de": [
+          {
+            "time": 0.3,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 13.3,
+            "text": "Knie und Fuß"
+          },
+          {
+            "time": 16.1,
+            "text": "Augen, Ohren, Nase und Mund"
+          },
+          {
+            "time": 23.2,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 30.3,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 36.9,
+            "text": "Knie und Fuß"
+          },
+          {
+            "time": 40.9,
+            "text": "Augen, Ohren, Nase und Mund"
+          },
+          {
+            "time": 46.6,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 51.3,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          }
         ]
       },
       "activity": {
@@ -1805,7 +2111,9 @@
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
         "en": "Super Simple Songs",
-        "es": "Canciones Infantiles"
+        "es": "Canciones Infantiles",
+        "fr": "Comptines et chansons",
+        "de": "mukkelig"
       },
       "echoWord": {
         "emoji": "🧒",
