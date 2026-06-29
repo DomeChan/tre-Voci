@@ -19,6 +19,7 @@ enum SheetDestination: Identifiable {
 
 struct HomeView: View {
     @Environment(PersistenceService.self) private var persistence
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var viewModel: HomeViewModel?
     @State private var activeSheet: SheetDestination?
     @State private var routeMonitor = AudioRouteMonitor()
@@ -196,7 +197,7 @@ struct HomeView: View {
             .padding(.vertical, 6)
             .background(Color.warm)
             .clipShape(Capsule())
-            .animation(.spring(response: 0.4, dampingFraction: 0.8), value: routeMonitor.routeName)
+            .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8), value: routeMonitor.routeName)
 
             AirPlayPickerButton()
                 .frame(width: 120, height: 28)

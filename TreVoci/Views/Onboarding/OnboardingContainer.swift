@@ -2,6 +2,7 @@ import SwiftUI
 
 struct OnboardingContainer: View {
     @Environment(PersistenceService.self) private var persistence
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var currentStep = 0
     @State private var childName = ""
     @State private var selectedLanguages: Set<Language> = Set(Language.all)
@@ -31,7 +32,7 @@ struct OnboardingContainer: View {
                         .tag(2)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                .animation(.spring(response: 0.4, dampingFraction: 0.8), value: currentStep)
+                .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8), value: currentStep)
             }
             .readableContentWidth()
         }
@@ -45,7 +46,7 @@ struct OnboardingContainer: View {
                 Capsule()
                     .fill(index == currentStep ? Color.coral : Color.sand)
                     .frame(width: index == currentStep ? 28 : 8, height: 8)
-                    .animation(.spring(response: 0.3, dampingFraction: 0.7), value: currentStep)
+                    .animation(reduceMotion ? nil : .spring(response: 0.3, dampingFraction: 0.7), value: currentStep)
             }
         }
     }
