@@ -62,6 +62,18 @@ serve none and flags candidates that *trade* one principle for another (e.g. eng
 - **JTBD**: "Show value in the first session"; "don't ask for permissions before value"; "make exposure legible without tracking."
 - **Sensitivities**: high — pre-trust. **Anti-patterns**: feature-richness without journey clarity; assuming brand recognition.
 
+### Persona `maker` — the indie developer & maintainer (us, solo/tiny team shipping Tre Voci)
+- **Context / environment**: one developer, hand-managed Xcode project (`pbxproj` edited by hand), no CI test target, no paid backend, no analytics to lean on. Every line is something *we* will maintain at 11pm after the kid is asleep. Build-and-ship cycles are measured against a single person's hours.
+- **Relationship**: we are the trust anchor *and* the cost center. The app must be **sustainable to keep alive** (a tip jar can fund the Apple Developer Program fee and audio re-mastering) without ever betraying the parent's privacy or the toddler's calm. We win when a change is small, obvious, reversible, and pays rent in maintainability or sustainability.
+- **Constraints / locale**: Apple frameworks only (zero third-party deps), Swift 6 + `@Observable`, iOS 17 floor, light-only palette, hand-managed pbxproj. Cross-platform Flutter migration is *planned*, so abstractions should be portable, not Swift-locked.
+- **Top jobs-to-be-done**:
+  1. "Ship a polished change without adding a dependency, a tracking call, or a maintenance tax I'll regret."
+  2. "Earn enough goodwill/funding to keep the app alive (optional, parent-gated tip jar via StoreKit) — never via ads, data, or dark patterns."
+  3. "Keep the codebase small, legible, and portable so the next feature (or the Flutter port) is cheap."
+- **Sensitivities**: dependency creep, hidden maintenance cost, anything that needs a server or breaks offline-complete, pbxproj corruption, abstractions hardcoded to exactly 3 languages / 1 platform, features that look good in a demo but rot.
+- **Anti-patterns** (→ KILL criteria): adding an SPM/CocoaPod, any network/analytics/tracking, ads, monetization that pressures or deceives the parent, one-off code that duplicates an existing token/service, "clever" code a solo maintainer can't safely change later, monetization not behind the parent gate.
+- **Sustainability note**: the only acceptable revenue is an **optional, parent-gated, no-pressure Apple StoreKit tip jar** ("support the maker") — no third-party SDK, no network call by us, no tracking, fully functional offline-after-purchase. It must serve Principle 7 (parent trust) and never violate Principle 5 (calm) or 6 (zero tracking). If a monetization idea can't clear all three, it's KILLed.
+
 ---
 
 ## 3. Lenses — the questions ideators ask
@@ -97,6 +109,17 @@ Use 3–6 per invocation, ≥1 value lens and ≥1 reference lens.
 ### Engineering lenses (reuse as-is)
 `technical-risk`, `performance`, `test-coverage`, `simplicity`, `a11y`, `design-system`, plus Tre Voci specifics:
 `swift6-concurrency` (`@Observable`/`@MainActor`, no Combine), `ios17-api` (avoid iOS-18-only APIs), `zero-dependency` (Apple frameworks only — any SPM/CocoaPod = KILL), `pbxproj-hygiene` (hand-managed project file).
+
+### Maker / indie-dev lenses (use ≥1 when framing for persona `maker`)
+| Lens | Question |
+|------|----------|
+| `maintenance-tax` | Will a solo developer be able to safely change this in six months? Does it duplicate an existing token/service, or reuse one? Smaller + obvious wins. |
+| `ship-velocity` | Does this ship without adding a dependency, a server, or a test-infra burden we don't have? Can it be built + gated in one sitting? |
+| `sustainability` | Does this help keep the app *alive* (fund the dev-program fee / audio re-mastering) **only** via an optional, parent-gated, no-pressure StoreKit tip jar — never ads, data, or dark patterns? |
+| `portability` | Is the abstraction reusable for the planned Flutter port and for an Nth language, or hardcoded to Swift / exactly 3 languages? (pairs with `cross-language-portability`) |
+| `reversibility` | If this is wrong, how cheaply can we back it out? Prefer additive, token-routed, single-file changes over cross-cutting rewrites. |
+
+> The net-new **`donation`** surface (SURFACES.md) is owned primarily by persona `maker` (lens `sustainability`) but MUST be co-validated by persona `parent` (Principle 7 trust, Principle 6 zero-tracking, Principle 5 calm): optional, parent-gated, StoreKit-only, no pressure, works offline.
 
 > Note: `dark-mode` is currently **out of scope** — Tre Voci ships a single warm light palette by design. A `dark-mode` candidate must first argue it serves Principle 11, or it's parked.
 
