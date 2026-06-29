@@ -1,5 +1,5 @@
 {
-  "order": ["it", "zh", "en", "fr"],
+  "order": ["it", "zh", "en", "fr", "es", "de"],
   "languages": {
     "it": {
       "displayName": "Italiano",
@@ -44,6 +44,28 @@
       "isRomanizable": false,
       "readyWord": "C'est parti !",
       "sectionTitle": "🇫🇷 Comptines Françaises"
+    },
+    "es": {
+      "displayName": "Español",
+      "flag": "🇪🇸",
+      "primaryHex": "C8472B",
+      "backgroundHex": "FBEFE9",
+      "familyRole": "Amigo",
+      "familyIcon": "🧑",
+      "isRomanizable": false,
+      "readyWord": "¡Listos!",
+      "sectionTitle": "🇪🇸 Canciones Infantiles"
+    },
+    "de": {
+      "displayName": "Deutsch",
+      "flag": "🇩🇪",
+      "primaryHex": "4C5B7A",
+      "backgroundHex": "EDEFF4",
+      "familyRole": "Freund",
+      "familyIcon": "🧑",
+      "isRomanizable": false,
+      "readyWord": "Los geht's!",
+      "sectionTitle": "🇩🇪 Kinderlieder"
     }
   }
 }
