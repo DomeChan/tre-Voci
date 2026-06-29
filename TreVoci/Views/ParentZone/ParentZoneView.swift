@@ -4,6 +4,7 @@ import AVFoundation
 struct ParentZoneView: View {
     @Environment(PersistenceService.self) private var persistence
     @State private var showPronunciation = false
+    @State private var showDonation = false
     let onBack: () -> Void
     let onReset: () -> Void
 
@@ -44,6 +45,10 @@ struct ParentZoneView: View {
                 pronunciationButton
                     .padding(.horizontal, 20)
 
+                // Support the maker (optional, parent-gated tip jar)
+                donationButton
+                    .padding(.horizontal, 20)
+
                 // Settings
                 SettingsView(onReset: onReset)
                     .padding(.horizontal, 20)
@@ -56,6 +61,41 @@ struct ParentZoneView: View {
         .sheet(isPresented: $showPronunciation) {
             PronunciationGuideView()
         }
+        .sheet(isPresented: $showDonation) {
+            DonationView()
+        }
+    }
+
+    private var donationButton: some View {
+        Button { showDonation = true } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 18))
+                    .foregroundStyle(Color.coral)
+                    .frame(width: 40, height: 40)
+                    .background(Color.coral.opacity(0.12))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Support the Maker")
+                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .foregroundStyle(Color.bark)
+                    Text("Tip the dad who built this \u{00B7} everything stays free")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .foregroundStyle(Color.stone)
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(Color.mist)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(color: Color.black.opacity(0.04), radius: 8, y: 2)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Support the maker. Tip the dad who built this. Everything stays free.")
     }
 
     private var pronunciationButton: some View {

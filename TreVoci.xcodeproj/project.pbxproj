@@ -43,6 +43,8 @@
 		AA000034 /* Font+Nunito.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000036 /* Font+Nunito.swift */; };
 		AA000035 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AB000037 /* Fonts */; };
 		AA000036 /* AirPlayPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000038 /* AirPlayPickerButton.swift */; };
+		AA000037 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000039 /* StoreService.swift */; };
+		AA000038 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000040 /* DonationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,9 @@
 		AB000036 /* Font+Nunito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Nunito.swift"; sourceTree = "<group>"; };
 		AB000037 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		AB000038 /* AirPlayPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayPickerButton.swift; sourceTree = "<group>"; };
+		AB000039 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		AB000040 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		AB000041 /* TreVoci.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TreVoci.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 			children = (
 				AB000001 /* TreVociApp.swift */,
 				AB000035 /* Info.plist */,
+				AB000041 /* TreVoci.storekit */,
 				AD000003 /* Models */,
 				AD000004 /* ViewModels */,
 				AD000005 /* Views */,
@@ -151,8 +157,17 @@
 				AD000014 /* Activity */,
 				AD000015 /* ParentZone */,
 				AD000016 /* Shared */,
+				AD000017 /* Donation */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AD000017 /* Donation */ = {
+			isa = PBXGroup;
+			children = (
+				AB000040 /* DonationView.swift */,
+			);
+			path = Donation;
 			sourceTree = "<group>";
 		};
 		AD000016 /* Shared */ = {
@@ -169,6 +184,7 @@
 				AB000006 /* PersistenceService.swift */,
 				AB000007 /* SongCatalogService.swift */,
 				AB000011 /* AudioService.swift */,
+				AB000039 /* StoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -365,6 +381,8 @@
 				AA000033 /* SettingsView.swift in Sources */,
 				AA000034 /* Font+Nunito.swift in Sources */,
 				AA000036 /* AirPlayPickerButton.swift in Sources */,
+				AA000037 /* StoreService.swift in Sources */,
+				AA000038 /* DonationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

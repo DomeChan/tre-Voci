@@ -1,0 +1,64 @@
+{
+  "identifier" : "TREVOCI-TIPS",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "TIP0000001",
+      "localizations" : [
+        {
+          "description" : "A small thank-you to the maker.",
+          "displayName" : "Small thank-you",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.trevoci-open.app.tip.small",
+      "referenceName" : "Tip Small",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "TIP0000002",
+      "localizations" : [
+        {
+          "description" : "A medium thank-you to the maker.",
+          "displayName" : "Medium thank-you",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.trevoci-open.app.tip.medium",
+      "referenceName" : "Tip Medium",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "TIP0000003",
+      "localizations" : [
+        {
+          "description" : "A large thank-you to the maker.",
+          "displayName" : "Large thank-you",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.trevoci-open.app.tip.large",
+      "referenceName" : "Tip Large",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "TREVOCI",
+    "_developerTeamID" : "TREVOCI",
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
