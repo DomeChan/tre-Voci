@@ -1,5 +1,5 @@
 {
-  "order": ["it", "zh", "en"],
+  "order": ["it", "zh", "en", "fr"],
   "languages": {
     "it": {
       "displayName": "Italiano",
@@ -33,6 +33,17 @@
       "isRomanizable": false,
       "readyWord": "Ready!",
       "sectionTitle": "🇬🇧 English Nursery Rhymes"
+    },
+    "fr": {
+      "displayName": "Français",
+      "flag": "🇫🇷",
+      "primaryHex": "5A4FA3",
+      "backgroundHex": "F1EFF9",
+      "familyRole": "Ami",
+      "familyIcon": "🧑",
+      "isRomanizable": false,
+      "readyWord": "C'est parti !",
+      "sectionTitle": "🇫🇷 Comptines Françaises"
     }
   }
 }

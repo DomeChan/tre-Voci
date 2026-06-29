@@ -20,15 +20,18 @@ struct CultureSection: View {
                 .padding(.horizontal, 20)
 
             if songs.isEmpty {
-                // Honest "on the way" state for a chosen language we don't have
+                // Honest "on the way" state for a registered language we don't have
                 // real recordings for yet — never a silent empty gap (P4, P10).
-                if !dimmed {
+                // Shown at full opacity (it's informational) whether or not selected.
+                HStack(spacing: 6) {
+                    Image(systemName: "music.note")
+                        .font(.system(size: 11))
                     Text("Songs in \(language.displayName) are on the way \u{2014} we only add real native recordings.")
                         .font(.nunito(.semiBold, size: 12))
-                        .foregroundStyle(Color.stone)
                         .fixedSize(horizontal: false, vertical: true)
-                        .padding(.horizontal, 20)
                 }
+                .foregroundStyle(Color.stone)
+                .padding(.horizontal, 20)
             } else {
                 LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
                     ForEach(songs) { song in
@@ -43,20 +46,20 @@ struct CultureSection: View {
                     }
                 }
                 .padding(.horizontal, 20)
-            }
 
-            if dimmed {
-                HStack(spacing: 4) {
-                    Image(systemName: "eye.slash")
-                        .font(.system(size: 10))
-                    Text("Not in your selection")
-                        .font(.nunito(.semiBold, size: 11))
+                if dimmed {
+                    HStack(spacing: 4) {
+                        Image(systemName: "eye.slash")
+                            .font(.system(size: 10))
+                        Text("Not in your selection")
+                            .font(.nunito(.semiBold, size: 11))
+                    }
+                    .foregroundStyle(Color.stone)
+                    .padding(.horizontal, 20)
                 }
-                .foregroundStyle(Color.stone)
-                .padding(.horizontal, 20)
             }
         }
-        .opacity(dimmed ? 0.4 : 1.0)
+        .opacity(songs.isEmpty ? 1.0 : (dimmed ? 0.4 : 1.0))
     }
 
     private func cultureRow(song: Song) -> some View {
