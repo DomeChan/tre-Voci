@@ -4,7 +4,7 @@ struct ParentGateView: View {
     @State private var holdProgress: CGFloat = 0
     @State private var isHolding = false
     @State private var unlocked = false
-    @State private var timer: Timer?
+    @State private var holdTask: Task<Void, Never>?
 
     let onUnlock: () -> Void
     let onBack: () -> Void
@@ -106,24 +106,26 @@ struct ParentGateView: View {
     private func startHold() {
         isHolding = true
         holdProgress = 0
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { t in
-            holdProgress += 0.05 / 3.0
-            if holdProgress >= 1.0 {
-                t.invalidate()
-                unlocked = true
-                isHolding = false
-                // Small delay for visual feedback
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    onUnlock()
-                }
+        holdTask?.cancel()
+        holdTask = Task { @MainActor in
+            // Advance the ring in 0.05s steps over 3 seconds.
+            while holdProgress < 1.0 {
+                try? await Task.sleep(nanoseconds: 50_000_000)
+                if Task.isCancelled { return }
+                holdProgress += 0.05 / 3.0
             }
+            unlocked = true
+            isHolding = false
+            // Small delay for visual feedback
+            try? await Task.sleep(nanoseconds: 300_000_000)
+            if Task.isCancelled { return }
+            onUnlock()
         }
     }
 
     private func cancelHold() {
-        timer?.invalidate()
-        timer = nil
+        holdTask?.cancel()
+        holdTask = nil
         isHolding = false
         withAnimation(.easeOut(duration: 0.3)) {
             holdProgress = 0
