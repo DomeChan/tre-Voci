@@ -5,6 +5,7 @@ struct ParentZoneView: View {
     @Environment(PersistenceService.self) private var persistence
     @State private var showPronunciation = false
     @State private var showDonation = false
+    @State private var showStoredData = false
     let onBack: () -> Void
     let onReset: () -> Void
 
@@ -219,19 +220,19 @@ struct ParentZoneView: View {
 
             // Motivational copy
             if todaySessions.isEmpty {
-                Text("No songs yet today. Start a session to build your streak!")
+                Text("No songs yet today.")
                     .font(.system(size: 12, weight: .semibold, design: .rounded))
                     .foregroundStyle(Color.stone)
             } else {
                 let missing = selectedLangs.filter { !langsToday.contains($0.rawValue) }
                 if missing.isEmpty {
                     let langCount = selectedLangs.count == 2 ? "Both" : "All \(selectedLangs.count)"
-                    Text("\(langCount) languages heard today \u{2014} amazing!")
+                    Text("\(langCount) languages heard today.")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                         .foregroundStyle(Color.italianGreen)
                 } else {
                     let names = missing.map(\.displayName).joined(separator: " & ")
-                    Text("Try a \(names) song to complete today's set!")
+                    Text("Not heard yet today: \(names).")
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                         .foregroundStyle(Color.stone)
                 }
@@ -402,14 +403,69 @@ struct ParentZoneView: View {
                     }
                 }
             }
+
+            // Proof drawer — show the parent the *actual* stored data, so
+            // "no tracking" is an inspectable receipt rather than a claim.
+            Button {
+                withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+                    showStoredData.toggle()
+                }
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: showStoredData ? "chevron.down" : "chevron.right")
+                        .font(.system(size: 11, weight: .bold))
+                    Text(showStoredData ? "Hide what's stored" : "See exactly what's stored")
+                        .font(.system(size: 13, weight: .bold, design: .rounded))
+                }
+                .foregroundStyle(Color.italianGreen)
+                .frame(minHeight: 44, alignment: .leading)
+            }
+            .accessibilityLabel(showStoredData ? "Hide stored data" : "See exactly what's stored on this device")
+
+            if showStoredData {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(storedSummary)
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
+                        .foregroundStyle(Color.bark)
+                    ScrollView {
+                        Text(storedJSON)
+                            .font(.system(size: 11, design: .monospaced))
+                            .foregroundStyle(Color.stone)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .textSelection(.enabled)
+                    }
+                    .frame(maxHeight: 220)
+                    .padding(12)
+                    .background(Color.warm)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                }
+                .transition(.opacity)
+            }
         }
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(color: Color.black.opacity(0.04), radius: 8, y: 2)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("Privacy: this data stays on this device. No accounts, no network calls, no tracking. Nothing ever leaves the device.")
+    }
+
+    /// A one-line honest summary of the entire footprint.
+    private var storedSummary: String {
+        let sessions = persistence.state.sessions.count
+        let seconds = persistence.state.sessions.reduce(0) { $0 + $1.durationSeconds }
+        return "\(sessions) session\(sessions == 1 ? "" : "s"), \(seconds) seconds \u{2014} and that's everything."
+    }
+
+    /// The complete on-device state, pretty-printed. This is literally the JSON
+    /// in UserDefaults; nothing is hidden and nothing leaves the device.
+    private var storedJSON: String {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        guard let data = try? encoder.encode(persistence.state),
+              let str = String(data: data, encoding: .utf8) else {
+            return "(nothing stored yet)"
+        }
+        return str
     }
 }
 

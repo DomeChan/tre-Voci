@@ -88,9 +88,9 @@ struct ExposureChart: View {
     private var streakBanner: some View {
         HStack(spacing: 8) {
             Text("\u{1F525}")
-                .font(.system(size: streakIconSize))
+                .font(.system(size: 22))
             VStack(alignment: .leading, spacing: 2) {
-                Text("\(currentStreak)-Day Streak!")
+                Text("\(currentStreak)-day streak")
                     .font(.system(size: 16, weight: .black, design: .rounded))
                     .foregroundStyle(Color.bark)
                 if longestStreak > currentStreak {
@@ -110,15 +110,6 @@ struct ExposureChart: View {
             )
         )
         .clipShape(RoundedRectangle(cornerRadius: 16))
-    }
-
-    private var streakIconSize: CGFloat {
-        switch currentStreak {
-        case 1...3: return 20
-        case 4...7: return 26
-        case 8...14: return 30
-        default: return 36
-        }
     }
 
     // MARK: - Weekly Goal Ring
