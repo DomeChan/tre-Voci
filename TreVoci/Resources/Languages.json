@@ -1,0 +1,35 @@
+{
+  "order": ["it", "zh", "en"],
+  "languages": {
+    "it": {
+      "displayName": "Italiano",
+      "flag": "🇮🇹",
+      "primaryHex": "2A6B45",
+      "backgroundHex": "EDF5F0",
+      "familyRole": "Papà",
+      "familyIcon": "🧔",
+      "isRomanizable": false,
+      "sectionTitle": "🇮🇹 Filastrocche Italiane"
+    },
+    "zh": {
+      "displayName": "中文",
+      "flag": "🇨🇳",
+      "primaryHex": "C43B3B",
+      "backgroundHex": "FDF0F0",
+      "familyRole": "Māmā",
+      "familyIcon": "👩",
+      "isRomanizable": true,
+      "sectionTitle": "🇨🇳 中文儿歌"
+    },
+    "en": {
+      "displayName": "English",
+      "flag": "🇬🇧",
+      "primaryHex": "2D5BA9",
+      "backgroundHex": "EDF2FA",
+      "familyRole": "School",
+      "familyIcon": "🏫",
+      "isRomanizable": false,
+      "sectionTitle": "🇬🇧 English Nursery Rhymes"
+    }
+  }
+}

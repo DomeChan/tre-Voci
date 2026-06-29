@@ -2,7 +2,9 @@ import Foundation
 
 struct Song: Codable, Identifiable {
     let id: String
-    let category: SongCategory
+    /// `"cross-cultural"` for multi-language songs, otherwise a language `code`
+    /// (e.g. `"it"`) — no fixed enum, so a new language needs no new case.
+    let category: String
     let melodyOrigin: String
     let icon: String
     let backgroundGradient: [String]
@@ -36,7 +38,7 @@ struct Song: Codable, Identifiable {
     var parentExtension: ParentExtension?
 
     var isCrossCultural: Bool {
-        category == .crossCultural
+        category == "cross-cultural"
     }
 
     /// Energy with a safe default for songs that predate the data spine.
@@ -61,9 +63,19 @@ struct Song: Codable, Identifiable {
         Language.allCases.filter { audioFiles[$0.rawValue] != nil }
     }
 
+    /// The song's opening voice. Data-driven: the first language (in registry
+    /// order) that the song actually has a recording for — never a hardcoded
+    /// language. Callers that know the family's chosen set can prefer it via
+    /// `primaryLanguage(preferring:)`.
     var primaryLanguage: Language {
-        if isCrossCultural { return .it }
-        return availableLanguages.first ?? .en
+        availableLanguages.first ?? Language.all.first ?? Language(code: "en")
+    }
+
+    /// Like `primaryLanguage`, but prefers the family's selected languages when
+    /// the song offers one of them — so a cross-cultural song opens in a voice
+    /// the family actually chose, rather than always the registry's first.
+    func primaryLanguage(preferring selected: [Language]) -> Language {
+        availableLanguages.first(where: { selected.contains($0) }) ?? primaryLanguage
     }
 
     var formattedDuration: String {
@@ -71,13 +83,6 @@ struct Song: Codable, Identifiable {
         let seconds = duration % 60
         return String(format: "%d:%02d", minutes, seconds)
     }
-}
-
-enum SongCategory: String, Codable {
-    case crossCultural = "cross-cultural"
-    case italian
-    case chinese
-    case english
 }
 
 struct LyricLine: Codable {

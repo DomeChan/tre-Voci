@@ -27,16 +27,14 @@ final class SongCatalogService {
     }
 
     var crossCulturalSongs: [Song] {
-        allSongs.filter { $0.category == .crossCultural }
+        allSongs.filter { $0.isCrossCultural }
     }
 
+    /// Culture-specific songs for a language: those whose `category` is the
+    /// language's own code. No category enum, so this works for any N languages.
     func songsByLanguage(_ language: Language) -> [Song] {
-        allSongs.filter { $0.category == language.category }
+        allSongs.filter { $0.category == language.code }
     }
-
-    var italianSongs: [Song] { songsByLanguage(.it) }
-    var chineseSongs: [Song] { songsByLanguage(.zh) }
-    var englishSongs: [Song] { songsByLanguage(.en) }
 
     func song(byId id: String) -> Song? {
         allSongs.first { $0.id == id }

@@ -3,15 +3,18 @@ import Foundation
 struct AppState: Codable {
     var hasCompletedOnboarding: Bool = false
     var childName: String = ""
-    var selectedLanguages: [String] = ["it", "zh", "en"]
+    /// Empty until onboarding sets it (onboarding seeds the family's chosen set).
+    /// Registry-driven — never a hardcoded language list.
+    var selectedLanguages: [String] = []
     var preferredSpeaker: String = "phone"
     var sessionLength: Int = 3
     var dailyMixSeed: String = ""
 
-    // Listening history
+    // Listening history. Keyed by language code; missing key reads as 0, so these
+    // start empty and grow to whatever languages the family actually hears.
     var sessions: [ListeningSession] = []
-    var totalListeningSeconds: [String: Int] = ["it": 0, "zh": 0, "en": 0]
-    var weeklyListeningSeconds: [String: Int] = ["it": 0, "zh": 0, "en": 0]
+    var totalListeningSeconds: [String: Int] = [:]
+    var weeklyListeningSeconds: [String: Int] = [:]
     var weekStartDate: Date?
 
     // Streaks

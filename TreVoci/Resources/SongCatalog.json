@@ -1893,7 +1893,7 @@
     },
     {
       "id": "stella-stellina",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian traditional lullaby",
       "icon": "🌟",
       "backgroundGradient": [
@@ -2006,7 +2006,7 @@
     },
     {
       "id": "batti-batti",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian clapping rhyme",
       "icon": "👏",
       "backgroundGradient": [
@@ -2227,7 +2227,7 @@
     },
     {
       "id": "giro-giro-tondo",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian circle game (Ring Around the Rosie equivalent)",
       "icon": "🔄",
       "backgroundGradient": [
@@ -2356,7 +2356,7 @@
     },
     {
       "id": "la-bella-lavanderina",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian traditional action song",
       "icon": "🧼",
       "backgroundGradient": [
@@ -2453,7 +2453,7 @@
     },
     {
       "id": "xiao-tuzi-guaiguai",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional children's safety song",
       "icon": "🐰",
       "backgroundGradient": [
@@ -2602,7 +2602,7 @@
     },
     {
       "id": "ba-luobo",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional story song",
       "icon": "🥕",
       "backgroundGradient": [
@@ -2746,7 +2746,7 @@
     },
     {
       "id": "zhao-pengyou",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional social song",
       "icon": "🤝",
       "backgroundGradient": [
@@ -2870,7 +2870,7 @@
     },
     {
       "id": "da-xiang",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional animal song",
       "icon": "🐘",
       "backgroundGradient": [
@@ -2974,7 +2974,7 @@
     },
     {
       "id": "humpty-dumpty",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "English traditional nursery rhyme (1797)",
       "icon": "🥚",
       "backgroundGradient": [
@@ -3063,7 +3063,7 @@
     },
     {
       "id": "baa-baa-black-sheep",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "English nursery rhyme, Twinkle melody (1731)",
       "icon": "🐑",
       "backgroundGradient": [
@@ -3152,7 +3152,7 @@
     },
     {
       "id": "mary-little-lamb",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "Mary Had a Little Lamb (1830)",
       "icon": "🐑",
       "backgroundGradient": [
@@ -3269,7 +3269,7 @@
     },
     {
       "id": "itsy-bitsy-spider",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "Itsy Bitsy Spider (early 1900s)",
       "icon": "🕷️",
       "backgroundGradient": [
