@@ -7,9 +7,10 @@ final class HomeViewModel {
     private let persistence: PersistenceService
 
     var crossCulturalSongs: [Song] { catalog.crossCulturalSongs }
-    var italianSongs: [Song] { catalog.italianSongs }
-    var chineseSongs: [Song] { catalog.chineseSongs }
-    var englishSongs: [Song] { catalog.englishSongs }
+
+    /// Culture-specific songs for any language — replaces the old per-language
+    /// accessors so Home can iterate `Language.all` instead of hardcoding three.
+    func songs(for language: Language) -> [Song] { catalog.songsByLanguage(language) }
 
     var childName: String { persistence.state.displayName }
     var sessionLength: Int { persistence.state.sessionLength }

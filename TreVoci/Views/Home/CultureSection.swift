@@ -19,19 +19,31 @@ struct CultureSection: View {
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)
 
-            LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
-                ForEach(songs) { song in
-                    Button {
-                        onSongTap(song)
-                    } label: {
-                        cultureRow(song: song)
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("\(song.title(for: language)), \(song.formattedDuration)")
-                    .accessibilityAddTraits(.isButton)
+            if songs.isEmpty {
+                // Honest "on the way" state for a chosen language we don't have
+                // real recordings for yet — never a silent empty gap (P4, P10).
+                if !dimmed {
+                    Text("Songs in \(language.displayName) are on the way \u{2014} we only add real native recordings.")
+                        .font(.nunito(.semiBold, size: 12))
+                        .foregroundStyle(Color.stone)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.horizontal, 20)
                 }
+            } else {
+                LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
+                    ForEach(songs) { song in
+                        Button {
+                            onSongTap(song)
+                        } label: {
+                            cultureRow(song: song)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("\(song.title(for: language)), \(song.formattedDuration)")
+                        .accessibilityAddTraits(.isButton)
+                    }
+                }
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
 
             if dimmed {
                 HStack(spacing: 4) {
