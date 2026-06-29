@@ -84,7 +84,7 @@ struct SpeakerStep: View {
             Button(action: onFinish) {
                 Text("Pronti! · 准备好了!")
                     .font(.system(size: 17, weight: .bold, design: .rounded))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.bark)
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
                     .background(

@@ -46,7 +46,7 @@ struct LanguageStep: View {
             Button(action: onNext) {
                 Text("Next")
                     .font(.system(size: 17, weight: .bold, design: .rounded))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.bark)
                     .frame(maxWidth: .infinity)
                     .frame(height: 56)
                     .background(selectedLanguages.count >= 2 ? Color.coral : Color.sand)
