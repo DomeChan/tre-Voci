@@ -139,15 +139,15 @@ struct SettingsView: View {
             // languages fits without squishing names into vertical letters.
             // Full name kept on the accessibilityLabel for VoiceOver.
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
+                HStack(spacing: 7) {
                     ForEach(Language.allCases) { lang in
                         let isSelected = persistence.state.isLanguageSelected(lang)
                         Button {
                             toggleSettingsLanguage(lang)
                         } label: {
                             Text(lang.flag)
-                                .font(.system(size: 22))
-                                .frame(width: 46, height: 46)
+                                .font(.system(size: 19))
+                                .frame(width: 40, height: 40)
                                 .background(
                                     Circle().fill(isSelected ? lang.primaryColor.opacity(0.18) : Color.sand.opacity(0.4))
                                 )
