@@ -8,7 +8,8 @@ for each tip product. Pass an image (PNG/JPG) of the donation screen.
 Auth: ASC_ISSUER_ID / ASC_KEY_ID / ASC_P8 env (Admin or App Manager key).
 Usage: python3 scripts/asc_upload_iap_screenshot.py <image.png> [--bundle com.trevoci-open.app]
 """
-import hashlib, json, os, sys, time, argparse, urllib.request, urllib.error
+import hashlib, json, os, sys, time, argparse, socket, urllib.request, urllib.error
+socket.setdefaulttimeout(45)
 try:
     import jwt
 except ImportError:
@@ -24,14 +25,12 @@ def tok():
                       algorithm="ES256", headers={"kid": os.environ["ASC_KEY_ID"], "typ": "JWT"})
 
 def api(method, path, t, body=None):
+    # Raises urllib.error.HTTPError on failure (callers decide what to tolerate).
     req = urllib.request.Request(path if path.startswith("http") else BASE + path,
         data=json.dumps(body).encode() if body is not None else None, method=method,
         headers={"Authorization": f"Bearer {t}", "Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req) as r:
-            return json.loads(r.read() or "{}")
-    except urllib.error.HTTPError as e:
-        sys.exit(f"{method} {path} [{e.code}]: {e.read().decode()}")
+    with urllib.request.urlopen(req) as r:
+        return json.loads(r.read() or "{}")
 
 def upload_one(iap_id, img, data, t):
     # 1. reserve
@@ -69,8 +68,14 @@ def main():
         iid = iaps.get(pid)
         if not iid:
             print(f"  ! {pid} not found"); continue
-        sid = upload_one(iid, args.image, data, t)
-        print(f"  + {pid}: review screenshot uploaded ({sid})")
+        try:
+            sid = upload_one(iid, args.image, data, t)
+            print(f"  + {pid}: review screenshot uploaded ({sid})")
+        except urllib.error.HTTPError as e:
+            if e.code == 409:           # "Screenshot already exists" — this one's done
+                print(f"  = {pid}: already has a review screenshot, skipping")
+            else:
+                print(f"  ! {pid}: [{e.code}] {e.read().decode()[:140]}"); raise
     print("\nDone. Each IAP now has a review screenshot. Remaining: Submit for Review (ASC UI).")
 
 if __name__ == "__main__":
