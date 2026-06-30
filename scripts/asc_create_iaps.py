@@ -24,9 +24,9 @@ except ImportError:
 
 BASE = "https://api.appstoreconnect.apple.com"
 TIPS = [
-    ("com.trevoci-open.app.tip.small",  "Small thank-you",  "A small thank-you to the maker."),
-    ("com.trevoci-open.app.tip.medium", "Medium thank-you", "A medium thank-you to the maker."),
-    ("com.trevoci-open.app.tip.large",  "Large thank-you",  "A large thank-you to the maker."),
+    ("com.trevoci.tip.small",  "Small thank-you",  "A small thank-you to the maker."),
+    ("com.trevoci.tip.medium", "Medium thank-you", "A medium thank-you to the maker."),
+    ("com.trevoci.tip.large",  "Large thank-you",  "A large thank-you to the maker."),
 ]
 REVIEW_NOTE = "Optional tip to support the indie developer. Unlocks nothing; all content stays free."
 
