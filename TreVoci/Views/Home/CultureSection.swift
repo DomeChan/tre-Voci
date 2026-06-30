@@ -14,10 +14,11 @@ struct CultureSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(title)
-                .font(.nunito(.black, size: 17))
-                .foregroundStyle(Color.bark)
+            // Flag carries the language identity; the full name is kept for VoiceOver.
+            Text(language.flag)
+                .font(.system(size: 30))
                 .padding(.horizontal, 20)
+                .accessibilityLabel(title)
 
             if songs.isEmpty {
                 // Honest "on the way" state for a registered language we don't have

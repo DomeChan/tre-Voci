@@ -76,29 +76,16 @@ struct LanguageStep: View {
         return Button {
             toggleLanguage(language)
         } label: {
-            HStack(spacing: 12) {
-                Text(language.familyIcon)
-                    .font(.system(size: 28))
+            HStack(spacing: 14) {
+                // Flag carries identity; the name is on the row's accessibilityLabel.
+                Text(language.flag)
+                    .font(.system(size: 34))
 
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("\(language.familyRole) speaks")
-                        .font(.nunito(.bold, size: 12))
-                        .foregroundStyle(Color.stone)
-
-                    HStack(spacing: 6) {
-                        Text(language.flag)
-                            .font(.system(size: 18))
-                        Text(language.displayName)
-                            .font(.nunito(.bold, size: 17))
-                            .foregroundStyle(Color.bark)
-                    }
-
-                    // Honest content count — "coming soon" when a registered
-                    // language has no real recordings yet (P10).
-                    Text(hasContent ? "\(count) songs" : "coming soon")
-                        .font(.nunito(.semiBold, size: 11))
-                        .foregroundStyle(Color.stone)
-                }
+                // Honest content count — "coming soon" when a registered
+                // language has no real recordings yet (P10).
+                Text(hasContent ? "\(count) songs" : "coming soon")
+                    .font(.nunito(.semiBold, size: 13))
+                    .foregroundStyle(Color.stone)
 
                 Spacer()
 
