@@ -4,7 +4,7 @@ import Foundation
 extension Song {
     static let preview = Song(
         id: "frere-jacques",
-        category: .crossCultural,
+        category: "cross-cultural",
         melodyOrigin: "Frère Jacques (France, ~1780)",
         icon: "🐯",
         backgroundGradient: ["#FFF3E0", "#FFE0B2"],

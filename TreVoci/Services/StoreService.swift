@@ -14,9 +14,9 @@ final class StoreService {
     /// The three tip tiers. Product IDs share the bundle prefix so they're
     /// obvious in App Store Connect later. Order is small → medium → large.
     enum Tip: String, CaseIterable {
-        case small = "com.trevoci-open.app.tip.small"
-        case medium = "com.trevoci-open.app.tip.medium"
-        case large = "com.trevoci-open.app.tip.large"
+        case small = "com.trevoci.tip.small"
+        case medium = "com.trevoci.tip.medium"
+        case large = "com.trevoci.tip.large"
 
         var order: Int { Self.allCases.firstIndex(of: self) ?? 0 }
 

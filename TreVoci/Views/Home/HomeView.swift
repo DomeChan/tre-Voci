@@ -51,37 +51,18 @@ struct HomeView: View {
                 // Cross-Cultural Section
                 crossCulturalSection
 
-                // Italian Section
+                // One culture section per registered language — data-driven, so a
+                // new language in Languages.json appears here with no code change.
                 if let vm = viewModel {
-                    CultureSection(
-                        title: "\u{1F1EE}\u{1F1F9} Filastrocche Italiane",
-                        language: .it,
-                        songs: vm.italianSongs,
-                        dimmed: !persistence.state.isLanguageSelected(.it),
-                        onSongTap: { selectSong($0) }
-                    )
-                }
-
-                // Chinese Section
-                if let vm = viewModel {
-                    CultureSection(
-                        title: "\u{1F1E8}\u{1F1F3} \u{4E2D}\u{6587}\u{513F}\u{6B4C}",
-                        language: .zh,
-                        songs: vm.chineseSongs,
-                        dimmed: !persistence.state.isLanguageSelected(.zh),
-                        onSongTap: { selectSong($0) }
-                    )
-                }
-
-                // English Section
-                if let vm = viewModel {
-                    CultureSection(
-                        title: "\u{1F1EC}\u{1F1E7} English Nursery Rhymes",
-                        language: .en,
-                        songs: vm.englishSongs,
-                        dimmed: !persistence.state.isLanguageSelected(.en),
-                        onSongTap: { selectSong($0) }
-                    )
+                    ForEach(Language.all) { lang in
+                        CultureSection(
+                            title: lang.sectionTitle,
+                            language: lang,
+                            songs: vm.songs(for: lang),
+                            dimmed: !persistence.state.isLanguageSelected(lang),
+                            onSongTap: { selectSong($0) }
+                        )
+                    }
                 }
 
                 // Bottom padding
@@ -212,7 +193,7 @@ struct HomeView: View {
 
     private var crossCulturalSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("\u{1F30D} Same Song, Three Worlds")
+            Text("\u{1F30D} Same Song, Many Worlds")
                 .font(.nunito(.black, size: 17))
                 .foregroundStyle(Color.bark)
                 .padding(.horizontal, 20)

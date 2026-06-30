@@ -45,7 +45,7 @@ final class PersistenceService {
         let now = Date()
         if let weekStart = state.weekStartDate,
            !calendar.isDate(weekStart, equalTo: now, toGranularity: .weekOfYear) {
-            state.weeklyListeningSeconds = ["it": 0, "zh": 0, "en": 0]
+            state.weeklyListeningSeconds = [:]
             state.weekStartDate = calendar.startOfDay(for: now)
             save()
         }

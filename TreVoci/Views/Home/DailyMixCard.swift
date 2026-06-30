@@ -7,6 +7,11 @@ struct DailyMixCard: View {
 
     private var songCount: Int { songs.count }
 
+    /// Distinct languages across the mix — data-driven, not a hardcoded "3".
+    private var languageCount: Int {
+        Set(songs.flatMap { $0.availableLanguages }).count
+    }
+
     private var tracklistLabel: String {
         songs.map { $0.title(for: .en) }.joined(separator: ", ")
     }
@@ -44,7 +49,7 @@ struct DailyMixCard: View {
                         .font(.nunito(.black, size: 28))
                         .foregroundStyle(.white)
 
-                    Text("\(songCount) Songs · 3 Languages · ~\(duration / 60) min")
+                    Text("\(songCount) Songs · \(languageCount) Languages · ~\(duration / 60) min")
                         .font(.nunito(.semiBold, size: 14))
                         .foregroundStyle(.white.opacity(0.85))
 

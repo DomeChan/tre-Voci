@@ -135,27 +135,32 @@ struct SettingsView: View {
                     .foregroundStyle(Color.stone)
             }
 
-            HStack(spacing: 8) {
-                ForEach(Language.allCases) { lang in
-                    let isSelected = persistence.state.isLanguageSelected(lang)
-                    Button {
-                        toggleSettingsLanguage(lang)
-                    } label: {
-                        HStack(spacing: 4) {
+            // Flag-only circular chips; scroll horizontally so any number of
+            // languages fits without squishing names into vertical letters.
+            // Full name kept on the accessibilityLabel for VoiceOver.
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 7) {
+                    ForEach(Language.allCases) { lang in
+                        let isSelected = persistence.state.isLanguageSelected(lang)
+                        Button {
+                            toggleSettingsLanguage(lang)
+                        } label: {
                             Text(lang.flag)
-                                .font(.system(size: 14))
-                            Text(lang.displayName)
-                                .font(.nunito(.bold, size: 12))
+                                .font(.system(size: 19))
+                                .frame(width: 40, height: 40)
+                                .background(
+                                    Circle().fill(isSelected ? lang.primaryColor.opacity(0.18) : Color.sand.opacity(0.4))
+                                )
+                                .overlay(
+                                    Circle().stroke(isSelected ? lang.primaryColor : Color.clear, lineWidth: 2)
+                                )
+                                .opacity(isSelected ? 1.0 : 0.55)
                         }
-                        .foregroundStyle(isSelected ? .white : Color.bark)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(isSelected ? lang.primaryColor : Color.sand.opacity(0.5))
-                        .clipShape(Capsule())
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("\(lang.displayName), \(isSelected ? "selected" : "not selected")")
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("\(lang.displayName), \(isSelected ? "selected" : "not selected")")
                 }
+                .padding(.horizontal, 2)
             }
         }
         .padding(.horizontal, 16)

@@ -14,37 +14,53 @@ struct CultureSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(title)
-                .font(.nunito(.black, size: 17))
-                .foregroundStyle(Color.bark)
+            // Flag carries the language identity; the full name is kept for VoiceOver.
+            Text(language.flag)
+                .font(.system(size: 30))
                 .padding(.horizontal, 20)
+                .accessibilityLabel(title)
 
-            LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
-                ForEach(songs) { song in
-                    Button {
-                        onSongTap(song)
-                    } label: {
-                        cultureRow(song: song)
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("\(song.title(for: language)), \(song.formattedDuration)")
-                    .accessibilityAddTraits(.isButton)
-                }
-            }
-            .padding(.horizontal, 20)
-
-            if dimmed {
-                HStack(spacing: 4) {
-                    Image(systemName: "eye.slash")
-                        .font(.system(size: 10))
-                    Text("Not in your selection")
-                        .font(.nunito(.semiBold, size: 11))
+            if songs.isEmpty {
+                // Honest "on the way" state for a registered language we don't have
+                // real recordings for yet — never a silent empty gap (P4, P10).
+                // Shown at full opacity (it's informational) whether or not selected.
+                HStack(spacing: 6) {
+                    Image(systemName: "music.note")
+                        .font(.system(size: 11))
+                    Text("Songs in \(language.displayName) are on the way \u{2014} we only add real native recordings.")
+                        .font(.nunito(.semiBold, size: 12))
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 .foregroundStyle(Color.stone)
                 .padding(.horizontal, 20)
+            } else {
+                LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
+                    ForEach(songs) { song in
+                        Button {
+                            onSongTap(song)
+                        } label: {
+                            cultureRow(song: song)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("\(song.title(for: language)), \(song.formattedDuration)")
+                        .accessibilityAddTraits(.isButton)
+                    }
+                }
+                .padding(.horizontal, 20)
+
+                if dimmed {
+                    HStack(spacing: 4) {
+                        Image(systemName: "eye.slash")
+                            .font(.system(size: 10))
+                        Text("Not in your selection")
+                            .font(.nunito(.semiBold, size: 11))
+                    }
+                    .foregroundStyle(Color.stone)
+                    .padding(.horizontal, 20)
+                }
             }
         }
-        .opacity(dimmed ? 0.4 : 1.0)
+        .opacity(songs.isEmpty ? 1.0 : (dimmed ? 0.4 : 1.0))
     }
 
     private func cultureRow(song: Song) -> some View {

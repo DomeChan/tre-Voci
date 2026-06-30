@@ -13,7 +13,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.trevoci-open.app.tip.small",
+      "productID" : "com.trevoci.tip.small",
       "referenceName" : "Tip Small",
       "type" : "Consumable"
     },
@@ -28,7 +28,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.trevoci-open.app.tip.medium",
+      "productID" : "com.trevoci.tip.medium",
       "referenceName" : "Tip Medium",
       "type" : "Consumable"
     },
@@ -43,7 +43,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.trevoci-open.app.tip.large",
+      "productID" : "com.trevoci.tip.large",
       "referenceName" : "Tip Large",
       "type" : "Consumable"
     }

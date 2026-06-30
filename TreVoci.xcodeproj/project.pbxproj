@@ -17,6 +17,7 @@
 		AA000008 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000008 /* PreviewData.swift */; };
 		AA000009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB000009 /* Assets.xcassets */; };
 		AA000010 /* SongCatalog.json in Resources */ = {isa = PBXBuildFile; fileRef = AB000010 /* SongCatalog.json */; };
+		AA000039 /* Languages.json in Resources */ = {isa = PBXBuildFile; fileRef = AB000042 /* Languages.json */; };
 		AA000011 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* AudioService.swift */; };
 		AA000012 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = AB000012 /* Audio */; };
 		AA000013 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000013 /* SplashView.swift */; };
@@ -58,6 +59,7 @@
 		AB000008 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		AB000009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB000010 /* SongCatalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongCatalog.json; sourceTree = "<group>"; };
+		AB000042 /* Languages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Languages.json; sourceTree = "<group>"; };
 		AB000011 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		AB000012 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
 		AB000013 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				AB000009 /* Assets.xcassets */,
 				AB000010 /* SongCatalog.json */,
+				AB000042 /* Languages.json */,
 				AB000012 /* Audio */,
 				AB000037 /* Fonts */,
 			);
@@ -337,6 +340,7 @@
 			files = (
 				AA000009 /* Assets.xcassets in Resources */,
 				AA000010 /* SongCatalog.json in Resources */,
+				AA000039 /* Languages.json in Resources */,
 				AA000012 /* Audio in Resources */,
 				AA000035 /* Fonts in Resources */,
 			);

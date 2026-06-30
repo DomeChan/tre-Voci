@@ -68,7 +68,7 @@ struct ExposureChart: View {
 
             // Language breakdown cards (only selected)
             ForEach(selectedLanguages) { lang in
-                languageCard(language: lang, minutes: minutes(for: lang), role: lang.familyRole + "'s language")
+                languageCard(language: lang, minutes: minutes(for: lang))
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(lang.displayName)
                     .accessibilityValue(cardAccessibilityValue(minutes: minutes(for: lang)))
@@ -165,19 +165,11 @@ struct ExposureChart: View {
 
     // MARK: - Language Card
 
-    private func languageCard(language: Language, minutes: Double, role: String) -> some View {
+    private func languageCard(language: Language, minutes: Double) -> some View {
         HStack(spacing: 12) {
+            // Flag carries identity; name is on the card's accessibilityLabel (in body).
             Text(language.flag)
-                .font(.system(size: 24))
-
-            VStack(alignment: .leading, spacing: 3) {
-                Text(language.displayName)
-                    .font(.nunito(.bold, size: 14))
-                    .foregroundStyle(Color.bark)
-                Text(role)
-                    .font(.nunito(.semiBold, size: 11))
-                    .foregroundStyle(Color.stone)
-            }
+                .font(.system(size: 30))
 
             Spacer()
 

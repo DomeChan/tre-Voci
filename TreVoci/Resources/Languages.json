@@ -1,0 +1,85 @@
+{
+  "order": ["it", "zh", "en", "fr", "es", "de", "ar"],
+  "languages": {
+    "it": {
+      "displayName": "Italiano",
+      "flag": "🇮🇹",
+      "primaryHex": "2A6B45",
+      "backgroundHex": "EDF5F0",
+      "familyRole": "Papà",
+      "familyIcon": "🧔",
+      "isRomanizable": false,
+      "readyWord": "Pronti!",
+      "sectionTitle": "🇮🇹 Filastrocche Italiane"
+    },
+    "zh": {
+      "displayName": "中文",
+      "flag": "🇨🇳",
+      "primaryHex": "C43B3B",
+      "backgroundHex": "FDF0F0",
+      "familyRole": "Māmā",
+      "familyIcon": "👩",
+      "isRomanizable": true,
+      "latinScript": false,
+      "readyWord": "准备好了!",
+      "sectionTitle": "🇨🇳 中文儿歌"
+    },
+    "en": {
+      "displayName": "English",
+      "flag": "🇬🇧",
+      "primaryHex": "2D5BA9",
+      "backgroundHex": "EDF2FA",
+      "familyRole": "School",
+      "familyIcon": "🏫",
+      "isRomanizable": false,
+      "readyWord": "Ready!",
+      "sectionTitle": "🇬🇧 English Nursery Rhymes"
+    },
+    "fr": {
+      "displayName": "Français",
+      "flag": "🇫🇷",
+      "primaryHex": "5A4FA3",
+      "backgroundHex": "F1EFF9",
+      "familyRole": "Ami",
+      "familyIcon": "🧑",
+      "isRomanizable": false,
+      "readyWord": "C'est parti !",
+      "sectionTitle": "🇫🇷 Comptines Françaises"
+    },
+    "es": {
+      "displayName": "Español",
+      "flag": "🇪🇸",
+      "primaryHex": "C8472B",
+      "backgroundHex": "FBEFE9",
+      "familyRole": "Amigo",
+      "familyIcon": "🧑",
+      "isRomanizable": false,
+      "readyWord": "¡Listos!",
+      "sectionTitle": "🇪🇸 Canciones Infantiles"
+    },
+    "de": {
+      "displayName": "Deutsch",
+      "flag": "🇩🇪",
+      "primaryHex": "4C5B7A",
+      "backgroundHex": "EDEFF4",
+      "familyRole": "Freund",
+      "familyIcon": "🧑",
+      "isRomanizable": false,
+      "readyWord": "Los geht's!",
+      "sectionTitle": "🇩🇪 Kinderlieder"
+    },
+    "ar": {
+      "displayName": "العربية",
+      "flag": "🇸🇦",
+      "primaryHex": "1F7A5C",
+      "backgroundHex": "EAF4EF",
+      "familyRole": "Jadd",
+      "familyIcon": "🧑",
+      "isRomanizable": true,
+      "latinScript": false,
+      "rtl": true,
+      "readyWord": "هيا بنا!",
+      "sectionTitle": "🇸🇦 أناشيد الأطفال"
+    }
+  }
+}

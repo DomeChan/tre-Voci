@@ -13,12 +13,18 @@
       "titles": {
         "it": "Fra Martino",
         "zh": "两只老虎",
-        "en": "Are You Sleeping"
+        "en": "Are You Sleeping",
+        "fr": "Frère Jacques",
+        "de": "Bruder Jakob",
+        "es": "Martinillo"
       },
       "audioFiles": {
         "it": "cross-cultural/frere-jacques-it.m4a",
         "zh": "cross-cultural/frere-jacques-zh.m4a",
-        "en": "cross-cultural/frere-jacques-en.m4a"
+        "en": "cross-cultural/frere-jacques-en.m4a",
+        "fr": "cross-cultural/frere-jacques-fr.m4a",
+        "de": "cross-cultural/frere-jacques-de.m4a",
+        "es": "cross-cultural/frere-jacques-es.m4a"
       },
       "lyrics": {
         "it": [
@@ -186,6 +192,96 @@
             "time": 72.4,
             "text": "Rise and shine, rise and shine!"
           }
+        ],
+        "fr": [
+          {
+            "time": 0.3,
+            "text": "Frère Jacques, Frère Jacques,"
+          },
+          {
+            "time": 6.8,
+            "text": "Dormez-vous? Dormez-vous?"
+          },
+          {
+            "time": 10.4,
+            "text": "Sonnez les matines, sonnez les matines,"
+          },
+          {
+            "time": 12.4,
+            "text": "Din din don, din din don."
+          },
+          {
+            "time": 21.0,
+            "text": "Frère Jacques, Frère Jacques,"
+          },
+          {
+            "time": 27.5,
+            "text": "Dormez-vous? Dormez-vous?"
+          },
+          {
+            "time": 31.1,
+            "text": "Sonnez les matines, sonnez les matines,"
+          },
+          {
+            "time": 33.1,
+            "text": "Din din don, din din don."
+          }
+        ],
+        "de": [
+          {
+            "time": 8.16,
+            "text": "Bruder Jakob, Bruder Jakob"
+          },
+          {
+            "time": 12.96,
+            "text": "Schläfst du noch, Schläfst du noch?"
+          },
+          {
+            "time": 17.84,
+            "text": "Hörst du nicht die Glocke? Hörst du nicht die Glocke?"
+          },
+          {
+            "time": 22.8,
+            "text": "Ding-Dang-Dong, Ding-Dang-Dong"
+          },
+          {
+            "time": 27.8,
+            "text": "Bruder Jakob, Bruder Jakob"
+          },
+          {
+            "time": 32.6,
+            "text": "Schläfst du noch, Schläfst du noch?"
+          },
+          {
+            "time": 37.44,
+            "text": "Hörst du nicht die Glocke? Hörst du nicht die Glocke?"
+          },
+          {
+            "time": 42.44,
+            "text": "Ding-Dang-Dong, Ding-Dang-Dong"
+          },
+          {
+            "time": 50.44,
+            "text": "Schläfst du noch? Hörst du nicht die Glocke?"
+          }
+        ],
+        "es": [
+          {
+            "time": 0.3,
+            "text": "Martinillo, Martinillo"
+          },
+          {
+            "time": 6.9,
+            "text": "¿Dónde estás? ¿Dónde estás?"
+          },
+          {
+            "time": 13.5,
+            "text": "Suenan las campanas, suenan las campanas"
+          },
+          {
+            "time": 20.1,
+            "text": "Din, don, dan. Din, don, dan."
+          }
         ]
       },
       "activity": {
@@ -202,7 +298,10 @@
       "recordingSource": {
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
-        "en": "Super Simple Songs"
+        "en": "Super Simple Songs",
+        "fr": "Monde des Titounis",
+        "de": "Pudding TV Deutsch",
+        "es": "Pudding TV Español"
       },
       "parentExtension": {
         "carryPhrase": {
@@ -229,12 +328,18 @@
       "titles": {
         "it": "Brilla Brilla Stellina",
         "zh": "小星星",
-        "en": "Twinkle Twinkle"
+        "en": "Twinkle Twinkle",
+        "es": "Estrellita, ¿dónde estás?",
+        "fr": "Brille, brille, petite étoile",
+        "de": "Funkel, funkel, kleiner Stern"
       },
       "audioFiles": {
         "it": "cross-cultural/twinkle-it.m4a",
         "zh": "cross-cultural/twinkle-zh.m4a",
-        "en": "cross-cultural/twinkle-en.m4a"
+        "en": "cross-cultural/twinkle-en.m4a",
+        "es": "cross-cultural/twinkle-es.m4a",
+        "fr": "cross-cultural/twinkle-fr.m4a",
+        "de": "cross-cultural/twinkle-de.m4a"
       },
       "lyrics": {
         "it": [
@@ -389,6 +494,124 @@
             "time": 46.0,
             "text": "How I wonder what you are"
           }
+        ],
+        "es": [
+          {
+            "time": 0.0,
+            "text": "Estrellita ¿Dónde estás?"
+          },
+          {
+            "time": 5.8,
+            "text": "Me pregunto ¿Quién serás?"
+          },
+          {
+            "time": 11.3,
+            "text": "En el cielo o en el mar"
+          },
+          {
+            "time": 16.8,
+            "text": "Un diamante de verdad"
+          },
+          {
+            "time": 22.8,
+            "text": "Estrellita ¿Dónde estás?"
+          },
+          {
+            "time": 28.3,
+            "text": "Me pregunto ¿Quién serás?"
+          },
+          {
+            "time": 45.6,
+            "text": "Estrellita ¿Dónde estás?"
+          },
+          {
+            "time": 51.1,
+            "text": "Me pregunto ¿Quién serás?"
+          },
+          {
+            "time": 56.6,
+            "text": "En el cielo o en el mar"
+          },
+          {
+            "time": 62.4,
+            "text": "Un diamante de verdad"
+          },
+          {
+            "time": 67.9,
+            "text": "Estrellita ¿Dónde estás?"
+          },
+          {
+            "time": 73.4,
+            "text": "Me pregunto ¿Quién serás?"
+          },
+          {
+            "time": 86.6,
+            "text": "Me pregunto ¿Quién serás?"
+          }
+        ],
+        "fr": [
+          {
+            "time": 0.0,
+            "text": "Brille, brille, petite étoile Dans la nuit qui se dévoile"
+          },
+          {
+            "time": 9.08,
+            "text": "Tout là-haut au firmament Tu sens-tu comme un diamant"
+          },
+          {
+            "time": 18.0,
+            "text": "Brille, brille, petite étoile Veille sur ce qui t'entend bas"
+          },
+          {
+            "time": 26.68,
+            "text": "Tellement haute dans le ciel Petit étoile comme tu es belle"
+          },
+          {
+            "time": 35.52,
+            "text": "Qu'est-ce qui se cache sous ton voie Tellement haute dans le ciel"
+          },
+          {
+            "time": 44.52,
+            "text": "Brille, brille, petite étoile Au cœur de la nuit sans pas"
+          },
+          {
+            "time": 53.28,
+            "text": "Tu brilles au milieu du ciel Comme un diamant éternel"
+          },
+          {
+            "time": 62.32,
+            "text": "Brille, brille, petite étoile Dans la nuit qui se dévoile"
+          }
+        ],
+        "de": [
+          {
+            "time": 0.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, wie bist du mir so fern?"
+          },
+          {
+            "time": 29.0,
+            "text": "Wunderschön und unbekannt, Wie ein strahlend Diamant."
+          },
+          {
+            "time": 40.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, wie bist du mir so fern?"
+          },
+          {
+            "time": 59.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, was haben wir dich gern?"
+          },
+          {
+            "time": 73.0,
+            "text": "Strahlend schön am Himmelszelt, Erleuchtestell die ganze Welt."
+          },
+          {
+            "time": 84.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, was haben wir dich gern?"
+          },
+          {
+            "time": 103.0,
+            "text": "Funkel, Funkel, kleiner Stern, Ach, was haben wir dich gern?"
+          }
         ]
       },
       "activity": {
@@ -405,7 +628,10 @@
       "recordingSource": {
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
-        "en": "Super Simple Songs"
+        "en": "Super Simple Songs",
+        "es": "El Reino Infantil (Plim Plim)",
+        "fr": "YesKids",
+        "de": "YouTube · c_GA5inSE7E"
       },
       "echoWord": {
         "emoji": "⭐",
@@ -443,12 +669,18 @@
       "titles": {
         "it": "Nella Vecchia Fattoria",
         "zh": "王老先生有块地",
-        "en": "Old MacDonald"
+        "en": "Old MacDonald",
+        "es": "El viejo MacDonald",
+        "fr": "Dans la ferme de Mathurin",
+        "de": "Old MacDonald hatte eine Farm"
       },
       "audioFiles": {
         "it": "cross-cultural/old-macdonald-it.m4a",
         "zh": "cross-cultural/old-macdonald-zh.m4a",
-        "en": "cross-cultural/old-macdonald-en.m4a"
+        "en": "cross-cultural/old-macdonald-en.m4a",
+        "es": "cross-cultural/old-macdonald-es.m4a",
+        "fr": "cross-cultural/old-macdonald-fr.m4a",
+        "de": "cross-cultural/old-macdonald-de.m4a"
       },
       "lyrics": {
         "it": [
@@ -648,6 +880,380 @@
             "time": 110.5,
             "text": "Old MacDonald had a farm, E-I-E-I-O"
           }
+        ],
+        "es": [
+          {
+            "time": 8.6,
+            "text": "El viejo McDonald tenía una granja y ía ía o"
+          },
+          {
+            "time": 12.96,
+            "text": "Y en esa granja tenía cerdos y ía ía o"
+          },
+          {
+            "time": 17.48,
+            "text": "Con su oink aquí, con su oink ya, oink aquí, oink ya, siempre con su oin"
+          },
+          {
+            "time": 22.08,
+            "text": "El viejo McDonald tenía una granja y ía ía o"
+          },
+          {
+            "time": 26.4,
+            "text": "El viejo McDonald tenía una granja y ía ía o"
+          },
+          {
+            "time": 31.08,
+            "text": "Y en esa granja tenía vacas y ía ía o"
+          },
+          {
+            "time": 35.56,
+            "text": "Con su moa aquí, con su moa ya, moa aquí, moa ya, siempre con su moa"
+          },
+          {
+            "time": 40.08,
+            "text": "Con su oink aquí, con su oink ya, oink aquí, oink ya, siempre con su oin"
+          },
+          {
+            "time": 44.6,
+            "text": "El viejo McDonald tenía una granja y ía ía o"
+          },
+          {
+            "time": 49.04,
+            "text": "El viejo McDonald tenía una granja y ía ía o"
+          },
+          {
+            "time": 53.48,
+            "text": "Y en esa granja tenía patos y ía ía o"
+          },
+          {
+            "time": 57.96,
+            "text": "Con su coaco aquí, con su coaco ya, coa aquí, coa allá, siempre con su coaco"
+          },
+          {
+            "time": 62.48,
+            "text": "Con su moa aquí, con su moa ya, moa aquí, moa allá, siempre con su moa"
+          },
+          {
+            "time": 66.96,
+            "text": "Con su oink aquí, con su oink ya, oink aquí, oink ya, siempre con su oin"
+          },
+          {
+            "time": 71.44,
+            "text": "El viejo McDonald tenía una granja y ía ía o"
+          },
+          {
+            "time": 82.04,
+            "text": "Ese reino infantil, un lugar tan especial"
+          }
+        ],
+        "fr": [
+          {
+            "time": 14.28,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 16.56,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 18.72,
+            "text": "Y'a des centaines de canards"
+          },
+          {
+            "time": 21.04,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 22.96,
+            "text": "Y'a des coins à scie"
+          },
+          {
+            "time": 24.16,
+            "text": "Y'a des coins à l'ail"
+          },
+          {
+            "time": 25.32,
+            "text": "Y'a des coins"
+          },
+          {
+            "time": 25.8,
+            "text": "Y'a des coins"
+          },
+          {
+            "time": 26.4,
+            "text": "Y'a des coins"
+          },
+          {
+            "time": 26.88,
+            "text": "Coin, coin, coin"
+          },
+          {
+            "time": 27.8,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 29.96,
+            "text": "Chacun son refrain"
+          },
+          {
+            "time": 31.96,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 34.48,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 36.6,
+            "text": "Y'a des centaines de montants"
+          },
+          {
+            "time": 39.0,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 40.92,
+            "text": "Y'a des bêtes par si"
+          },
+          {
+            "time": 42.08,
+            "text": "Y'a des bêtes par là"
+          },
+          {
+            "time": 43.2,
+            "text": "Y'a des bêtes, y'a des bêtes, y'a des bêtes, bêtes, bêtes, bêtes"
+          },
+          {
+            "time": 45.68,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 47.92,
+            "text": "Chacun son refrain"
+          },
+          {
+            "time": 50.12,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 52.4,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 54.52,
+            "text": "Y'a des centaines de vaches"
+          },
+          {
+            "time": 56.92,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 58.88,
+            "text": "Y'a des meufs par si"
+          },
+          {
+            "time": 60.12,
+            "text": "Y'a des meufs par là"
+          },
+          {
+            "time": 61.12,
+            "text": "Y'a des meufs, y'a des meufs, y'a des meufs, meufs, meufs, meufs"
+          },
+          {
+            "time": 63.64,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 65.88,
+            "text": "Chacun son refrain"
+          },
+          {
+            "time": 68.12,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 70.4,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 72.56,
+            "text": "Y'a des centaines de cochons"
+          },
+          {
+            "time": 74.88,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 76.8,
+            "text": "Y'a des coins par si"
+          },
+          {
+            "time": 77.96,
+            "text": "Y'a des coins à l'ail"
+          },
+          {
+            "time": 79.12,
+            "text": "Y'a des coins, y'a des coins, y'a des coins, coins, coins, coins, coins"
+          },
+          {
+            "time": 81.6,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 83.84,
+            "text": "Chacun son refrain"
+          },
+          {
+            "time": 86.08,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 88.36,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 90.4,
+            "text": "Y'a des centaines de chiens"
+          },
+          {
+            "time": 92.8,
+            "text": "I-A-I-A-O"
+          },
+          {
+            "time": 94.8,
+            "text": "Y'a des meufs par si"
+          },
+          {
+            "time": 95.92,
+            "text": "Y'a des meufs par là"
+          },
+          {
+            "time": 97.04,
+            "text": "Y'a des meufs, y'a des meufs, y'a des meufs, meufs, meufs, meufs, meufs"
+          },
+          {
+            "time": 99.48,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 101.72,
+            "text": "Chacun son refrain"
+          },
+          {
+            "time": 103.92,
+            "text": "Dans la ferme de Mathurin"
+          },
+          {
+            "time": 106.24,
+            "text": "Chacun son refrain"
+          }
+        ],
+        "de": [
+          {
+            "time": 11.68,
+            "text": "Old MacDonald hat eine Farm, ia ia o."
+          },
+          {
+            "time": 16.12,
+            "text": "Und auf der Farm gibt's 'ne Kuh, ia ia o."
+          },
+          {
+            "time": 20.92,
+            "text": "Mit 'nem Muh hier und 'nem Muh da, hier ein Mutter, ein Mo,"
+          },
+          {
+            "time": 25.2,
+            "text": "überall ein Muh, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 35.52,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 40.0,
+            "text": "Und auf der Farm gibt's ein Schwein, ia ia o."
+          },
+          {
+            "time": 44.84,
+            "text": "Mit 'nem Onk, Onk hier und 'nem Onk, Onk da, hier ein Onk, da ein Onk,"
+          },
+          {
+            "time": 49.04,
+            "text": "überall ein Onk, Onk, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 59.68,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 64.0,
+            "text": "Und auf der Farm gibt's 'nen Hund, ia ia o."
+          },
+          {
+            "time": 68.92,
+            "text": "Mit 'nem Wurf, Wurf hier und 'nem Wurf, Wurf da, hier ein Wurf, da ein Wurf,"
+          },
+          {
+            "time": 73.36,
+            "text": "überall ein Wurf, Wurf, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 83.6,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 88.08,
+            "text": "Und auf der Farm gibt's ein Müll, ia ia o."
+          },
+          {
+            "time": 92.92,
+            "text": "Mit 'nem Gack, Gack hier und 'nem Gack, Gack da, hier ein Gack,"
+          },
+          {
+            "time": 96.44,
+            "text": "da ein Gack, überall ein Gack, Gack, Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 118.08,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 122.56,
+            "text": "Und auf der Farm gibt's 'nen Schaf, ia ia o."
+          },
+          {
+            "time": 127.04,
+            "text": "Mit 'nem Mehme hier und Mehme da, hier ein Mehme da,"
+          },
+          {
+            "time": 130.76,
+            "text": "ein Mehme überall, ein Mehme."
+          },
+          {
+            "time": 133.0,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 142.08,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 146.08,
+            "text": "Old MacDonald hat 'ne Farm, ia ia o."
+          },
+          {
+            "time": 150.56,
+            "text": "Und auf der Farm gibt's ein Pferd, ia ia o."
+          },
+          {
+            "time": 155.4,
+            "text": "Mit 'nem Wehr, wir, hier und 'nem Wehr, wir da, hier ein Wehr, da ein Wehr,"
+          },
+          {
+            "time": 159.52,
+            "text": "überall ein Wehr, wir, Old MacDonald hat 'ne Farm, ia ia o."
+          }
         ]
       },
       "activity": {
@@ -664,7 +1270,10 @@
       "recordingSource": {
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
-        "en": "Super Simple Songs"
+        "en": "Super Simple Songs",
+        "es": "El Reino Infantil",
+        "fr": "BB LouLou",
+        "de": "YouTube · dwMxNqIAqd4"
       },
       "echoWord": {
         "emoji": "🐮",
@@ -702,12 +1311,18 @@
       "titles": {
         "it": "Se Sei Felice",
         "zh": "如果感到幸福",
-        "en": "If You're Happy"
+        "en": "If You're Happy",
+        "de": "Wenn du fröhlich bist",
+        "es": "Si eres feliz y lo sabes",
+        "fr": "Si tu aimes le soleil"
       },
       "audioFiles": {
         "it": "cross-cultural/if-youre-happy-it.m4a",
         "zh": "cross-cultural/if-youre-happy-zh.m4a",
-        "en": "cross-cultural/if-youre-happy-en.m4a"
+        "en": "cross-cultural/if-youre-happy-en.m4a",
+        "de": "cross-cultural/if-youre-happy-de.m4a",
+        "es": "cross-cultural/if-youre-happy-es.m4a",
+        "fr": "cross-cultural/if-youre-happy-fr.m4a"
       },
       "lyrics": {
         "it": [
@@ -927,6 +1542,144 @@
             "time": 85.9,
             "text": "If you're happy and you know it, do all three"
           }
+        ],
+        "de": [
+          {
+            "time": 7.0,
+            "text": "Wenn du fröhlich bist, dann klatsche in die Hand"
+          },
+          {
+            "time": 10.0,
+            "text": "Wenn du fröhlich bist, dann klatsche in die Hand"
+          },
+          {
+            "time": 14.0,
+            "text": "Wenn du fröhlich bist und heiter, ja dann sag es allen weiter"
+          },
+          {
+            "time": 18.0,
+            "text": "Wenn du fröhlich bist, dann klatsche in die Hand"
+          },
+          {
+            "time": 25.0,
+            "text": "Wenn du fröhlich bist, dann stampfe mit dem Fuß"
+          },
+          {
+            "time": 29.0,
+            "text": "Wenn du fröhlich bist, dann stampfe mit dem Fuß"
+          },
+          {
+            "time": 33.0,
+            "text": "Wenn du fröhlich bist und heiter, ja dann sag es allen weiter"
+          },
+          {
+            "time": 37.0,
+            "text": "Wenn du fröhlich bist, dann stampfe mit dem Fuß"
+          },
+          {
+            "time": 44.0,
+            "text": "Wenn du fröhlich bist, dann rufe laut Hurra"
+          },
+          {
+            "time": 48.0,
+            "text": "Wenn du fröhlich bist, dann rufe laut Hurra"
+          },
+          {
+            "time": 52.0,
+            "text": "Wenn du fröhlich bist und heiter, ja dann sag es allen weiter"
+          },
+          {
+            "time": 56.0,
+            "text": "Wenn du fröhlich bist, dann rufe laut Hurra"
+          },
+          {
+            "time": 63.0,
+            "text": "Wenn du fröhlich bist, dann macht doch alles drei"
+          },
+          {
+            "time": 69.0,
+            "text": "Wenn du fröhlich bist, dann macht doch alles drei"
+          },
+          {
+            "time": 75.0,
+            "text": "Wenn du fröhlich bist und heiter, ja dann sag es allen weiter"
+          },
+          {
+            "time": 79.0,
+            "text": "Wenn du fröhlich bist, dann macht doch alles drei"
+          }
+        ],
+        "es": [
+          {
+            "time": 0.0,
+            "text": "Si eres feliz y lo sabes aplaudir así Si eres feliz y lo sabes aplaudir así"
+          },
+          {
+            "time": 19.8,
+            "text": "Si eres feliz y lo sabes y tu cara lo demuestra Si eres feliz y lo sabes aplaudir así"
+          },
+          {
+            "time": 31.0,
+            "text": "Si eres feliz y lo sabes aplaudir así Si eres feliz y lo sabes aplaudir así"
+          },
+          {
+            "time": 39.0,
+            "text": "Si eres feliz y lo sabes y tu cara lo demuestra Si eres feliz y lo sabes aplaudir así"
+          },
+          {
+            "time": 51.0,
+            "text": "Si eres feliz y lo sabes grita hurra hurra Si eres feliz y lo sabes grita hurra hurra"
+          },
+          {
+            "time": 59.0,
+            "text": "Si eres feliz y lo sabes y tu cara lo demuestra Si eres feliz y lo sabes grita hurra hurra"
+          },
+          {
+            "time": 70.0,
+            "text": "Si eres feliz y lo sabes haz los tres hurra Si eres feliz y lo sabes haz los tres"
+          },
+          {
+            "time": 81.0,
+            "text": "hurra Si eres feliz y lo sabes y tu cara lo demuestra Si eres feliz y lo sabes haz los tres"
+          },
+          {
+            "time": 91.0,
+            "text": "hurra"
+          }
+        ],
+        "fr": [
+          {
+            "time": 0.0,
+            "text": "Si tu aimes le soleil, frappe des mains. Si tu aimes le soleil, frappe des mains. Si tu"
+          },
+          {
+            "time": 6.32,
+            "text": "aimes le soleil, le printemps qui se réveille. Si tu aimes le soleil, frappe des mains. Si"
+          },
+          {
+            "time": 12.72,
+            "text": "tu aimes le soleil, tape des pieds. Si tu aimes le soleil, tape des pieds. Si tu aimes"
+          },
+          {
+            "time": 18.76,
+            "text": "le soleil, le printemps qui se réveille. Si tu aimes le soleil, tape des pieds. Si tu"
+          },
+          {
+            "time": 25.04,
+            "text": "aimes le soleil, claque des doigts. Si tu aimes le soleil, claque des doigts. Si tu"
+          },
+          {
+            "time": 30.88,
+            "text": "aimes le soleil, le printemps qui se réveille. Si tu aimes le soleil, claque des doigts."
+          },
+          {
+            "time": 37.08,
+            "text": "Si tu aimes le soleil, diura. Si tu aimes le soleil, diura. Si tu aimes le soleil,"
+          },
+          {
+            "time": 44.08,
+            "text": "le printemps qui se réveille. Si tu aimes le soleil, diura."
+          }
         ]
       },
       "activity": {
@@ -943,7 +1696,10 @@
       "recordingSource": {
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
-        "en": "Super Simple Songs"
+        "en": "Super Simple Songs",
+        "de": "YouTube",
+        "es": "Canciones Infantiles",
+        "fr": "Comptines Accords Sensibles"
       },
       "echoWord": {
         "emoji": "👏",
@@ -981,12 +1737,18 @@
       "titles": {
         "it": "Testa Spalle",
         "zh": "头肩膀膝脚趾",
-        "en": "Head Shoulders"
+        "en": "Head Shoulders",
+        "es": "Cabeza, hombros, rodillas, pies",
+        "fr": "Tête, épaules, genoux et pieds",
+        "de": "Kopf, Schulter, Knie und Fuß"
       },
       "audioFiles": {
         "it": "cross-cultural/head-shoulders-it.m4a",
         "zh": "cross-cultural/head-shoulders-zh.m4a",
-        "en": "cross-cultural/head-shoulders-en.m4a"
+        "en": "cross-cultural/head-shoulders-en.m4a",
+        "es": "cross-cultural/head-shoulders-es.m4a",
+        "fr": "cross-cultural/head-shoulders-fr.m4a",
+        "de": "cross-cultural/head-shoulders-de.m4a"
       },
       "lyrics": {
         "it": [
@@ -1150,6 +1912,188 @@
             "time": 70.6,
             "text": "Head, shoulders, knees and toes"
           }
+        ],
+        "es": [
+          {
+            "time": 0.0,
+            "text": "Cabezas, hombros, rodillas y pies, rodillas y pies, cabezas, hombros, rodillas y pies,"
+          },
+          {
+            "time": 18.34,
+            "text": "rodillas y pies, ojos y orejas y boca y nariz, cabezas, hombros, rodillas y pies, rodillas"
+          },
+          {
+            "time": 28.4,
+            "text": "y pies, una vez más, cabezas, hombros, rodillas y pies, rodillas y pies, cabezas, hombros,"
+          },
+          {
+            "time": 41.0,
+            "text": "rodillas y pies, rodillas y pies y ojos y orejas y boca y nariz, cabezas, hombros, rodillas"
+          },
+          {
+            "time": 51.2,
+            "text": "y pies, rodillas y pies."
+          }
+        ],
+        "fr": [
+          {
+            "time": 0.0,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 4.48,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 8.48,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 10.98,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 13.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 17.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 22.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 26.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 28.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 30.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 33.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 36.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 40.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 44.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 48.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 52.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 55.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 58.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 60.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 62.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 66.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 70.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 73.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 75.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 77.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 81.08,
+            "text": "Genoux et pieds"
+          },
+          {
+            "time": 84.08,
+            "text": "Les yeux, les oreilles, la bouche et le nez"
+          },
+          {
+            "time": 87.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 89.08,
+            "text": "Tête, épaules, genoux et pieds"
+          },
+          {
+            "time": 91.08,
+            "text": "Genoux et pieds"
+          }
+        ],
+        "de": [
+          {
+            "time": 0.3,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 13.3,
+            "text": "Knie und Fuß"
+          },
+          {
+            "time": 16.1,
+            "text": "Augen, Ohren, Nase und Mund"
+          },
+          {
+            "time": 23.2,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 30.3,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 36.9,
+            "text": "Knie und Fuß"
+          },
+          {
+            "time": 40.9,
+            "text": "Augen, Ohren, Nase und Mund"
+          },
+          {
+            "time": 46.6,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          },
+          {
+            "time": 51.3,
+            "text": "Kopf, Schulter, Knie und Fuß"
+          }
         ]
       },
       "activity": {
@@ -1166,7 +2110,10 @@
       "recordingSource": {
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
-        "en": "Super Simple Songs"
+        "en": "Super Simple Songs",
+        "es": "Canciones Infantiles",
+        "fr": "Comptines et chansons",
+        "de": "mukkelig"
       },
       "echoWord": {
         "emoji": "🧒",
@@ -1204,12 +2151,18 @@
       "titles": {
         "it": "Tanti Auguri",
         "zh": "祝你生日快乐",
-        "en": "Happy Birthday"
+        "en": "Happy Birthday",
+        "de": "Zum Geburtstag viel Glück",
+        "es": "Cumpleaños feliz",
+        "fr": "Joyeux anniversaire"
       },
       "audioFiles": {
         "it": "cross-cultural/happy-birthday-it.m4a",
         "zh": "cross-cultural/happy-birthday-zh.m4a",
-        "en": "cross-cultural/happy-birthday-en.m4a"
+        "en": "cross-cultural/happy-birthday-en.m4a",
+        "de": "cross-cultural/happy-birthday-de.m4a",
+        "es": "cross-cultural/happy-birthday-es.m4a",
+        "fr": "cross-cultural/happy-birthday-fr.m4a"
       },
       "lyrics": {
         "it": [
@@ -1341,6 +2294,48 @@
             "time": 10.4,
             "text": "Happy birthday to you"
           }
+        ],
+        "de": [
+          {
+            "time": 0.0,
+            "text": "Zum Geburtstag viel Glück, zum Geburtstag viel Glück, zum Geburtstag alles Gute, zum Geburtstag viel Glück."
+          },
+          {
+            "time": 30.0,
+            "text": "Zum Geburtstag viel Glück, zum Geburtstag viel Glück, zum Geburtstag alles Gute, zum Geburtstag viel Glück."
+          }
+        ],
+        "es": [
+          {
+            "time": 16.0,
+            "text": "Cumpleaños feliz, que deseamos a ti, que los cumplas en tu día."
+          },
+          {
+            "time": 30.0,
+            "text": "Que los cumplas feliz, cumple años feliz, que deseamos a ti."
+          },
+          {
+            "time": 44.0,
+            "text": "Que los cumplas en tu día, que los cumplas feliz."
+          }
+        ],
+        "fr": [
+          {
+            "time": 0.3,
+            "text": "Joyeux anniversaire"
+          },
+          {
+            "time": 9.1,
+            "text": "Joyeux anniversaire"
+          },
+          {
+            "time": 17.9,
+            "text": "Joyeux anniversaire"
+          },
+          {
+            "time": 26.7,
+            "text": "Joyeux anniversaire"
+          }
         ]
       },
       "activity": {
@@ -1357,7 +2352,10 @@
       "recordingSource": {
         "it": "Coccole Sonore",
         "zh": "宝宝巴士",
-        "en": "Super Simple Songs"
+        "en": "Super Simple Songs",
+        "de": "YouTube",
+        "es": "Creaciones Ángela",
+        "fr": "BB LouLou"
       },
       "echoWord": {
         "emoji": "🎂",
@@ -1893,7 +2891,7 @@
     },
     {
       "id": "stella-stellina",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian traditional lullaby",
       "icon": "🌟",
       "backgroundGradient": [
@@ -2006,7 +3004,7 @@
     },
     {
       "id": "batti-batti",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian clapping rhyme",
       "icon": "👏",
       "backgroundGradient": [
@@ -2227,7 +3225,7 @@
     },
     {
       "id": "giro-giro-tondo",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian circle game (Ring Around the Rosie equivalent)",
       "icon": "🔄",
       "backgroundGradient": [
@@ -2356,7 +3354,7 @@
     },
     {
       "id": "la-bella-lavanderina",
-      "category": "italian",
+      "category": "it",
       "melodyOrigin": "Italian traditional action song",
       "icon": "🧼",
       "backgroundGradient": [
@@ -2453,7 +3451,7 @@
     },
     {
       "id": "xiao-tuzi-guaiguai",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional children's safety song",
       "icon": "🐰",
       "backgroundGradient": [
@@ -2602,7 +3600,7 @@
     },
     {
       "id": "ba-luobo",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional story song",
       "icon": "🥕",
       "backgroundGradient": [
@@ -2746,7 +3744,7 @@
     },
     {
       "id": "zhao-pengyou",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional social song",
       "icon": "🤝",
       "backgroundGradient": [
@@ -2870,7 +3868,7 @@
     },
     {
       "id": "da-xiang",
-      "category": "chinese",
+      "category": "zh",
       "melodyOrigin": "Chinese traditional animal song",
       "icon": "🐘",
       "backgroundGradient": [
@@ -2974,7 +3972,7 @@
     },
     {
       "id": "humpty-dumpty",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "English traditional nursery rhyme (1797)",
       "icon": "🥚",
       "backgroundGradient": [
@@ -3063,7 +4061,7 @@
     },
     {
       "id": "baa-baa-black-sheep",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "English nursery rhyme, Twinkle melody (1731)",
       "icon": "🐑",
       "backgroundGradient": [
@@ -3152,7 +4150,7 @@
     },
     {
       "id": "mary-little-lamb",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "Mary Had a Little Lamb (1830)",
       "icon": "🐑",
       "backgroundGradient": [
@@ -3269,7 +4267,7 @@
     },
     {
       "id": "itsy-bitsy-spider",
-      "category": "english",
+      "category": "en",
       "melodyOrigin": "Itsy Bitsy Spider (early 1900s)",
       "icon": "🕷️",
       "backgroundGradient": [
