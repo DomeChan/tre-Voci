@@ -8,6 +8,10 @@ Audio-first trilingual nursery rhyme app for iOS. Plays songs in Italian, Mandar
 
 Full PRD: `docs/TRE-VOCI-PRD.md` | Audio pipeline: `docs/AUDIO-SOURCING-GUIDE.md`
 
+## Design Context
+
+Strategic + visual design system: `PRODUCT.md` (register, users, brand personality, anti-references) and `DESIGN.md` (color tokens, typography, elevation, component patterns — Nunito, coral/cream/bark palette, tri-language color system). Read both before any UI work. Managed via the `impeccable` skill (`.claude/skills/impeccable/`) — see its commands for audits, polish passes, and critiques.
+
 ## Build Commands
 
 ```bash
