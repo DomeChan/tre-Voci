@@ -3,6 +3,10 @@ import SwiftUI
 struct DailyMixCard: View {
     let songs: [Song]
     let duration: Int
+    /// See SongCard's `glareCut` doc comment — same uniform-brightness-cut
+    /// reasoning applied to this card's gradient. Tied to actual Bedtime Mode
+    /// only, never to system Dark Mode alone.
+    var glareCut: Bool = false
     let onPlay: () -> Void
 
     private var songCount: Int { songs.count }
@@ -19,12 +23,16 @@ struct DailyMixCard: View {
     var body: some View {
         Button(action: onPlay) {
             ZStack {
-                // Background gradient
+                // Background gradient, scrimmed per DESIGN.md's Cards spec ("always
+                // under a black @ 0.32 scrim for text legibility") — SongCard already
+                // does this; this hero card had been missing it, leaving white text
+                // on the coral region under ~3:1 contrast.
                 LinearGradient(
                     colors: [.coral, .rose, .plum],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
+                .overlay(Color.black.opacity(0.32))
 
                 // Decorative circles
                 Circle()
@@ -40,17 +48,17 @@ struct DailyMixCard: View {
                 // Content
                 VStack(alignment: .leading, spacing: 12) {
                     Text("🎵 Daily Mix")
-                        .font(.nunito(.bold, size: 12))
-                        .foregroundStyle(.white.opacity(0.8))
-                        .textCase(.uppercase)
-                        .tracking(1.5)
+                        .font(.nunito(.bold, size: 13, relativeTo: .subheadline))
+                        .foregroundStyle(.white.opacity(0.85))
 
-                    Text("Today's\nAdventure")
-                        .font(.nunito(.black, size: 28))
+                    Text("Today's Adventure")
+                        .font(.nunito(.black, size: 28, relativeTo: .title))
                         .foregroundStyle(.white)
 
-                    Text("\(songCount) Songs · \(languageCount) Languages · ~\(duration / 60) min")
-                        .font(.nunito(.semiBold, size: 14))
+                    Text(songCount == 0
+                         ? "No songs available yet"
+                         : "\(songCount) \(songCount == 1 ? "Song" : "Songs") · \(languageCount) \(languageCount == 1 ? "Language" : "Languages") · ~\(max(1, duration / 60)) min")
+                        .font(.nunito(.semiBold, size: 14, relativeTo: .subheadline))
                         .foregroundStyle(.white.opacity(0.85))
 
                     // Tracklist preview — catalog glyphs for today's songs.
@@ -76,26 +84,37 @@ struct DailyMixCard: View {
                             Image(systemName: "play.fill")
                                 .font(.system(size: 16))
                             Text("Play Mix")
-                                .font(.nunito(.bold, size: 16))
+                                .font(.nunito(.bold, size: 16, relativeTo: .callout))
                         }
-                        .foregroundStyle(Color.coral)
+                        .foregroundStyle(Color.coralDeep)
                         .padding(.horizontal, 24)
                         .frame(minHeight: 44)
                         .background(.white)
                         .clipShape(Capsule())
-                        .shadow(color: .black.opacity(0.15), radius: 8, y: 4)
+                        .shadow(color: .coral.opacity(0.35), radius: 8, y: 4)
                     }
                 }
                 .padding(24)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .frame(height: 200)
+            .frame(minHeight: 200)
+            // Same reasoning as SongCard: this hero's decorative circles are
+            // point-positioned, so cap Dynamic Type to the standard range and let
+            // minHeight (not a fixed height) absorb any remaining growth safely.
+            .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
             .clipShape(RoundedRectangle(cornerRadius: 32))
             .shadow(color: .coral.opacity(0.25), radius: 16, y: 8)
+            .brightness(glareCut ? -0.22 : 0)
         }
         .buttonStyle(.plain)
+        .disabled(songCount == 0)
+        .opacity(songCount == 0 ? 0.55 : 1)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Play daily mix, \(songCount) songs in 3 languages")
+        .accessibilityLabel(
+            songCount == 0
+                ? "Daily mix has no songs available yet"
+                : "Play daily mix: \(tracklistLabel), \(languageCount) languages"
+        )
         .accessibilityAddTraits(.isButton)
     }
 }

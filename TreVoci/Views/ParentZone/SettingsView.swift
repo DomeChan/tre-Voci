@@ -266,7 +266,7 @@ struct SettingsView: View {
                 Label("Bedtime Mode", systemImage: "moon.fill")
                     .font(.nunito(.semiBold, size: 14))
                     .foregroundStyle(Color.bark)
-                Text("Calm songs only, unhurried language hand-offs, a soft fade-out, and no \u{201C}one more.\u{201D}")
+                Text("Calm songs only, unhurried language hand-offs, a soft fade-out, and no \u{201C}one more.\u{201D} Turns on by itself in the evening — use this switch to override that.")
                     .font(.nunito(.medium, size: 12))
                     .foregroundStyle(Color.stone)
                     .fixedSize(horizontal: false, vertical: true)
@@ -274,7 +274,12 @@ struct SettingsView: View {
             Spacer()
             Toggle("", isOn: Binding(
                 get: { persistence.state.bedtimeMode },
-                set: { val in persistence.update { $0.bedtimeMode = val } }
+                set: { val in
+                    persistence.update {
+                        $0.bedtimeMode = val
+                        $0.bedtimeModeManuallySet = true
+                    }
+                }
             ))
             .tint(Color.coral)
             .labelsHidden()

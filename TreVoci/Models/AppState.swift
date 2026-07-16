@@ -25,6 +25,11 @@ struct AppState: Codable {
     // Preferences
     var autoLanguageRotation: Bool = true
     var bedtimeMode: Bool = false
+    /// True once a parent has explicitly touched the Bedtime Mode toggle in
+    /// Settings. Until then, Home auto-arms/disarms bedtimeMode by clock time
+    /// (see HomeView's autoArmBedtimeIfNeeded) so the parent it's built for
+    /// doesn't have to find a settings toggle at 11pm to get a dimmer screen.
+    var bedtimeModeManuallySet: Bool = false
 
     var displayName: String {
         childName.isEmpty ? "piccola" : childName

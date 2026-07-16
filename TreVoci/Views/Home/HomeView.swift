@@ -20,11 +20,35 @@ enum SheetDestination: Identifiable {
 struct HomeView: View {
     @Environment(PersistenceService.self) private var persistence
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorScheme) private var colorScheme
     @State private var viewModel: HomeViewModel?
     @State private var activeSheet: SheetDestination?
     @State private var routeMonitor = AudioRouteMonitor()
 
     private let catalog = SongCatalogService()
+
+    /// Gap between dismissing one fullScreenCover and presenting the next, so the
+    /// two transitions don't collide. Covers the system dismiss animation
+    /// (~300ms); tightened from a prior 0.5s per product-register motion
+    /// guidance (150-300ms band).
+    private let sheetTransitionDelay: TimeInterval = 0.35
+
+    /// The explicit, parent-controlled setting — narrows the Daily Mix to calm
+    /// songs, lengthens language hand-off pauses, softens the fade-out. This is
+    /// a deliberate playback-behavior choice and must NOT be inferred from the
+    /// system appearance; a parent in system Dark Mode on a bright afternoon
+    /// shouldn't silently get calm-only songs.
+    private var isBedtime: Bool { persistence.state.bedtimeMode }
+
+    /// Home stays cream/bright by default, but bedtime is this product's stated
+    /// real-world context — a tired parent glancing at the screen in a dark room.
+    /// Forcing full brightness there fights the product's own calm promise, so
+    /// the screen-level chrome (not the self-contained song/card surfaces) swaps
+    /// to the night palette when Bedtime Mode is on — OR when the system is
+    /// already in Dark Mode, so Home doesn't silently override an OS-level
+    /// accessibility/appearance choice the parent already made. This only
+    /// affects the visual palette, not playback behavior (see `isBedtime`).
+    private var usesDarkPalette: Bool { isBedtime || colorScheme == .dark }
 
     var body: some View {
         ScrollView {
@@ -43,6 +67,7 @@ struct HomeView: View {
                     DailyMixCard(
                         songs: vm.dailyMix,
                         duration: vm.dailyMixDuration,
+                        glareCut: isBedtime,
                         onPlay: { playDailyMix() }
                     )
                     .padding(.horizontal, 20)
@@ -60,6 +85,8 @@ struct HomeView: View {
                             language: lang,
                             songs: vm.songs(for: lang),
                             dimmed: !persistence.state.isLanguageSelected(lang),
+                            usesDarkPalette: usesDarkPalette,
+                            glareCut: isBedtime,
                             onSongTap: { selectSong($0) }
                         )
                     }
@@ -68,8 +95,10 @@ struct HomeView: View {
                 // Bottom padding
                 Color.clear.frame(height: 32)
             }
+            .readableContentWidth()
         }
-        .background(Color.cream)
+        .background(usesDarkPalette ? Color.nightBg : Color.cream)
+        .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: usesDarkPalette)
         .fullScreenCover(item: $activeSheet) { sheet in
             switch sheet {
             case .player(let song):
@@ -80,7 +109,7 @@ struct HomeView: View {
                     onBack: { activeSheet = nil },
                     onActivityBridge: { song, elapsed in
                         activeSheet = nil
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + sheetTransitionDelay) {
                             activeSheet = .activity(song, elapsed)
                         }
                     }
@@ -95,7 +124,7 @@ struct HomeView: View {
                     },
                     onOneMore: {
                         activeSheet = nil
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + sheetTransitionDelay) {
                             if let vm = viewModel,
                                let next = vm.crossCulturalSongs.first(where: { $0.id != song.id }) {
                                 activeSheet = .player(next)
@@ -108,7 +137,7 @@ struct HomeView: View {
                 ParentGateView(
                     onUnlock: {
                         activeSheet = nil
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + sheetTransitionDelay) {
                             activeSheet = .parentZone
                         }
                     },
@@ -130,9 +159,22 @@ struct HomeView: View {
                 viewModel = HomeViewModel(catalog: catalog, persistence: persistence)
             }
             routeMonitor.start()
+            autoArmBedtimeIfNeeded()
         }
         .onDisappear {
             routeMonitor.stop()
+        }
+    }
+
+    /// Follows the same night window as the greeting (21:00–5:00). Only acts
+    /// while the parent has never explicitly touched the Settings toggle —
+    /// once they do, their choice sticks and auto-arm stops overriding it.
+    private func autoArmBedtimeIfNeeded() {
+        guard !persistence.state.bedtimeModeManuallySet else { return }
+        let hour = Calendar.current.component(.hour, from: Date())
+        let isNight = !(5..<21).contains(hour)
+        if persistence.state.bedtimeMode != isNight {
+            persistence.update { $0.bedtimeMode = isNight }
         }
     }
 
@@ -142,12 +184,12 @@ struct HomeView: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(greeting)
-                    .font(.nunito(.semiBold, size: 14))
-                    .foregroundStyle(Color.stone)
+                    .font(.nunito(.semiBold, size: 14, relativeTo: .subheadline))
+                    .foregroundStyle(usesDarkPalette ? Color.nightStone : Color.stone)
 
                 Text("\(persistence.state.displayName)'s Songs")
-                    .font(.nunito(.black, size: 26))
-                    .foregroundStyle(Color.bark)
+                    .font(.nunito(.black, size: 26, relativeTo: .title))
+                    .foregroundStyle(usesDarkPalette ? Color.nightInk : Color.bark)
             }
 
             Spacer()
@@ -156,7 +198,9 @@ struct HomeView: View {
             Button(action: { activeSheet = .parentGate }) {
                 Image(systemName: "person.circle.fill")
                     .font(.system(size: 28))
-                    .foregroundStyle(Color.mist)
+                    .foregroundStyle(usesDarkPalette ? Color.nightStone : Color.stone)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .accessibilityLabel("Parent zone")
             .accessibilityAddTraits(.isButton)
@@ -167,21 +211,31 @@ struct HomeView: View {
 
     private var speakerPill: some View {
         ZStack {
-            HStack(spacing: 6) {
+            HStack(spacing: 7) {
                 Image(systemName: routeMonitor.iconName)
-                    .font(.system(size: 10))
+                    .font(.system(size: 12))
                 Text(routeMonitor.routeName)
-                    .font(.nunito(.semiBold, size: 12))
+                    .font(.nunito(.semiBold, size: 13, relativeTo: .caption))
+                // Visual cue that this pill is switchable, not just a status
+                // caption — the tap target itself is the invisible AirPlayPickerButton
+                // layered underneath. Sized up and the pill given a hairline border
+                // so it reads as a control, not a quiet label — the one affordance
+                // that fulfills this product's actual job (get sound to the room).
+                Image(systemName: "chevron.up.chevron.down")
+                    .font(.system(size: 10, weight: .bold))
             }
-            .foregroundStyle(Color.stone)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(Color.warm)
+            .foregroundStyle(usesDarkPalette ? Color.nightStone : Color.stone)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 8)
+            .background(usesDarkPalette ? Color.nightSurface : Color.warm)
             .clipShape(Capsule())
+            .overlay(
+                Capsule().strokeBorder((usesDarkPalette ? Color.nightStone : Color.stone).opacity(0.25), lineWidth: 1)
+            )
             .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8), value: routeMonitor.routeName)
 
             AirPlayPickerButton()
-                .frame(width: 120, height: 28)
+                .frame(width: 140, height: 44)
                 .opacity(0.015)
         }
         .fixedSize()
@@ -194,34 +248,71 @@ struct HomeView: View {
     private var crossCulturalSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("\u{1F30D} Same Song, Many Worlds")
-                .font(.nunito(.black, size: 17))
-                .foregroundStyle(Color.bark)
+                .font(.nunito(.black, size: 17, relativeTo: .headline))
+                .foregroundStyle(usesDarkPalette ? Color.nightInk : Color.bark)
                 .padding(.horizontal, 20)
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    if let vm = viewModel {
-                        ForEach(vm.crossCulturalSongs) { song in
-                            SongCard(song: song) {
-                                selectSong(song)
+            if let vm = viewModel, vm.crossCulturalSongs.isEmpty {
+                HStack(spacing: 6) {
+                    Image(systemName: "music.note")
+                        .font(.system(size: 11))
+                    Text("Cross-cultural songs are on the way \u{2014} we're still pairing melodies across languages.")
+                        .font(.nunito(.semiBold, size: 12, relativeTo: .footnote))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .foregroundStyle(usesDarkPalette ? Color.nightStone : Color.stone)
+                .padding(.horizontal, 20)
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        if let vm = viewModel {
+                            ForEach(vm.crossCulturalSongs) { song in
+                                SongCard(song: song, glareCut: isBedtime) {
+                                    selectSong(song)
+                                }
                             }
                         }
                     }
+                    .padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20)
             }
         }
     }
 
     // MARK: - Greeting
 
+    /// Rotates the greeting's language across the family's selected voices
+    /// (Italian/Mandarin/English) by day, so no single language is quietly
+    /// privileged as "the" greeting language. Stable for the whole day, not
+    /// re-randomized on every Home visit.
+    private var greetingLanguage: Language {
+        let selected = persistence.state.selectedLanguages
+            .compactMap { Language(rawValue: $0) }
+            .filter { [.it, .zh, .en].contains($0) }
+        guard !selected.isEmpty else { return .it }
+        let dayOrdinal = Calendar.current.ordinality(of: .day, in: .year, for: Date()) ?? 0
+        return selected[dayOrdinal % selected.count]
+    }
+
     private var greeting: String {
-        let hour = Calendar.current.component(.hour, from: Date())
+        greetingText(language: greetingLanguage, hour: Calendar.current.component(.hour, from: Date()))
+    }
+
+    private func greetingText(language: Language, hour: Int) -> String {
+        let band: Int
         switch hour {
-        case 5..<12: return "Buongiorno \u{2600}\u{FE0F}"
-        case 12..<17: return "Buon pomeriggio \u{1F324}\u{FE0F}"
-        case 17..<21: return "Buonasera \u{1F305}"
-        default: return "Buonanotte \u{1F319}"
+        case 5..<12: band = 0
+        case 12..<17: band = 1
+        case 17..<21: band = 2
+        default: band = 3
+        }
+        switch language {
+        case .zh:
+            return ["\u{65E9}\u{4E0A}\u{597D} \u{2600}\u{FE0F}", "\u{4E0B}\u{5348}\u{597D} \u{1F324}\u{FE0F}", "\u{665A}\u{4E0A}\u{597D} \u{1F305}", "\u{665A}\u{5B89} \u{1F319}"][band]
+        case .en:
+            return ["Good morning \u{2600}\u{FE0F}", "Good afternoon \u{1F324}\u{FE0F}", "Good evening \u{1F305}", "Good night \u{1F319}"][band]
+        default:
+            return ["Buongiorno \u{2600}\u{FE0F}", "Buon pomeriggio \u{1F324}\u{FE0F}", "Buonasera \u{1F305}", "Buonanotte \u{1F319}"][band]
         }
     }
 
