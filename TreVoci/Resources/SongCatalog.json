@@ -16,7 +16,8 @@
         "en": "Are You Sleeping",
         "fr": "Frère Jacques",
         "de": "Bruder Jakob",
-        "es": "Martinillo"
+        "es": "Martinillo",
+        "ar": "هل أنت نائم؟"
       },
       "audioFiles": {
         "it": "cross-cultural/frere-jacques-it.m4a",
@@ -24,7 +25,8 @@
         "en": "cross-cultural/frere-jacques-en.m4a",
         "fr": "cross-cultural/frere-jacques-fr.m4a",
         "de": "cross-cultural/frere-jacques-de.m4a",
-        "es": "cross-cultural/frere-jacques-es.m4a"
+        "es": "cross-cultural/frere-jacques-es.m4a",
+        "ar": "cross-cultural/frere-jacques-ar.m4a"
       },
       "lyrics": {
         "it": [
@@ -282,6 +284,128 @@
             "time": 20.1,
             "text": "Din, don, dan. Din, don, dan."
           }
+        ],
+        "ar": [
+          {
+            "time": 0.0,
+            "text": "هل أنت نائم؟ هل أنت نائم؟",
+            "romanization": "Hal anta nā'im? Hal anta nā'im?"
+          },
+          {
+            "time": 4.5,
+            "text": "يا أخي جون، يا أخي جون",
+            "romanization": "Yā akhī jūn, yā akhī jūn"
+          },
+          {
+            "time": 9.1,
+            "text": "الجرس يرنّ، الجرس يرنّ",
+            "romanization": "Al-jaras yarinn, al-jaras yarinn"
+          },
+          {
+            "time": 13.6,
+            "text": "دينج دينج دونج، دينج دينج دونج",
+            "romanization": "Ding ding dong, ding ding dong"
+          },
+          {
+            "time": 18.1,
+            "text": "هل أنت نائم؟ هل أنت نائم؟",
+            "romanization": "Hal anta nā'im? Hal anta nā'im?"
+          },
+          {
+            "time": 23.4,
+            "text": "يا أخي جون، يا أخي جون",
+            "romanization": "Yā akhī jūn, yā akhī jūn"
+          },
+          {
+            "time": 28.6,
+            "text": "الجرس يرنّ، الجرس يرنّ",
+            "romanization": "Al-jaras yarinn, al-jaras yarinn"
+          },
+          {
+            "time": 33.9,
+            "text": "دينج دينج دونج، دينج دينج دونج",
+            "romanization": "Ding ding dong, ding ding dong"
+          },
+          {
+            "time": 39.1,
+            "text": "هل أنت نائم؟ هل أنت نائم؟",
+            "romanization": "Hal anta nā'im? Hal anta nā'im?"
+          },
+          {
+            "time": 43.5,
+            "text": "يا أخي جون، يا أخي جون",
+            "romanization": "Yā akhī jūn, yā akhī jūn"
+          },
+          {
+            "time": 48.0,
+            "text": "الجرس يرنّ، الجرس يرنّ",
+            "romanization": "Al-jaras yarinn, al-jaras yarinn"
+          },
+          {
+            "time": 52.5,
+            "text": "دينج دينج دونج، دينج دينج دونج",
+            "romanization": "Ding ding dong, ding ding dong"
+          },
+          {
+            "time": 64.9,
+            "text": "هل أنت نائم؟ هل أنت نائم؟",
+            "romanization": "Hal anta nā'im? Hal anta nā'im?"
+          },
+          {
+            "time": 69.4,
+            "text": "يا أخي جون، يا أخي جون",
+            "romanization": "Yā akhī jūn, yā akhī jūn"
+          },
+          {
+            "time": 73.9,
+            "text": "الجرس يرنّ، الجرس يرنّ",
+            "romanization": "Al-jaras yarinn, al-jaras yarinn"
+          },
+          {
+            "time": 78.4,
+            "text": "دينج دينج دونج، دينج دينج دونج",
+            "romanization": "Ding ding dong, ding ding dong"
+          },
+          {
+            "time": 90.9,
+            "text": "هل أنت نائم؟ هل أنت نائم؟",
+            "romanization": "Hal anta nā'im? Hal anta nā'im?"
+          },
+          {
+            "time": 95.7,
+            "text": "يا أخي جون، يا أخي جون",
+            "romanization": "Yā akhī jūn, yā akhī jūn"
+          },
+          {
+            "time": 100.4,
+            "text": "الجرس يرنّ، الجرس يرنّ",
+            "romanization": "Al-jaras yarinn, al-jaras yarinn"
+          },
+          {
+            "time": 105.2,
+            "text": "دينج دينج دونج، دينج دينج دونج",
+            "romanization": "Ding ding dong, ding ding dong"
+          },
+          {
+            "time": 116.9,
+            "text": "هل أنت نائم؟ هل أنت نائم؟",
+            "romanization": "Hal anta nā'im? Hal anta nā'im?"
+          },
+          {
+            "time": 123.0,
+            "text": "يا أخي جون، يا أخي جون",
+            "romanization": "Yā akhī jūn, yā akhī jūn"
+          },
+          {
+            "time": 129.1,
+            "text": "الجرس يرنّ، الجرس يرنّ",
+            "romanization": "Al-jaras yarinn, al-jaras yarinn"
+          },
+          {
+            "time": 135.1,
+            "text": "دينج دينج دونج، دينج دينج دونج",
+            "romanization": "Ding ding dong, ding ding dong"
+          }
         ]
       },
       "activity": {
@@ -301,7 +425,8 @@
         "en": "Super Simple Songs",
         "fr": "Monde des Titounis",
         "de": "Pudding TV Deutsch",
-        "es": "Pudding TV Español"
+        "es": "Pudding TV Español",
+        "ar": "Cocomelon Arabic"
       },
       "parentExtension": {
         "carryPhrase": {
@@ -331,7 +456,8 @@
         "en": "Twinkle Twinkle",
         "es": "Estrellita, ¿dónde estás?",
         "fr": "Brille, brille, petite étoile",
-        "de": "Funkel, funkel, kleiner Stern"
+        "de": "Funkel, funkel, kleiner Stern",
+        "ar": "أضيئي يا نجمتي"
       },
       "audioFiles": {
         "it": "cross-cultural/twinkle-it.m4a",
@@ -339,7 +465,8 @@
         "en": "cross-cultural/twinkle-en.m4a",
         "es": "cross-cultural/twinkle-es.m4a",
         "fr": "cross-cultural/twinkle-fr.m4a",
-        "de": "cross-cultural/twinkle-de.m4a"
+        "de": "cross-cultural/twinkle-de.m4a",
+        "ar": "cross-cultural/twinkle-ar.m4a"
       },
       "lyrics": {
         "it": [
@@ -612,6 +739,68 @@
             "time": 103.0,
             "text": "Funkel, Funkel, kleiner Stern, Ach, was haben wir dich gern?"
           }
+        ],
+        "ar": [
+          {
+            "time": 0.0,
+            "text": "أضيئي أضيئي أيتها النجمة",
+            "romanization": "Adī'ī adī'ī ayyatuhā n-najma"
+          },
+          {
+            "time": 13.3,
+            "text": "أتساءل دائمًا أين تعيشين",
+            "romanization": "Atasā'alu dā'iman ayna ta'īshīn"
+          },
+          {
+            "time": 26.7,
+            "text": "بألوان جميلة في السماء تزيّنين",
+            "romanization": "Bi-alwān jamīla fī s-samā' tuzayyinīn"
+          },
+          {
+            "time": 46.0,
+            "text": "أضيئي أضيئي أيتها النجمة",
+            "romanization": "Adī'ī adī'ī ayyatuhā n-najma"
+          },
+          {
+            "time": 57.3,
+            "text": "أتساءل دائمًا أين تعيشين",
+            "romanization": "Atasā'alu dā'iman ayna ta'īshīn"
+          },
+          {
+            "time": 68.7,
+            "text": "بألوان جميلة في السماء تزيّنين",
+            "romanization": "Bi-alwān jamīla fī s-samā' tuzayyinīn"
+          },
+          {
+            "time": 86.0,
+            "text": "أضيئي أضيئي أيتها النجمة",
+            "romanization": "Adī'ī adī'ī ayyatuhā n-najma"
+          },
+          {
+            "time": 97.7,
+            "text": "أتساءل دائمًا أين تعيشين",
+            "romanization": "Atasā'alu dā'iman ayna ta'īshīn"
+          },
+          {
+            "time": 109.3,
+            "text": "بألوان جميلة في السماء تزيّنين",
+            "romanization": "Bi-alwān jamīla fī s-samā' tuzayyinīn"
+          },
+          {
+            "time": 127.0,
+            "text": "أضيئي أضيئي أيتها النجمة",
+            "romanization": "Adī'ī adī'ī ayyatuhā n-najma"
+          },
+          {
+            "time": 138.7,
+            "text": "أتساءل دائمًا أين تعيشين",
+            "romanization": "Atasā'alu dā'iman ayna ta'īshīn"
+          },
+          {
+            "time": 150.3,
+            "text": "بألوان جميلة في السماء تزيّنين",
+            "romanization": "Bi-alwān jamīla fī s-samā' tuzayyinīn"
+          }
         ]
       },
       "activity": {
@@ -631,7 +820,8 @@
         "en": "Super Simple Songs",
         "es": "El Reino Infantil (Plim Plim)",
         "fr": "YesKids",
-        "de": "YouTube · c_GA5inSE7E"
+        "de": "YouTube · c_GA5inSE7E",
+        "ar": "Cocomelon Arabic"
       },
       "echoWord": {
         "emoji": "⭐",
@@ -672,7 +862,8 @@
         "en": "Old MacDonald",
         "es": "El viejo MacDonald",
         "fr": "Dans la ferme de Mathurin",
-        "de": "Old MacDonald hatte eine Farm"
+        "de": "Old MacDonald hatte eine Farm",
+        "ar": "مزرعة عمّي ماكدونالد"
       },
       "audioFiles": {
         "it": "cross-cultural/old-macdonald-it.m4a",
@@ -680,7 +871,8 @@
         "en": "cross-cultural/old-macdonald-en.m4a",
         "es": "cross-cultural/old-macdonald-es.m4a",
         "fr": "cross-cultural/old-macdonald-fr.m4a",
-        "de": "cross-cultural/old-macdonald-de.m4a"
+        "de": "cross-cultural/old-macdonald-de.m4a",
+        "ar": "cross-cultural/old-macdonald-ar.m4a"
       },
       "lyrics": {
         "it": [
@@ -1254,6 +1446,38 @@
             "time": 159.52,
             "text": "überall ein Wehr, wir, Old MacDonald hat 'ne Farm, ia ia o."
           }
+        ],
+        "ar": [
+          {
+            "time": 10.0,
+            "text": "مزرعة عمّي ماكدونالد",
+            "romanization": "Mazra'at 'ammī Mākdūnāld"
+          },
+          {
+            "time": 13.0,
+            "text": "إي آي إي آي أوه",
+            "romanization": "Ī āy ī āy ōh"
+          },
+          {
+            "time": 15.0,
+            "text": "وفي المزرعة يوجد بقرة",
+            "romanization": "Wa fī l-mazra'a yūjad baqara"
+          },
+          {
+            "time": 20.0,
+            "text": "مو هنا، مو هناك",
+            "romanization": "Mū hunā, mū hunāk"
+          },
+          {
+            "time": 23.0,
+            "text": "هنا مو، هناك مو، مو مو في كل مكان",
+            "romanization": "Hunā mū, hunāk mū, mū mū fī kulli makān"
+          },
+          {
+            "time": 101.0,
+            "text": "الفيلة لا تعيش في المزارع!",
+            "romanization": "Al-fīla lā ta'īsh fī l-mazāri'!"
+          }
         ]
       },
       "activity": {
@@ -1273,7 +1497,8 @@
         "en": "Super Simple Songs",
         "es": "El Reino Infantil",
         "fr": "BB LouLou",
-        "de": "YouTube · dwMxNqIAqd4"
+        "de": "YouTube · dwMxNqIAqd4",
+        "ar": "Cocomelon Arabic"
       },
       "echoWord": {
         "emoji": "🐮",
@@ -1314,7 +1539,8 @@
         "en": "If You're Happy",
         "de": "Wenn du fröhlich bist",
         "es": "Si eres feliz y lo sabes",
-        "fr": "Si tu aimes le soleil"
+        "fr": "Si tu aimes le soleil",
+        "ar": "إن كنت سعيدًا"
       },
       "audioFiles": {
         "it": "cross-cultural/if-youre-happy-it.m4a",
@@ -1322,7 +1548,8 @@
         "en": "cross-cultural/if-youre-happy-en.m4a",
         "de": "cross-cultural/if-youre-happy-de.m4a",
         "es": "cross-cultural/if-youre-happy-es.m4a",
-        "fr": "cross-cultural/if-youre-happy-fr.m4a"
+        "fr": "cross-cultural/if-youre-happy-fr.m4a",
+        "ar": "cross-cultural/if-youre-happy-ar.m4a"
       },
       "lyrics": {
         "it": [
@@ -1680,6 +1907,43 @@
             "time": 44.08,
             "text": "le printemps qui se réveille. Si tu aimes le soleil, diura."
           }
+        ],
+        "ar": [
+          {
+            "time": 0.0,
+            "text": "إن كنت سعيدًا صفّق بيديك",
+            "romanization": "In kunta sa'īdan saffiq bi-yadayk"
+          },
+          {
+            "time": 19.0,
+            "text": "إن كنت جائعًا اربّت على بطنك",
+            "romanization": "In kunta jā'i'an irbit 'alā batnik"
+          },
+          {
+            "time": 39.0,
+            "text": "إن كنت متعبًا تثاءب",
+            "romanization": "In kunta ta'ban tathāwab"
+          },
+          {
+            "time": 59.0,
+            "text": "إن كنت غاضبًا خذ نفسًا",
+            "romanization": "In kunta ghādiban khudh nafasan"
+          },
+          {
+            "time": 79.0,
+            "text": "إن كنت متفاجئًا اقفز للأعلى",
+            "romanization": "In kunta mutafāji'an iqfiz lil-a'lā"
+          },
+          {
+            "time": 99.0,
+            "text": "إن كنت مستاءً امسح عينيك",
+            "romanization": "In kunta musta'an imsah 'aynayk"
+          },
+          {
+            "time": 138.0,
+            "text": "إن كنت سعيدًا هيا اصرخ حي!",
+            "romanization": "In kunta sa'īdan hayyā israkh hay!"
+          }
         ]
       },
       "activity": {
@@ -1699,7 +1963,8 @@
         "en": "Super Simple Songs",
         "de": "YouTube",
         "es": "Canciones Infantiles",
-        "fr": "Comptines Accords Sensibles"
+        "fr": "Comptines Accords Sensibles",
+        "ar": "Cocomelon Arabic"
       },
       "echoWord": {
         "emoji": "👏",
@@ -1740,7 +2005,8 @@
         "en": "Head Shoulders",
         "es": "Cabeza, hombros, rodillas, pies",
         "fr": "Tête, épaules, genoux et pieds",
-        "de": "Kopf, Schulter, Knie und Fuß"
+        "de": "Kopf, Schulter, Knie und Fuß",
+        "ar": "رأس، أكتاف"
       },
       "audioFiles": {
         "it": "cross-cultural/head-shoulders-it.m4a",
@@ -1748,7 +2014,8 @@
         "en": "cross-cultural/head-shoulders-en.m4a",
         "es": "cross-cultural/head-shoulders-es.m4a",
         "fr": "cross-cultural/head-shoulders-fr.m4a",
-        "de": "cross-cultural/head-shoulders-de.m4a"
+        "de": "cross-cultural/head-shoulders-de.m4a",
+        "ar": "cross-cultural/head-shoulders-ar.m4a"
       },
       "lyrics": {
         "it": [
@@ -2094,6 +2361,38 @@
             "time": 51.3,
             "text": "Kopf, Schulter, Knie und Fuß"
           }
+        ],
+        "ar": [
+          {
+            "time": 0.0,
+            "text": "رأس، أكتاف، ركبة وقدم",
+            "romanization": "Ra's, aktāf, rukba wa qadam"
+          },
+          {
+            "time": 23.6,
+            "text": "عين، أذن، فم وأنف",
+            "romanization": "'Ayn, udhun, fam wa anf"
+          },
+          {
+            "time": 85.4,
+            "text": "لا، أرجوك، هذا يكفي!",
+            "romanization": "Lā, arjūk, hādhā yakfī!"
+          },
+          {
+            "time": 91.4,
+            "text": "لأنه أصبح سريعًا جدًا",
+            "romanization": "Li'annahu asbaha sarī'an jiddan"
+          },
+          {
+            "time": 97.4,
+            "text": "رأس، أكتاف، ركبة وقدم",
+            "romanization": "Ra's, aktāf, rukba wa qadam"
+          },
+          {
+            "time": 106.4,
+            "text": "عين، أذن، فم وأنف",
+            "romanization": "'Ayn, udhun, fam wa anf"
+          }
         ]
       },
       "activity": {
@@ -2113,7 +2412,8 @@
         "en": "Super Simple Songs",
         "es": "Canciones Infantiles",
         "fr": "Comptines et chansons",
-        "de": "mukkelig"
+        "de": "mukkelig",
+        "ar": "Cocomelon Arabic"
       },
       "echoWord": {
         "emoji": "🧒",
@@ -2154,7 +2454,8 @@
         "en": "Happy Birthday",
         "de": "Zum Geburtstag viel Glück",
         "es": "Cumpleaños feliz",
-        "fr": "Joyeux anniversaire"
+        "fr": "Joyeux anniversaire",
+        "ar": "سنة حلوة"
       },
       "audioFiles": {
         "it": "cross-cultural/happy-birthday-it.m4a",
@@ -2162,7 +2463,8 @@
         "en": "cross-cultural/happy-birthday-en.m4a",
         "de": "cross-cultural/happy-birthday-de.m4a",
         "es": "cross-cultural/happy-birthday-es.m4a",
-        "fr": "cross-cultural/happy-birthday-fr.m4a"
+        "fr": "cross-cultural/happy-birthday-fr.m4a",
+        "ar": "cross-cultural/happy-birthday-ar.m4a"
       },
       "lyrics": {
         "it": [
@@ -2336,6 +2638,38 @@
             "time": 26.7,
             "text": "Joyeux anniversaire"
           }
+        ],
+        "ar": [
+          {
+            "time": 0.0,
+            "text": "أنا اليوم يوم ميلادي، يلا كلكم غنّوا معي",
+            "romanization": "Anā el-yōm yōm mīlādī, yalla kullukum ghannū ma'ī"
+          },
+          {
+            "time": 5.9,
+            "text": "Happy birthday to you",
+            "romanization": "Happy birthday to you"
+          },
+          {
+            "time": 18.8,
+            "text": "سنة حلوة يا جميل",
+            "romanization": "Sana helwa yā gamīl"
+          },
+          {
+            "time": 35.0,
+            "text": "يلا غنّوا يا أولاد",
+            "romanization": "Yalla ghannū yā awlād"
+          },
+          {
+            "time": 66.8,
+            "text": "Happy birthday to you",
+            "romanization": "Happy birthday to you"
+          },
+          {
+            "time": 79.6,
+            "text": "سنة حلوة يا جميل",
+            "romanization": "Sana helwa yā gamīl"
+          }
         ]
       },
       "activity": {
@@ -2355,7 +2689,8 @@
         "en": "Super Simple Songs",
         "de": "YouTube",
         "es": "Creaciones Ángela",
-        "fr": "BB LouLou"
+        "fr": "BB LouLou",
+        "ar": "Wanasah TV"
       },
       "echoWord": {
         "emoji": "🎂",
