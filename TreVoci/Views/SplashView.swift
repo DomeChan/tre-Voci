@@ -50,11 +50,14 @@ struct SplashView: View {
                     .foregroundStyle(Color.stone)
                     .tracking(2.5)
 
-                // Animated flags
-                HStack(spacing: 24) {
-                    flagView("🇮🇹", delay: 0)
-                    flagView("🇨🇳", delay: 0.3)
-                    flagView("🇬🇧", delay: 0.6)
+                // Animated flags — one per registered language (Languages.json),
+                // so a newly added language shows up here with no code change.
+                // Sized down once the registry grows past the original trio, so
+                // all of them stay on one row instead of clipping off-screen.
+                HStack(spacing: flagSpacing) {
+                    ForEach(Array(Language.all.enumerated()), id: \.element.id) { index, language in
+                        flagView(language.flag, delay: Double(index % 4) * 0.2)
+                    }
                 }
                 .padding(.top, 8)
 
@@ -86,9 +89,14 @@ struct SplashView: View {
         .onAppear { animate = true }
     }
 
+    /// Shrinks once the registry outgrows the original three, so the row
+    /// stays on one line instead of running off-screen.
+    private var flagSpacing: CGFloat { Language.all.count > 3 ? 14 : 24 }
+    private var flagFontSize: CGFloat { Language.all.count > 3 ? 30 : 40 }
+
     private func flagView(_ flag: String, delay: Double) -> some View {
         Text(flag)
-            .font(.system(size: 40))
+            .font(.system(size: flagFontSize))
             .offset(y: animate ? -10 : 10)
             .scaleEffect(animate ? 1.1 : 0.9)
             .animation(
