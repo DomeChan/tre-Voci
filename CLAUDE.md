@@ -74,7 +74,7 @@ Splash → Onboarding (name/languages/speaker) → Home → Player → Activity 
 
 Naming: cross-cultural = `{song-id}-{lang}.m4a` (e.g. `frere-jacques-it.m4a`), culture-specific = `{song-id}.m4a` (e.g. `stella-stellina.m4a`).
 
-Spec: AAC, 192kbps, 44.1kHz, stereo, -16 LUFS, 0.5s fade in, 1.0s fade out.
+Spec: see `docs/AUDIO-SOURCING-GUIDE.md` § Audio Specs Summary (source of truth). **Unresolved as of 2026-07-25: this file previously said 0.5s fade-in/1.0s fade-out; the guide says ~0.3s/0.3s — verify which is correct before the next re-master.**
 
 ## Coding Standards
 
