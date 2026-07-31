@@ -5,6 +5,16 @@ struct CultureSection: View {
     let language: Language
     let songs: [Song]
     var dimmed: Bool = false
+    /// Screen-level chrome (the section header and "on the way" copy sit directly
+    /// on Home's background) follows the display palette — Bedtime Mode OR
+    /// system Dark Mode, either one. The song rows below carry their own
+    /// self-contained light card background and don't need this.
+    var usesDarkPalette: Bool = false
+    /// The row brightness cut (see cultureRow) is a glare fix for an actually
+    /// dark ROOM, not a system-appearance match — it must only follow real
+    /// Bedtime Mode, never system Dark Mode alone. A parent using Dark Mode in
+    /// daylight shouldn't get dimmed, lower-contrast song rows for no reason.
+    var glareCut: Bool = false
     let onSongTap: (Song) -> Void
 
     /// Auto-fill columns by available width so the grid genuinely fills the canvas:
@@ -14,11 +24,14 @@ struct CultureSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Flag carries the language identity; the full name is kept for VoiceOver.
-            Text(language.flag)
-                .font(.system(size: 30))
+            // Match the cross-cultural section's header treatment: a real, visible
+            // title (`title` already carries the flag, e.g. "🇮🇹 Filastrocche
+            // Italiane") — previously only the bare flag rendered, with the
+            // language name living solely in the accessibility label.
+            Text(title)
+                .font(.nunito(.black, size: 17, relativeTo: .headline))
+                .foregroundStyle(usesDarkPalette ? Color.nightInk : Color.bark)
                 .padding(.horizontal, 20)
-                .accessibilityLabel(title)
 
             if songs.isEmpty {
                 // Honest "on the way" state for a registered language we don't have
@@ -28,10 +41,10 @@ struct CultureSection: View {
                     Image(systemName: "music.note")
                         .font(.system(size: 11))
                     Text("Songs in \(language.displayName) are on the way \u{2014} we only add real native recordings.")
-                        .font(.nunito(.semiBold, size: 12))
+                        .font(.nunito(.semiBold, size: 12, relativeTo: .footnote))
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                .foregroundStyle(Color.stone)
+                .foregroundStyle(usesDarkPalette ? Color.nightStone : Color.stone)
                 .padding(.horizontal, 20)
             } else {
                 LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
@@ -53,14 +66,17 @@ struct CultureSection: View {
                         Image(systemName: "eye.slash")
                             .font(.system(size: 10))
                         Text("Not in your selection")
-                            .font(.nunito(.semiBold, size: 11))
+                            .font(.nunito(.semiBold, size: 11, relativeTo: .caption2))
                     }
-                    .foregroundStyle(Color.stone)
+                    .foregroundStyle(usesDarkPalette ? Color.nightStone : Color.stone)
                     .padding(.horizontal, 20)
                 }
             }
         }
-        .opacity(songs.isEmpty ? 1.0 : (dimmed ? 0.4 : 1.0))
+        // The row brightness cut (glareCut, see cultureRow) stacks with this
+        // opacity dim; raise the floor when it's active so the two effects
+        // together don't drop dimmed text below the AAA-leaning bar.
+        .opacity(songs.isEmpty ? 1.0 : (dimmed ? (glareCut ? 0.55 : 0.4) : 1.0))
     }
 
     private func cultureRow(song: Song) -> some View {
@@ -73,11 +89,11 @@ struct CultureSection: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(song.title(for: language))
-                    .font(.nunito(.bold, size: 15))
+                    .font(.nunito(.bold, size: 15, relativeTo: .subheadline))
                     .foregroundStyle(Color.bark)
 
                 Text(song.formattedDuration)
-                    .font(.nunito(.semiBold, size: 12))
+                    .font(.nunito(.semiBold, size: 12, relativeTo: .caption))
                     .foregroundStyle(Color.stone)
             }
 
@@ -91,6 +107,11 @@ struct CultureSection: View {
         .padding(.vertical, 12)
         .background(language.backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: 18))
+        // Same uniform-brightness-cut reasoning as SongCard/DailyMixCard: these
+        // pastel rows are self-contained and stay legible unchanged, but at full
+        // luminance they glare against an actually dark bedtime room. Tied to
+        // glareCut (real Bedtime Mode), never to system Dark Mode alone.
+        .brightness(glareCut ? -0.22 : 0)
     }
 }
 

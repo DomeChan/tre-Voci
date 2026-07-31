@@ -25,6 +25,21 @@ extension Color {
     static let peach = Color(hex: "FFAD8F")
     static let gold = Color(hex: "FFB84D")
     static let plum = Color(hex: "9B59B6")
+    /// Same hue as `.coral`, held at low enough lightness to clear text-contrast
+    /// minimums on a white background — `.coral` itself (~2.5:1) fails AA there.
+    /// Use for coral text/icons on light surfaces (e.g. the Daily Mix Play pill);
+    /// `.coral` stays the fill/glow color everywhere else.
+    static let coralDeep = Color(hex: "B8422E")
+
+    // MARK: - Bedtime Mode (Night Surface)
+    // Same brand hue as .bark/.warm, held at low lightness — not an inverted
+    // light mode. Used for the screen-level chrome only; individual song/card
+    // surfaces already carry their own self-contained gradient or tint and
+    // stay legible floating on a dark canvas without changes.
+    static let nightBg = Color(hex: "1C1712")
+    static let nightSurface = Color(hex: "241E17")
+    static let nightInk = Color(hex: "F2ECE0")
+    static let nightStone = Color(hex: "B5A897")
 
     // MARK: - Hex Initializer
     init(hex: String) {

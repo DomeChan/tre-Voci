@@ -14,7 +14,7 @@ struct LanguageStep: View {
 
     var body: some View {
         VStack(spacing: 24) {
-            Spacer()
+            Spacer(minLength: 8)
 
             // Title
             Text("Choose at least 2 languages")
@@ -27,13 +27,18 @@ struct LanguageStep: View {
                 .foregroundStyle(Color.stone)
                 .multilineTextAlignment(.center)
 
-            // Language rows
-            VStack(spacing: 12) {
-                ForEach(Language.allCases) { lang in
-                    languageRow(language: lang)
+            // Language rows — scrollable so the registry can keep growing
+            // (Languages.json) without the Next button getting pushed off
+            // the bottom of shorter screens.
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 12) {
+                    ForEach(Language.allCases) { lang in
+                        languageRow(language: lang)
+                    }
                 }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 4)
             }
-            .padding(.horizontal, 24)
 
             // "More languages coming" note
             HStack(spacing: 6) {
@@ -47,8 +52,6 @@ struct LanguageStep: View {
             .padding(.vertical, 8)
             .background(Color.sand.opacity(0.5))
             .clipShape(Capsule())
-
-            Spacer()
 
             // Next button
             Button(action: onNext) {

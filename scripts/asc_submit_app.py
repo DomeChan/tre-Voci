@@ -53,15 +53,13 @@ def main():
             "relationships": {"app": {"data": {"type": "apps", "id": aid}}}}})["data"]["id"]
         print(f"created review submission {sub}")
 
-    existing = {it.get("relationships", {}).get("appStoreVersion", {}).get("data", {}) and "version"
-                for it in api("GET", f"/v1/reviewSubmissions/{sub}/items", t).get("data", [])}
     def add_item(rel, rid, label):
         r = api("POST", "/v1/reviewSubmissionItems", t, {"data": {"type": "reviewSubmissionItems",
             "relationships": {"reviewSubmission": {"data": {"type": "reviewSubmissions", "id": sub}},
                               rel: {"data": {"type": ("appStoreVersions" if rel == "appStoreVersion" else "inAppPurchases"), "id": rid}}}}},
             tolerate=(409,))
         print(f"  + item {label}: {'added' if '_e' not in r else 'already present'}")
-    add_item("appStoreVersion", vid, "app version 0.1")
+    add_item("appStoreVersion", vid, "app version")
     for iid in iaps:
         add_item("inAppPurchaseV2", iid, f"IAP {iid}")
 
