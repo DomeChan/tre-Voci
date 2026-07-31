@@ -72,6 +72,13 @@ Splash → Onboarding (name/languages/speaker) → Home → Player → Activity 
 - **Nunito fonts** — variable font files from Google Fonts GitHub repo (static font URLs 404). Registered in Info.plist under `UIAppFonts`.
 - **SourceKit false positives** — editor diagnostics show errors for cross-file references that build fine. Trust the actual build output.
 
+## App Store Release
+
+- **Never build App Store submissions locally on this Mac** — its host OS is a macOS 27 beta, which stamps every Xcode archive with beta SDK build identifiers regardless of which Xcode version is installed; Apple's ingestion rejects it (`ITMS-90111`) no matter what. Use `.github/workflows/appstore-release.yml` instead (manual `workflow_dispatch`) — it builds on a stable `macos-15` GitHub-hosted runner and refuses to run if that runner's own host OS looks like a beta build.
+- Release signing is **Manual**, not Automatic — `CODE_SIGN_IDENTITY = "Apple Distribution"`, `PROVISIONING_PROFILE_SPECIFIER = "TreVoci App Store (auto)"`. Pinned explicitly because Automatic signing was silently resolving to a wildcard development profile during plain CLI archiving.
+- CI upload gotchas already worked around in the workflow, but worth knowing: `xcodebuild -exportArchive` with `-allowProvisioningUpdates` or `destination: upload` both route through Xcode's Accounts subsystem, which fails (`Failed to Use Accounts`) on a runner with no signed-in Apple ID — export locally instead, then upload via `xcrun altool --upload-app` with the ASC API key. Also, `/Applications/Xcode.app` on GitHub's macOS runners is not necessarily the newest Xcode installed — glob `/Applications/Xcode_*.app` and pick the highest with `sort -V`.
+- ASC scripts live in `scripts/asc_*.py` (App Store Connect API, JWT auth via `ASC_ISSUER_ID`/`ASC_KEY_ID`/`ASC_P8` env vars) — `asc_submit_app.py` stages and submits a review submission, `asc_create_version.py` creates/renames an App Store version and attaches a processed build once it's `VALID`.
+
 ## Audio Files
 
 36 real .m4a files in `TreVoci/Resources/Audio/` with subdirectories: `cross-cultural/`, `italian/`, `chinese/`, `english/`.
