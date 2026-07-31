@@ -22,8 +22,16 @@ jobs:
 
       - name: Select Xcode
         run: |
-          sudo xcode-select -s /Applications/Xcode.app
+          ls /Applications | grep -i '^Xcode'
+          LATEST=$(ls -d /Applications/Xcode_*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$LATEST" ]; then LATEST=/Applications/Xcode.app; fi
+          sudo xcode-select -s "$LATEST"
           xcodebuild -version
+          MAJOR=$(xcodebuild -version | head -1 | grep -oE '[0-9]+' | head -1)
+          if [ "$MAJOR" -lt 26 ]; then
+            echo "::error::Selected Xcode ($LATEST) is version $MAJOR, need 26+ for App Store submission."
+            exit 1
+          fi
 
       - name: Import signing certificate + provisioning profile
         env:
