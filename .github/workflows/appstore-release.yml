@@ -56,31 +56,20 @@ jobs:
             -archivePath "$RUNNER_TEMP/TreVoci.xcarchive" \
             -destination 'generic/platform=iOS'
 
-      - name: Export + upload to App Store Connect
-        env:
-          ASC_API_KEY_BASE64: ${{ secrets.ASC_API_KEY_BASE64 }}
-          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
-          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      - name: Export IPA
         run: |
-          KEY_PATH=$RUNNER_TEMP/AuthKey.p8
-          echo -n "$ASC_API_KEY_BASE64" | base64 --decode -o "$KEY_PATH"
-
           cat > "$RUNNER_TEMP/exportOptions.plist" <<PLIST
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0">
           <dict>
             <key>method</key><string>app-store-connect</string>
-            <key>destination</key><string>upload</string>
             <key>teamID</key><string>595P4J7T9L</string>
             <key>signingStyle</key><string>manual</string>
             <key>provisioningProfiles</key>
             <dict>
               <key>com.trevoci-open.app</key><string>TreVoci App Store (auto)</string>
             </dict>
-            <key>authenticationKeyPath</key><string>$KEY_PATH</string>
-            <key>authenticationKeyID</key><string>$ASC_KEY_ID</string>
-            <key>authenticationKeyIssuerID</key><string>$ASC_ISSUER_ID</string>
           </dict>
           </plist>
           PLIST
@@ -89,6 +78,25 @@ jobs:
             -archivePath "$RUNNER_TEMP/TreVoci.xcarchive" \
             -exportOptionsPlist "$RUNNER_TEMP/exportOptions.plist" \
             -exportPath "$RUNNER_TEMP/export"
+
+      # xcodebuild -exportArchive's "destination: upload" routes through Xcode's
+      # Accounts subsystem and fails with "Failed to Use Accounts" on a runner with
+      # no signed-in Apple ID, even when an API key is supplied. altool authenticates
+      # with the API key directly and never touches Accounts, so upload is a separate step.
+      - name: Upload to App Store Connect
+        env:
+          ASC_API_KEY_BASE64: ${{ secrets.ASC_API_KEY_BASE64 }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+        run: |
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo -n "$ASC_API_KEY_BASE64" | base64 --decode -o ~/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8
+
+          xcrun altool --upload-app \
+            -f "$RUNNER_TEMP/export/TreVoci.ipa" \
+            -t ios \
+            --apiKey "$ASC_KEY_ID" \
+            --apiIssuer "$ASC_ISSUER_ID"
 
       - name: Clean up keychain
         if: always()
